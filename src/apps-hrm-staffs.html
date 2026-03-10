@@ -1,541 +1,46 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Staffs List"}) @@include('./partials/head-css.html')
+    </head>
 
-<head>
-    @@include("./partials/title-meta.html", {"title": "Staffs List"}) @@include('./partials/head-css.html')
-</head>
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
 
-<body>
-    <!-- Begin page -->
-    <div class="wrapper">
-        @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
 
-        <!-- ============================================================== -->
-        <!-- Start Main Content -->
-        <!-- ============================================================== -->
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle": "HRM", "title":"Staffs"})
 
-        <div class="content-page">
-            <div class="container-fluid">
-                @@include("./partials/page-title.html", {"subtitle": "HRM", "title":"Staffs"})
+                    <div class="row">
+                        <div class="col-12">
+                            <div data-table data-table-rows-per-page="10" class="card">
+                                <div class="card-header border-light justify-content-between">
+                                    <div class="d-flex gap-2">
+                                        <div class="app-search">
+                                            <input data-table-search type="text" class="form-control" placeholder="Search staff..." />
+                                            <span data-icon="search" class="app-search-icon text-muted"></span>
+                                        </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        <div data-table data-table-rows-per-page="10" class="card">
-                            <div class="card-header border-light justify-content-between">
-                                <div class="d-flex gap-2">
-                                    <div class="app-search">
-                                        <input data-table-search type="text" class="form-control" placeholder="Search staff..." />
-                                        <span data-icon="search" class="app-search-icon text-muted"></span>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStaffModal">
+                                            <span data-icon="plus" class="me-1"></span>
+                                            New Staff
+                                        </button>
+                                        <button data-table-delete-selected class="btn btn-danger d-none">Delete</button>
                                     </div>
 
-                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStaffModal">
-                                        <span data-icon="plus" class="me-1"></span>
-                                        New Staff
-                                    </button>
-                                    <button data-table-delete-selected class="btn btn-danger d-none">Delete</button>
-                                </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="me-2 fw-semibold">Filter By:</span>
 
-                                <div class="d-flex align-items-center gap-2">
-                                    <span class="me-2 fw-semibold">Filter By:</span>
-
-                                    <!-- Department Filter -->
-                                    <div class="app-search">
-                                        <select data-table-filter="department" class="form-select form-control my-1 my-md-0">
-                                            <option value="All">Department</option>
-                                            <option value="Human Resources">Human Resources</option>
-                                            <option value="IT Department">IT Department</option>
-                                            <option value="Operations">Operations</option>
-                                            <option value="Marketing">Marketing</option>
-                                            <option value="Finance">Finance</option>
-                                            <option value="Design">Design</option>
-                                            <option value="Analytics">Analytics</option>
-                                            <option value="Product">Product</option>
-                                            <option value="Quality Assurance">Quality Assurance</option>
-                                        </select>
-                                        <span data-icon="layout" class="app-search-icon text-muted"></span>
-                                    </div>
-
-                                    <!-- Status Filter -->
-                                    <div class="app-search">
-                                        <select data-table-filter="status" class="form-select form-control my-1 my-md-0">
-                                            <option value="">Employment Status</option>
-                                            <option value="Active">Active</option>
-                                            <option value="On Leave">On Leave</option>
-                                            <option value="Probation">Probation</option>
-                                            <option value="Suspended">Suspended</option>
-                                            <option value="Review Pending">Review Pending</option>
-                                        </select>
-                                        <span data-icon="shuffle" class="app-search-icon text-muted"></span>
-                                    </div>
-
-                                    <!-- Records Per Page -->
-                                    <div>
-                                        <select data-table-set-rows-per-page class="form-select form-control my-1 my-md-0">
-                                            <option value="5">5</option>
-                                            <option value="10">10</option>
-                                            <option value="15">15</option>
-                                            <option value="20">20</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="table-responsive">
-                                <table class="table table-custom table-centered table-select table-hover w-100 mb-0">
-                                    <thead class="bg-light bg-opacity-25 thead-sm">
-                                        <tr class="text-uppercase fs-xxs">
-                                            <th scope="col" style="width: 1%">
-                                                <input data-table-select-all class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" id="checkAll" value="option" />
-                                            </th>
-                                            <th data-table-sort>Staff ID</th>
-                                            <th data-table-sort>Staff Name</th>
-                                            <th data-table-sort>Phone</th>
-                                            <th data-table-sort>Country</th>
-                                            <th data-table-sort>Joined</th>
-                                            <th data-table-sort>Role</th>
-                                            <th data-table-sort data-column="department">Department</th>
-                                            <th data-table-sort data-column="status">Status</th>
-                                            <th class="text-center">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- STF-001 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-001</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-3.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Samantha Green</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">samantha.green&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+1 202 555 0147</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/us.svg" height="12" class="rounded-circle me-1" />US</span></td>
-                                            <td>Feb 10, 2024</td>
-                                            <td>HR Manager</td>
-                                            <td>Human Resources</td>
-                                            <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- STF-002 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-002</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-5.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Liam Johnson</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">liam.johnson&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+44 7700 900123</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/gb.svg" height="12" class="rounded-circle me-1" />UK</span></td>
-                                            <td>Jan 25, 2024</td>
-                                            <td>Software Engineer</td>
-                                            <td>IT Department</td>
-                                            <td><span class="badge bg-warning-subtle text-warning badge-label">On Leave</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- STF-003 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-003</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-7.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Noah Martinez</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">noah.martinez&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+61 401 222 890</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/au.svg" height="12" class="rounded-circle me-1" />AU</span></td>
-                                            <td>Mar 05, 2024</td>
-                                            <td>Project Coordinator</td>
-                                            <td>Operations</td>
-                                            <td><span class="badge bg-danger-subtle text-danger badge-label">Suspended</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- STF-004 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-004</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-8.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Emily Davis</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">emily.davis&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+1 303 555 0172</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/ca.svg" height="12" class="rounded-circle me-1" />CA</span></td>
-                                            <td>Apr 18, 2024</td>
-                                            <td>Marketing Lead</td>
-                                            <td>Marketing</td>
-                                            <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- STF-005 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-005</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-9.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Lucas Brown</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">lucas.brown&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+49 1512 345678</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/de.svg" height="12" class="rounded-circle me-1" />GE</span></td>
-                                            <td>May 12, 2024</td>
-                                            <td>Financial Analyst</td>
-                                            <td>Finance</td>
-                                            <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- STF-006 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-006</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-10.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Olivia Wilson</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">olivia.wilson&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+33 6 12 34 56 78</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/fr.svg" height="12" class="rounded-circle me-1" />FR</span></td>
-                                            <td>Jun 02, 2024</td>
-                                            <td>UX Designer</td>
-                                            <td>Design</td>
-                                            <td><span class="badge bg-warning-subtle text-warning badge-label">Probation</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- STF-007 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-007</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-1.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Isabella Moore</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">isabella.moore&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+34 612 345 678</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/es.svg" height="12" class="rounded-circle me-1" />SP</span></td>
-                                            <td>Jul 21, 2024</td>
-                                            <td>Data Analyst</td>
-                                            <td>Analytics</td>
-                                            <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- STF-008 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-008</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-2.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Ethan Clark</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">ethan.clark&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+39 347 123 4567</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/it.svg" height="12" class="rounded-circle me-1" />IT</span></td>
-                                            <td>Aug 08, 2024</td>
-                                            <td>QA Tester</td>
-                                            <td>Quality Assurance</td>
-                                            <td><span class="badge bg-warning-subtle text-warning badge-label">Review Pending</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- STF-009 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-009</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-4.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Charlotte Turner</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">charlotte.turner&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+41 79 123 4567</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/ch.svg" height="12" class="rounded-circle me-1" />SW</span></td>
-                                            <td>Sep 15, 2024</td>
-                                            <td>Legal Advisor</td>
-                                            <td>Legal</td>
-                                            <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- STF-010 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-010</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-9.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Amelia Walker</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">amelia.walker&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+65 8123 4567</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/sg.svg" height="12" class="rounded-circle me-1" />SI</span></td>
-                                            <td>Oct 04, 2024</td>
-                                            <td>Sales Executive</td>
-                                            <td>Sales</td>
-                                            <td><span class="badge bg-warning-subtle text-warning badge-label">Probation</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- STF-011 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-011</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-7.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Benjamin Scott</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">benjamin.scott&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+31 6 12 34 56 78</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/nl.svg" height="12" class="rounded-circle me-1" />NE</span></td>
-                                            <td>Nov 11, 2024</td>
-                                            <td>Network Administrator</td>
-                                            <td>IT Department</td>
-                                            <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- STF-012 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-012</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-6.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Henry Lewis</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">henry.lewis&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+353 86 123 4567</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/ie.svg" height="12" class="rounded-circle me-1" />IR</span></td>
-                                            <td>Dec 02, 2024</td>
-                                            <td>Content Strategist</td>
-                                            <td>Marketing</td>
-                                            <td><span class="badge bg-warning-subtle text-warning badge-label">Review Pending</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- STF-013 -->
-                                        <tr>
-                                            <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
-                                            <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-013</a></td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div class="avatar avatar-sm"><img src="assets/images/users/user-1.jpg" class="img-fluid rounded-circle" alt="" /></div>
-                                                    <div>
-                                                        <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Grace Adams</a></h5>
-                                                        <p class="text-muted fs-xs mb-0">grace.adams&#64;company.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>+351 912 345 678</td>
-                                            <td><span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/pt.svg" height="12" class="rounded-circle me-1" />PO</span></td>
-                                            <td>Dec 18, 2024</td>
-                                            <td>Product Manager</td>
-                                            <td>Product</td>
-                                            <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
-                                            <td class="text-center">
-                                                <div class="d-flex align-items-center justify-content-center gap-1">
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                    <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                    <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-
-                                    </tbody>
-
-                                </table>
-                                <!-- end table -->
-                            </div>
-
-                            <div class="card-footer border-0">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div data-table-pagination-info="staffs"></div>
-
-                                    <div data-table-pagination></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col -->
-                </div>
-                <!-- end row -->
-
-                <!-- Add Staff Modal -->
-                <div class="modal fade" id="addStaffModal" tabindex="-1" aria-labelledby="addStaffModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title fw-semibold" id="addStaffModalLabel">
-                                    <span data-icon="user-plus" class="me-1"></span>
-                                    Add New Staff
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-
-                            <form id="addStaffForm">
-                                <div class="modal-body">
-                                    <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <label for="staffName" class="form-label">Full Name</label>
-                                            <input type="text" class="form-control" id="staffName" placeholder="Enter full name" required />
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="staffEmail" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="staffEmail" placeholder="name&#64;example.com" required />
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="staffPhone" class="form-label">Phone</label>
-                                            <input type="text" class="form-control" id="staffPhone" placeholder="+1 202 555 0123" />
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="staffCountry" class="form-label">Country</label>
-                                            <select id="staffCountry" class="form-select">
-                                                <option value="">Select country</option>
-                                                <option value="USA">United States</option>
-                                                <option value="UK">United Kingdom</option>
-                                                <option value="Canada">Canada</option>
-                                                <option value="Germany">Germany</option>
-                                                <option value="France">France</option>
-                                                <option value="Australia">Australia</option>
-                                                <option value="India">India</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="staffRole" class="form-label">Role</label>
-                                            <input type="text" class="form-control" id="staffRole" placeholder="e.g. Software Engineer" />
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="staffDepartment" class="form-label">Department</label>
-                                            <select id="staffDepartment" class="form-select">
-                                                <option value="">Select department</option>
+                                        <!-- Department Filter -->
+                                        <div class="app-search">
+                                            <select data-table-filter="department" class="form-select form-control my-1 my-md-0">
+                                                <option value="All">Department</option>
                                                 <option value="Human Resources">Human Resources</option>
                                                 <option value="IT Department">IT Department</option>
                                                 <option value="Operations">Operations</option>
@@ -546,55 +51,571 @@
                                                 <option value="Product">Product</option>
                                                 <option value="Quality Assurance">Quality Assurance</option>
                                             </select>
+                                            <span data-icon="layout" class="app-search-icon text-muted"></span>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <label for="staffStatus" class="form-label">Status</label>
-                                            <select id="staffStatus" class="form-select">
+                                        <!-- Status Filter -->
+                                        <div class="app-search">
+                                            <select data-table-filter="status" class="form-select form-control my-1 my-md-0">
+                                                <option value="">Employment Status</option>
                                                 <option value="Active">Active</option>
                                                 <option value="On Leave">On Leave</option>
                                                 <option value="Probation">Probation</option>
                                                 <option value="Suspended">Suspended</option>
                                                 <option value="Review Pending">Review Pending</option>
                                             </select>
+                                            <span data-icon="shuffle" class="app-search-icon text-muted"></span>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <label for="staffJoinDate" class="form-label">Join Date</label>
-                                            <input type="date" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" id="staffJoinDate" />
+                                        <!-- Records Per Page -->
+                                        <div>
+                                            <select data-table-set-rows-per-page class="form-select form-control my-1 my-md-0">
+                                                <option value="5">5</option>
+                                                <option value="10">10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary">
-                                        <span data-icon="check" class="me-1"></span>
-                                        Save Staff
-                                    </button>
+                                <div class="table-responsive">
+                                    <table class="table table-custom table-centered table-select table-hover w-100 mb-0">
+                                        <thead class="bg-light bg-opacity-25 thead-sm">
+                                            <tr class="text-uppercase fs-xxs">
+                                                <th scope="col" style="width: 1%">
+                                                    <input data-table-select-all class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" id="checkAll" value="option" />
+                                                </th>
+                                                <th data-table-sort>Staff ID</th>
+                                                <th data-table-sort>Staff Name</th>
+                                                <th data-table-sort>Phone</th>
+                                                <th data-table-sort>Country</th>
+                                                <th data-table-sort>Joined</th>
+                                                <th data-table-sort>Role</th>
+                                                <th data-table-sort data-column="department">Department</th>
+                                                <th data-table-sort data-column="status">Status</th>
+                                                <th class="text-center">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- STF-001 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-001</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-3.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Samantha Green</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">samantha.green&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+1 202 555 0147</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/us.svg" height="12" class="rounded-circle me-1" />US</span>
+                                                </td>
+                                                <td>Feb 10, 2024</td>
+                                                <td>HR Manager</td>
+                                                <td>Human Resources</td>
+                                                <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- STF-002 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-002</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-5.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Liam Johnson</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">liam.johnson&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+44 7700 900123</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/gb.svg" height="12" class="rounded-circle me-1" />UK</span>
+                                                </td>
+                                                <td>Jan 25, 2024</td>
+                                                <td>Software Engineer</td>
+                                                <td>IT Department</td>
+                                                <td><span class="badge bg-warning-subtle text-warning badge-label">On Leave</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- STF-003 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-003</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-7.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Noah Martinez</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">noah.martinez&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+61 401 222 890</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/au.svg" height="12" class="rounded-circle me-1" />AU</span>
+                                                </td>
+                                                <td>Mar 05, 2024</td>
+                                                <td>Project Coordinator</td>
+                                                <td>Operations</td>
+                                                <td><span class="badge bg-danger-subtle text-danger badge-label">Suspended</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- STF-004 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-004</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-8.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Emily Davis</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">emily.davis&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+1 303 555 0172</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/ca.svg" height="12" class="rounded-circle me-1" />CA</span>
+                                                </td>
+                                                <td>Apr 18, 2024</td>
+                                                <td>Marketing Lead</td>
+                                                <td>Marketing</td>
+                                                <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- STF-005 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-005</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-9.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Lucas Brown</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">lucas.brown&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+49 1512 345678</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/de.svg" height="12" class="rounded-circle me-1" />GE</span>
+                                                </td>
+                                                <td>May 12, 2024</td>
+                                                <td>Financial Analyst</td>
+                                                <td>Finance</td>
+                                                <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- STF-006 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-006</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-10.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Olivia Wilson</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">olivia.wilson&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+33 6 12 34 56 78</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/fr.svg" height="12" class="rounded-circle me-1" />FR</span>
+                                                </td>
+                                                <td>Jun 02, 2024</td>
+                                                <td>UX Designer</td>
+                                                <td>Design</td>
+                                                <td><span class="badge bg-warning-subtle text-warning badge-label">Probation</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- STF-007 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-007</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-1.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Isabella Moore</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">isabella.moore&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+34 612 345 678</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/es.svg" height="12" class="rounded-circle me-1" />SP</span>
+                                                </td>
+                                                <td>Jul 21, 2024</td>
+                                                <td>Data Analyst</td>
+                                                <td>Analytics</td>
+                                                <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- STF-008 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-008</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-2.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Ethan Clark</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">ethan.clark&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+39 347 123 4567</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/it.svg" height="12" class="rounded-circle me-1" />IT</span>
+                                                </td>
+                                                <td>Aug 08, 2024</td>
+                                                <td>QA Tester</td>
+                                                <td>Quality Assurance</td>
+                                                <td><span class="badge bg-warning-subtle text-warning badge-label">Review Pending</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- STF-009 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-009</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-4.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Charlotte Turner</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">charlotte.turner&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+41 79 123 4567</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/ch.svg" height="12" class="rounded-circle me-1" />SW</span>
+                                                </td>
+                                                <td>Sep 15, 2024</td>
+                                                <td>Legal Advisor</td>
+                                                <td>Legal</td>
+                                                <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- STF-010 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-010</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-9.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Amelia Walker</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">amelia.walker&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+65 8123 4567</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/sg.svg" height="12" class="rounded-circle me-1" />SI</span>
+                                                </td>
+                                                <td>Oct 04, 2024</td>
+                                                <td>Sales Executive</td>
+                                                <td>Sales</td>
+                                                <td><span class="badge bg-warning-subtle text-warning badge-label">Probation</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- STF-011 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-011</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-7.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Benjamin Scott</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">benjamin.scott&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+31 6 12 34 56 78</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/nl.svg" height="12" class="rounded-circle me-1" />NE</span>
+                                                </td>
+                                                <td>Nov 11, 2024</td>
+                                                <td>Network Administrator</td>
+                                                <td>IT Department</td>
+                                                <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- STF-012 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-012</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-6.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Henry Lewis</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">henry.lewis&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+353 86 123 4567</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/ie.svg" height="12" class="rounded-circle me-1" />IR</span>
+                                                </td>
+                                                <td>Dec 02, 2024</td>
+                                                <td>Content Strategist</td>
+                                                <td>Marketing</td>
+                                                <td><span class="badge bg-warning-subtle text-warning badge-label">Review Pending</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- STF-013 -->
+                                            <tr>
+                                                <td><input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><a href="apps-hrm-staff-profile.html" class="fw-semibold link-reset">STF-013</a></td>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm"><img src="assets/images/users/user-1.jpg" class="img-fluid rounded-circle" alt="" /></div>
+                                                        <div>
+                                                            <h5 class="mb-0 lh-base fs-base"><a href="apps-hrm-staff-profile.html" class="link-reset">Grace Adams</a></h5>
+                                                            <p class="text-muted fs-xs mb-0">grace.adams&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>+351 912 345 678</td>
+                                                <td>
+                                                    <span class="badge p-1 text-bg-light fs-sm"><img src="assets/images/flags/pt.svg" height="12" class="rounded-circle me-1" />PO</span>
+                                                </td>
+                                                <td>Dec 18, 2024</td>
+                                                <td>Product Manager</td>
+                                                <td>Product</td>
+                                                <td><span class="badge bg-success-subtle text-success badge-label">Active</span></td>
+                                                <td class="text-center">
+                                                    <div class="d-flex align-items-center justify-content-center gap-1">
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- end table -->
                                 </div>
-                            </form>
+
+                                <div class="card-footer border-0">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div data-table-pagination-info="staffs"></div>
+
+                                        <div data-table-pagination></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <!-- Add Staff Modal -->
+                    <div class="modal fade" id="addStaffModal" tabindex="-1" aria-labelledby="addStaffModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title fw-semibold" id="addStaffModalLabel">
+                                        <span data-icon="user-plus" class="me-1"></span>
+                                        Add New Staff
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <form id="addStaffForm">
+                                    <div class="modal-body">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="staffName" class="form-label">Full Name</label>
+                                                <input type="text" class="form-control" id="staffName" placeholder="Enter full name" required />
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="staffEmail" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="staffEmail" placeholder="name&#64;example.com" required />
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="staffPhone" class="form-label">Phone</label>
+                                                <input type="text" class="form-control" id="staffPhone" placeholder="+1 202 555 0123" />
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="staffCountry" class="form-label">Country</label>
+                                                <select id="staffCountry" class="form-select">
+                                                    <option value="">Select country</option>
+                                                    <option value="USA">United States</option>
+                                                    <option value="UK">United Kingdom</option>
+                                                    <option value="Canada">Canada</option>
+                                                    <option value="Germany">Germany</option>
+                                                    <option value="France">France</option>
+                                                    <option value="Australia">Australia</option>
+                                                    <option value="India">India</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="staffRole" class="form-label">Role</label>
+                                                <input type="text" class="form-control" id="staffRole" placeholder="e.g. Software Engineer" />
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="staffDepartment" class="form-label">Department</label>
+                                                <select id="staffDepartment" class="form-select">
+                                                    <option value="">Select department</option>
+                                                    <option value="Human Resources">Human Resources</option>
+                                                    <option value="IT Department">IT Department</option>
+                                                    <option value="Operations">Operations</option>
+                                                    <option value="Marketing">Marketing</option>
+                                                    <option value="Finance">Finance</option>
+                                                    <option value="Design">Design</option>
+                                                    <option value="Analytics">Analytics</option>
+                                                    <option value="Product">Product</option>
+                                                    <option value="Quality Assurance">Quality Assurance</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="staffStatus" class="form-label">Status</label>
+                                                <select id="staffStatus" class="form-select">
+                                                    <option value="Active">Active</option>
+                                                    <option value="On Leave">On Leave</option>
+                                                    <option value="Probation">Probation</option>
+                                                    <option value="Suspended">Suspended</option>
+                                                    <option value="Review Pending">Review Pending</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="staffJoinDate" class="form-label">Join Date</label>
+                                                <input type="date" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" id="staffJoinDate" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary">
+                                            <span data-icon="check" class="me-1"></span>
+                                            Save Staff
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- end modal-->
                 </div>
+                <!-- container -->
 
-                <!-- end modal-->
+                @@include('./partials/footer.html')
             </div>
-            <!-- container -->
 
-            @@include('./partials/footer.html')
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
         </div>
+        <!-- END wrapper -->
 
-        <!-- ============================================================== -->
-        <!-- End of Main Content -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- END wrapper -->
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
 
-    @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
-
-    <!-- Custom table -->
-    <script src="assets/js/pages/custom-table.js"></script>
-</body>
-
+        <!-- Custom table -->
+        <script src="assets/js/pages/custom-table.js"></script>
+    </body>
 </html>

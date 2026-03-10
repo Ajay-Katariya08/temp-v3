@@ -1,205 +1,182 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Salary Slip"}) @@include('./partials/head-css.html')
+    </head>
 
-<head>
-    @@include("./partials/title-meta.html", {"title": "Salary Slip"}) @@include('./partials/head-css.html')
-</head>
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
 
-<body>
-    <!-- Begin page -->
-    <div class="wrapper">
-        @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
 
-        <!-- ============================================================== -->
-        <!-- Start Main Content -->
-        <!-- ============================================================== -->
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle": "HRM", "title":"Salary Slip"})
 
-        <div class="content-page">
-            <div class="container-fluid">@@include("./partials/page-title.html", {"subtitle": "HRM", "title":"Salary Slip"})
+                    <div class="container-xxl">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header justify-content-between">
+                                        <h5 class="mb-0 fw-semibold">
+                                            <span data-icon="file-text" class="me-1"></span>
+                                            Create Salary Slip
+                                        </h5>
+                                        <button class="btn btn-light btn-sm"><span data-icon="printer" class="me-1"></span> Print Preview</button>
+                                    </div>
 
-                <div class="container-xxl">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header justify-content-between">
-                                    <h5 class="mb-0 fw-semibold">
-                                        <span data-icon="file-text" class="me-1"></span>
-                                        Create Salary Slip
-                                    </h5>
-                                    <button class="btn btn-light btn-sm">
-                                        <span data-icon="printer" class="me-1"></span> Print Preview
-                                    </button>
-                                </div>
+                                    <div class="card-body">
+                                        <form id="salarySlipForm">
+                                            <div class="row g-3">
+                                                <!-- Employee Name -->
+                                                <div class="col-md-6">
+                                                    <label for="employeeName" class="form-label"> Employee Name <span class="text-danger">*</span> </label>
+                                                    <select id="employeeName" class="form-select" required>
+                                                        <option value="">Select Employee</option>
+                                                        <option>Samantha Green</option>
+                                                        <option>David Lee</option>
+                                                        <option>Maria Smith</option>
+                                                        <option>Olivia Brown</option>
+                                                        <option>James Walker</option>
+                                                    </select>
+                                                </div>
 
-                                <div class="card-body">
-                                    <form id="salarySlipForm">
-                                        <div class="row g-3">
+                                                <!-- Employee ID -->
+                                                <div class="col-md-6">
+                                                    <label for="employeeId" class="form-label"> Employee ID <span class="text-danger">*</span> </label>
+                                                    <input type="text" id="employeeId" class="form-control" placeholder="e.g., EMP-1015" required />
+                                                </div>
 
-                                            <!-- Employee Name -->
-                                            <div class="col-md-6">
-                                                <label for="employeeName" class="form-label">
-                                                    Employee Name <span class="text-danger">*</span>
-                                                </label>
-                                                <select id="employeeName" class="form-select" required>
-                                                    <option value="">Select Employee</option>
-                                                    <option>Samantha Green</option>
-                                                    <option>David Lee</option>
-                                                    <option>Maria Smith</option>
-                                                    <option>Olivia Brown</option>
-                                                    <option>James Walker</option>
-                                                </select>
+                                                <!-- Department -->
+                                                <div class="col-md-6">
+                                                    <label for="department" class="form-label"> Department <span class="text-danger">*</span> </label>
+                                                    <select id="department" class="form-select" required>
+                                                        <option value="">Select Department</option>
+                                                        <option>Human Resources</option>
+                                                        <option>Finance</option>
+                                                        <option>IT</option>
+                                                        <option>Marketing</option>
+                                                        <option>Operations</option>
+                                                    </select>
+                                                </div>
+
+                                                <!-- Designation -->
+                                                <div class="col-md-6">
+                                                    <label for="designation" class="form-label"> Designation <span class="text-danger">*</span> </label>
+                                                    <input type="text" id="designation" class="form-control" placeholder="e.g., Senior Developer" required />
+                                                </div>
+
+                                                <!-- Pay Period -->
+                                                <div class="col-md-6">
+                                                    <label for="payPeriod" class="form-label"> Pay Period <span class="text-danger">*</span> </label>
+                                                    <select id="payPeriod" class="form-select" required>
+                                                        <option value="">Select Month</option>
+                                                        <option>October 2025</option>
+                                                        <option>September 2025</option>
+                                                        <option>August 2025</option>
+                                                        <option>July 2025</option>
+                                                    </select>
+                                                </div>
+
+                                                <!-- Pay Date -->
+                                                <div class="col-md-6">
+                                                    <label for="payDate" class="form-label"> Pay Date <span class="text-danger">*</span> </label>
+                                                    <input type="date" data-provider="flatpickr" data-date-format="d M, Y" id="payDate" class="form-control" required />
+                                                </div>
+
+                                                <!-- Salary Details Section -->
+                                                <h5 class="fw-semibold text-muted text-uppercase mt-3">Earnings</h5>
+
+                                                <!-- Basic Salary -->
+                                                <div class="col-md-6">
+                                                    <label for="basicSalary" class="form-label"> Basic Salary ($) <span class="text-danger">*</span> </label>
+                                                    <input type="number" id="basicSalary" class="form-control" placeholder="e.g., 5000" min="0" required />
+                                                </div>
+
+                                                <!-- House Allowance -->
+                                                <div class="col-md-6">
+                                                    <label for="houseAllowance" class="form-label">House Allowance ($)</label>
+                                                    <input type="number" id="houseAllowance" class="form-control" placeholder="e.g., 800" min="0" />
+                                                </div>
+
+                                                <!-- Medical Allowance -->
+                                                <div class="col-md-6">
+                                                    <label for="medicalAllowance" class="form-label">Medical Allowance ($)</label>
+                                                    <input type="number" id="medicalAllowance" class="form-control" placeholder="e.g., 400" min="0" />
+                                                </div>
+
+                                                <!-- Transport Allowance -->
+                                                <div class="col-md-6">
+                                                    <label for="transportAllowance" class="form-label">Transport Allowance ($)</label>
+                                                    <input type="number" id="transportAllowance" class="form-control" placeholder="e.g., 300" min="0" />
+                                                </div>
+
+                                                <h5 class="fw-semibold text-muted text-uppercase mt-3">Deductions</h5>
+
+                                                <!-- Tax -->
+                                                <div class="col-md-6">
+                                                    <label for="tax" class="form-label">Tax ($)</label>
+                                                    <input type="number" id="tax" class="form-control" placeholder="e.g., 200" min="0" />
+                                                </div>
+
+                                                <!-- Provident Fund -->
+                                                <div class="col-md-6">
+                                                    <label for="providentFund" class="form-label">Provident Fund ($)</label>
+                                                    <input type="number" id="providentFund" class="form-control" placeholder="e.g., 150" min="0" />
+                                                </div>
+
+                                                <!-- Loan Deduction -->
+                                                <div class="col-md-6">
+                                                    <label for="loanDeduction" class="form-label">Loan Deduction ($)</label>
+                                                    <input type="number" id="loanDeduction" class="form-control" placeholder="e.g., 100" min="0" />
+                                                </div>
+
+                                                <hr class="mt-4 mb-0" />
+
+                                                <!-- Total Earnings & Net Pay -->
+                                                <div class="col-md-6">
+                                                    <label for="totalEarnings" class="form-label">Total Earnings ($)</label>
+                                                    <input type="number" id="totalEarnings" class="form-control" placeholder="Auto-calculated" readonly />
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="netPay" class="form-label">Net Pay ($)</label>
+                                                    <input type="number" id="netPay" class="form-control" placeholder="Auto-calculated" readonly />
+                                                </div>
+
+                                                <!-- Remarks -->
+                                                <div class="col-md-12">
+                                                    <label for="remarks" class="form-label">Remarks</label>
+                                                    <textarea id="remarks" class="form-control" rows="2" placeholder="Optional notes or remarks"></textarea>
+                                                </div>
                                             </div>
+                                        </form>
+                                    </div>
 
-                                            <!-- Employee ID -->
-                                            <div class="col-md-6">
-                                                <label for="employeeId" class="form-label">
-                                                    Employee ID <span class="text-danger">*</span>
-                                                </label>
-                                                <input type="text" id="employeeId" class="form-control" placeholder="e.g., EMP-1015" required />
-                                            </div>
-
-                                            <!-- Department -->
-                                            <div class="col-md-6">
-                                                <label for="department" class="form-label">
-                                                    Department <span class="text-danger">*</span>
-                                                </label>
-                                                <select id="department" class="form-select" required>
-                                                    <option value="">Select Department</option>
-                                                    <option>Human Resources</option>
-                                                    <option>Finance</option>
-                                                    <option>IT</option>
-                                                    <option>Marketing</option>
-                                                    <option>Operations</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Designation -->
-                                            <div class="col-md-6">
-                                                <label for="designation" class="form-label">
-                                                    Designation <span class="text-danger">*</span>
-                                                </label>
-                                                <input type="text" id="designation" class="form-control" placeholder="e.g., Senior Developer" required />
-                                            </div>
-
-                                            <!-- Pay Period -->
-                                            <div class="col-md-6">
-                                                <label for="payPeriod" class="form-label">
-                                                    Pay Period <span class="text-danger">*</span>
-                                                </label>
-                                                <select id="payPeriod" class="form-select" required>
-                                                    <option value="">Select Month</option>
-                                                    <option>October 2025</option>
-                                                    <option>September 2025</option>
-                                                    <option>August 2025</option>
-                                                    <option>July 2025</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Pay Date -->
-                                            <div class="col-md-6">
-                                                <label for="payDate" class="form-label">
-                                                    Pay Date <span class="text-danger">*</span>
-                                                </label>
-                                                <input type="date" data-provider="flatpickr" data-date-format="d M, Y" id="payDate" class="form-control" required />
-                                            </div>
-
-                                            <!-- Salary Details Section -->
-                                            <h5 class="fw-semibold text-muted text-uppercase mt-3">Earnings</h5>
-
-                                            <!-- Basic Salary -->
-                                            <div class="col-md-6">
-                                                <label for="basicSalary" class="form-label">
-                                                    Basic Salary ($) <span class="text-danger">*</span>
-                                                </label>
-                                                <input type="number" id="basicSalary" class="form-control" placeholder="e.g., 5000" min="0" required />
-                                            </div>
-
-                                            <!-- House Allowance -->
-                                            <div class="col-md-6">
-                                                <label for="houseAllowance" class="form-label">House Allowance ($)</label>
-                                                <input type="number" id="houseAllowance" class="form-control" placeholder="e.g., 800" min="0" />
-                                            </div>
-
-                                            <!-- Medical Allowance -->
-                                            <div class="col-md-6">
-                                                <label for="medicalAllowance" class="form-label">Medical Allowance ($)</label>
-                                                <input type="number" id="medicalAllowance" class="form-control" placeholder="e.g., 400" min="0" />
-                                            </div>
-
-                                            <!-- Transport Allowance -->
-                                            <div class="col-md-6">
-                                                <label for="transportAllowance" class="form-label">Transport Allowance ($)</label>
-                                                <input type="number" id="transportAllowance" class="form-control" placeholder="e.g., 300" min="0" />
-                                            </div>
-
-                                            <h5 class="fw-semibold text-muted text-uppercase mt-3">Deductions</h5>
-
-                                            <!-- Tax -->
-                                            <div class="col-md-6">
-                                                <label for="tax" class="form-label">Tax ($)</label>
-                                                <input type="number" id="tax" class="form-control" placeholder="e.g., 200" min="0" />
-                                            </div>
-
-                                            <!-- Provident Fund -->
-                                            <div class="col-md-6">
-                                                <label for="providentFund" class="form-label">Provident Fund ($)</label>
-                                                <input type="number" id="providentFund" class="form-control" placeholder="e.g., 150" min="0" />
-                                            </div>
-
-                                            <!-- Loan Deduction -->
-                                            <div class="col-md-6">
-                                                <label for="loanDeduction" class="form-label">Loan Deduction ($)</label>
-                                                <input type="number" id="loanDeduction" class="form-control" placeholder="e.g., 100" min="0" />
-                                            </div>
-
-                                            <hr class="mt-4 mb-0">
-
-                                            <!-- Total Earnings & Net Pay -->
-                                            <div class="col-md-6">
-                                                <label for="totalEarnings" class="form-label">Total Earnings ($)</label>
-                                                <input type="number" id="totalEarnings" class="form-control" placeholder="Auto-calculated" readonly />
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="netPay" class="form-label">Net Pay ($)</label>
-                                                <input type="number" id="netPay" class="form-control" placeholder="Auto-calculated" readonly />
-                                            </div>
-
-                                            <!-- Remarks -->
-                                            <div class="col-md-12">
-                                                <label for="remarks" class="form-label">Remarks</label>
-                                                <textarea id="remarks" class="form-control" rows="2" placeholder="Optional notes or remarks"></textarea>
-                                            </div>
-
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div class="card-footer border-top text-end">
-                                    <button type="reset" class="btn btn-light">Reset</button>
-                                    <button type="submit" class="btn btn-primary">
-                                        <span data-icon="save" class="me-1"></span> Generate Slip
-                                    </button>
+                                    <div class="card-footer border-top text-end">
+                                        <button type="reset" class="btn btn-light">Reset</button>
+                                        <button type="submit" class="btn btn-primary"><span data-icon="save" class="me-1"></span> Generate Slip</button>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
+                <!-- container -->
 
+                @@include('./partials/footer.html')
             </div>
-            <!-- container -->
 
-            @@include('./partials/footer.html')
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
         </div>
+        <!-- END wrapper -->
 
-        <!-- ============================================================== -->
-        <!-- End of Main Content -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- END wrapper -->
-
-    @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
-</body>
-
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+    </body>
 </html>

@@ -1,904 +1,975 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Projects"}) @@include('./partials/head-css.html')
+    </head>
 
-<head>
-    @@include("./partials/title-meta.html", {"title": "Projects"}) @@include('./partials/head-css.html')
-</head>
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
 
-<body>
-    <!-- Begin page -->
-    <div class="wrapper">
-        @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
 
-        <!-- ============================================================== -->
-        <!-- Start Main Content -->
-        <!-- ============================================================== -->
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle": "Apps", "title":"Projects"})
 
-        <div class="content-page">
-            <div class="container-fluid">
-                @@include("./partials/page-title.html", {"subtitle": "Apps", "title":"Projects"})
-
-                <div class="row mb-3">
-                    <div class="col-lg-12">
-                        <form class="bg-light-subtle rounded border p-3">
-                            <div class="row gap-3">
-                                <div class="col">
-                                    <div class="row gap-3">
-                                        <div class="col-lg-4">
-                                            <div class="app-search">
-                                                <input type="text" class="form-control" placeholder="Search project name..." />
-                                                <span data-icon="search" class="app-search-icon text-muted"></span>
+                    <div class="row mb-3">
+                        <div class="col-lg-12">
+                            <form class="bg-light-subtle rounded border p-3">
+                                <div class="row gap-3">
+                                    <div class="col">
+                                        <div class="row gap-3">
+                                            <div class="col-lg-4">
+                                                <div class="app-search">
+                                                    <input type="text" class="form-control" placeholder="Search project name..." />
+                                                    <span data-icon="search" class="app-search-icon text-muted"></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="d-flex flex-wrap align-items-center gap-2">
-                                                <span class="me-2 fw-semibold">Filter By:</span>
+                                            <div class="col-auto">
+                                                <div class="d-flex flex-wrap align-items-center gap-2">
+                                                    <span class="me-2 fw-semibold">Filter By:</span>
 
-                                                <!-- Status Filter -->
-                                                <div class="app-search">
-                                                    <select class="form-select form-control my-1 my-md-0">
-                                                        <option selected>Status</option>
-                                                        <option value="On Track">On Track</option>
-                                                        <option value="Delayed">Delayed</option>
-                                                        <option value="At Risk">At Risk</option>
-                                                        <option value="Completed">Completed</option>
-                                                    </select>
-                                                    <span data-icon="activity" class="app-search-icon text-muted"></span>
+                                                    <!-- Status Filter -->
+                                                    <div class="app-search">
+                                                        <select class="form-select form-control my-1 my-md-0">
+                                                            <option selected>Status</option>
+                                                            <option value="On Track">On Track</option>
+                                                            <option value="Delayed">Delayed</option>
+                                                            <option value="At Risk">At Risk</option>
+                                                            <option value="Completed">Completed</option>
+                                                        </select>
+                                                        <span data-icon="activity" class="app-search-icon text-muted"></span>
+                                                    </div>
+
+                                                    <!-- Team Filter -->
+                                                    <div class="app-search">
+                                                        <select class="form-select form-control my-1 my-md-0">
+                                                            <option selected>Team</option>
+                                                            <option value="Design">Design</option>
+                                                            <option value="Development">Development</option>
+                                                            <option value="Marketing">Marketing</option>
+                                                            <option value="QA">QA</option>
+                                                        </select>
+                                                        <span data-icon="users" class="app-search-icon text-muted"></span>
+                                                    </div>
+
+                                                    <!-- Deadline Filter -->
+                                                    <div class="app-search">
+                                                        <select class="form-select form-control my-1 my-md-0">
+                                                            <option selected>Deadline</option>
+                                                            <option value="This Week">This Week</option>
+                                                            <option value="This Month">This Month</option>
+                                                            <option value="Next Month">Next Month</option>
+                                                            <option value="No Deadline">No Deadline</option>
+                                                        </select>
+                                                        <span data-icon="calendar-clock" class="app-search-icon text-muted"></span>
+                                                    </div>
+
+                                                    <button type="submit" class="btn btn-secondary">Apply</button>
                                                 </div>
-
-                                                <!-- Team Filter -->
-                                                <div class="app-search">
-                                                    <select class="form-select form-control my-1 my-md-0">
-                                                        <option selected>Team</option>
-                                                        <option value="Design">Design</option>
-                                                        <option value="Development">Development</option>
-                                                        <option value="Marketing">Marketing</option>
-                                                        <option value="QA">QA</option>
-                                                    </select>
-                                                    <span data-icon="users" class="app-search-icon text-muted"></span>
-                                                </div>
-
-                                                <!-- Deadline Filter -->
-                                                <div class="app-search">
-                                                    <select class="form-select form-control my-1 my-md-0">
-                                                        <option selected>Deadline</option>
-                                                        <option value="This Week">This Week</option>
-                                                        <option value="This Month">This Month</option>
-                                                        <option value="Next Month">Next Month</option>
-                                                        <option value="No Deadline">No Deadline</option>
-                                                    </select>
-                                                    <span data-icon="calendar-clock" class="app-search-icon text-muted"></span>
-                                                </div>
-
-                                                <button type="submit" class="btn btn-secondary">Apply</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Layout toggle (grid/list) -->
-                                <div class="col-auto">
-                                    <div class="d-flex gap-1">
-                                        <a href="apps-projects-grid.html" class="btn btn-primary btn-icon">
-                                            <span data-icon="category" class="fs-lg"></span>
-                                        </a>
-                                        <a href="apps-projects-list.html" class="btn btn-soft-primary btn-icon">
-                                            <span data-icon="list" class="fs-lg"></span>
-                                        </a>
+                                    <!-- Layout toggle (grid/list) -->
+                                    <div class="col-auto">
+                                        <div class="d-flex gap-1">
+                                            <a href="apps-projects-grid.html" class="btn btn-primary btn-icon">
+                                                <span data-icon="category" class="fs-lg"></span>
+                                            </a>
+                                            <a href="apps-projects-list.html" class="btn btn-soft-primary btn-icon">
+                                                <span data-icon="list" class="fs-lg"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-xxl-3">
+                            <div class="card">
+                                <div class="card-body d-flex flex-column">
+                                    <!-- Header: icon + title + status + menu -->
+                                    <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
+                                        <div class="avatar-xl me-3">
+                                            <span class="avatar-title text-bg-primary rounded">
+                                                <span data-icon="robot" class="fs-24"></span>
+                                            </span>
+                                        </div>
+
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <h5 class="mb-1 lh-sm flex-grow-1">
+                                                    <a href="apps-projects-details.html" class="link-reset">AI Analytics Dashboard</a>
+                                                </h5>
+                                                <span class="badge badge-soft-success fs-xxs badge-label align-self-start">In Progress</span>
+                                            </div>
+                                            <p class="text-muted fs-xxs mb-0">Updated 5 minutes ago</p>
+                                        </div>
+
+                                        <div class="ms-2">
+                                            <div class="dropdown">
+                                                <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-xl"></span>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li>
+                                                        <a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#"><span data-icon="ban" class="me-2"></span>Block</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Quick stats: tasks / files / comments / due -->
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="list" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">18/60</div>
+                                                    <small class="text-muted fs-xs">Assets & docs</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="paperclip" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">15 Files</div>
+                                                    <small class="text-muted fs-xs">Tasks</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="message" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">5 Comments</div>
+                                                    <small class="text-muted fs-xs">Latest: today</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">10 Jun, 2025</div>
+                                                    <small class="text-muted fs-xs">Due date</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Team -->
+                                    <div class="mb-3">
+                                        <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
+                                        <div class="avatar-group avatar-group-xs">
+                                            <div class="avatar"><img src="assets/images/users/user-2.jpg" alt="" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-3.jpg" alt="" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-5.jpg" alt="" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-1.jpg" alt="" class="rounded-circle avatar-xs" /></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Progress -->
+                                    <div class="mt-auto">
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
+                                            <p class="fw-semibold mb-0">65%</p>
+                                        </div>
+                                        <div class="progress" style="height: 5px">
+                                            <div class="progress-bar bg-success" style="width: 65%"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+
+                        <div class="col-md-6 col-xxl-3">
+                            <div class="card">
+                                <div class="card-body d-flex flex-column">
+                                    <!-- Header -->
+                                    <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
+                                        <div class="avatar-xl me-3">
+                                            <span class="avatar-title text-bg-warning rounded">
+                                                <span data-icon="dashboard" class="fs-24"></span>
+                                            </span>
+                                        </div>
+
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <h5 class="mb-1 lh-sm flex-grow-1">
+                                                    <a href="apps-projects-details.html" class="link-reset">CRM Web Platform for Club</a>
+                                                </h5>
+                                                <span class="badge badge-soft-warning fs-xxs badge-label align-self-start">Pending</span>
+                                            </div>
+                                            <p class="text-muted fs-xxs mb-0">Updated 2 hours ago</p>
+                                        </div>
+
+                                        <div class="ms-2">
+                                            <div class="dropdown">
+                                                <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-xl"></span>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li>
+                                                        <a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#"><span data-icon="ban" class="me-2"></span>Block</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Stats -->
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="list" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">45/120</div>
+                                                    <small class="text-muted fs-xs">Features</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="paperclip" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">28 Files</div>
+                                                    <small class="text-muted fs-xs">Resources</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="message" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">19 Comments</div>
+                                                    <small class="text-muted fs-xs">Latest: 30m ago</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">02 Aug, 2025</div>
+                                                    <small class="text-muted fs-xs">Due date</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Team -->
+                                    <div class="mb-3">
+                                        <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
+                                        <div class="avatar-group avatar-group-xs">
+                                            <div class="avatar"><img src="assets/images/users/user-4.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-6.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-8.jpg" class="rounded-circle avatar-xs" /></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Progress -->
+                                    <div class="mt-auto">
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
+                                            <p class="fw-semibold mb-0">42%</p>
+                                        </div>
+                                        <div class="progress" style="height: 5px">
+                                            <div class="progress-bar bg-warning" style="width: 42%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xxl-3">
+                            <div class="card">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
+                                        <div class="avatar-xl me-3">
+                                            <span class="avatar-title text-bg-info rounded">
+                                                <span data-icon="shopping-cart" class="fs-24"></span>
+                                            </span>
+                                        </div>
+
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <h5 class="mb-1 lh-sm flex-grow-1">
+                                                    <a href="apps-projects-details.html" class="link-reset">E-Commerce Mobile App</a>
+                                                </h5>
+                                                <span class="badge badge-soft-info fs-xxs badge-label align-self-start">Review</span>
+                                            </div>
+                                            <p class="text-muted fs-xxs mb-0">Updated 1 day ago</p>
+                                        </div>
+
+                                        <div class="ms-2">
+                                            <div class="dropdown">
+                                                <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-xl"></span>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="share" class="me-2"></span>Share</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="edit" class="me-2"></span>Edit</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="ban" class="me-2"></span>Block</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item text-danger"><span data-icon="delete" class="me-2"></span>Delete</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="list" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">32/80</div>
+                                                    <small class="text-muted fs-xs">Screens</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="paperclip" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">21 Assets</div>
+                                                    <small class="text-muted fs-xs">UI / Icons</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="message" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">12 Comments</div>
+                                                    <small class="text-muted fs-xs">Design Feedback</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">18 Dec, 2025</div>
+                                                    <small class="text-muted fs-xs">Launch Target</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Team -->
+                                    <div class="mb-3">
+                                        <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
+                                        <div class="avatar-group avatar-group-xs">
+                                            <div class="avatar"><img src="assets/images/users/user-9.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-7.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-10.jpg" class="rounded-circle avatar-xs" /></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Progress -->
+                                    <div class="mt-auto">
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
+                                            <p class="fw-semibold mb-0">78%</p>
+                                        </div>
+                                        <div class="progress" style="height: 5px">
+                                            <div class="progress-bar bg-info" style="width: 78%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xxl-3">
+                            <div class="card">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
+                                        <div class="avatar-xl me-3">
+                                            <span class="avatar-title text-bg-secondary rounded">
+                                                <span data-icon="users" class="fs-24"></span>
+                                            </span>
+                                        </div>
+
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <h5 class="mb-1 lh-sm flex-grow-1">
+                                                    <a href="apps-projects-details.html" class="link-reset">HR Employee Portal - Web & Mobile</a>
+                                                </h5>
+                                                <span class="badge badge-soft-secondary fs-xxs badge-label align-self-start">On Hold</span>
+                                            </div>
+                                            <p class="text-muted fs-xxs mb-0">Updated 30 minutes ago</p>
+                                        </div>
+
+                                        <div class="ms-2">
+                                            <div class="dropdown">
+                                                <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-xl"></span>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="share" class="me-2"></span>Share</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="edit" class="me-2"></span>Edit</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="ban" class="me-2"></span>Block</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item text-danger"><span data-icon="delete" class="me-2"></span>Delete</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="list" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">12/40</div>
+                                                    <small class="text-muted fs-xs">Modules</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="paperclip" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">9 Files</div>
+                                                    <small class="text-muted fs-xs">Policies</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="message" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">3 Comments</div>
+                                                    <small class="text-muted fs-xs">Feedback</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">22 Apr, 2025</div>
+                                                    <small class="text-muted fs-xs">Review</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
+                                        <div class="avatar-group avatar-group-xs">
+                                            <div class="avatar"><img src="assets/images/users/user-1.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-4.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-9.jpg" class="rounded-circle avatar-xs" /></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-auto">
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
+                                            <p class="fw-semibold mb-0">33%</p>
+                                        </div>
+                                        <div class="progress" style="height: 5px">
+                                            <div class="progress-bar bg-secondary" style="width: 33%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xxl-3">
+                            <div class="card">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
+                                        <div class="avatar-xl me-3">
+                                            <span class="avatar-title text-bg-danger rounded">
+                                                <span data-icon="receipt" class="fs-24"></span>
+                                            </span>
+                                        </div>
+
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <h5 class="mb-1 lh-sm flex-grow-1">
+                                                    <a href="apps-projects-details.html" class="link-reset">SaaS Billing System - Starbucks</a>
+                                                </h5>
+                                                <span class="badge badge-soft-danger fs-xxs badge-label">Critical</span>
+                                            </div>
+                                            <p class="text-muted fs-xxs mb-0">Updated 12 minutes ago</p>
+                                        </div>
+
+                                        <div class="ms-2">
+                                            <div class="dropdown">
+                                                <a class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-xl"></span>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="share" class="me-2"></span>Share</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="edit" class="me-2"></span>Edit</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item text-danger"><span data-icon="delete" class="me-2"></span>Delete</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="list" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">50/70</div>
+                                                    <small class="text-muted fs-xs">APIs</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="paperclip" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">32 Docs</div>
+                                                    <small class="text-muted fs-xs">Integration</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="message" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">16 Comments</div>
+                                                    <small class="text-muted fs-xs">Team</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">12 Jul, 2025</div>
+                                                    <small class="text-muted fs-xs">Launch</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
+                                        <div class="avatar-group avatar-group-xs">
+                                            <div class="avatar"><img src="assets/images/users/user-6.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-3.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-7.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-2.jpg" class="rounded-circle avatar-xs" /></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
+                                            <p class="fw-semibold mb-0">54%</p>
+                                        </div>
+                                        <div class="progress" style="height: 5px">
+                                            <div class="progress-bar bg-danger" style="width: 54%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xxl-3">
+                            <div class="card">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
+                                        <div class="avatar-xl me-3">
+                                            <span class="avatar-title text-bg-info rounded">
+                                                <span data-icon="school" class="fs-24"></span>
+                                            </span>
+                                        </div>
+
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <h5 class="mb-1 lh-sm flex-grow-1"><a href="#" class="link-reset">Learning Management System</a></h5>
+                                                <span class="badge badge-soft-info fs-xxs badge-label">Review</span>
+                                            </div>
+                                            <p class="text-muted fs-xxs mb-0">Updated 1 hour ago</p>
+                                        </div>
+
+                                        <div class="ms-2">
+                                            <div class="dropdown">
+                                                <a class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown"><span data-icon="dots-vertical" class="fs-xl"></span></a>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="share" class="me-2"></span>Share</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="edit" class="me-2"></span>Edit</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item text-danger"><span data-icon="delete" class="me-2"></span>Delete</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="list" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">40/100</div>
+                                                    <small class="text-muted fs-xs">Modules</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="paperclip" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">14 Files</div>
+                                                    <small class="text-muted fs-xs">PDF / Docs</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="message" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">6 Comments</div>
+                                                    <small class="text-muted fs-xs">Instructor</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">05 May, 2025</div>
+                                                    <small class="text-muted fs-xs">Next milestone</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
+                                        <div class="avatar-group avatar-group-xs">
+                                            <div class="avatar"><img src="assets/images/users/user-3.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-8.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-5.jpg" class="rounded-circle avatar-xs" /></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
+                                            <p class="fw-semibold mb-0">60%</p>
+                                        </div>
+                                        <div class="progress" style="height: 5px">
+                                            <div class="progress-bar bg-info" style="width: 60%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xxl-3">
+                            <div class="card">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
+                                        <div class="avatar-xl me-3">
+                                            <span class="avatar-title text-bg-dark rounded">
+                                                <span data-icon="inventory" class="fs-24"></span>
+                                            </span>
+                                        </div>
+
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <h5 class="mb-1 lh-sm flex-grow-1">
+                                                    <a href="apps-projects-details.html" class="link-reset">Warehouse Inventory System</a>
+                                                </h5>
+                                                <span class="badge badge-soft-dark fs-xxs badge-label align-self-start">Monitoring</span>
+                                            </div>
+                                            <p class="text-muted fs-xxs mb-0">Updated 6 hours ago</p>
+                                        </div>
+
+                                        <div class="ms-2">
+                                            <div class="dropdown">
+                                                <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-xl"></span>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="share" class="me-2"></span>Share</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="edit" class="me-2"></span>Edit</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="ban" class="me-2"></span>Block</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item text-danger"><span data-icon="delete" class="me-2"></span>Delete</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="list" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">120/450</div>
+                                                    <small class="text-muted fs-xs">Items Tracked</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="paperclip" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">48 Files</div>
+                                                    <small class="text-muted fs-xs">Reports</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="message" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">9 Comments</div>
+                                                    <small class="text-muted fs-xs">Audit</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">14 Mar, 2025</div>
+                                                    <small class="text-muted fs-xs">Next Check</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
+                                        <div class="avatar-group avatar-group-xs">
+                                            <div class="avatar"><img src="assets/images/users/user-2.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-5.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-7.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-9.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-10.jpg" class="rounded-circle avatar-xs" /></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-auto">
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
+                                            <p class="fw-semibold mb-0">47%</p>
+                                        </div>
+                                        <div class="progress" style="height: 5px">
+                                            <div class="progress-bar bg-dark" style="width: 47%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xxl-3">
+                            <div class="card">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
+                                        <div class="avatar-xl me-3">
+                                            <span class="avatar-title text-bg-success rounded">
+                                                <span data-icon="activity" class="fs-24"></span>
+                                            </span>
+                                        </div>
+
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <h5 class="mb-1 lh-sm flex-grow-1">
+                                                    <a href="apps-projects-details.html" class="link-reset">Fitness Tracker App - Tracky</a>
+                                                </h5>
+                                                <span class="badge badge-soft-success fs-xxs badge-label align-self-start">Stable</span>
+                                            </div>
+                                            <p class="text-muted fs-xxs mb-0">Updated 3 days ago</p>
+                                        </div>
+
+                                        <div class="ms-2">
+                                            <div class="dropdown">
+                                                <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-xl"></span>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="share" class="me-2"></span>Share</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="edit" class="me-2"></span>Edit</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item"><span data-icon="ban" class="me-2"></span>Block</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item text-danger"><span data-icon="delete" class="me-2"></span>Delete</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="list" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">22/45</div>
+                                                    <small class="text-muted fs-xs">Features</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="paperclip" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">12 Media</div>
+                                                    <small class="text-muted fs-xs">Images/Videos</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="message" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">7 Comments</div>
+                                                    <small class="text-muted fs-xs">Community</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
+                                                <div>
+                                                    <div class="fw-medium">30 Sep, 2025</div>
+                                                    <small class="text-muted fs-xs">Goal</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
+                                        <div class="avatar-group avatar-group-xs">
+                                            <div class="avatar"><img src="assets/images/users/user-1.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-4.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-6.jpg" class="rounded-circle avatar-xs" /></div>
+                                            <div class="avatar"><img src="assets/images/users/user-8.jpg" class="rounded-circle avatar-xs" /></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
+                                            <p class="fw-semibold mb-0">78%</p>
+                                        </div>
+                                        <div class="progress" style="height: 5px">
+                                            <div class="progress-bar bg-success" style="width: 78%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- end row-->
+
+                    <ul class="pagination pagination-rounded pagination-boxed justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="javascript: void(0);" aria-label="Previous">
+                                <span aria-hidden="true">«</span>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="javascript: void(0);">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript: void(0);">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript: void(0);">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript: void(0);">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript: void(0);">5</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript: void(0);" aria-label="Next">
+                                <span aria-hidden="true">»</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+                <!-- container -->
 
-                <div class="row">
-                    <div class="col-md-6 col-xxl-3">
-                        <div class="card">
-                            <div class="card-body d-flex flex-column">
-
-                                <!-- Header: icon + title + status + menu -->
-                                <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
-                                    <div class="avatar-xl me-3">
-                                        <span class="avatar-title text-bg-primary rounded">
-                                            <span data-icon="robot" class="fs-24"></span>
-                                        </span>
-                                    </div>
-
-                                    <div class="flex-grow-1">
-                                        <div class="d-flex align-items-start gap-2">
-                                            <h5 class="mb-1 lh-sm flex-grow-1">
-                                                <a href="apps-projects-details.html" class="link-reset">AI Analytics Dashboard</a>
-                                            </h5>
-                                            <span class="badge badge-soft-success fs-xxs badge-label align-self-start">In Progress</span>
-                                        </div>
-                                        <p class="text-muted fs-xxs mb-0">Updated 5 minutes ago</p>
-                                    </div>
-
-                                    <div class="ms-2">
-                                        <div class="dropdown">
-                                            <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
-                                                <span data-icon="dots-vertical" class="fs-xl"></span>
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
-                                                <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
-                                                <li><a class="dropdown-item" href="#"><span data-icon="ban" class="me-2"></span>Block</a></li>
-                                                <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Quick stats: tasks / files / comments / due -->
-                                <div class="row g-3 mb-3">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="list" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">18/60</div>
-                                                <small class="text-muted fs-xs">Assets & docs</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="paperclip" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">15 Files</div>
-                                                <small class="text-muted fs-xs">Tasks</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="message" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">5 Comments</div>
-                                                <small class="text-muted fs-xs">Latest: today</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">10 Jun, 2025</div>
-                                                <small class="text-muted fs-xs">Due date</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Team -->
-                                <div class="mb-3">
-                                    <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
-                                    <div class="avatar-group avatar-group-xs">
-                                        <div class="avatar"><img src="assets/images/users/user-2.jpg" alt="" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-3.jpg" alt="" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-5.jpg" alt="" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-1.jpg" alt="" class="rounded-circle avatar-xs"></div>
-                                    </div>
-                                </div>
-
-                                <!-- Progress -->
-                                <div class="mt-auto">
-                                    <div class="d-flex align-items-center justify-content-between mb-2">
-                                        <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
-                                        <p class="fw-semibold mb-0">65%</p>
-                                    </div>
-                                    <div class="progress" style="height:5px;">
-                                        <div class="progress-bar bg-success" style="width:65%"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-xxl-3">
-                        <div class="card">
-                            <div class="card-body d-flex flex-column">
-
-                                <!-- Header -->
-                                <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
-                                    <div class="avatar-xl me-3">
-                                        <span class="avatar-title text-bg-warning rounded">
-                                            <span data-icon="dashboard" class="fs-24"></span>
-                                        </span>
-                                    </div>
-
-                                    <div class="flex-grow-1">
-                                        <div class="d-flex align-items-start gap-2">
-                                            <h5 class="mb-1 lh-sm flex-grow-1">
-                                                <a href="apps-projects-details.html" class="link-reset">CRM Web Platform for Club</a>
-                                            </h5>
-                                            <span class="badge badge-soft-warning fs-xxs badge-label align-self-start">Pending</span>
-                                        </div>
-                                        <p class="text-muted fs-xxs mb-0">Updated 2 hours ago</p>
-                                    </div>
-
-                                    <div class="ms-2">
-                                        <div class="dropdown">
-                                            <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
-                                                <span data-icon="dots-vertical" class="fs-xl"></span>
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
-                                                <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
-                                                <li><a class="dropdown-item" href="#"><span data-icon="ban" class="me-2"></span>Block</a></li>
-                                                <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Stats -->
-                                <div class="row g-3 mb-3">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="list" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">45/120</div>
-                                                <small class="text-muted fs-xs">Features</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="paperclip" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">28 Files</div>
-                                                <small class="text-muted fs-xs">Resources</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="message" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">19 Comments</div>
-                                                <small class="text-muted fs-xs">Latest: 30m ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">02 Aug, 2025</div>
-                                                <small class="text-muted fs-xs">Due date</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Team -->
-                                <div class="mb-3">
-                                    <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
-                                    <div class="avatar-group avatar-group-xs">
-                                        <div class="avatar"><img src="assets/images/users/user-4.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-6.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-8.jpg" class="rounded-circle avatar-xs"></div>
-                                    </div>
-                                </div>
-
-                                <!-- Progress -->
-                                <div class="mt-auto">
-                                    <div class="d-flex align-items-center justify-content-between mb-2">
-                                        <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
-                                        <p class="fw-semibold mb-0">42%</p>
-                                    </div>
-                                    <div class="progress" style="height:5px;">
-                                        <div class="progress-bar bg-warning" style="width:42%"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-xxl-3">
-                        <div class="card">
-                            <div class="card-body d-flex flex-column">
-
-                                <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
-                                    <div class="avatar-xl me-3">
-                                        <span class="avatar-title text-bg-info rounded">
-                                            <span data-icon="shopping-cart" class="fs-24"></span>
-                                        </span>
-                                    </div>
-
-                                    <div class="flex-grow-1">
-                                        <div class="d-flex align-items-start gap-2">
-                                            <h5 class="mb-1 lh-sm flex-grow-1">
-                                                <a href="apps-projects-details.html" class="link-reset">E-Commerce Mobile App</a>
-                                            </h5>
-                                            <span class="badge badge-soft-info fs-xxs badge-label align-self-start">Review</span>
-                                        </div>
-                                        <p class="text-muted fs-xxs mb-0">Updated 1 day ago</p>
-                                    </div>
-
-                                    <div class="ms-2">
-                                        <div class="dropdown">
-                                            <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
-                                                <span data-icon="dots-vertical" class="fs-xl"></span>
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li><a class="dropdown-item"><span data-icon="share" class="me-2"></span>Share</a></li>
-                                                <li><a class="dropdown-item"><span data-icon="edit" class="me-2"></span>Edit</a></li>
-                                                <li><a class="dropdown-item"><span data-icon="ban" class="me-2"></span>Block</a></li>
-                                                <li><a class="dropdown-item text-danger"><span data-icon="delete" class="me-2"></span>Delete</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row g-3 mb-3">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="list" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">32/80</div>
-                                                <small class="text-muted fs-xs">Screens</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="paperclip" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">21 Assets</div>
-                                                <small class="text-muted fs-xs">UI / Icons</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="message" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">12 Comments</div>
-                                                <small class="text-muted fs-xs">Design Feedback</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">18 Dec, 2025</div>
-                                                <small class="text-muted fs-xs">Launch Target</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Team -->
-                                <div class="mb-3">
-                                    <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
-                                    <div class="avatar-group avatar-group-xs">
-                                        <div class="avatar"><img src="assets/images/users/user-9.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-7.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-10.jpg" class="rounded-circle avatar-xs"></div>
-                                    </div>
-                                </div>
-
-                                <!-- Progress -->
-                                <div class="mt-auto">
-                                    <div class="d-flex align-items-center justify-content-between mb-2">
-                                        <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
-                                        <p class="fw-semibold mb-0">78%</p>
-                                    </div>
-                                    <div class="progress" style="height:5px;">
-                                        <div class="progress-bar bg-info" style="width:78%"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-xxl-3">
-                        <div class="card">
-                            <div class="card-body d-flex flex-column">
-
-                                <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
-                                    <div class="avatar-xl me-3">
-                                        <span class="avatar-title text-bg-secondary rounded">
-                                            <span data-icon="users" class="fs-24"></span>
-                                        </span>
-                                    </div>
-
-                                    <div class="flex-grow-1">
-                                        <div class="d-flex align-items-start gap-2">
-                                            <h5 class="mb-1 lh-sm flex-grow-1">
-                                                <a href="apps-projects-details.html" class="link-reset">HR Employee Portal - Web & Mobile</a>
-                                            </h5>
-                                            <span class="badge badge-soft-secondary fs-xxs badge-label align-self-start">On Hold</span>
-                                        </div>
-                                        <p class="text-muted fs-xxs mb-0">Updated 30 minutes ago</p>
-                                    </div>
-
-                                    <div class="ms-2">
-                                        <div class="dropdown">
-                                            <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
-                                                <span data-icon="dots-vertical" class="fs-xl"></span>
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li><a class="dropdown-item"><span data-icon="share" class="me-2"></span>Share</a></li>
-                                                <li><a class="dropdown-item"><span data-icon="edit" class="me-2"></span>Edit</a></li>
-                                                <li><a class="dropdown-item"><span data-icon="ban" class="me-2"></span>Block</a></li>
-                                                <li><a class="dropdown-item text-danger"><span data-icon="delete" class="me-2"></span>Delete</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row g-3 mb-3">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2"><span data-icon="list" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">12/40</div><small class="text-muted fs-xs">Modules</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2"><span data-icon="paperclip" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">9 Files</div><small class="text-muted fs-xs">Policies</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2"><span data-icon="message" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">3 Comments</div><small class="text-muted fs-xs">Feedback</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2"><span data-icon="calendar-clock" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">22 Apr, 2025</div><small class="text-muted fs-xs">Review</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
-                                    <div class="avatar-group avatar-group-xs">
-                                        <div class="avatar"><img src="assets/images/users/user-1.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-4.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-9.jpg" class="rounded-circle avatar-xs"></div>
-                                    </div>
-                                </div>
-
-                                <div class="mt-auto">
-                                    <div class="d-flex align-items-center justify-content-between mb-2">
-                                        <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
-                                        <p class="fw-semibold mb-0">33%</p>
-                                    </div>
-                                    <div class="progress" style="height:5px;">
-                                        <div class="progress-bar bg-secondary" style="width:33%"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-xxl-3">
-                        <div class="card">
-                            <div class="card-body d-flex flex-column">
-
-                                <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
-                                    <div class="avatar-xl me-3">
-                                        <span class="avatar-title text-bg-danger rounded">
-                                            <span data-icon="receipt" class="fs-24"></span>
-                                        </span>
-                                    </div>
-
-                                    <div class="flex-grow-1">
-                                        <div class="d-flex align-items-start gap-2">
-                                            <h5 class="mb-1 lh-sm flex-grow-1">
-                                                <a href="apps-projects-details.html" class="link-reset">SaaS Billing System - Starbucks</a>
-                                            </h5>
-                                            <span class="badge badge-soft-danger fs-xxs badge-label">Critical</span>
-                                        </div>
-                                        <p class="text-muted fs-xxs mb-0">Updated 12 minutes ago</p>
-                                    </div>
-
-                                    <div class="ms-2">
-                                        <div class="dropdown">
-                                            <a class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
-                                                <span data-icon="dots-vertical" class="fs-xl"></span>
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li><a class="dropdown-item"><span data-icon="share" class="me-2"></span>Share</a></li>
-                                                <li><a class="dropdown-item"><span data-icon="edit" class="me-2"></span>Edit</a></li>
-                                                <li><a class="dropdown-item text-danger"><span data-icon="delete" class="me-2"></span>Delete</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row g-3 mb-3">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2"><span data-icon="list" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">50/70</div><small class="text-muted fs-xs">APIs</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2"><span data-icon="paperclip" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">32 Docs</div><small class="text-muted fs-xs">Integration</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2"><span data-icon="message" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">16 Comments</div><small class="text-muted fs-xs">Team</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2"><span data-icon="calendar-clock" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">12 Jul, 2025</div><small class="text-muted fs-xs">Launch</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
-                                    <div class="avatar-group avatar-group-xs">
-                                        <div class="avatar"><img src="assets/images/users/user-6.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-3.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-7.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-2.jpg" class="rounded-circle avatar-xs"></div>
-                                    </div>
-                                </div>
-
-                                <div class="mt-auto">
-                                    <div class="d-flex justify-content-between mb-2">
-                                        <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
-                                        <p class="fw-semibold mb-0">54%</p>
-                                    </div>
-                                    <div class="progress" style="height:5px;">
-                                        <div class="progress-bar bg-danger" style="width:54%"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-6 col-xxl-3">
-                        <div class="card">
-                            <div class="card-body d-flex flex-column">
-
-                                <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
-                                    <div class="avatar-xl me-3">
-                                        <span class="avatar-title text-bg-info rounded">
-                                            <span data-icon="school" class="fs-24"></span>
-                                        </span>
-                                    </div>
-
-                                    <div class="flex-grow-1">
-                                        <div class="d-flex align-items-start gap-2">
-                                            <h5 class="mb-1 lh-sm flex-grow-1"><a href="#" class="link-reset">Learning Management System</a></h5>
-                                            <span class="badge badge-soft-info fs-xxs badge-label">Review</span>
-                                        </div>
-                                        <p class="text-muted fs-xxs mb-0">Updated 1 hour ago</p>
-                                    </div>
-
-                                    <div class="ms-2">
-                                        <div class="dropdown">
-                                            <a class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown"><span data-icon="dots-vertical" class="fs-xl"></span></a>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li><a class="dropdown-item"><span data-icon="share" class="me-2"></span>Share</a></li>
-                                                <li><a class="dropdown-item"><span data-icon="edit" class="me-2"></span>Edit</a></li>
-                                                <li><a class="dropdown-item text-danger"><span data-icon="delete" class="me-2"></span>Delete</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row g-3 mb-3">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2"><span data-icon="list" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">40/100</div><small class="text-muted fs-xs">Modules</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2"><span data-icon="paperclip" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">14 Files</div><small class="text-muted fs-xs">PDF / Docs</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2"><span data-icon="message" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">6 Comments</div><small class="text-muted fs-xs">Instructor</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2"><span data-icon="calendar-clock" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">05 May, 2025</div><small class="text-muted fs-xs">Next milestone</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
-                                    <div class="avatar-group avatar-group-xs">
-                                        <div class="avatar"><img src="assets/images/users/user-3.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-8.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-5.jpg" class="rounded-circle avatar-xs"></div>
-                                    </div>
-                                </div>
-
-                                <div class="mt-auto">
-                                    <div class="d-flex justify-content-between mb-2">
-                                        <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
-                                        <p class="fw-semibold mb-0">60%</p>
-                                    </div>
-                                    <div class="progress" style="height:5px;">
-                                        <div class="progress-bar bg-info" style="width:60%"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-xxl-3">
-                        <div class="card">
-                            <div class="card-body d-flex flex-column">
-
-                                <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
-                                    <div class="avatar-xl me-3">
-                                        <span class="avatar-title text-bg-dark rounded">
-                                            <span data-icon="inventory" class="fs-24"></span>
-                                        </span>
-                                    </div>
-
-                                    <div class="flex-grow-1">
-                                        <div class="d-flex align-items-start gap-2">
-                                            <h5 class="mb-1 lh-sm flex-grow-1">
-                                                <a href="apps-projects-details.html" class="link-reset">Warehouse Inventory System</a>
-                                            </h5>
-                                            <span class="badge badge-soft-dark fs-xxs badge-label align-self-start">Monitoring</span>
-                                        </div>
-                                        <p class="text-muted fs-xxs mb-0">Updated 6 hours ago</p>
-                                    </div>
-
-                                    <div class="ms-2">
-                                        <div class="dropdown">
-                                            <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
-                                                <span data-icon="dots-vertical" class="fs-xl"></span>
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li><a class="dropdown-item"><span data-icon="share" class="me-2"></span>Share</a></li>
-                                                <li><a class="dropdown-item"><span data-icon="edit" class="me-2"></span>Edit</a></li>
-                                                <li><a class="dropdown-item"><span data-icon="ban" class="me-2"></span>Block</a></li>
-                                                <li><a class="dropdown-item text-danger"><span data-icon="delete" class="me-2"></span>Delete</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row g-3 mb-3">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="list" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">120/450</div><small class="text-muted fs-xs">Items Tracked</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="paperclip" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">48 Files</div><small class="text-muted fs-xs">Reports</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="message" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">9 Comments</div><small class="text-muted fs-xs">Audit</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">14 Mar, 2025</div><small class="text-muted fs-xs">Next Check</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
-                                    <div class="avatar-group avatar-group-xs">
-                                        <div class="avatar"><img src="assets/images/users/user-2.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-5.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-7.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-9.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-10.jpg" class="rounded-circle avatar-xs"></div>
-                                    </div>
-                                </div>
-
-                                <div class="mt-auto">
-                                    <div class="d-flex align-items-center justify-content-between mb-2">
-                                        <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
-                                        <p class="fw-semibold mb-0">47%</p>
-                                    </div>
-                                    <div class="progress" style="height:5px;">
-                                        <div class="progress-bar bg-dark" style="width:47%"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-xxl-3">
-                        <div class="card">
-                            <div class="card-body d-flex flex-column">
-
-                                <div class="d-flex align-items-start border-bottom border-dashed pb-3 mb-3">
-                                    <div class="avatar-xl me-3">
-                                        <span class="avatar-title text-bg-success rounded">
-                                            <span data-icon="activity" class="fs-24"></span>
-                                        </span>
-                                    </div>
-
-                                    <div class="flex-grow-1">
-                                        <div class="d-flex align-items-start gap-2">
-                                            <h5 class="mb-1 lh-sm flex-grow-1">
-                                                <a href="apps-projects-details.html" class="link-reset">Fitness Tracker App - Tracky</a>
-                                            </h5>
-                                            <span class="badge badge-soft-success fs-xxs badge-label align-self-start">Stable</span>
-                                        </div>
-                                        <p class="text-muted fs-xxs mb-0">Updated 3 days ago</p>
-                                    </div>
-
-                                    <div class="ms-2">
-                                        <div class="dropdown">
-                                            <a href="#" class="btn btn-icon btn-ghost-light text-muted" data-bs-toggle="dropdown">
-                                                <span data-icon="dots-vertical" class="fs-xl"></span>
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li><a class="dropdown-item"><span data-icon="share" class="me-2"></span>Share</a></li>
-                                                <li><a class="dropdown-item"><span data-icon="edit" class="me-2"></span>Edit</a></li>
-                                                <li><a class="dropdown-item"><span data-icon="ban" class="me-2"></span>Block</a></li>
-                                                <li><a class="dropdown-item text-danger"><span data-icon="delete" class="me-2"></span>Delete</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row g-3 mb-3">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="list" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">22/45</div><small class="text-muted fs-xs">Features</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="paperclip" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">12 Media</div><small class="text-muted fs-xs">Images/Videos</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="message" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">7 Comments</div><small class="text-muted fs-xs">Community</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span data-icon="calendar-clock" class="text-muted fs-lg"></span>
-                                            <div>
-                                                <div class="fw-medium">30 Sep, 2025</div><small class="text-muted fs-xs">Goal</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <p class="my-2 text-muted fw-semibold fs-xs">Team Members</p>
-                                    <div class="avatar-group avatar-group-xs">
-                                        <div class="avatar"><img src="assets/images/users/user-1.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-4.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-6.jpg" class="rounded-circle avatar-xs"></div>
-                                        <div class="avatar"><img src="assets/images/users/user-8.jpg" class="rounded-circle avatar-xs"></div>
-                                    </div>
-                                </div>
-
-                                <div class="mt-auto">
-                                    <div class="d-flex justify-content-between mb-2">
-                                        <p class="mb-0 text-muted fw-semibold fs-xs">Progress</p>
-                                        <p class="fw-semibold mb-0">78%</p>
-                                    </div>
-                                    <div class="progress" style="height:5px;">
-                                        <div class="progress-bar bg-success" style="width:78%"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-                <!-- end row-->
-
-                <ul class="pagination pagination-rounded pagination-boxed justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="javascript: void(0);" aria-label="Previous">
-                            <span aria-hidden="true">«</span>
-                        </a>
-                    </li>
-                    <li class="page-item active">
-                        <a class="page-link" href="javascript: void(0);">1</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="javascript: void(0);">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="javascript: void(0);">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="javascript: void(0);">4</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="javascript: void(0);">5</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="javascript: void(0);" aria-label="Next">
-                            <span aria-hidden="true">»</span>
-                        </a>
-                    </li>
-                </ul>
+                @@include('./partials/footer.html')
             </div>
-            <!-- container -->
 
-            @@include('./partials/footer.html')
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
         </div>
+        <!-- END wrapper -->
 
-        <!-- ============================================================== -->
-        <!-- End of Main Content -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- END wrapper -->
-
-    @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
-</body>
-
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+    </body>
 </html>
