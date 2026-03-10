@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Coupons"}) @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle": "Promo", "title":"Coupons"})
+
+                    <div class="row row-cols-xxl-5 row-cols-md-3 row-cols-1 align-items-center g-1">
+                        <!-- Total Coupons -->
+                        <div class="col">
+                            <div class="card mb-1">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <div class="avatar-md flex-shrink-0">
+                                            <span class="avatar-title text-bg-primary rounded-circle fs-22">
+                                                <span data-icon="ticket"></span>
+                                            </span>
+                                        </div>
+                                        <h3 class="mb-0">1,245</h3>
+                                    </div>
+                                    <p class="mb-0">
+                                        Total Coupons
+                                        <span class="float-end badge badge-soft-primary">+4.26%</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Active Coupons -->
+                        <div class="col">
+                            <div class="card mb-1">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <div class="avatar-md flex-shrink-0">
+                                            <span class="avatar-title text-bg-success rounded-circle fs-22">
+                                                <span data-icon="check-circle"></span>
+                                            </span>
+                                        </div>
+                                        <h3 class="mb-0">830</h3>
+                                    </div>
+                                    <p class="mb-0">
+                                        Active Coupons
+                                        <span class="float-end badge badge-soft-success">+2.18%</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Expired Coupons -->
+                        <div class="col">
+                            <div class="card mb-1">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <div class="avatar-md flex-shrink-0">
+                                            <span class="avatar-title text-bg-danger rounded-circle fs-22">
+                                                <span data-icon="clock"></span>
+                                            </span>
+                                        </div>
+                                        <h3 class="mb-0">220</h3>
+                                    </div>
+                                    <p class="mb-0">
+                                        Expired Coupons
+                                        <span class="float-end badge badge-soft-danger">-1.64%</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Upcoming Coupons -->
+                        <div class="col">
+                            <div class="card mb-1">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <div class="avatar-md flex-shrink-0">
+                                            <span class="avatar-title text-bg-warning rounded-circle fs-22">
+                                                <span data-icon="calendar-clock"></span>
+                                            </span>
+                                        </div>
+                                        <h3 class="mb-0">115</h3>
+                                    </div>
+                                    <p class="mb-0">
+                                        Upcoming Coupons
+                                        <span class="float-end badge badge-soft-warning">+0.93%</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Total Redemptions -->
+                        <div class="col">
+                            <div class="card mb-1">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <div class="avatar-md flex-shrink-0">
+                                            <span class="avatar-title text-bg-info rounded-circle fs-22">
+                                                <span data-icon="users"></span>
+                                            </span>
+                                        </div>
+                                        <h3 class="mb-0">4,980</h3>
+                                    </div>
+                                    <p class="mb-0">
+                                        Total Redemptions
+                                        <span class="float-end badge badge-soft-info">+6.12%</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- end row -->
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div data-table data-table-rows-per-page="8" class="card">
+                                <div class="card-header border-light justify-content-between">
+                                    <div class="d-flex gap-2">
+                                        <!-- Search -->
+                                        <div class="app-search">
+                                            <input data-table-search type="search" class="form-control" placeholder="Search coupon..." />
+                                            <span data-icon="search" class="app-search-icon text-muted"></span>
+                                        </div>
+
+                                        <!-- Delete Selected -->
+                                        <button data-table-delete-selected class="btn btn-danger d-none">Delete</button>
+                                    </div>
+
+                                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                                        <span class="me-2 fw-semibold">Filter By:</span>
+
+                                        <!-- Status Filter -->
+                                        <div class="app-search">
+                                            <select data-table-filter="coupon-status" class="form-select form-control my-1 my-md-0">
+                                                <option value="All">Coupon Status</option>
+                                                <option value="Active">Active</option>
+                                                <option value="Expired">Expired</option>
+                                                <option value="Upcoming">Upcoming</option>
+                                                <option value="Disabled">Disabled</option>
+                                            </select>
+                                            <span data-icon="check-circle" class="app-search-icon text-muted"></span>
+                                        </div>
+
+                                        <!-- Type Filter -->
+                                        <div class="app-search">
+                                            <select data-table-filter="coupon-type" class="form-select form-control my-1 my-md-0">
+                                                <option value="All">Coupon Type</option>
+                                                <option value="Percentage">Percentage</option>
+                                                <option value="Fixed">Fixed Amount</option>
+                                                <option value="Free Shipping">Free Shipping</option>
+                                            </select>
+                                            <span data-icon="tag" class="app-search-icon text-muted"></span>
+                                        </div>
+
+                                        <!-- Records Per Page -->
+                                        <div>
+                                            <select data-table-set-rows-per-page class="form-select form-control my-1 my-md-0">
+                                                <option value="5">5</option>
+                                                <option value="10" selected>10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex gap-1">
+                                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addCouponModal"><span data-icon="plus" class="me-1"></span> Add Coupon</button>
+                                    </div>
+                                </div>
+                                <!-- /.card-header -->
+
+                                <div class="table-responsive">
+                                    <table class="table table-custom table-centered table-select table-hover w-100 mb-0">
+                                        <thead class="bg-light align-middle bg-opacity-25 thead-sm">
+                                            <tr class="text-uppercase fs-xxs">
+                                                <th class="ps-3" style="width: 1%">
+                                                    <input data-table-select-all class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </th>
+                                                <th data-table-sort>Coupon Code</th>
+                                                <th data-table-sort data-column="coupon-type">Discount Type</th>
+                                                <th data-table-sort>Discount Value</th>
+                                                <th data-table-sort>Start Date</th>
+                                                <th data-table-sort>Expiry Date</th>
+                                                <th data-table-sort>Usage Limit</th>
+                                                <th data-table-sort>Used</th>
+                                                <th data-table-sort data-column="coupon-status">Status</th>
+                                                <th class="text-center" style="width: 1%">Actions</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <!-- Example Row -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-sm mb-0">
+                                                        <a href="#!" class="link-reset">SAVE20</a>
+                                                    </h5>
+                                                    <small class="text-muted">Applies to all products</small>
+                                                </td>
+                                                <td><span class="badge badge-label fs-xs badge-soft-primary">Percentage</span></td>
+                                                <td>20%</td>
+                                                <td>1 May, 2025</td>
+                                                <td>31 May, 2025</td>
+                                                <td>500</td>
+                                                <td>320</td>
+                                                <td class="text-success fw-semibold"><span data-icon="circle-filled" class="fs-sm me-1"></span> Active</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Example Row 2 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-sm mb-0">
+                                                        <a href="#!" class="link-reset">FREESHIP</a>
+                                                    </h5>
+                                                    <small class="text-muted">Free shipping on orders over $100</small>
+                                                </td>
+                                                <td><span class="badge badge-label fs-xs badge-soft-info">Free Shipping</span></td>
+                                                <td>-</td>
+                                                <td>15 Apr, 2025</td>
+                                                <td>15 Jul, 2025</td>
+                                                <td>Unlimited</td>
+                                                <td>230</td>
+                                                <td class="text-warning fw-semibold"><span data-icon="circle-filled" class="fs-sm me-1"></span> Upcoming</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Example Row 3 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-sm mb-0">
+                                                        <a href="#!" class="link-reset">WELCOME10</a>
+                                                    </h5>
+                                                    <small class="text-muted">New users get 10% off</small>
+                                                </td>
+                                                <td><span class="badge badge-label fs-xs badge-soft-primary">Percentage</span></td>
+                                                <td>10%</td>
+                                                <td>1 Apr, 2025</td>
+                                                <td>31 Dec, 2025</td>
+                                                <td>1000</td>
+                                                <td>754</td>
+                                                <td class="text-success fw-semibold"><span data-icon="circle-filled" class="fs-sm me-1"></span> Active</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Example Row 4 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-sm mb-0">
+                                                        <a href="#!" class="link-reset">SUMMER25</a>
+                                                    </h5>
+                                                    <small class="text-muted">25% off on all summer collections</small>
+                                                </td>
+                                                <td><span class="badge badge-label fs-xs badge-soft-primary">Percentage</span></td>
+                                                <td>25%</td>
+                                                <td>10 May, 2025</td>
+                                                <td>30 Jun, 2025</td>
+                                                <td>800</td>
+                                                <td>645</td>
+                                                <td class="text-success fw-semibold"><span data-icon="circle-filled" class="fs-sm me-1"></span> Active</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Example Row 5 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-sm mb-0">
+                                                        <a href="#!" class="link-reset">FLAT50</a>
+                                                    </h5>
+                                                    <small class="text-muted">Flat $50 off on orders above $300</small>
+                                                </td>
+                                                <td><span class="badge badge-label fs-xs badge-soft-secondary">Fixed</span></td>
+                                                <td>$50</td>
+                                                <td>20 Mar, 2025</td>
+                                                <td>20 Jul, 2025</td>
+                                                <td>500</td>
+                                                <td>370</td>
+                                                <td class="text-success fw-semibold"><span data-icon="circle-filled" class="fs-sm me-1"></span> Active</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Example Row 6 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-sm mb-0">
+                                                        <a href="#!" class="link-reset">WINTER15</a>
+                                                    </h5>
+                                                    <small class="text-muted">15% off on winter apparel</small>
+                                                </td>
+                                                <td><span class="badge badge-label fs-xs badge-soft-primary">Percentage</span></td>
+                                                <td>15%</td>
+                                                <td>1 Dec, 2024</td>
+                                                <td>28 Feb, 2025</td>
+                                                <td>400</td>
+                                                <td>400</td>
+                                                <td class="text-danger fw-semibold"><span data-icon="circle-filled" class="fs-sm me-1"></span> Expired</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Example Row 7 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-sm mb-0">
+                                                        <a href="#!" class="link-reset">BULK30</a>
+                                                    </h5>
+                                                    <small class="text-muted">30% off for bulk orders over 10 items</small>
+                                                </td>
+                                                <td><span class="badge badge-label fs-xs badge-soft-primary">Percentage</span></td>
+                                                <td>30%</td>
+                                                <td>5 Jun, 2025</td>
+                                                <td>5 Aug, 2025</td>
+                                                <td>200</td>
+                                                <td>55</td>
+                                                <td class="text-warning fw-semibold"><span data-icon="circle-filled" class="fs-sm me-1"></span> Upcoming</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Example Row 8 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-sm mb-0">
+                                                        <a href="#!" class="link-reset">NEWYEAR40</a>
+                                                    </h5>
+                                                    <small class="text-muted">Flat 40% off for New Year Sale</small>
+                                                </td>
+                                                <td><span class="badge badge-label fs-xs badge-soft-primary">Percentage</span></td>
+                                                <td>40%</td>
+                                                <td>25 Dec, 2024</td>
+                                                <td>5 Jan, 2025</td>
+                                                <td>1500</td>
+                                                <td>1365</td>
+                                                <td class="text-danger fw-semibold"><span data-icon="circle-filled" class="fs-sm me-1"></span> Expired</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Example Row 9 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-sm mb-0">
+                                                        <a href="#!" class="link-reset">APP20</a>
+                                                    </h5>
+                                                    <small class="text-muted">20% off for app users only</small>
+                                                </td>
+                                                <td><span class="badge badge-label fs-xs badge-soft-primary">Percentage</span></td>
+                                                <td>20%</td>
+                                                <td>10 Oct, 2025</td>
+                                                <td>31 Dec, 2025</td>
+                                                <td>Unlimited</td>
+                                                <td>120</td>
+                                                <td class="text-success fw-semibold"><span data-icon="circle-filled" class="fs-sm me-1"></span> Active</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Example Row 10 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-sm mb-0">
+                                                        <a href="#!" class="link-reset">VIP100</a>
+                                                    </h5>
+                                                    <small class="text-muted">Exclusive $100 off for VIP members</small>
+                                                </td>
+                                                <td><span class="badge badge-label fs-xs badge-soft-secondary">Fixed</span></td>
+                                                <td>$100</td>
+                                                <td>1 Jan, 2025</td>
+                                                <td>31 Dec, 2025</td>
+                                                <td>300</td>
+                                                <td>85</td>
+                                                <td class="text-success fw-semibold"><span data-icon="circle-filled" class="fs-sm me-1"></span> Active</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Example Row 11 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-sm mb-0">
+                                                        <a href="#!" class="link-reset">FIRSTBUY15</a>
+                                                    </h5>
+                                                    <small class="text-muted">15% off for first purchase</small>
+                                                </td>
+                                                <td><span class="badge badge-label fs-xs badge-soft-primary">Percentage</span></td>
+                                                <td>15%</td>
+                                                <td>1 Aug, 2025</td>
+                                                <td>31 Dec, 2025</td>
+                                                <td>Unlimited</td>
+                                                <td>310</td>
+                                                <td class="text-success fw-semibold"><span data-icon="circle-filled" class="fs-sm me-1"></span> Active</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Example Row 12 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-sm mb-0">
+                                                        <a href="#!" class="link-reset">FALL30</a>
+                                                    </h5>
+                                                    <small class="text-muted">30% off on Fall Collection</small>
+                                                </td>
+                                                <td><span class="badge badge-label fs-xs badge-soft-primary">Percentage</span></td>
+                                                <td>30%</td>
+                                                <td>1 Sep, 2025</td>
+                                                <td>30 Nov, 2025</td>
+                                                <td>700</td>
+                                                <td>180</td>
+                                                <td class="text-warning fw-semibold"><span data-icon="circle-filled" class="fs-sm me-1"></span> Upcoming</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+
+                                <div class="card-footer border-0">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div data-table-pagination-info="coupons"></div>
+                                        <div data-table-pagination></div>
+                                    </div>
+                                </div>
+                                <!-- /.card-footer -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+
+                    <!-- Add Coupon Modal -->
+                    <div class="modal fade" id="addCouponModal" tabindex="-1" aria-labelledby="addCouponModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content border-0 shadow">
+                                <div class="modal-header bg-light">
+                                    <h5 class="modal-title fw-semibold" id="addCouponModalLabel"><span data-icon="ticket" class="me-2 text-primary"></span> Add New Coupon</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <form id="addCouponForm">
+                                    <div class="modal-body">
+                                        <div class="row g-3">
+                                            <!-- Coupon Code -->
+                                            <div class="col-md-6">
+                                                <label class="form-label">Coupon Code <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" name="coupon_code" placeholder="e.g., SAVE20" required />
+                                            </div>
+
+                                            <!-- Coupon Type -->
+                                            <div class="col-md-6">
+                                                <label class="form-label">Coupon Type <span class="text-danger">*</span></label>
+                                                <select class="form-select" name="coupon_type" required>
+                                                    <option value="">Select Type</option>
+                                                    <option value="percentage">Percentage</option>
+                                                    <option value="fixed">Fixed Amount</option>
+                                                    <option value="free_shipping">Free Shipping</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Discount Value -->
+                                            <div class="col-md-6">
+                                                <label class="form-label">Discount Value <span class="text-danger">*</span></label>
+                                                <input type="number" class="form-control" name="discount_value" placeholder="e.g., 20 or 50" required />
+                                            </div>
+
+                                            <!-- Minimum Order -->
+                                            <div class="col-md-6">
+                                                <label class="form-label">Minimum Order Value</label>
+                                                <input type="number" class="form-control" name="min_order" placeholder="e.g., 100" />
+                                            </div>
+
+                                            <!-- Start Date -->
+                                            <div class="col-md-6">
+                                                <label class="form-label">Start Date <span class="text-danger">*</span></label>
+                                                <input type="text" data-provider="flatpickr" data-date-format="d M, Y" class="form-control" name="start_date" placeholder="Select start date" required />
+                                            </div>
+
+                                            <!-- End Date -->
+                                            <div class="col-md-6">
+                                                <label class="form-label">End Date <span class="text-danger">*</span></label>
+                                                <input type="text" data-provider="flatpickr" data-date-format="d M, Y" class="form-control" name="end_date" placeholder="Select end date" required />
+                                            </div>
+
+                                            <!-- Usage Limit -->
+                                            <div class="col-md-6">
+                                                <label class="form-label">Usage Limit</label>
+                                                <input type="number" class="form-control" name="usage_limit" placeholder="e.g., 1000" />
+                                            </div>
+
+                                            <!-- Per User Limit -->
+                                            <div class="col-md-6">
+                                                <label class="form-label">Per User Limit</label>
+                                                <input type="number" class="form-control" name="user_limit" placeholder="e.g., 5" />
+                                            </div>
+
+                                            <!-- Description -->
+                                            <div class="col-12">
+                                                <label class="form-label">Description</label>
+                                                <textarea class="form-control" name="description" rows="2" placeholder="Brief description of the offer"></textarea>
+                                            </div>
+
+                                            <!-- Toggle Options -->
+                                            <div class="col-12">
+                                                <div class="d-flex flex-wrap gap-3 mt-2">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="isActive" checked />
+                                                        <label class="form-check-label" for="isActive">Active</label>
+                                                    </div>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="isFeatured" />
+                                                        <label class="form-check-label" for="isFeatured">Featured Coupon</label>
+                                                    </div>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="isFreeShipping" />
+                                                        <label class="form-check-label" for="isFreeShipping">Free Shipping</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.row -->
+                                    </div>
+                                    <!-- /.modal-body -->
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary"><span data-icon="plus" class="me-1"></span> Add Coupon</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
+                </div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+
+        <!-- Custom table -->
+        <script src="assets/js/pages/custom-table.js"></script>
+    </body>
+</html>

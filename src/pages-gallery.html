@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Gallery"})
+
+        <!-- glightbox css -->
+        <link href="assets/plugins/glightbox/glightbox.min.css" rel="stylesheet" />
+
+        @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"title":"Gallery", "subtitle": "Miscellaneous" })
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header flex-wrap justify-content-between w-100 gap-3">
+                                    <!-- Search -->
+                                    <div class="flex-grow-1">
+                                        <div class="app-search">
+                                            <input type="search" class="form-control" name="search" placeholder="Search ..." />
+                                            <span data-icon="search" class="app-search-icon text-muted"></span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Filter -->
+                                    <div class="d-flex flex-wrap gap-1 filter-buttons">
+                                        <button class="btn btn-sm fw-semibold fs-sm btn-ghost-primary active" data-filter="">All</button>
+                                        <button class="btn btn-sm fw-semibold fs-sm btn-ghost-primary" data-filter="machine-learning">Machine Learning</button>
+                                        <button class="btn btn-sm fw-semibold fs-sm btn-ghost-primary" data-filter="computer-vision">Computer Vision</button>
+                                        <button class="btn btn-sm fw-semibold fs-sm btn-ghost-primary" data-filter="nlp">NLP</button>
+                                        <button class="btn btn-sm fw-semibold fs-sm btn-ghost-primary" data-filter="robotics">Robotics</button>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+                                    <!-- Grid -->
+                                    <div class="row row-cols-xxl-5 row-cols-lg-4 row-cols-md-3 g-2 row-cols-1 position-relative" id="grid">
+                                        <!-- MACHINE LEARNING ITEMS -->
+                                        <div class="col position-absolute" data-category="machine-learning">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/1.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">Machine Learning</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/1.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col position-absolute" data-category="machine-learning">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/5.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">Machine Learning</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/5.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col position-absolute" data-category="machine-learning">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/6.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">Machine Learning</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/6.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col position-absolute" data-category="machine-learning">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/11.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">Machine Learning</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/11.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- COMPUTER VISION ITEMS -->
+                                        <div class="col position-absolute" data-category="computer-vision">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/2.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">Computer Vision</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/2.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col position-absolute" data-category="computer-vision">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/7.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">Computer Vision</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/7.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col position-absolute" data-category="computer-vision">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/12.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">Computer Vision</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/12.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- NLP ITEMS -->
+                                        <div class="col position-absolute" data-category="nlp">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/3.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">NLP</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/3.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col position-absolute" data-category="nlp">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/8.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">NLP</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/8.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col position-absolute" data-category="nlp">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/13.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">NLP</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/13.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col position-absolute" data-category="nlp">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/14.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">NLP</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/14.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- ROBOTICS ITEMS -->
+                                        <div class="col position-absolute" data-category="robotics">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/4.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">Robotics</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/4.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col position-absolute" data-category="robotics">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/9.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">Robotics</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/9.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col position-absolute" data-category="robotics">
+                                            <div class="card border-0 mb-0 position-relative overflow-hidden gallery-item">
+                                                <img class="card-img rounded-2" src="assets/images/gallery/10.jpg" alt="" />
+                                                <div class="gall-overlay d-flex align-items-center justify-content-center">
+                                                    <div class="badge text-bg-dark badge-label position-absolute top-0 start-0 m-3 z-1">Robotics</div>
+                                                    <a class="image-popup btn btn-sm btn-primary" href="assets/images/gallery/10.jpg">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end row-->
+                                </div>
+                                <!-- end card-body-->
+                            </div>
+                            <!-- end card-->
+                        </div>
+                        <!-- end col-->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end container-->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+
+        <!-- Glightbox Plugin Js -->
+        <script src="assets/plugins/glightbox/glightbox.min.js"></script>
+
+        <!-- Web travels Plugin Js -->
+        <script src="assets/plugins/web-animations/web-animations.min.js"></script>
+
+        <!-- Muuri Plugin Js -->
+        <script src="assets/plugins/muuri/muuri.min.js"></script>
+
+        <!-- Gallery Demo Js -->
+        <script src="assets/js/pages/pages-gallery.js"></script>
+    </body>
+</html>

@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Todo List App"}) @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle": "Apps", "title":"Todo List"})
+
+                    <div class="outlook-box gap-1">
+                        <div class="offcanvas-lg offcanvas-start outlook-left-menu outlook-left-menu-lg" tabindex="-1" id="emailSidebaroffcanvas">
+                            <div class="card h-100 mb-0 rounded-end-0" data-simplebar>
+                                <div class="card-body">
+                                    <button class="btn btn-success fw-medium w-100" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+                                        Create New
+                                        <span data-icon="plus" class="ms-1"></span>
+                                    </button>
+                                    <div class="my-3">
+                                        <label for="taskDate" class="form-label">Select Date</label>
+                                        <input type="text" id="taskDate" data-provider="flatpickr" data-altFormat="F j, Y" class="form-control flatpickr-input" placeholder="Select Date" />
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="taskPriority" class="form-label">Select Priority</label>
+                                        <select class="form-select" id="taskPriority">
+                                            <option value="all" selected="">All</option>
+                                            <option value="High">High</option>
+                                            <option value="Normal">Medium</option>
+                                            <option value="Low">Low</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="taskStatus" class="form-label">Select Status</label>
+                                        <select class="form-select" id="taskStatus">
+                                            <option value="all" selected="">All</option>
+                                            <option value="New">New</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Inprogress">Inprogress</option>
+                                            <option value="Completed">Completed</option>
+                                            <option value="Urgent">Urgent</option>
+                                            <option value="Scheduled">Scheduled</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- end card-body-->
+                            </div>
+                            <!-- end card-->
+                        </div>
+
+                        <div data-table data-table-rows-per-page="15" class="card h-100 mb-0 rounded-start-0 flex-grow-1 border-start-0">
+                            <div class="card-header d-lg-none d-flex gap-2">
+                                <button class="btn btn-default btn-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#emailSidebaroffcanvas" aria-controls="emailSidebaroffcanvas">
+                                    <span data-icon="menu-icon" class="fs-lg"></span>
+                                </button>
+
+                                <div class="app-search">
+                                    <input type="text" class="form-control" placeholder="Search here..." />
+                                    <span data-icon="search" class="app-search-icon text-muted"></span>
+                                </div>
+                            </div>
+
+                            <div class="card-header card-bg justify-content-between">
+                                <h4 class="card-title">Tasks</h4>
+                                <div class="app-search">
+                                    <input type="text" class="form-control" placeholder="Search here..." />
+                                    <span data-icon="search" class="app-search-icon text-muted"></span>
+                                </div>
+                            </div>
+
+                            <div class="card-body p-0" style="height: calc(100% - 100px)" data-simplebar data-simplebar-md>
+                                <div class="nested-sortable-handle">
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task1" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Complete Presentation Slides for Meeting</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Cruise ⚒️">
+                                                    <img src="assets/images/users/user-2.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Kevin">
+                                                    <img src="assets/images/users/user-3.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Thomas 🏠">
+                                                    <img src="assets/images/users/user-4.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-warning">New</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">Today</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">3/7</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">21</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-danger p-1">High</span>
+                                            </div>
+                                        </div>
+                                        <!-- end d-flex-->
+                                    </div>
+                                    <!-- end task -->
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task2" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Finalize Product Roadmap for Launch</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Maria 💻">
+                                                    <img src="assets/images/users/user-5.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="James">
+                                                    <img src="assets/images/users/user-6.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Sophia 🚀">
+                                                    <img src="assets/images/users/user-7.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-success">In Progress</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">Tomorrow</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">5/10</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">14</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-warning p-1">Medium</span>
+                                            </div>
+                                        </div>
+                                        <!-- end d-flex-->
+                                    </div>
+                                    <!-- end task-->
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task3" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Design Marketing Assets for Campaign</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Olivia 🎨">
+                                                    <img src="assets/images/users/user-8.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Daniel">
+                                                    <img src="assets/images/users/user-9.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Liam 📷">
+                                                    <img src="assets/images/users/user-10.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-warning">Pending</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">Next Week</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">2/8</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">8</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-danger p-1">High</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end task -->
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task4" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Prepare Financial Report for Q3 Review</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Emma 💼">
+                                                    <img src="assets/images/users/user-1.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Michael">
+                                                    <img src="assets/images/users/user-2.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Chloe 📊">
+                                                    <img src="assets/images/users/user-4.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-success">In Progress</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">Friday</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">6/12</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">18</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-warning p-1">Medium</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task5" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Organize Client Feedback Workshop</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Isabella 📝">
+                                                    <img src="assets/images/users/user-3.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Lucas">
+                                                    <img src="assets/images/users/user-5.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Noah 🎤">
+                                                    <img src="assets/images/users/user-7.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-primary">Scheduled</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">Next Monday</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">1/5</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">4</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-success p-1">Low</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task6" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Update Company Website Content</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Mason 🌐">
+                                                    <img src="assets/images/users/user-6.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Ava">
+                                                    <img src="assets/images/users/user-8.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-secondary" data-bs-placement="top" title="Ethan 🖋">
+                                                    <img src="assets/images/users/user-10.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-danger">Urgent</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">Today</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">9/15</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">27</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-danger p-1">High</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task7" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Conduct Security Audit for New App</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Alice 🔒">
+                                                    <img src="assets/images/users/user-1.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="David">
+                                                    <img src="assets/images/users/user-2.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Sophia">
+                                                    <img src="assets/images/users/user-3.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-danger">Urgent</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">15 Sep, 2025</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">4/12</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">9</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-danger p-1">High</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task8" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Draft Press Release for Product Launch</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Ben 📰">
+                                                    <img src="assets/images/users/user-4.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Chloe">
+                                                    <img src="assets/images/users/user-5.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Olivia">
+                                                    <img src="assets/images/users/user-6.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-success">In Progress</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">16 Sep, 2025</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">3/6</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">5</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-warning p-1">Medium</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task9" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Update CRM Database Records</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Liam 📁">
+                                                    <img src="assets/images/users/user-7.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Emily">
+                                                    <img src="assets/images/users/user-8.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Nathan">
+                                                    <img src="assets/images/users/user-9.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-warning">Pending</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">17 Sep, 2025</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">8/20</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">11</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-danger p-1">High</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task10" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Plan Internal Team Training Session</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Sophie 🎓">
+                                                    <img src="assets/images/users/user-10.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Jack">
+                                                    <img src="assets/images/users/user-1.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Ava">
+                                                    <img src="assets/images/users/user-2.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-primary">Scheduled</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">18 Sep, 2025</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">2/7</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">3</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-success p-1">Low</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task11" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Review Supplier Contract Renewals</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Ella 📑">
+                                                    <img src="assets/images/users/user-3.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Henry">
+                                                    <img src="assets/images/users/user-4.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Mia">
+                                                    <img src="assets/images/users/user-5.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-warning">Pending</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">19 Sep, 2025</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">5/15</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">7</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-warning p-1">Medium</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task12" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Compile Monthly Marketing Metrics</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Noah 📈">
+                                                    <img src="assets/images/users/user-6.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Grace">
+                                                    <img src="assets/images/users/user-7.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Leo">
+                                                    <img src="assets/images/users/user-8.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-success">In Progress</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">20 Sep, 2025</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">6/10</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">15</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-success p-1">Low</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task13" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Prepare Year-End Performance Review</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Lucas 📝">
+                                                    <img src="assets/images/users/user-9.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Avery">
+                                                    <img src="assets/images/users/user-10.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Ella">
+                                                    <img src="assets/images/users/user-1.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-primary">Scheduled</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">21 Sep, 2025</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">1/3</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">2</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-warning p-1">Medium</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task14" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Coordinate Social Media Influencer Outreach</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Maya 📱">
+                                                    <img src="assets/images/users/user-2.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Oliver">
+                                                    <img src="assets/images/users/user-3.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Zoe">
+                                                    <img src="assets/images/users/user-4.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-warning">Pending</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">22 Sep, 2025</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">3/8</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">6</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-danger p-1">High</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-bottom py-2 px-3 d-flex gap-2 align-items-center">
+                                        <span data-icon="grip-horizontal" class="align-middle sort-handle"></span>
+                                        <input type="checkbox" class="form-check-input rounded-circle mt-0 fs-16" id="task15" />
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#taskDetailsModal" class="link-reset fw-medium">Test and Deploy New Checkout System</a>
+
+                                        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-md-end ms-auto">
+                                            <div class="avatar-group avatar-group-sm flex-shrink-0">
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Harper 🧪">
+                                                    <img src="assets/images/users/user-5.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Ethan">
+                                                    <img src="assets/images/users/user-6.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Amelia">
+                                                    <img src="assets/images/users/user-7.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-outline-danger">Urgent</span>
+                                            </div>
+
+                                            <ul class="list-inline fs-13 text-end flex-shrink-0 mb-0">
+                                                <li class="list-inline-item">
+                                                    <span data-icon="calendar" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-semibold">23 Sep, 2025</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="list-details" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">7/14</span>
+                                                </li>
+                                                <li class="list-inline-item ms-1">
+                                                    <span data-icon="messages" class="text-muted fs-16 me-1 align-middle"></span>
+                                                    <span class="fw-medium">19</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex-shrink-0">
+                                                <span class="badge badge-soft-danger p-1">High</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-center gap-2 p-3">
+                                    <strong>Loading...</strong>
+                                    <div class="spinner-border spinner-border-sm text-danger" role="status" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                            <!-- end card-body-->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end row-->
+
+                    <div class="modal fade" id="taskDetailsModal" tabindex="-1" aria-labelledby="taskDetailsModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="taskDetailsModalLabel">Finalize Product Roadmap for Launch</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body pb-0">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="avatar me-2" data-bs-toggle="tooltip" title="Assigned by Alex Johnson">
+                                            <img src="assets/images/users/user-8.jpg" alt="" class="rounded-circle avatar-img-size" style="width: 40px; height: 40px" />
+                                        </div>
+                                        <div>
+                                            <span class="fw-semibold">Assigned by:</span>
+                                            Alex Johnson
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <label class="text-uppercase d-block fw-semibold fs-xs text-muted mb-1">Status</label>
+                                            <span class="badge badge-outline-success">In Progress</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="text-uppercase d-block fw-semibold fs-xs text-muted mb-1">Priority</label>
+                                            <span class="badge badge-soft-primary p-1">Medium</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="text-uppercase d-block fw-semibold fs-xs text-muted mb-1">Due Date</label>
+                                            <span class="fw-semibold">Tomorrow</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="text-uppercase d-block fw-semibold fs-xs text-muted mb-1">Progress</label>
+                                            <span class="fw-medium">5/10</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="text-uppercase d-block fw-semibold fs-xs text-muted mb-1">Assigned To</label>
+                                            <div class="avatar-group avatar-group-sm">
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Maria 💻">
+                                                    <img src="assets/images/users/user-5.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="James">
+                                                    <img src="assets/images/users/user-6.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                                <div class="avatar" data-bs-toggle="tooltip" title="Sophia 🚀">
+                                                    <img src="assets/images/users/user-7.jpg" alt="" class="rounded-circle fs-24 avatar-img-size" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="text-uppercase d-block fw-semibold fs-xs text-muted mb-1">Description</label>
+                                            <p class="mb-0">Preparing and finalizing the product roadmap for the upcoming launch with clear milestones and dependencies.</p>
+                                        </div>
+
+                                        <!-- Comments -->
+                                        <div class="col-12">
+                                            <div class="bg-light-subtle mx-n3 p-3 border-top border-bottom border-dashed">
+                                                <div class="d-flex align-items-start">
+                                                    <img class="me-2 avatar-sm rounded-circle" src="assets/images/users/user-5.jpg" alt="Generic placeholder image" />
+                                                    <div class="w-100 fs-sm">
+                                                        <h6 class="mt-0 mb-1">
+                                                            <a href="#!" class="link-reset">Ethan Reynolds</a>
+                                                            <small class="text-muted fw-normal float-end">20 minutes ago</small>
+                                                        </h6>
+                                                        Loved your recent project! Really curious to see how you implemented the animations.
+                                                        <br />
+                                                        <a href="javascript:void(0);" class="text-muted font-13 d-inline-block mt-2">
+                                                            <span data-icon="reply"></span>
+                                                            Reply
+                                                        </a>
+
+                                                        <div class="d-flex align-items-start mt-3">
+                                                            <a class="pe-2" href="#">
+                                                                <img src="assets/images/users/user-6.jpg" class="avatar-sm rounded-circle" alt="Generic placeholder image" />
+                                                            </a>
+                                                            <div class="w-100">
+                                                                <h6 class="mt-0 mb-1">
+                                                                    <a href="#!" class="link-reset">Mia Thompson</a>
+                                                                    <small class="text-muted fw-normal float-end">12 minutes ago</small>
+                                                                </h6>
+                                                                I created something similar in Angular last month — would love to swap tips!
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex align-items-start mt-3">
+                                                    <a class="pe-2" href="#">
+                                                        <img src="assets/images/users/user-3.jpg" class="rounded-circle" alt="Generic placeholder image" height="31" />
+                                                    </a>
+                                                    <div class="w-100">
+                                                        <input type="text" id="simpleinput" class="form-control form-control-sm" placeholder="Add a comment..." />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer border-top-0">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Mark as Complete</button>
+                                </div>
+                            </div>
+                            <!-- end modal-content-->
+                        </div>
+                        <!-- end modal-dialog-->
+                    </div>
+                    <!-- end modal-->
+
+                    <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="addTaskModalLabel">Add New Task</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <form id="addTaskForm">
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold">Task Title</label>
+                                            <input type="text" class="form-control" name="taskTitle" placeholder="Enter task title" required />
+                                        </div>
+
+                                        <div class="row g-3">
+                                            <!-- Due Date -->
+                                            <div class="col-md-6">
+                                                <label for="DueDate" class="form-label">Due Date</label>
+                                                <input type="date" class="form-control" id="DueDate" data-provider="flatpickr" data-date-format="d M, Y" required />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-semibold">Priority</label>
+                                                <select class="form-select" name="taskPriority">
+                                                    <option value="badge-soft-success p-1">Low</option>
+                                                    <option value="badge-soft-primary p-1">Medium</option>
+                                                    <option value="badge-soft-danger p-1" selected>High</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-3">
+                                            <label class="form-label fw-semibold">Status</label>
+                                            <select class="form-select" name="taskStatus">
+                                                <option value="badge-outline-warning">New</option>
+                                                <option value="badge-outline-success">In Progress</option>
+                                                <option value="badge-outline-primary">Scheduled</option>
+                                                <option value="badge-outline-danger">Urgent</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mt-3">
+                                            <label class="form-label fw-semibold">Assign To</label>
+                                            <input type="text" class="form-control" name="taskAvatars" placeholder="Comma-separated user IDs" />
+                                            <small class="text-muted">set &#64;username</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary">Add Task</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- end modal-content-->
+                        </div>
+                        <!-- end modal-dialog-->
+                    </div>
+                    <!-- end modal-->
+                </div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+
+        <!-- sortablejs -->
+        <script src="assets/plugins/sortablejs/Sortable.min.js"></script>
+
+        <!-- Todo Init Js -->
+        <script src="assets/js/pages/apps-todo.js"></script>
+    </body>
+</html>

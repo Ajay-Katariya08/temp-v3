@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "Create New Task"}) @@include('./partials/head-css.html')
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div class="wrapper">
+        @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+        <!-- ============================================================== -->
+        <!-- Start Main Content -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="container-fluid">@@include("./partials/page-title.html", {"subtitle": "Tasks", "title":"Create Task"})
+
+                <!-- Container -->
+                <div class="container-xxl">
+                    <!-- Card -->
+                    <div class="card">
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <!-- Form -->
+                            <form>
+                                <!-- Task Title -->
+                                <div class="mb-3">
+                                    <label for="taskTitle" class="form-label">Task Title <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="taskTitle" placeholder="Enter task title" required />
+                                </div>
+                                <!-- End Task Title -->
+
+                                <!-- Task Description -->
+                                <div class="mb-3">
+                                    <label for="taskDescription" class="form-label">Description</label>
+                                    <textarea class="form-control" id="taskDescription" rows="4" placeholder="Write a short task description..."></textarea>
+                                </div>
+                                <!-- End Task Description -->
+
+                                <!-- Dates -->
+                                <div class="row mb-3">
+                                    <!-- Start Date -->
+                                    <div class="col-md-6">
+                                        <label for="startDate" class="form-label">Start Date</label>
+                                        <input type="text" data-provider="flatpickr" data-date-format="d M, Y" class="form-control" id="startDate" />
+                                    </div>
+                                    <!-- End Start Date -->
+
+                                    <!-- Due Date -->
+                                    <div class="col-md-6">
+                                        <label for="dueDate" class="form-label">Due Date</label>
+                                        <input type="text" data-provider="flatpickr" data-date-format="d M, Y" class="form-control" id="dueDate" />
+                                    </div>
+                                    <!-- End Due Date -->
+                                </div>
+                                <!-- End Dates -->
+
+                                <!-- Assigned To -->
+                                <div class="mb-3">
+                                    <label for="assignedTo" class="form-label">Assigned To</label>
+                                    <select class="form-select" id="assignedTo">
+                                        <option selected disabled>Choose member</option>
+                                        <option value="1">Cruise</option>
+                                        <option value="2">Maria</option>
+                                        <option value="3">Chris</option>
+                                        <option value="4">Alex</option>
+                                    </select>
+                                </div>
+                                <!-- End Assigned To -->
+
+                                <!-- Priority and Status -->
+                                <div class="row mb-3">
+                                    <!-- Priority -->
+                                    <div class="col-md-6">
+                                        <label for="priority" class="form-label">Priority</label>
+                                        <select class="form-select" id="priority">
+                                            <option selected disabled>Select priority</option>
+                                            <option value="High">High</option>
+                                            <option value="Medium">Medium</option>
+                                            <option value="Low">Low</option>
+                                        </select>
+                                    </div>
+                                    <!-- End Priority -->
+
+                                    <!-- Status -->
+                                    <div class="col-md-6">
+                                        <label for="task-status" class="form-label">Status</label>
+                                        <select class="form-select" id="task-status">
+                                            <option selected value="New">New</option>
+                                            <option value="In Progress">In Progress</option>
+                                            <option value="On Hold">On Hold</option>
+                                            <option value="Completed">Completed</option>
+                                        </select>
+                                    </div>
+                                    <!-- End Status -->
+                                </div>
+                                <!-- End Priority and Status -->
+
+                                <!-- Attachment -->
+                                <div class="mb-3">
+                                    <label for="fileUpload" class="form-label">Attachment</label>
+                                    <input class="form-control" type="file" id="fileUpload" />
+                                </div>
+                                <!-- End Attachment -->
+
+                                <!-- Buttons -->
+                                <div class="d-flex justify-content-end mt-4">
+                                    <button type="reset" class="btn btn-light me-2">Cancel</button>
+                                    <button type="submit" class="btn btn-primary"><span data-icon="plus" class="me-1"></span> Create Task</button>
+                                </div>
+                                <!-- End Buttons -->
+                            </form>
+                            <!-- End Form -->
+                        </div>
+                        <!-- End Card Body -->
+                    </div>
+                    <!-- End Card -->
+                </div>
+                <!-- End Container -->
+            </div>
+            <!-- container-fluid -->
+
+            @@include('./partials/footer.html')
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End of Main Content -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+</body>
+
+</html>

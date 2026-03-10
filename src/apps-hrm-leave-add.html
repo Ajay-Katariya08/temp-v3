@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "Add Leave"}) @@include('./partials/head-css.html')
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div class="wrapper">
+        @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+        <!-- ============================================================== -->
+        <!-- Start Main Content -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="container-fluid">@@include("./partials/page-title.html", {"subtitle": "HRM", "title":"Add Leave"})
+
+                <div class="container-xxl">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header border-light">
+                                    <h4 class="card-title mb-0">
+                                        <span data-icon="calendar-plus" class="me-1"></span>
+                                        Apply for Leave
+                                    </h4>
+                                </div>
+
+                                <div class="card-body">
+                                    <form id="applyLeaveForm">
+                                        <div class="row g-3">
+                                            <!-- Employee Info -->
+                                            <div class="col-md-4">
+                                                <label for="employeeId" class="form-label">
+                                                    Employee ID <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" id="employeeId" class="form-control" placeholder="e.g., EMP-1035" required />
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label for="employeeName" class="form-label">
+                                                    Full Name <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" id="employeeName" class="form-control" placeholder="Enter full name" required />
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label for="department" class="form-label">
+                                                    Department <span class="text-danger">*</span>
+                                                </label>
+                                                <select id="department" class="form-select" required>
+                                                    <option value="">Select Department</option>
+                                                    <option>HR</option>
+                                                    <option>Finance</option>
+                                                    <option>IT</option>
+                                                    <option>Design</option>
+                                                    <option>Marketing</option>
+                                                    <option>Operations</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Leave Dates -->
+                                            <div class="col-md-4">
+                                                <label for="leaveFrom" class="form-label">
+                                                    From Date <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="date" class="form-control" data-provider="flatpickr" data-date-format="d F, Y" id="leaveFrom" required />
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label for="leaveTo" class="form-label">
+                                                    To Date <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="date" data-provider="flatpickr" data-date-format="d F, Y" id="leaveTo" class="form-control" required />
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label for="leaveType" class="form-label">
+                                                    Leave Type <span class="text-danger">*</span>
+                                                </label>
+                                                <select id="leaveType" class="form-select" required>
+                                                    <option value="">Select Leave Type</option>
+                                                    <option>Sick Leave</option>
+                                                    <option>Casual Leave</option>
+                                                    <option>Paid Leave</option>
+                                                    <option>Unpaid Leave</option>
+                                                    <option>Maternity Leave</option>
+                                                    <option>Half Day Leave</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Reason -->
+                                            <div class="col-md-12">
+                                                <label for="reason" class="form-label">
+                                                    Reason <span class="text-danger">*</span>
+                                                </label>
+                                                <textarea id="reason" class="form-control" rows="3" placeholder="Explain your reason for leave" required></textarea>
+                                            </div>
+
+                                            <!-- Contact Details During Leave -->
+                                            <div class="col-md-6">
+                                                <label for="contactNumber" class="form-label">
+                                                    Contact Number <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" id="contactNumber" class="form-control" placeholder="+1 234 567 890" required />
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="emergencyContact" class="form-label">
+                                                    Emergency Contact Person <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" id="emergencyContact" class="form-control" placeholder="Name of emergency contact" required />
+                                            </div>
+
+                                            <!-- Supporting Document -->
+                                            <div class="col-md-12">
+                                                <label for="supportDoc" class="form-label">Supporting Document (optional)</label>
+                                                <input type="file" id="supportDoc" class="form-control" accept=".pdf,.jpg,.jpeg,.png" />
+                                                <small class="text-muted">Attach medical certificate or proof if required (PDF/JPG/PNG).</small>
+                                            </div>
+
+                                            <!-- Remarks -->
+                                            <div class="col-md-12">
+                                                <label for="remarks" class="form-label">Additional Remarks</label>
+                                                <textarea id="remarks" class="form-control" rows="3" placeholder="Optional comments..."></textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div> <!-- end card-body-->
+
+                                <div class="card-footer border-light d-flex justify-content-end gap-2">
+                                    <button type="reset" class="btn btn-light">
+                                        <span data-icon="refresh" class="me-1"></span>Reset
+                                    </button>
+                                    <button type="submit" form="applyLeaveForm" class="btn btn-primary">
+                                        <span data-icon="send" class="me-1"></span>Submit Application
+                                    </button>
+                                </div> <!-- end card-footer-->
+                            </div> <!-- end card-->
+
+                        </div> <!-- end col-->
+                    </div> <!-- end row-->
+                </div> <!-- end container-->
+
+            </div>
+            <!-- container-fluid -->
+
+            @@include('./partials/footer.html')
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End of Main Content -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+</body>
+
+</html>

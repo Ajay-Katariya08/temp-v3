@@ -1,0 +1,1827 @@
+<!-- Topbar Start -->
+<header class="app-topbar">
+    <div class="container-fluid topbar-menu">
+        <div class="d-flex align-items-center gap-2">
+            <!-- Topbar Brand Logo -->
+            <div class="logo-topbar">
+                <!-- Logo light -->
+                <a href="index.html" class="logo-light">
+                    <span class="logo-lg">
+                        <img src="assets/images/logo.png" alt="logo" />
+                    </span>
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="small logo" />
+                    </span>
+                </a>
+
+                <!-- Logo Dark -->
+                <a href="index.html" class="logo-dark">
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-black.png" alt="dark logo" />
+                    </span>
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="small logo" />
+                    </span>
+                </a>
+            </div>
+
+            <!-- Sidebar Menu Toggle Button -->
+            <button class="sidenav-toggle-button btn btn-primary btn-icon">
+                <span data-icon="menu-icon"></span>
+            </button>
+
+            <!-- Horizontal Menu Toggle Button -->
+            <button class="topnav-toggle-button px-2" data-bs-toggle="collapse" data-bs-target="#topnav-menu">
+                <span data-icon="menu-icon"></span>
+            </button>
+
+            <div id="search-box" class="app-search d-none d-xl-flex">
+                <input type="search" class="form-control topbar-search" name="search" placeholder="Search for something..." />
+                <span data-icon="search" class="app-search-icon text-muted"></span>
+            </div>
+
+            <div id="search-box-rounded" class="app-search d-none d-xl-flex">
+                <input type="search" class="form-control rounded-pill topbar-search" name="search" placeholder="Quick Search..." />
+                <span data-icon="search" class="app-search-icon text-muted"></span>
+            </div>
+
+            <div id="search-box-adornment" class="app-search-pill input-group d-none d-xl-flex">
+                <input type="search" class="form-control topbar-search" name="search" placeholder="Quick Search..." />
+                <button class="btn btn-secondary btn-icon" type="button">
+                    <span data-icon="search"></span>
+                </button>
+            </div>
+
+            <div id="simple-link" class="topbar-item d-none d-xl-flex">
+                <a href="#!" class="topbar-link btn shadow-none btn-link px-2 fw-medium">Some Item</a>
+            </div>
+
+            <div id="simple-link-alt" class="topbar-item d-none d-xl-flex">
+                <a href="#!" class="topbar-link btn shadow-none btn-link px-2 fw-medium">Projects</a>
+            </div>
+
+            <div id="simple-dropdown" class="topbar-item d-none d-xl-flex">
+                <div class="dropdown">
+                    <a href="#!" class="topbar-link btn shadow-none btn-link dropdown-toggle drop-arrow-none px-2 fw-medium" data-bs-toggle="dropdown">
+                        Dropdown
+                        <span data-icon="chevron-down" class="ms-1"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <!-- My Profile -->
+                        <a href="javascript:void(0);" class="dropdown-item">Profile</a>
+
+                        <!-- Settings -->
+                        <a href="javascript:void(0);" class="dropdown-item">Account Settings</a>
+
+                        <!-- Support -->
+                        <a href="javascript:void(0);" class="dropdown-item">Support Center</a>
+                    </div>
+                    <!-- end dropdown-menu-->
+                </div>
+                <!-- end dropdown-->
+            </div>
+
+            <div id="loot-box" class="topbar-item d-none d-xl-flex">
+                <div class="dropdown">
+                    <a href="#!" class="topbar-link btn shadow-none btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown">
+                        Loot Box
+                        <span data-icon="chevron-down" class="ms-1"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <!-- My Profile -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <span data-icon="user-circle" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Secret Identity</span>
+                        </a>
+
+                        <!-- Settings -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <span data-icon="settings-2" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Control Panel</span>
+                        </a>
+
+                        <!-- Support -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <span data-icon="headset" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Help Squad</span>
+                        </a>
+                    </div>
+                    <!-- end dropdown-menu-->
+                </div>
+                <!-- end dropdown-->
+            </div>
+
+            <div id="megamenu-header" class="topbar-item d-none d-md-flex">
+                <div class="dropdown">
+                    <button class="topbar-link btn fw-medium btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                        Mega Menu
+                        <span data-icon="chevron-down" class="ms-1"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-xxl p-0">
+                        <div class="h-100" style="max-height: 380px" data-simplebar>
+                            <div class="row g-0">
+                                <div class="col-12">
+                                    <div class="px-3 py-2 text-center bg-light bg-opacity-50">
+                                        <h4 class="mb-0 fs-lg fw-semibold">
+                                            Welcome to
+                                            <span class="text-primary">__name__</span>
+                                            Admin Theme.
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h5 class="mb-2 fw-semibold fs-sm dropdown-header">Dashboard & Analytics</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Sales Dashboard</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Marketing Dashboard</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Finance Overview</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">User Analytics</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Traffic Insights</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h5 class="mb-2 fw-semibold fs-sm dropdown-header">Project Management</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Task Overview</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Kanban Board</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Gantt Chart</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Team Collaboration</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Project Milestones</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h5 class="mb-2 fw-semibold fs-sm dropdown-header">User Management</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">User Profiles</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Access Control</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Role Permissions</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Activity Logs</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">Security Settings</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- end dropdown-->
+                                </div>
+                                <!-- end col-->
+                            </div>
+                            <!-- end row-->
+                        </div>
+                        <!-- end .h-100-->
+                    </div>
+                    <!-- .dropdown-menu-->
+                </div>
+                <!-- .dropdown-->
+            </div>
+
+            <div id="megamenu-pages" class="topbar-item d-none d-md-flex">
+                <div class="dropdown">
+                    <button class="topbar-link btn fw-medium btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                        Pages
+                        <span data-icon="chevron-down" class="ms-1"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-xxl p-0">
+                        <div class="h-100" style="max-height: 380px" data-simplebar>
+                            <div class="row g-0">
+                                <!-- Dashboard & Analytics -->
+                                <div class="col-md-4">
+                                    <div class="p-2">
+                                        <h5 class="mb-1 fw-semibold fs-sm dropdown-header">Dashboard & Analytics</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="chart-line" class="align-middle me-2 fs-16"></span>
+                                                    Sales Dashboard
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="bulb" class="align-middle me-2 fs-16"></span>
+                                                    Marketing Dashboard
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="dollar" class="align-middle me-2 fs-16"></span>
+                                                    Finance Overview
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="users" class="align-middle me-2 fs-16"></span>
+                                                    User Analytics
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="activity" class="align-middle me-2 fs-16"></span>
+                                                    Traffic Insights
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Project Management -->
+                                <div class="col-md-4">
+                                    <div class="p-2">
+                                        <h5 class="mb-1 fw-semibold fs-sm dropdown-header">Project Management</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="kanban" class="align-middle me-2 fs-16"></span>
+                                                    Kanban Workflow
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="calendar-clock" class="align-middle me-2 fs-16"></span>
+                                                    Project Timeline
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="list" class="align-middle me-2 fs-16"></span>
+                                                    Task Management
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="team" class="align-middle me-2 fs-16"></span>
+                                                    Team Members
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="clipboard" class="align-middle me-2 fs-16"></span>
+                                                    Assignments
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- User Management -->
+                                <div class="col-md-4">
+                                    <div class="p-2">
+                                        <h5 class="mb-1 fw-semibold fs-sm dropdown-header">User Management</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="user-circle" class="align-middle me-2 fs-16"></span>
+                                                    User Profiles
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="lock" class="align-middle me-2 fs-16"></span>
+                                                    Access Control
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="settings" class="align-middle me-2 fs-16"></span>
+                                                    Security Settings
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="users" class="align-middle me-2 fs-16"></span>
+                                                    User Groups
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="key" class="align-middle me-2 fs-16"></span>
+                                                    Authentication
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end .h-100-->
+                    </div>
+                    <!-- .dropdown-menu-->
+                </div>
+                <!-- .dropdown-->
+            </div>
+
+            <div id="megamenu-columns" class="topbar-item d-none d-md-flex">
+                <div class="dropdown">
+                    <button class="topbar-link btn fw-medium btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                        Mega Menu
+                        <span data-icon="chevron-down" class="ms-1"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-xxl p-0">
+                        <div class="h-100" style="max-height: 380px" data-simplebar>
+                            <div class="row g-0">
+                                <!-- Dashboard & Analytics -->
+                                <div class="col-md-4">
+                                    <div class="p-2">
+                                        <h5 class="mb-1 fw-semibold fs-sm dropdown-header">Dashboard & Analytics</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="chevron-right" class="align-middle me-1 text-muted"></span>
+                                                    Sales Dashboard
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="chevron-right" class="align-middle me-1 text-muted"></span>
+                                                    Marketing Dashboard
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="chevron-right" class="align-middle me-1 text-muted"></span>
+                                                    Finance Overview
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="chevron-right" class="align-middle me-1 text-muted"></span>
+                                                    User Analytics
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="chevron-right" class="align-middle me-1 text-muted"></span>
+                                                    Traffic Insights
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Project Management -->
+                                <div class="col-md-4">
+                                    <div class="p-2">
+                                        <h5 class="mb-1 fw-semibold fs-sm dropdown-header">Project Management</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="minus" class="align-middle me-1 text-muted"></span>
+                                                    Kanban Workflow
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="minus" class="align-middle me-1 text-muted"></span>
+                                                    Project Timeline
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="minus" class="align-middle me-1 text-muted"></span>
+                                                    Task Management
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="minus" class="align-middle me-1 text-muted"></span>
+                                                    Team Members
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="minus" class="align-middle me-1 text-muted"></span>
+                                                    Assignments
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- User Management -->
+                                <div class="col-md-4">
+                                    <div class="p-2 bg-light bg-opacity-50">
+                                        <h5 class="mb-1 fw-semibold fs-sm dropdown-header">User Management</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="chevron-right" class="align-middle me-1 text-muted"></span>
+                                                    User Profiles
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="chevron-right" class="align-middle me-1 text-muted"></span>
+                                                    Access Control
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="chevron-right" class="align-middle me-1 text-muted"></span>
+                                                    Security Settings
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="chevron-right" class="align-middle me-1 text-muted"></span>
+                                                    User Groups
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="dropdown-item">
+                                                    <span data-icon="chevron-right" class="align-middle me-1 text-muted"></span>
+                                                    Authentication
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end .h-100-->
+                    </div>
+                    <!-- .dropdown-menu-->
+                </div>
+                <!-- .dropdown-->
+            </div>
+
+            <div id="megamenu-apps" class="topbar-item d-none d-md-flex">
+                <div class="dropdown">
+                    <button class="topbar-link btn fw-medium btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                        Apps
+                        <span data-icon="chevron-down" class="ms-1"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-xxl p-0">
+                        <div class="h-100" style="max-height: 380px" data-simplebar>
+                            <div class="row g-0">
+                                <div class="col-sm-8">
+                                    <div class="row g-0">
+                                        <div class="col-sm-6">
+                                            <div class="p-2">
+                                                <a href="#!" class="dropdown-item">
+                                                    <span class="d-flex align-items-center">
+                                                        <span class="avatar-md me-2">
+                                                            <span class="avatar-title text-primary border border-light bg-light bg-opacity-50 rounded">
+                                                                <span data-icon="basket" class="fs-22"></span>
+                                                            </span>
+                                                        </span>
+                                                        <span>
+                                                            <h5 class="fs-base mb-0 lh-base">eCommerce</h5>
+                                                            <span class="text-muted fs-12">Products, orders & etc.</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+
+                                                <a href="#!" class="dropdown-item my-2">
+                                                    <span class="d-flex align-items-center">
+                                                        <span class="avatar-md me-2">
+                                                            <span class="avatar-title text-success border border-light bg-light bg-opacity-50 rounded">
+                                                                <span data-icon="chat" class="fs-22"></span>
+                                                            </span>
+                                                        </span>
+                                                        <span>
+                                                            <h5 class="fs-base mb-0 lh-base">Chat</h5>
+                                                            <span class="text-muted fs-12">Team conversations</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+
+                                                <a href="#!" class="dropdown-item my-2">
+                                                    <span class="d-flex align-items-center">
+                                                        <span class="avatar-md me-2">
+                                                            <span class="avatar-title text-danger border border-light bg-light bg-opacity-50 rounded">
+                                                                <span data-icon="list" class="fs-22"></span>
+                                                            </span>
+                                                        </span>
+                                                        <span>
+                                                            <h5 class="fs-base mb-0 lh-base">Task</h5>
+                                                            <span class="text-muted fs-12">Plan and track work</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+
+                                                <a href="#!" class="dropdown-item mt-2">
+                                                    <span class="d-flex align-items-center">
+                                                        <span class="avatar-md me-2">
+                                                            <span class="avatar-title text-info border border-light bg-light bg-opacity-50 rounded">
+                                                                <span data-icon="mailbox" class="fs-22"></span>
+                                                            </span>
+                                                        </span>
+                                                        <span>
+                                                            <h5 class="fs-base mb-0 lh-base">Email</h5>
+                                                            <span class="text-muted fs-12">Messages and inbox</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <div class="p-2">
+                                                <a href="#!" class="dropdown-item">
+                                                    <span class="d-flex align-items-center">
+                                                        <span class="avatar-md me-2">
+                                                            <span class="avatar-title text-secondary border border-light bg-light bg-opacity-50 rounded">
+                                                                <span data-icon="building" class="fs-22"></span>
+                                                            </span>
+                                                        </span>
+                                                        <span>
+                                                            <h5 class="fs-base mb-0 lh-base">Companies</h5>
+                                                            <span class="text-muted fs-12">Business profiles</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+
+                                                <a href="#!" class="dropdown-item my-2">
+                                                    <span class="d-flex align-items-center">
+                                                        <span class="avatar-md me-2">
+                                                            <span class="avatar-title text-dark border border-light bg-light bg-opacity-50 rounded">
+                                                                <span data-icon="usercard" class="fs-22"></span>
+                                                            </span>
+                                                        </span>
+                                                        <span>
+                                                            <h5 class="fs-base mb-0 lh-base">Contacts Diary</h5>
+                                                            <span class="text-muted fs-12">People and connections</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+
+                                                <a href="#!" class="dropdown-item my-2">
+                                                    <span class="d-flex align-items-center">
+                                                        <span class="avatar-md me-2">
+                                                            <span class="avatar-title text-warning border border-light bg-light bg-opacity-50 rounded">
+                                                                <span data-icon="calendar" class="fs-22"></span>
+                                                            </span>
+                                                        </span>
+                                                        <span>
+                                                            <h5 class="fs-base mb-0 lh-base">Calendar</h5>
+                                                            <span class="text-muted fs-12">Events and reminders</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+
+                                                <a href="#!" class="dropdown-item mt-2">
+                                                    <span class="d-flex align-items-center">
+                                                        <span class="avatar-md me-2">
+                                                            <span class="avatar-title text-success border border-light bg-light bg-opacity-50 rounded">
+                                                                <span data-icon="lifebuoy" class="fs-22"></span>
+                                                            </span>
+                                                        </span>
+                                                        <span>
+                                                            <h5 class="fs-base mb-0 lh-base">Support</h5>
+                                                            <span class="text-muted fs-12">Help and assistance</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end row-->
+
+                                    <div class="row g-0 border-top border-light border-dashed text-center">
+                                        <div class="col">
+                                            <div class="p-3">
+                                                <p class="fw-medium text-muted mb-2 fs-11 text-uppercase lh-1">-: &nbsp; Support &nbsp;:-</p>
+                                                <h5 class="fs-15 mb-0">help@mydomain.com</h5>
+                                            </div>
+                                        </div>
+                                        <!-- end col-->
+                                        <div class="col">
+                                            <div class="p-3">
+                                                <p class="fw-medium text-muted mb-2 fs-11 text-uppercase lh-1">-: &nbsp; Help: &nbsp;:-</p>
+                                                <h5 class="fs-15 mb-0">+(12) 3456 7890</h5>
+                                            </div>
+                                        </div>
+                                        <!-- end col-->
+                                    </div>
+                                    <!-- end row-->
+                                </div>
+                                <!-- end col-->
+
+                                <div class="col-sm-4">
+                                    <div class="h-100 position-relative rounded-end rounded-0 overflow-hidden"
+                                        style="background: url(assets/images/stock/small-8.jpg); background-size: cover">
+                                        <div class="p-3 card-img-overlay bg-gradient bg-secondary bg-opacity-90 d-flex align-items-center justify-content-center">
+                                            <div class="text-center text-white">
+                                                <span data-icon="atom" class="fs-36"></span>
+
+                                                <p class="text-white text-opacity-75 mb-3 text-uppercase">
+                                                    Limited Offer
+                                                </p>
+
+                                                <h3 class="fw-semibold text-white mb-2 fs-20">
+                                                    Unlock Exclusive Savings
+                                                </h3>
+
+                                                <h4 class="fw-medium fs-16 mb-1">
+                                                    <del class="text-white text-opacity-75">$49.00</del>
+                                                    /
+                                                    <span class="fw-bold text-white">$25 USD</span>
+                                                </h4>
+
+                                                <button type="button" class="btn btn-danger btn-sm mt-3">
+                                                    <span data-icon="shopping-cart" class="me-1"></span>
+                                                    Grab Deal
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end .bg-light-->
+                                </div>
+                                <!-- end col-->
+                            </div>
+                            <!-- end row-->
+                        </div>
+                        <!-- end .h-100-->
+                    </div>
+                    <!-- .dropdown-menu-->
+                </div>
+                <!-- .dropdown-->
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+
+            <div id="search-box-right" class="app-search d-none d-xl-flex">
+                <input type="search" class="form-control topbar-search" name="search" placeholder="Search for something..." />
+                <span data-icon="search" class="app-search-icon text-muted"></span>
+            </div>
+
+            <div id="search-box-rounded-right" class="app-search d-none d-xl-flex">
+                <input type="search" class="form-control rounded-pill topbar-search" name="search" placeholder="Quick Search..." />
+                <span data-icon="search" class="app-search-icon text-muted"></span>
+            </div>
+
+            <div id="search-box-adornment-right" class="app-search-pill input-group d-none d-xl-flex">
+                <input type="search" class="form-control topbar-search" name="search" placeholder="Quick Search..." />
+                <button class="btn btn-secondary btn-icon" type="button">
+                    <span data-icon="search"></span>
+                </button>
+            </div>
+
+            <div id="theme-toggler" class="topbar-item d-none d-sm-flex">
+                <button class="topbar-link" id="light-dark-mode" type="button">
+                    <span data-icon="moon" class="topbar-link-icon mode-light-moon"></span>
+                    <span data-icon="sun" class="topbar-link-icon mode-light-sun"></span>
+                </button>
+            </div>
+
+            <div id="theme-dropdown" class="topbar-item d-none d-sm-flex">
+                <div class="dropdown">
+                    <button class="topbar-link" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                        <span data-icon="sun" id="theme-icon-light" class="topbar-link-icon d-none"></span>
+                        <span data-icon="moon" id="theme-icon-dark" class="topbar-link-icon d-none"></span>
+                        <span data-icon="sun-moon" id="theme-icon-system" class="topbar-link-icon d-none"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" data-thememode="dropdown">
+                        <label class="dropdown-item cursor-pointer">
+                            <input class="form-check-input" type="radio" name="data-bs-theme" value="light" style="display: none" />
+                            <span data-icon="sun" class="align-middle me-1 fs-16"></span>
+                            <span class="align-middle">Light</span>
+                        </label>
+                        <label class="dropdown-item cursor-pointer">
+                            <input class="form-check-input" type="radio" name="data-bs-theme" value="dark" style="display: none" />
+                            <span data-icon="moon" class="align-middle me-1 fs-16"></span>
+                            <span class="align-middle">Dark</span>
+                        </label>
+                        <label class="dropdown-item cursor-pointer">
+                            <input class="form-check-input" type="radio" name="data-bs-theme" value="system" style="display: none" />
+                            <span data-icon="sun-moon" class="align-middle me-1 fs-16"></span>
+                            <span class="align-middle">System</span>
+                        </label>
+                    </div>
+                    <!-- end dropdown-menu-->
+                </div>
+                <!-- end dropdown-->
+            </div>
+
+            <div id="icon-library-dropdown" class="topbar-item">
+                <div class="dropdown">
+                    <button class="topbar-link fw-bold" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                        <i data-lucide="radar" class="fs-xxl me-1"></i>
+                        <span id="selected-icon-library">TABLER</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a href="javascript:void(0);" class="dropdown-item" data-icon-library="tabler">
+                            <span class="align-middle">Tabler</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-icon-library="lucide">
+                            <span class="align-middle">Lucide</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-icon-library="remix">
+                            <span class="align-middle">Remix</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-icon-library="boxicons">
+                            <span class="align-middle">Boxicons</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-icon-library="solar-broken">
+                            <span class="align-middle">Solar Broken</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-icon-library="solar-duotone">
+                            <span class="align-middle">Solar Duotone</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="apps-dropdown-grid" class="topbar-item d-none d-xl-flex">
+                <div class="dropdown">
+                    <button class="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
+                        <span data-icon="apps" class="topbar-link-icon"></span>
+                    </button>
+
+                    <div class="dropdown-menu dropdown-menu-lg p-2 dropdown-menu-end">
+                        <div class="row align-items-center g-1">
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title text-bg-light rounded-circle">
+                                            <img src="assets/images/logos/google.svg" alt="Google Logo" height="18" />
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Google</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title text-bg-light rounded-circle">
+                                            <img src="assets/images/logos/figma.svg" alt="Figma Logo" height="18" />
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Figma</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title text-bg-light rounded-circle">
+                                            <img src="assets/images/logos/slack.svg" alt="Slack Logo" height="18" />
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Slack</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title text-bg-light rounded-circle">
+                                            <img src="assets/images/logos/dropbox.svg" alt="Dropbox Logo" height="18" />
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Dropbox</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4 text-center">
+                                <a href="javascript:void(0);" class="btn btn-sm rounded-circle btn-icon btn-danger">
+                                    <span data-icon="circle-plus" class="fs-18"></span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                            <span data-icon="calendar" class="fs-18"></span>
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Calendar</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                            <span data-icon="message-rounded" class="fs-18"></span>
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Chat</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                            <span data-icon="folder" class="fs-18"></span>
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Files</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item border border-dashed rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                            <span data-icon="users" class="fs-18"></span>
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Team</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End dropdown-menu -->
+                </div>
+                <!-- end dropdown-->
+            </div>
+
+            <div id="apps-dropdown-rounded" class="topbar-item">
+                <div class="dropdown">
+                    <button class="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
+                        <span data-icon="apps" class="topbar-link-icon"></span>
+                    </button>
+
+                    <div class="dropdown-menu dropdown-menu-lg p-2 dropdown-menu-end">
+                        <div class="row align-items-center g-1">
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title text-bg-light rounded-circle">
+                                            <img src="assets/images/logos/google.svg" alt="Google Logo" height="18" />
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Google</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title text-bg-light rounded-circle">
+                                            <img src="assets/images/logos/figma.svg" alt="Figma Logo" height="18" />
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Figma</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title text-bg-light rounded-circle">
+                                            <img src="assets/images/logos/slack.svg" alt="Slack Logo" height="18" />
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Slack</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title text-bg-light rounded-circle">
+                                            <img src="assets/images/logos/dropbox.svg" alt="Dropbox Logo" height="18" />
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Dropbox</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                            <span data-icon="calendar" class="fs-18"></span>
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Calendar</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item rounded text-center py-2">
+                                    <span class="avatar-sm d-block mx-auto mb-1">
+                                        <span class="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                            <span data-icon="folder" class="fs-18"></span>
+                                        </span>
+                                    </span>
+                                    <span class="align-middle fw-medium">Files</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End dropdown-menu -->
+                </div>
+                <!-- end dropdown-->
+            </div>
+
+            <div id="simple-apps-dropdown" class="topbar-item">
+                <div class="dropdown">
+                    <button class="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
+                        <span data-icon="apps" class="topbar-link-icon"></span>
+                    </button>
+
+                    <div class="dropdown-menu dropdown-menu-lg p-2 dropdown-menu-end">
+                        <div class="row align-items-center g-2">
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item rounded text-center py-2">
+                                    <img src="assets/images/logos/google.svg" alt="Google Logo" height="24" />
+                                    <span class="align-middle fw-medium d-block mt-1">Google</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item rounded text-center py-2">
+                                    <img src="assets/images/logos/figma.svg" alt="Figma Logo" height="24" />
+                                    <span class="align-middle fw-medium d-block mt-1">Figma</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item rounded text-center py-2">
+                                    <img src="assets/images/logos/slack.svg" alt="Slack Logo" height="24" />
+                                    <span class="align-middle fw-medium d-block mt-1">Slack</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item rounded text-center py-2">
+                                    <span data-icon="calendar" class="fs-20"></span>
+                                    <span class="align-middle fw-medium d-block mt-1">Calendar</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item rounded text-center py-2">
+                                    <img src="assets/images/logos/dropbox.svg" alt="Dropbox Logo" height="24" />
+                                    <span class="align-middle fw-medium d-block mt-1">Dropbox</span>
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <a href="javascript:void(0);" class="dropdown-item rounded text-center py-2">
+                                    <span data-icon="folder" class="fs-20"></span>
+                                    <span class="align-middle fw-medium d-block mt-1">Files</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End dropdown-menu -->
+                </div>
+                <!-- end dropdown-->
+            </div>
+
+            <div id="simple-messages-dropdown" class="topbar-item">
+                <div class="dropdown">
+                    <button class="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
+                        <span data-icon="email" class="topbar-link-icon"></span>
+                        <span class="badge text-bg-success badge-circle topbar-badge">7</span>
+                    </button>
+
+                    <div class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
+                        <div class="px-3 py-2 border-bottom">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h6 class="m-0 fs-md fw-semibold">Messages</h6>
+                                </div>
+                                <div class="col text-end">
+                                    <a href="#!" class="badge badge-soft-success badge-label py-1">09 Notifications</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="max-height: 300px" data-simplebar>
+                            <!-- item 1 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap active" id="message-1">
+                                <span class="d-flex gap-3">
+                                    <span class="flex-shrink-0">
+                                        <img src="assets/images/users/user-1.jpg" class="avatar-md rounded-circle" alt="User Avatar" />
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Liam Carter</span>
+                                        uploaded a new document to
+                                        <span class="fw-medium text-body">Project Phoenix</span>
+                                        <br />
+                                        <span class="fs-xs">5 minutes ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#message-1">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 2 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-2">
+                                <span class="d-flex gap-3">
+                                    <span class="flex-shrink-0">
+                                        <img src="assets/images/users/user-2.jpg" class="avatar-md rounded-circle" alt="User Avatar" />
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Ava Mitchell</span>
+                                        commented on
+                                        <span class="fw-medium text-body">Marketing Campaign Q3</span>
+                                        <br />
+                                        <span class="fs-xs">12 minutes ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#message-2">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 3 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-3">
+                                <span class="d-flex gap-3">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title text-bg-info rounded-circle fs-22">
+                                            <span data-icon="shield-user" class="fs-22"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Noah Blake</span>
+                                        updated the status of
+                                        <span class="fw-medium text-body">Client Onboarding</span>
+                                        <br />
+                                        <span class="fs-xs">30 minutes ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#message-3">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 4 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-4">
+                                <span class="d-flex gap-3">
+                                    <span class="flex-shrink-0">
+                                        <img src="assets/images/users/user-4.jpg" class="avatar-md rounded-circle" alt="User Avatar" />
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Sophia Taylor</span>
+                                        sent an invoice for
+                                        <span class="fw-medium text-body">Service Renewal</span>
+                                        <br />
+                                        <span class="fs-xs">1 hour ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#message-4">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 5 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-5">
+                                <span class="d-flex gap-3">
+                                    <span class="flex-shrink-0">
+                                        <img src="assets/images/users/user-5.jpg" class="avatar-md rounded-circle" alt="User Avatar" />
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Ethan Moore</span>
+                                        completed the task
+                                        <span class="fw-medium text-body">UI Review</span>
+                                        <br />
+                                        <span class="fs-xs">2 hours ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#message-5">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 6 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-6">
+                                <span class="d-flex gap-3">
+                                    <span class="flex-shrink-0">
+                                        <img src="assets/images/users/user-6.jpg" class="avatar-md rounded-circle" alt="User Avatar" />
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Olivia White</span>
+                                        assigned you a task in
+                                        <span class="fw-medium text-body">Sales Pipeline</span>
+                                        <br />
+                                        <span class="fs-xs">Yesterday</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#message-6">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-center text-reset text-decoration-underline link-offset-2 fw-bold notify-item border-top border-light py-2">Read All Messages</a>
+                    </div>
+                    <!-- End dropdown-menu -->
+                </div>
+                <!-- end dropdown-->
+            </div>
+
+            <div id="notification-dropdown-people" class="topbar-item">
+                <div class="dropdown">
+                    <button class="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
+                        <span data-icon="bell" class="topbar-link-icon animate-ring"></span>
+                        <span class="badge text-bg-danger badge-circle topbar-badge">5</span>
+                    </button>
+
+                    <div class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
+                        <div class="px-3 py-2 border-bottom">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h6 class="m-0 fs-md fw-semibold">Notifications</h6>
+                                </div>
+                                <div class="col text-end">
+                                    <a href="#!" class="badge badge-soft-success badge-label py-1">07 Notifications</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="max-height: 300px" data-simplebar>
+                            <!-- Notification 1 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-1">
+                                <span class="d-flex align-items-center gap-3">
+                                    <span class="flex-shrink-0 position-relative">
+                                        <img src="assets/images/users/user-4.jpg" class="avatar-md rounded-circle" alt="User Avatar" />
+                                        <span class="position-absolute rounded-pill bg-success notification-badge">
+                                            <span data-icon="bell" class="align-middle"></span>
+                                            <span class="visually-hidden">unread notification</span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Emily Johnson</span>
+                                        commented on a task in
+                                        <span class="fw-medium text-body">Design Sprint</span>
+                                        <br />
+                                        <span class="fs-xs">12 minutes ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-1">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- Notification 2 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-2">
+                                <span class="d-flex align-items-center gap-3">
+                                    <span class="flex-shrink-0 position-relative">
+                                        <img src="assets/images/users/user-5.jpg" class="avatar-md rounded-circle" alt="User Avatar" />
+                                        <span class="position-absolute rounded-pill bg-info notification-badge">
+                                            <span data-icon="cloud-upload" class="align-middle"></span>
+                                            <span class="visually-hidden">upload notification</span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Michael Lee</span>
+                                        uploaded files to
+                                        <span class="fw-medium text-body">Marketing Assets</span>
+                                        <br />
+                                        <span class="fs-xs">25 minutes ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-2">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- Notification 3 - Server CPU Alert -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-6">
+                                <span class="d-flex align-items-center gap-3">
+                                    <span class="flex-shrink-0 position-relative">
+                                        <span class="avatar-md rounded-circle bg-light d-flex align-items-center justify-content-center">
+                                            <span data-icon="database" class="fs-4"></span>
+                                        </span>
+                                        <span class="position-absolute rounded-pill bg-danger notification-badge">
+                                            <span data-icon="alert-circle" class="align-middle"></span>
+                                            <span class="visually-hidden">server alert</span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Server #3</span>
+                                        CPU usage exceeded 90%
+                                        <br />
+                                        <span class="fs-xs">Just now</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-6">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- Notification 4 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-3">
+                                <span class="d-flex align-items-center gap-3">
+                                    <span class="flex-shrink-0 position-relative">
+                                        <img src="assets/images/users/user-6.jpg" class="avatar-md rounded-circle" alt="User Avatar" />
+                                        <span class="position-absolute rounded-pill bg-warning notification-badge">
+                                            <span data-icon="alert-triangle" class="align-middle"></span>
+                                            <span class="visually-hidden">alert</span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Sophia Ray</span>
+                                        flagged an issue in
+                                        <span class="fw-medium text-body">Bug Tracker</span>
+                                        <br />
+                                        <span class="fs-xs">40 minutes ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-3">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- Notification 5 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-4">
+                                <span class="d-flex align-items-center gap-3">
+                                    <span class="flex-shrink-0 position-relative">
+                                        <img src="assets/images/users/user-7.jpg" class="avatar-md rounded-circle" alt="User Avatar" />
+                                        <span class="position-absolute rounded-pill bg-primary notification-badge">
+                                            <span data-icon="calendar-event" class="align-middle"></span>
+                                            <span class="visually-hidden">event notification</span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">David Kim</span>
+                                        scheduled a meeting for
+                                        <span class="fw-medium text-body">UX Review</span>
+                                        <br />
+                                        <span class="fs-xs">1 hour ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-4">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- Notification 6 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-5">
+                                <span class="d-flex align-items-center gap-3">
+                                    <span class="flex-shrink-0 position-relative">
+                                        <img src="assets/images/users/user-8.jpg" class="avatar-md rounded-circle" alt="User Avatar" />
+                                        <span class="position-absolute rounded-pill bg-secondary notification-badge">
+                                            <span data-icon="edit" class="align-middle"></span>
+                                            <span class="visually-hidden">edit</span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Isabella White</span>
+                                        updated the document in
+                                        <span class="fw-medium text-body">Product Specs</span>
+                                        <br />
+                                        <span class="fs-xs">2 hours ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-5">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- Notification 7 - Deployment Success -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-7">
+                                <span class="d-flex align-items-center gap-3">
+                                    <span class="flex-shrink-0 position-relative">
+                                        <span class="avatar-md rounded-circle bg-light d-flex align-items-center justify-content-center">
+                                            <span data-icon="rocket" class="fs-4"></span>
+                                        </span>
+                                        <span class="position-absolute rounded-pill bg-success notification-badge">
+                                            <span data-icon="check" class="align-middle"></span>
+                                            <span class="visually-hidden">deployment</span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Production Server</span>
+                                        deployment completed successfully
+                                        <br />
+                                        <span class="fs-xs">30 minutes ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-7">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-center text-reset text-decoration-underline link-offset-2 fw-bold notify-item border-top border-light py-2">Read All Messages</a>
+                    </div>
+                    <!-- End dropdown-menu -->
+                </div>
+                <!-- end dropdown-->
+            </div>
+
+            <div id="notification-dropdown-alert" class="topbar-item">
+                <div class="dropdown">
+                    <button class="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
+                        <span data-icon="bell" class="topbar-link-icon"></span>
+                        <span class="badge badge-square text-bg-warning topbar-badge">12</span>
+                    </button>
+
+                    <div class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
+                        <div class="px-3 py-2 border-bottom">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h6 class="m-0 fs-md fw-semibold">Notifications</h6>
+                                </div>
+                                <div class="col text-end">
+                                    <a href="#!" class="badge text-bg-light badge-label py-1">12 Alerts</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="max-height: 300px" data-simplebar>
+                            <!-- item 1 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-1">
+                                <span class="d-flex gap-2">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-danger-subtle text-danger rounded">
+                                            <span data-icon="server-crash" class="notification-item-icon fill-danger"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Critical alert: Server crash detected</span>
+                                        <br />
+                                        <span class="fs-xs">30 minutes ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#notification-1">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 2 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-2">
+                                <span class="d-flex gap-2">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-warning-subtle text-warning rounded">
+                                            <span data-icon="alert-triangle" class="notification-item-icon fill-warning"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">High memory usage on Node A</span>
+                                        <br />
+                                        <span class="fs-xs">10 minutes ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#notification-2">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 3 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-3">
+                                <span class="d-flex gap-2">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-success-subtle text-success rounded">
+                                            <span data-icon="check-circle" class="notification-item-icon fill-success"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Backup completed successfully</span>
+                                        <br />
+                                        <span class="fs-xs">1 hour ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#notification-3">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 4 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-4">
+                                <span class="d-flex gap-2">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-primary-subtle text-primary rounded">
+                                            <span data-icon="user-plus" class="notification-item-icon fill-primary"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">New user registration: Sarah Miles</span>
+                                        <br />
+                                        <span class="fs-xs">Just now</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#notification-4">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 5 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-5">
+                                <span class="d-flex gap-2">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-danger-subtle text-danger rounded">
+                                            <span data-icon="bug" class="notification-item-icon fill-danger"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Bug reported in payment module</span>
+                                        <br />
+                                        <span class="fs-xs">20 minutes ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#notification-5">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 6 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-6">
+                                <span class="d-flex gap-2">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-info-subtle text-info rounded">
+                                            <span data-icon="message-rounded" class="notification-item-icon fill-info"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">New comment on Task #142</span>
+                                        <br />
+                                        <span class="fs-xs">15 minutes ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#notification-6">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 7 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-7">
+                                <span class="d-flex gap-2">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-warning-subtle text-warning rounded">
+                                            <span data-icon="battery-warning" class="notification-item-icon fill-warning"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Low battery on Device X</span>
+                                        <br />
+                                        <span class="fs-xs">45 minutes ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#notification-7">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 8 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-8">
+                                <span class="d-flex gap-2">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-success-subtle text-success rounded">
+                                            <span data-icon="cloud-upload" class="notification-item-icon fill-success"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">File upload completed</span>
+                                        <br />
+                                        <span class="fs-xs">1 hour ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#notification-8">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 9 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-9">
+                                <span class="d-flex gap-2">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-primary-subtle text-primary rounded">
+                                            <span data-icon="calendar" class="notification-item-icon fill-primary"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Team meeting scheduled at 3 PM</span>
+                                        <br />
+                                        <span class="fs-xs">2 hours ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#notification-9">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 10 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-10">
+                                <span class="d-flex gap-2">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-secondary-subtle text-secondary rounded">
+                                            <span data-icon="download" class="notification-item-icon fill-secondary"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Report ready for download</span>
+                                        <br />
+                                        <span class="fs-xs">3 hours ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#notification-10">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 11 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-11">
+                                <span class="d-flex gap-2">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-danger-subtle text-danger rounded">
+                                            <span data-icon="lock" class="notification-item-icon fill-danger"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Multiple failed login attempts</span>
+                                        <br />
+                                        <span class="fs-xs">5 hours ago</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#notification-11">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+
+                            <!-- item 12 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-12">
+                                <span class="d-flex gap-2">
+                                    <span class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-info-subtle text-info rounded">
+                                            <span data-icon="bell-ring" class="notification-item-icon fill-info"></span>
+                                        </span>
+                                    </span>
+                                    <span class="flex-grow-1 text-muted">
+                                        <span class="fw-medium text-body">Reminder: Submit your timesheet</span>
+                                        <br />
+                                        <span class="fs-xs">Today, 9:00 AM</span>
+                                    </span>
+                                    <button type="button" class="flex-shrink-0 text-muted btn btn-link p-0" data-dismissible="#notification-12">
+                                        <span data-icon="square-rounded-x" class="fs-xxl"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- end dropdown-->
+
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-center text-reset text-decoration-underline link-offset-2 fw-bold notify-item border-top border-light py-2">View All Alerts</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fullscreen-toggler" class="topbar-item d-none d-md-flex">
+                <button class="topbar-link" type="button" data-toggle="fullscreen">
+                    <span data-icon="maximize" class="topbar-link-icon"></span>
+                    <span data-icon="minimize" class="topbar-link-icon d-none"></span>
+                </button>
+            </div>
+
+            <div id="monochrome-toggler" class="topbar-item d-none d-xl-flex">
+                <button id="monochrome-mode" class="topbar-link" type="button" data-toggle="monochrome">
+                    <span data-icon="monocrome" class="topbar-link-icon"></span>
+                </button>
+            </div>
+
+            <div class="topbar-item d-none d-sm-flex">
+                <button class="topbar-link btn-theme-setting" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" type="button">
+                    <span data-icon="settings" class="topbar-link-icon"></span>
+                </button>
+            </div>
+
+            <div id="language-selector" class="topbar-item">
+                <div class="dropdown">
+                    <button class="topbar-link fw-bold" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="assets/images/flags/us.svg" alt="user-image" class="rounded me-2" height="18" id="selected-language-image" />
+                        <span id="selected-language-code">EN</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="en" title="English">
+                            <img src="assets/images/flags/us.svg" alt="English" class="me-1 rounded" height="18" data-translator-image />
+                            <span class="align-middle">English</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="de" title="German">
+                            <img src="assets/images/flags/de.svg" alt="German" class="me-1 rounded" height="18" data-translator-image />
+                            <span class="align-middle">Deutsch</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="it" title="Italian">
+                            <img src="assets/images/flags/it.svg" alt="Italian" class="me-1 rounded" height="18" data-translator-image />
+                            <span class="align-middle">Italiano</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="es" title="Spanish">
+                            <img src="assets/images/flags/es.svg" alt="Spanish" class="me-1 rounded" height="18" data-translator-image />
+                            <span class="align-middle">Español</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="ru" title="Russian">
+                            <img src="assets/images/flags/ru.svg" alt="Russian" class="me-1 rounded" height="18" data-translator-image />
+                            <span class="align-middle">Русский</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="hi" title="Hindi">
+                            <img src="assets/images/flags/in.svg" alt="Hindi" class="me-1 rounded" height="18" data-translator-image />
+                            <span class="align-middle">हिन्दी</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="ar" title="Arabic">
+                            <img src="assets/images/flags/sa.svg" alt="Arabic" class="me-1 rounded" height="18" data-translator-image />
+                            <span class="align-middle">عربي</span>
+                        </a>
+                    </div>
+                    <!-- end dropdown-menu-->
+                </div>
+                <!-- end dropdown-->
+            </div>
+
+            <div id="language-selector-rounded" class="topbar-item">
+                <div class="dropdown">
+                    <button class="topbar-link fw-bold" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="assets/images/flags/us.svg" alt="user-image" class="rounded-circle me-2" height="18" id="selected-language-image" />
+                        <span id="selected-language-code">EN</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="en" title="English">
+                            <img src="assets/images/flags/us.svg" alt="English" class="me-1 rounded-circle" height="18" data-translator-image />
+                            <span class="align-middle">English</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="de" title="German">
+                            <img src="assets/images/flags/de.svg" alt="German" class="me-1 rounded-circle" height="18" data-translator-image />
+                            <span class="align-middle">Deutsch</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="it" title="Italian">
+                            <img src="assets/images/flags/it.svg" alt="Italian" class="me-1 rounded-circle" height="18" data-translator-image />
+                            <span class="align-middle">Italiano</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="es" title="Spanish">
+                            <img src="assets/images/flags/es.svg" alt="Spanish" class="me-1 rounded-circle" height="18" data-translator-image />
+                            <span class="align-middle">Español</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="ru" title="Russian">
+                            <img src="assets/images/flags/ru.svg" alt="Russian" class="me-1 rounded-circle" height="18" data-translator-image />
+                            <span class="align-middle">Русский</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="hi" title="Hindi">
+                            <img src="assets/images/flags/in.svg" alt="Hindi" class="me-1 rounded-circle" height="18" data-translator-image />
+                            <span class="align-middle">हिन्दी</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="ar" title="Arabic">
+                            <img src="assets/images/flags/sa.svg" alt="Arabic" class="me-1 rounded-circle" height="18" data-translator-image />
+                            <span class="align-middle">عربي</span>
+                        </a>
+                    </div>
+                    <!-- end dropdown-menu-->
+                </div>
+                <!-- end dropdown-->
+            </div>
+
+            <div id="user-dropdown-detailed" class="topbar-item nav-user">
+                <div class="dropdown">
+                    <a class="topbar-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" href="#!" aria-haspopup="false" aria-expanded="false">
+                        <img src="assets/images/users/user-1.jpg" width="32" class="rounded-circle me-lg-2 d-flex" alt="user-image" />
+                        <div class="d-lg-flex align-items-center gap-1 d-none">
+                            <span>
+                                <h5 class="my-0 lh-1 pro-username">__username__</h5>
+                                <span class="fs-xs lh-1">Admin Head</span>
+                            </span>
+                            <span data-icon="chevron-down" class="align-middle"></span>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <!-- Header -->
+                        <div class="dropdown-header noti-title">
+                            <h6 class="text-overflow m-0">Welcome back 👋!</h6>
+                        </div>
+
+                        <!-- My Profile -->
+                        <a href="#!" class="dropdown-item">
+                            <span data-icon="user-circle" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Profile</span>
+                        </a>
+
+                        <!-- Notifications -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <span data-icon="bell-ring" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Notifications</span>
+                        </a>
+
+                        <!-- Settings -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <span data-icon="settings-2" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Account Settings</span>
+                        </a>
+
+                        <!-- Support -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <span data-icon="headset" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Support Center</span>
+                        </a>
+
+                        <!-- Divider -->
+                        <div class="dropdown-divider"></div>
+
+                        <!-- Lock -->
+                        <a href="auth-lock-screen.html" class="dropdown-item">
+                            <span data-icon="lock" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Lock Screen</span>
+                        </a>
+
+                        <!-- Logout -->
+                        <a href="javascript:void(0);" class="dropdown-item fw-semibold">
+                            <span data-icon="logout" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="simple-user-dropdown" class="topbar-item nav-user">
+                <div class="dropdown">
+                    <a class="topbar-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" href="#!" aria-haspopup="false" aria-expanded="false">
+                        <img src="assets/images/users/user-1.jpg" width="32" class="rounded-circle me-lg-2 d-flex" alt="user-image" />
+                        <div class="d-lg-flex align-items-center gap-1 d-none">
+                            <h5 class="my-0">__username__</h5>
+                            <span data-icon="chevron-down" class="align-middle"></span>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <!-- Header -->
+                        <div class="dropdown-header noti-title">
+                            <h6 class="text-overflow m-0">Welcome back!</h6>
+                        </div>
+
+                        <!-- My Profile -->
+                        <a href="#!" class="dropdown-item">
+                            <span data-icon="user-circle" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Profile</span>
+                        </a>
+
+                        <!-- Notifications -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <span data-icon="bell-ring" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Notifications</span>
+                        </a>
+
+                        <!-- Wallet -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <span data-icon="credit-card" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">
+                                Balance:
+                                <span class="fw-semibold">$985.25</span>
+                            </span>
+                        </a>
+
+                        <!-- Settings -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <span data-icon="settings-2" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Account Settings</span>
+                        </a>
+
+                        <!-- Support -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <span data-icon="headset" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Support Center</span>
+                        </a>
+
+                        <!-- Divider -->
+                        <div class="dropdown-divider"></div>
+
+                        <!-- Lock -->
+                        <a href="auth-lock-screen.html" class="dropdown-item">
+                            <span data-icon="lock" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Lock Screen</span>
+                        </a>
+
+                        <!-- Logout -->
+                        <a href="javascript:void(0);" class="dropdown-item text-danger fw-semibold">
+                            <span data-icon="logout" class="me-1 fs-lg align-middle"></span>
+                            <span class="align-middle">Log Out</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Topbar End -->

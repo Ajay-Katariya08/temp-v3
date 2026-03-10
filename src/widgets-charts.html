@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Chart Widgets"}) @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">@@include("./partials/page-title.html", {"subtitle": "Widgets", "title":"Charts"})
+
+                    <div class="row">
+
+                        <!-- Leads Generated -->
+                        <div class="col-md-6 col-xxl-3">
+                            <div class="card card-h-100">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+
+                                        <div class="col-6">
+                                            <h5 class="text-muted fs-sm text-uppercase text-truncate" title="Leads Generated">Leads Generated</h5>
+                                            <div class="d-flex align-items-center gap-2 my-3">
+                                                <div class="avatar-md flex-shrink-0">
+                                                    <span class="avatar-title text-bg-light rounded-circle fs-22">
+                                                        <span data-icon="users"></span>
+                                                    </span>
+                                                </div> <!-- avatar-md -->
+                                                <h3 class="mb-0 fw-bold"><span data-target="48.2">0</span>k</h3>
+                                            </div> <!-- stat-container -->
+                                            <p class="mb-0 text-muted">
+                                                <span class="text-success me-2">5.12% <span data-icon="trending-up" class="ms-1"></span></span>
+                                                <span class="text-nowrap">2.3k Up</span>
+                                            </p>
+                                        </div> <!-- col-6 -->
+
+                                        <div class="col-6">
+                                            <div class="text-end">
+                                                <div id="leads-generated-chart"></div>
+                                            </div> <!-- text-end -->
+                                        </div> <!-- col-6 -->
+
+                                    </div> <!-- row align-items-center -->
+                                </div> <!-- card-body -->
+                            </div> <!-- card -->
+                        </div> <!-- col -->
+
+                        <!-- Qualified Leads -->
+                        <div class="col-md-6 col-xxl-3">
+                            <div class="card card-h-100">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+
+                                        <div class="col-6">
+                                            <h5 class="text-muted fs-sm text-uppercase text-truncate" title="Qualified Leads">Qualified Leads</h5>
+                                            <div class="d-flex align-items-center gap-2 my-3">
+                                                <div class="avatar-md flex-shrink-0">
+                                                    <span class="avatar-title text-bg-light rounded-circle fs-22">
+                                                        <span data-icon="user-check"></span>
+                                                    </span>
+                                                </div> <!-- avatar-md -->
+                                                <h3 class="mb-0 fw-bold"><span data-target="12.8">0</span>k</h3>
+                                            </div> <!-- stat-container -->
+                                            <p class="mb-0 text-muted">
+                                                <span class="text-danger me-2">3.45%  <span data-icon="trending-down" class="ms-1"></span></span>
+                                                <span class="text-nowrap">0.4k Down</span>
+                                            </p>
+                                        </div> <!-- col-6 -->
+
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-end">
+                                                <div id="qualified-leads-chart" class="text-end"></div>
+                                            </div> <!-- text-end -->
+                                        </div> <!-- col-6 -->
+
+                                    </div> <!-- row align-items-center -->
+                                </div> <!-- card-body -->
+                            </div> <!-- card -->
+                        </div> <!-- col -->
+
+                        <!-- Deals Closed -->
+                        <div class="col-md-6 col-xxl-3">
+                            <div class="card card-h-100">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+
+                                        <div class="col-6">
+                                            <h5 class="text-muted fs-sm text-uppercase text-truncate" title="Deals Closed">Deals Closed</h5>
+                                            <div class="d-flex align-items-center gap-2 my-3">
+                                                <div class="avatar-md flex-shrink-0">
+                                                    <span class="avatar-title text-bg-light rounded-circle fs-22">
+                                                        <span data-icon="briefcase"></span>
+                                                    </span>
+                                                </div> <!-- avatar-md -->
+                                                <h3 class="mb-0 fw-bold"><span data-target="9.75">0</span>k</h3>
+                                            </div> <!-- stat-container -->
+                                            <p class="mb-0 text-muted">
+                                                <span class="text-success me-2">2.94% <span data-icon="trending-up" class="ms-1"></span></span>
+                                                <span class="text-nowrap">1.1k Up</span>
+                                            </p>
+                                        </div> <!-- col-6 -->
+
+                                        <div class="col-6">
+                                            <div class="text-end">
+                                                <div id="deals-closed-chart"></div>
+                                            </div> <!-- text-end -->
+                                        </div> <!-- col-6 -->
+
+                                    </div> <!-- row align-items-center -->
+                                </div> <!-- card-body -->
+                            </div> <!-- card -->
+                        </div> <!-- col -->
+
+                        <!-- Revenue Generated -->
+                        <div class="col-md-6 col-xxl-3">
+                            <div class="card card-h-100">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+
+                                        <div class="col-6">
+                                            <h5 class="text-muted fs-sm text-uppercase text-truncate" title="Revenue Generated">Revenue Generated</h5>
+                                            <div class="d-flex align-items-center gap-2 my-3">
+                                                <div class="avatar-md flex-shrink-0">
+                                                    <span class="avatar-title text-bg-light rounded-circle fs-22">
+                                                        <span data-icon="dollar"></span>
+                                                    </span>
+                                                </div> <!-- avatar-md -->
+                                                <h3 class="mb-0 fw-bold">$<span data-target="5.63">0</span>M</h3>
+                                            </div> <!-- stat-container -->
+                                            <p class="mb-0 text-muted">
+                                                <span class="text-success me-2">4.21% <span data-icon="trending-up" class="ms-1"></span></span>
+                                                <span class="text-nowrap">$32.4k Up</span>
+                                            </p>
+                                        </div> <!-- col-6 -->
+
+                                        <div class="col-6">
+                                            <div class="text-end">
+                                                <div id="revenue-generated-chart"></div>
+                                            </div> <!-- text-end -->
+                                        </div> <!-- col-6 -->
+
+                                    </div> <!-- row align-items-center -->
+                                </div> <!-- card-body -->
+                            </div> <!-- card -->
+                        </div> <!-- col -->
+
+                    </div> <!-- row -->
+
+                    <div class="row row-cols-xxl-4 row-cols-md-2 row-cols-1">
+                        <!-- Revenue Widget -->
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header d-flex border-0 justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Total Revenue</h5>
+                                    <span class="badge bg-success-subtle text-success">+8.2%</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h3 class="mb-1 fw-normal">$<span data-target="1240">0</span>K</h3>
+                                            <p class="mb-0 text-muted">This Quarter</p>
+                                        </div>
+                                        <div class="text-end w-50">
+                                            <div id="total-revenue-chart"></div>
+                                        </div> <!-- text-end -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Expenses Widget -->
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header d-flex border-0 justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Total Expenses</h5>
+                                    <span class="badge bg-danger-subtle text-danger">-2.1%</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="text-end w-50">
+                                            <div id="total-expenses-chart"></div>
+                                        </div> <!-- text-end -->
+                                        <div class="text-end ms-3">
+                                            <h3 class="mb-1 fw-normal">$<span data-target="840">0</span>K</h3>
+                                            <p class="mb-0 text-muted">This Quarter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Net Profit Widget -->
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header d-flex border-0 justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Net Profit</h5>
+                                    <span class="badge bg-info-subtle text-info">Stable</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h3 class="mb-1 fw-normal">$<span data-target="400">0</span>K</h3>
+                                            <p class="mb-0 text-muted">This Quarter</p>
+                                        </div>
+                                        <div class="text-end w-50">
+                                            <div id="net-profit-chart"></div>
+                                        </div> <!-- text-end -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cash Flow Widget -->
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header d-flex border-0 justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Cash Flow</h5>
+                                    <span class="badge bg-warning-subtle text-warning">+5.6%</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="text-end w-50">
+                                            <div id="cash-flow-chart"></div>
+                                        </div> <!-- text-end -->
+                                        <div class="text-end ms-3">
+                                            <h3 class="mb-1 fw-normal">$<span data-target="720">0</span>K</h3>
+                                            <p class="mb-0 text-muted">This Quarter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end col-->
+                    </div> <!-- end row-->
+
+                    <div class="row">
+                        <div class="col-xxl-3 col-xl-6">
+                            <div class="card card-h-100">
+                                <div class="card-header justify-content-between">
+                                    <h4 class="card-title">Project Status Breakdown</h4>
+                                    <div class="dropdown ms-auto">
+                                        <a href="#" class="btn btn-sm btn-default btn-icon" data-bs-toggle="dropdown">
+                                            <span data-icon="dots-vertical" class="fs-lg"></span>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span data-icon="eye" class="me-2"></span> View All Status Details
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span data-icon="list-filter" class="me-2"></span> Filter by Status
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span data-icon="calendar" class="me-2"></span> Change Date Range
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span data-icon="download" class="me-2"></span> Export Breakdown
+                                                </a>
+                                            </li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <a class="dropdown-item text-danger" href="#">
+                                                    <span data-icon="refresh" class="me-2"></span> Reset Status View
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="card-body pt-0">
+                                    <div id="project-status-chart" class="apex-charts"></div>
+
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <div class="d-flex justify-content-between align-items-center p-1">
+                                                <div>
+                                                    <span data-icon="circle-filled" class="fs-12 align-middle me-1 text-secondary"></span>
+                                                    <span class="align-middle fw-semibold">Completed</span>
+                                                </div>
+                                                <span class="fw-semibold text-muted float-end"><span data-icon="chevron-down" class="text-danger"></span> 965</span>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between align-items-center p-1">
+                                                <div>
+                                                    <span data-icon="circle-filled" class="fs-12 align-middle me-1 text-warning"></span>
+                                                    <span class="align-middle fw-semibold">In Progress</span>
+                                                </div>
+                                                <span class="fw-semibold text-muted float-end"><span data-icon="chevron-up" class="text-success"></span> 75</span>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex justify-content-between align-items-center p-1">
+                                                <div>
+                                                    <span data-icon="circle-filled" class="fs-12 align-middle me-1 text-secondary"></span>
+                                                    <span class="align-middle fw-semibold"> Yet to Start</span>
+                                                </div>
+                                                <span class="fw-semibold text-muted float-end"><span data-icon="chevron-up" class="text-success"></span> 102</span>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between align-items-center p-1">
+                                                <div>
+                                                    <span data-icon="circle-filled" class="fs-12 align-middle me-1 text-danger"></span>
+                                                    <span class="align-middle fw-semibold">Cancelled</span>
+                                                </div>
+                                                <span class="fw-semibold text-muted float-end"><span data-icon="chevron-down" class="text-danger"></span> 96</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end card-->
+                        </div> <!-- end col-->
+                        <div class="col-xxl-3 col-xl-6 order-xxl-1">
+                            <div class="card card-h-100">
+                                <div class="card-header justify-content-between">
+                                    <h4 class="card-title">Store Performance Analytics</h4>
+                                    <div>
+                                        <a href="#" class="btn btn-sm btn-default"><span data-icon="refresh" class="me-1"></span> Refresh</a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div dir="ltr">
+                                        <div id="total-sales-chart" class="apex-charts"></div>
+                                    </div>
+                                    <div class="text-center">
+                                        <span class="badge badge-outline-light text-dark p-1 px-2 rounded-pill fs-12"><span data-icon="star-filled" class="text-success me-1"></span> GOOD SALES</span>
+                                    </div>
+                                    <div class="table-responsive mt-3">
+                                        <table class="table table-sm table-nowrap table-borderless table-centered mb-0">
+                                            <thead class="bg-light bg-opacity-50 thead-sm">
+                                                <tr class="text-uppercase fs-xxs">
+                                                    <th>Page</th>
+                                                    <th>Views</th>
+                                                    <th>B. Rate</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a href="javascript:void(0);" class="text-muted">/dashboard-analytics</a>
+                                                    </td>
+                                                    <td>25</td>
+                                                    <td>87.5%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="javascript:void(0);" class="text-muted">/dashboard-crm</a>
+                                                    </td>
+                                                    <td>15</td>
+                                                    <td>21.48%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="javascript:void(0);" class="text-muted">/ubold/dashboard</a>
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td>63.59%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div> <!-- end .table-responsive-->
+                                </div> <!-- end card-body-->
+                            </div> <!-- end card-->
+                        </div> <!-- end col-->
+                        <div class="col-xxl-6 col-xl-12">
+                            <div class="card card-h-100">
+                                <div class="card-header justify-content-between">
+                                    <h4 class="card-title">Projects Performance Overview</h4>
+                                    <div class="dropdown ms-auto">
+                                        <a href="#" class="btn btn-sm btn-default btn-icon" data-bs-toggle="dropdown">
+                                            <span data-icon="dots-vertical" class="fs-lg"></span>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span data-icon="chart-line" class="me-2"></span> View Detailed Report
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span data-icon="list-filter" class="me-2"></span> Filter by Project
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span data-icon="calendar" class="me-2"></span> Select Date Range
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span data-icon="download" class="me-2"></span> Export as CSV
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item text-danger" href="#">
+                                                    <span data-icon="refresh" class="me-2"></span> Reset Analytics
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row text-center g-2">
+                                        <div class="col">
+                                            <div class="border bg-light-subtle border-dashed border-light p-2 rounded">
+                                                <h4><span data-target="7,845">0</span></h4>
+                                                <p class="mb-0 text-muted">Number of Projects</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="border bg-light-subtle border-dashed border-light p-2 rounded">
+                                                <h4><span data-target="289">0</span></h4>
+                                                <p class="mb-0 text-muted">Active Projects</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="border bg-light-subtle border-dashed border-light p-2 rounded">
+                                                <h4>$<span data-target="982.5">0</span>k</h4>
+                                                <p class="mb-0 text-muted">Revenue</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="border bg-light-subtle border-dashed border-light p-2 rounded">
+                                                <h4>~<span data-target="12,559">0</span>h</h4>
+                                                <p class="mb-0 text-muted">Working Hours</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div dir="ltr">
+                                        <div id="dash-projects-overviews" class="apex-charts"></div>
+                                    </div>
+                                </div>
+                            </div> <!-- end card-->
+                        </div> <!-- end col-->
+                    </div> <!-- end row-->
+
+                    <div class="row">
+                        <div class="col-xxl-6">
+                            <div class="card card-h-100">
+                                <div class="card-header border-dashed card-tabs">
+                                    <div class="flex-grow-1">
+                                        <h4 class="card-title">Sales Report <span class="text-muted fs-base fw-normal">(25822 Orders)</span></h4>
+                                    </div>
+                                    <ul class="nav nav-tabs nav-justified card-header-tabs nav-bordered">
+                                        <li class="nav-item">
+                                            <a href="#!" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                                <span class="d-md-none d-block">1D</span>
+                                                <span class="d-none d-md-block">Today</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#!" data-bs-toggle="tab" aria-expanded="true" class="nav-link active">
+                                                <span class="d-md-none d-block">1M</span>
+                                                <span class="d-none d-md-block">Monthly</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#!" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                                <span class="d-md-none d-block">1Y</span>
+                                                <span class="d-none d-md-block">Annual</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="bg-light bg-opacity-25 border-bottom border-dashed">
+                                        <div class="row text-center">
+                                            <div class="col-sm-4">
+                                                <p class="text-muted mt-3 mb-1">Revenue</p>
+                                                <h4 class="mb-3">
+                                                    <span data-icon="wallet" class="text-success me-1"></span>
+                                                    <span>$<span data-target="78,224.68"></span></span>
+                                                </h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <p class="text-muted mt-3 mb-1">Orders</p>
+                                                <h4 class="mb-3">
+                                                    <span data-icon="basket" class="text-success me-1"></span>
+                                                    <span><span data-target="8541"></span></span>
+                                                </h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <p class="text-muted mt-3 mb-1">Growth Rate</p>
+                                                <h4 class="mb-3">
+                                                    <span data-icon="trending-up" class="text-success me-1"></span>
+                                                    <span><span data-target="25.3"></span>%</span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-3 pt-1">
+                                        <div class="dash-item-overlay d-none d-md-block" dir="ltr">
+                                            <h5>Today's Earning: $8,975.30</h5>
+                                            <p class="text-muted mb-0 mt-2">Property PS007 is not receiving hits. Either your site is not receiving any sessions.</p>
+                                        </div>
+                                        <div dir="ltr">
+                                            <div id="sales-report-chart" class="apex-charts"></div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end card-body-->
+                            </div> <!-- end card-->
+                        </div> <!-- end col-->
+
+                        <div class="col-xxl-6">
+                            <div class="card card-h-100">
+                                <div class="card-header border-0 justify-content-between">
+                                    <h4 class="card-title">Financial Overview</h4>
+                                    <div class="dropdown ms-auto">
+                                        <a href="#" class="btn btn-sm btn-default btn-icon" data-bs-toggle="dropdown">
+                                            <span data-icon="dots-vertical" class="fs-lg"></span>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span data-icon="refresh" class="me-2"></span> Refresh Data
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span data-icon="bar-chart" class="me-2"></span> View Analytics
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span data-icon="list-filter" class="me-2"></span> Filter Report
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item text-danger" href="#">
+                                                    <span data-icon="download" class="me-2"></span> Export Data
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="card-body p-0">
+                                    <div class="bg-light bg-opacity-40">
+                                        <div class="row text-center">
+                                            <div class="col">
+                                                <p class="text-muted mt-3 mb-1">Revenue</p>
+                                                <h4 class="mb-3">
+                                                    <span class="ti ti-square-rounded-arrow-down text-success me-1"></span>
+                                                    <span>$<span data-target="29.56">0</span>k</span>
+                                                </h4>
+                                            </div>
+                                            <div class="col">
+                                                <p class="text-muted mt-3 mb-1">Expenses</p>
+                                                <h4 class="mb-3">
+                                                    <span class="ti ti-square-rounded-arrow-up text-danger me-1"></span>
+                                                    <span>$<span data-target="15.08">0</span>k</span>
+                                                </h4>
+                                            </div>
+                                            <div class="col">
+                                                <p class="text-muted mt-3 mb-1">Investment</p>
+                                                <h4 class="mb-3">
+                                                    <span class="ti ti-chart-infographic me-1"></span>
+                                                    <span>$<span data-target="3.67">0</span>k</span>
+                                                </h4>
+                                            </div>
+                                            <div class="col">
+                                                <p class="text-muted mt-3 mb-1">Savings</p>
+                                                <h4 class="mb-3">
+                                                    <span class="ti ti-pig me-1"></span>
+                                                    <span>$<span data-target="6.72">0</span>k</span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-2">
+                                        <div dir="ltr">
+                                            <div id="financial-overview-chart" class="apex-charts"></div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end card-body-->
+                            </div> <!-- end card-->
+                        </div> <!-- end col-->
+                    </div>
+                    <!-- end row-->
+                </div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+
+        <!-- Apex Chart js -->
+        <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
+
+        <!-- Chart Widgets js -->
+        <script src="assets/js/pages/widgets-charts.js"></script>
+
+    </body>
+</html>

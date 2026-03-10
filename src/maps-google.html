@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Google Maps"}) @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle":"Maps","title":"Google"})
+
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header d-block">
+                                    <h5 class="mb-1 card-title">Basic Google Map</h5>
+                                    <p class="text-muted mb-0">Displays a basic embedded Google Map.</p>
+                                </div>
+                                <div class="card-body">
+                                    <iframe src="https://www.google.com/maps/embed/v1/place?q=Eiffel+Tower&key=AIzaSyBSFRN6WWGYwmFi498qXXsD2UwkbmD74v4" style="width: 100%; height: 360px; overflow: hidden; border: 0"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header d-block">
+                                    <h5 class="mb-1 card-title">Street View Google Map</h5>
+                                    <p class="text-muted mb-0">Displays a satellite-styled view of the map.</p>
+                                </div>
+                                <div class="card-body">
+                                    <iframe src="https://www.google.com/maps/embed/v1/place?q=Statue+of+Liberty&key=AIzaSyBSFRN6WWGYwmFi498qXXsD2UwkbmD74v4&zoom=18&maptype=satellite" style="width: 100%; height: 360px; overflow: hidden; border: 0"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header d-block">
+                                    <h5 class="mb-1 card-title">Dark Google Map</h5>
+                                    <p class="text-muted mb-0">A dark-mode styled map using CSS filters.</p>
+                                </div>
+                                <div class="card-body">
+                                    <iframe src="https://www.google.com/maps/embed/v1/place?q=Sydney+Opera+House&key=AIzaSyBSFRN6WWGYwmFi498qXXsD2UwkbmD74v4" style="width: 100%; height: 360px; overflow: hidden; border: 0; filter: invert(100%) hue-rotate(180deg)"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+    </body>
+</html>

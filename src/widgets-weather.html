@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "Weather Widgets"}) @@include('./partials/head-css.html')
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div class="wrapper">
+        @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+        <!-- ============================================================== -->
+        <!-- Start Main Content -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="container-fluid">
+                
+                @@include("./partials/page-title.html", {"subtitle": "Widgets", "title":"Weather"})
+
+                <div class="row row-cols-xxl-5 row-cols-md-3 row-cols-1 g-2 text-center align-items-center">
+                    <!-- Today -->
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-muted fs-13 text-uppercase">Today</h5>
+                                <div class="d-flex align-items-center justify-content-center gap-2 my-3">
+                                    <div class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-22">
+                                            <i class="ti ti-cloud-rain"></i>
+                                        </span>
+                                    </div>
+                                    <h3 class="mb-0 fw-bold">32°</h3>
+                                </div>
+                                <p class="mb-1 text-muted text-center">Partly Cloudy</p>
+                                <p class="mb-0 text-muted text-center gap-3 d-flex justify-content-center">
+                                    <span><i class="ti ti-wind"></i> 15km/h</span>
+                                    <span><i class="ti ti-droplet"></i> 37%</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Saturday -->
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-muted fs-13 text-uppercase">Saturday</h5>
+                                <div class="d-flex align-items-center justify-content-center gap-2 my-3">
+                                    <div class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-warning-subtle text-warning rounded-circle fs-22">
+                                            <i class="ti ti-cloud"></i>
+                                        </span>
+                                    </div>
+                                    <h3 class="mb-0 fw-bold">30°</h3>
+                                </div>
+                                <p class="mb-1 text-muted text-center">Cloudy</p>
+                                <p class="mb-0 text-muted text-center gap-3 d-flex justify-content-center">
+                                    <span><i class="ti ti-wind"></i> 10km/h</span>
+                                    <span><i class="ti ti-droplet"></i> 40%</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sunday -->
+                    <div class="col">
+                        <div class="card border-0 rounded-3 text-white" style="background-image: url(assets/images/stock/small-7.jpg); background-size: cover;">
+                            <div class="card-body bg-gradient bg-secondary bg-opacity-90 rounded-3">
+                                <h5 class="text-white text-opacity-75 fs-13 text-uppercase">Sunday</h5>
+                                <div class="d-flex align-items-center justify-content-center gap-2 my-3">
+                                    <div class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-danger-subtle text-danger rounded-circle fs-22">
+                                            <i class="ti ti-cloud-storm"></i>
+                                        </span>
+                                    </div>
+                                    <h3 class="mb-0 fw-bold text-white">28°</h3>
+                                </div>
+                                <p class="mb-1 text-white text-center">Stormy</p>
+                                <p class="mb-0 text-white text-opacity-75 text-center gap-3 d-flex justify-content-center">
+                                    <span><i class="ti ti-wind"></i> 22km/h</span>
+                                    <span><i class="ti ti-droplet"></i> 60%</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monday -->
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-muted fs-13 text-uppercase">Monday</h5>
+                                <div class="d-flex align-items-center justify-content-center gap-2 my-3">
+                                    <div class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-info-subtle text-info rounded-circle fs-22">
+                                            <i class="ti ti-sun"></i>
+                                        </span>
+                                    </div>
+                                    <h3 class="mb-0 fw-bold">33°</h3>
+                                </div>
+                                <p class="mb-1 text-muted text-center">Sunny</p>
+                                <p class="mb-0 text-muted text-center gap-3 d-flex justify-content-center">
+                                    <span><i class="ti ti-wind"></i> 8km/h</span>
+                                    <span><i class="ti ti-droplet"></i> 25%</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tuesday -->
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-muted fs-13 text-uppercase">Tuesday</h5>
+                                <div class="d-flex align-items-center justify-content-center gap-2 my-3">
+                                    <div class="avatar-md flex-shrink-0">
+                                        <span class="avatar-title bg-success-subtle text-success rounded-circle fs-22">
+                                            <i class="ti ti-snowflake"></i>
+                                        </span>
+                                    </div>
+                                    <h3 class="mb-0 fw-bold">23°</h3>
+                                </div>
+                                <p class="mb-1 text-muted text-center">Wind & Chill</p>
+                                <p class="mb-0 text-muted text-center gap-3 d-flex justify-content-center">
+                                    <span><i class="ti ti-wind"></i> 20km/h</span>
+                                    <span><i class="ti ti-droplet"></i> 45%</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="card text-bg-primary bg-gradient border-0">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+
+                                    <!-- Main Weather -->
+                                    <div class="col-md-4">
+                                        <div class="d-flex justify-content-center align-items-center gap-3">
+                                            <div>
+                                                <i class="ti ti-cloud-rain fs-48"></i>
+                                                <h2 class="mt-1 mb-0 text-white">32°</h2>
+                                            </div>
+                                            <div>
+                                                <p class="mb-0">Partly cloudy</p>
+                                                <small>15km/h - 37%</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Forecast -->
+                                    <div class="col-md-8 mt-4 mt-md-0 text-center">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h6 class="text-white-50 mb-1">SAT</h6>
+                                                <i class="ti ti-cloud fs-32"></i>
+                                                <p class="mt-1 mb-0">30°</p>
+                                            </div>
+
+                                            <div class="col">
+                                                <h6 class="text-white-50 mb-1">SUN</h6>
+                                                <i class="ti ti-cloud-storm fs-32"></i>
+                                                <p class="mt-1 mb-0">28°</p>
+                                            </div>
+
+                                            <div class="col">
+                                                <h6 class="text-white-50 mb-1">MON</h6>
+                                                <i class="ti ti-sun-high fs-32"></i>
+                                                <p class="mt-1 mb-0">33°</p>
+                                            </div>
+
+                                            <div class="col">
+                                                <h6 class="text-white-50 mb-1">TUE</h6>
+                                                <i class="ti ti-sun-high fs-32"></i>
+                                                <p class="mt-1 mb-0">33°</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <div class="col-xl-6">
+                        <div class="card text-bg-info bg-gradient border-0">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+
+                                    <!-- Main Weather -->
+                                    <div class="col-md-4">
+                                        <div class="d-flex justify-content-center align-items-center gap-3">
+                                            <div>
+                                                <i class="ti ti-sun fs-48"></i>
+                                                <h2 class="mt-1 mb-0 text-white">27°</h2>
+                                            </div>
+                                            <div>
+                                                <p class="mb-0">Sunny</p>
+                                                <small>12km/h - 42%</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Forecast -->
+                                    <div class="col-md-8 mt-4 mt-md-0 text-center">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h6 class="text-white-50 mb-1">SAT</h6>
+                                                <i class="ti ti-cloud fs-32"></i>
+                                                <p class="mt-1 mb-0">29°</p>
+                                            </div>
+
+                                            <div class="col">
+                                                <h6 class="text-white-50 mb-1">SUN</h6>
+                                                <i class="ti ti-rainbow fs-32"></i>
+                                                <p class="mt-1 mb-0">26°</p>
+                                            </div>
+
+                                            <div class="col">
+                                                <h6 class="text-white-50 mb-1">MON</h6>
+                                                <i class="ti ti-cloud-fog fs-32"></i>
+                                                <p class="mt-1 mb-0">24°</p>
+                                            </div>
+
+                                            <div class="col">
+                                                <h6 class="text-white-50 mb-1">TUE</h6>
+                                                <i class="ti ti-sun fs-32"></i>
+                                                <p class="mt-1 mb-0">35°</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+
+                    </div> <!-- end col-->
+                </div>
+                <!-- end row-->
+
+                <div class="row">
+                    <div class="col-xxl-4 col-xl-12">
+                        <div data-table data-table-rows-per-page="5" class="card">
+                            <div class="card-header border-light justify-content-between">
+                                <h4 class="card-title">Top Cities Weather</h4>
+
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="app-search">
+                                        <input data-table-search type="search" class="form-control" placeholder="Search..." />
+                                        <span data-icon="search" class="app-search-icon text-muted"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-custom table-nowrap table-centered table-select table-hover w-100 mb-0">
+                                    <thead class="bg-light align-middle bg-opacity-25 thead-sm">
+                                        <tr class="text-uppercase fs-xxs">
+                                            <th data-table-sort>City</th>
+                                            <th data-table-sort>Temp</th>
+                                            <th data-table-sort>Humidity</th>
+                                            <th data-table-sort>Wind</th>
+                                            <th>•••</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <h5 class="fs-14 mb-0 fw-normal">New York</h5>
+                                                <span class="text-muted fs-12">Partly Cloudy</span>
+                                            </td>
+                                            <td>28°C</td>
+                                            <td>45%</td>
+                                            <td>12 km/h</td>
+                                            <td><a href="#" class="text-muted fs-20"><i class="ti ti-eye"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 class="fs-14 mb-0 fw-normal">London</h5>
+                                                <span class="text-muted fs-12">Rainy</span>
+                                            </td>
+                                            <td>19°C</td>
+                                            <td>68%</td>
+                                            <td>20 km/h</td>
+                                            <td><a href="#" class="text-muted fs-20"><i class="ti ti-eye"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 class="fs-14 mb-0 fw-normal">Dubai</h5>
+                                                <span class="text-muted fs-12">Sunny</span>
+                                            </td>
+                                            <td>38°C</td>
+                                            <td>20%</td>
+                                            <td>10 km/h</td>
+                                            <td><a href="#" class="text-muted fs-20"><i class="ti ti-eye"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 class="fs-14 mb-0 fw-normal">Tokyo</h5>
+                                                <span class="text-muted fs-12">Thunderstorm</span>
+                                            </td>
+                                            <td>25°C</td>
+                                            <td>70%</td>
+                                            <td>18 km/h</td>
+                                            <td><a href="#" class="text-muted fs-20"><i class="ti ti-eye"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 class="fs-14 mb-0 fw-normal">Sydney</h5>
+                                                <span class="text-muted fs-12">Windy</span>
+                                            </td>
+                                            <td>22°C</td>
+                                            <td>55%</td>
+                                            <td>30 km/h</td>
+                                            <td><a href="#" class="text-muted fs-20"><i class="ti ti-eye"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 class="fs-14 mb-0 fw-normal">Paris</h5>
+                                                <span class="text-muted fs-12">Cloudy</span>
+                                            </td>
+                                            <td>21°C</td>
+                                            <td>50%</td>
+                                            <td>14 km/h</td>
+                                            <td><a href="#" class="text-muted fs-20"><i class="ti ti-eye"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 class="fs-14 mb-0 fw-normal">Toronto</h5>
+                                                <span class="text-muted fs-12">Snowy</span>
+                                            </td>
+                                            <td>-3°C</td>
+                                            <td>72%</td>
+                                            <td>25 km/h</td>
+                                            <td><a href="#" class="text-muted fs-20"><i class="ti ti-eye"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 class="fs-14 mb-0 fw-normal">Singapore</h5>
+                                                <span class="text-muted fs-12">Humid</span>
+                                            </td>
+                                            <td>30°C</td>
+                                            <td>80%</td>
+                                            <td>10 km/h</td>
+                                            <td><a href="#" class="text-muted fs-20"><i class="ti ti-eye"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 class="fs-14 mb-0 fw-normal">Berlin</h5>
+                                                <span class="text-muted fs-12">Foggy</span>
+                                            </td>
+                                            <td>16°C</td>
+                                            <td>65%</td>
+                                            <td>8 km/h</td>
+                                            <td><a href="#" class="text-muted fs-20"><i class="ti ti-eye"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 class="fs-14 mb-0 fw-normal">Cape Town</h5>
+                                                <span class="text-muted fs-12">Clear Sky</span>
+                                            </td>
+                                            <td>26°C</td>
+                                            <td>40%</td>
+                                            <td>12 km/h</td>
+                                            <td><a href="#" class="text-muted fs-20"><i class="ti ti-eye"></i></a></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="card-footer border-0">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div data-table-pagination-info="cities"></div>
+                                    <div data-table-pagination></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end col-->
+
+                    <div class="col-xxl-4 col-xl-6">
+                        <div class="card">
+                            <div class="card-header justify-content-between">
+                                <h4 class="card-title">Weather by Country</h4>
+
+                                <div class="dropdown ms-auto">
+                                    <a href="#" class="btn btn-sm btn-default btn-icon" data-bs-toggle="dropdown">
+                                        <i class="ti ti-dots-vertical fs-lg"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="ti ti-report me-2"></i> View Full Weather Report
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="ti ti-download me-2"></i> Export Data
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="ti ti-filter me-2"></i> Filter Countries
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item text-danger" href="#">
+                                                <i class="ti ti-trash me-2"></i> Remove Widget
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card-body py-2 px-0">
+                                <div class="px-3" data-simplebar style="height: 415px;">
+                                    <!-- USA -->
+                                    <div class="row align-items-center g-0 py-2">
+                                        <div class="col-4 d-flex align-items-center">
+                                            <img src="assets/images/flags/us.svg" class="me-2 rounded-circle" height="26">
+                                            <span class="fw-semibold fs-16">USA</span>
+                                        </div>
+
+                                        <div class="col-4 text-end text-muted">
+                                            <div class="fw-semibold">28°C <span class="text-muted fs-12">(Feels 30°)</span></div>
+                                            <div class="fw-semibold fs-12"><i class="ti ti-droplet"></i> 45% | <i class="ti ti-wind"></i> 12 km/h</div>
+                                        </div>
+
+                                        <div class="col-4 text-success fw-semibold text-end">
+                                            <i class="ti ti-sun"></i> Clear Sky
+                                        </div>
+                                    </div>
+
+                                    <!-- UK -->
+                                    <div class="row align-items-center g-0 py-2">
+                                        <div class="col-4 d-flex align-items-center">
+                                            <img src="assets/images/flags/gb.svg" class="me-2 rounded-circle" height="26">
+                                            <span class="fw-semibold fs-16">UK</span>
+                                        </div>
+
+                                        <div class="col-4 text-end text-muted">
+                                            <div class="fw-semibold">19°C <span class="text-muted fs-12">(Feels 17°)</span></div>
+                                            <div class="fw-semibold fs-12"><i class="ti ti-droplet"></i> 68% | <i class="ti ti-wind"></i> 20 km/h</div>
+                                        </div>
+
+                                        <div class="col-4 text-info fw-semibold text-end">
+                                            <i class="ti ti-cloud-rain"></i> Rainy
+                                        </div>
+                                    </div>
+
+                                    <!-- UAE -->
+                                    <div class="row align-items-center g-0 py-2">
+                                        <div class="col-4 d-flex align-items-center">
+                                            <img src="assets/images/flags/ae.svg" class="me-2 rounded-circle" height="26">
+                                            <span class="fw-semibold fs-16">UAE</span>
+                                        </div>
+
+                                        <div class="col-4 text-end text-muted">
+                                            <div class="fw-semibold">38°C <span class="text-muted fs-12">(Feels 41°)</span></div>
+                                            <div class="fw-semibold fs-12"><i class="ti ti-droplet"></i> 20% | <i class="ti ti-wind"></i> 10 km/h</div>
+                                        </div>
+
+                                        <div class="col-4 text-warning fw-semibold text-end">
+                                            <i class="ti ti-sun-high"></i> Sunny
+                                        </div>
+                                    </div>
+
+                                    <!-- Japan -->
+                                    <div class="row align-items-center g-0 py-2">
+                                        <div class="col-4 d-flex align-items-center">
+                                            <img src="assets/images/flags/jp.svg" class="me-2 rounded-circle" height="26">
+                                            <span class="fw-semibold fs-16">Japan</span>
+                                        </div>
+
+                                        <div class="col-4 text-end text-muted">
+                                            <div class="fw-semibold">25°C <span class="text-muted fs-12">(Feels 26°)</span></div>
+                                            <div class="fw-semibold fs-12"><i class="ti ti-droplet"></i> 70% | <i class="ti ti-wind"></i> 18 km/h</div>
+                                        </div>
+
+                                        <div class="col-4 text-danger fw-semibold text-end">
+                                            <i class="ti ti-cloud-storm"></i> Stormy
+                                        </div>
+                                    </div>
+
+                                    <!-- Australia -->
+                                    <div class="row align-items-center g-0 py-2">
+                                        <div class="col-4 d-flex align-items-center">
+                                            <img src="assets/images/flags/au.svg" class="me-2 rounded-circle" height="26">
+                                            <span class="fw-semibold fs-16">Australia</span>
+                                        </div>
+
+                                        <div class="col-4 text-end text-muted">
+                                            <div class="fw-semibold">22°C <span class="text-muted fs-12">(Feels 21°)</span></div>
+                                            <div class="fw-semibold fs-12"><i class="ti ti-droplet"></i> 55% | <i class="ti ti-wind"></i> 30 km/h</div>
+                                        </div>
+
+                                        <div class="col-4 text-primary fw-semibold text-end">
+                                            <i class="ti ti-wind"></i> Windy
+                                        </div>
+                                    </div>
+
+                                    <!-- Canada -->
+                                    <div class="row align-items-center g-0 py-2">
+                                        <div class="col-4 d-flex align-items-center">
+                                            <img src="assets/images/flags/ca.svg" class="me-2 rounded-circle" height="26">
+                                            <span class="fw-semibold fs-16">Canada</span>
+                                        </div>
+
+                                        <div class="col-4 text-end text-muted">
+                                            <div class="fw-semibold">14°C <span class="text-muted fs-12">(Feels 12°)</span></div>
+                                            <div class="fw-semibold fs-12"><i class="ti ti-droplet"></i> 52% | <i class="ti ti-wwind"></i> 15 km/h</div>
+                                        </div>
+
+                                        <div class="col-4 text-primary fw-semibold text-end">
+                                            <i class="ti ti-cloud"></i> Cloudy
+                                        </div>
+                                    </div>
+
+                                    <!-- Germany -->
+                                    <div class="row align-items-center g-0 py-2">
+                                        <div class="col-4 d-flex align-items-center">
+                                            <img src="assets/images/flags/de.svg" class="me-2 rounded-circle" height="26">
+                                            <span class="fw-semibold fs-16">Germany</span>
+                                        </div>
+
+                                        <div class="col-4 text-end text-muted">
+                                            <div class="fw-semibold">17°C <span class="text-muted fs-12">(Feels 16°)</span></div>
+                                            <div class="fw-semibold fs-12"><i class="ti ti-droplet"></i> 60% | <i class="ti ti-wind"></i> 9 km/h</div>
+                                        </div>
+
+                                        <div class="col-4 text-info fw-semibold text-end">
+                                            <i class="ti ti-cloud-drizzle"></i> Drizzle
+                                        </div>
+                                    </div>
+
+                                    <!-- France -->
+                                    <div class="row align-items-center g-0 py-2">
+                                        <div class="col-4 d-flex align-items-center">
+                                            <img src="assets/images/flags/fr.svg" class="me-2 rounded-circle" height="26">
+                                            <span class="fw-semibold fs-16">France</span>
+                                        </div>
+
+                                        <div class="col-4 text-end text-muted">
+                                            <div class="fw-semibold">21°C <span class="text-muted fs-12">(Feels 20°)</span></div>
+                                            <div class="fw-semibold fs-12"><i class="ti ti-droplet"></i> 48% | <i class="ti ti-wind"></i> 14 km/h</div>
+                                        </div>
+
+                                        <div class="col-4 text-warning fw-semibold text-end">
+                                            <i class="ti ti-sun-wind"></i> Partly Sunny
+                                        </div>
+                                    </div>
+
+                                    <!-- Brazil -->
+                                    <div class="row align-items-center g-0 py-2">
+                                        <div class="col-4 d-flex align-items-center">
+                                            <img src="assets/images/flags/br.svg" class="me-2 rounded-circle" height="26">
+                                            <span class="fw-semibold fs-16">Brazil</span>
+                                        </div>
+
+                                        <div class="col-4 text-end text-muted">
+                                            <div class="fw-semibold">30°C <span class="text-muted fs-12">(Feels 35°)</span></div>
+                                            <div class="fw-semibold fs-12"><i class="ti ti-droplet"></i> 75% | <i class="ti ti-wind"></i> 22 km/h</div>
+                                        </div>
+
+                                        <div class="col-4 text-danger fw-semibold text-end">
+                                            <i class="ti ti-cloud-storm"></i> Thunderstorm
+                                        </div>
+                                    </div>
+
+                                    <!-- Singapore -->
+                                    <div class="row align-items-center g-0 py-2">
+                                        <div class="col-4 d-flex align-items-center">
+                                            <img src="assets/images/flags/sg.svg" class="me-2 rounded-circle" height="26">
+                                            <span class="fw-semibold fs-16">Singapore</span>
+                                        </div>
+
+                                        <div class="col-4 text-end text-muted">
+                                            <div class="fw-semibold">32°C <span class="text-muted fs-12">(Feels 39°)</span></div>
+                                            <div class="fw-semibold fs-12"><i class="ti ti-droplet"></i> 83% | <i class="ti ti-wind"></i> 11 km/h</div>
+                                        </div>
+
+                                        <div class="col-4 text-success fw-semibold text-end">
+                                            <i class="ti ti-cloud-rain"></i> Light Rain
+                                        </div>
+                                    </div>
+
+
+                                </div> <!-- end data-simplebar -->
+
+                            </div> <!-- end card-body -->
+                        </div> <!--end card-->
+                    </div>
+                    <!-- end col -->
+
+                    <div class="col-xxl-4 col-xl-6">
+                        <div class="card overflow-hidden">
+
+                            <!-- Top Weather Banner -->
+                            <div class="position-relative" style="height:200px; background:url('assets/images/stock/small-6.jpg') center/cover;">
+                                <!-- Date -->
+                                <div class="position-absolute top-0 start-0 bg-dark text-white text-center px-3 py-2 rounded-end-3 mt-3">
+                                    <div class="fw-bold">OCT</div>
+                                    <div class="fw-bold fs-5">21</div>
+                                </div>
+
+                                <!-- Weather Info -->
+                                <div class="position-absolute bottom-0 start-0 text-white p-3">
+                                    <div class="fs-5">Cloudy</div>
+                                    <h2 class="fw-bold">69°</h2>
+                                </div>
+
+                                <!-- Tabs -->
+                                <ul class="nav nav-tabs border-0 position-absolute bottom-0 end-0 p-2">
+                                    <li class="nav-item">
+                                        <button class="nav-link active bg-transparent text-white fw-semibold border-0 border-bottom border-white rounded-0" data-bs-toggle="tab" data-bs-target="#todayTab">
+                                            Today
+                                        </button>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <button class="nav-link bg-transparent text-white-50 fw-semibold border-0 rounded-0" data-bs-toggle="tab" data-bs-target="#weekTab">
+                                            Week
+                                        </button>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                            <!-- Hourly Section -->
+                            <div class="p-3">
+                                <div class="row text-center">
+                                    <div class="col">
+                                        <div class="fw-semibold text-muted">Now</div>
+                                        <i class="ti ti-cloud fs-2 my-1 d-block"></i>
+                                        <div class="fw-semibold">72°</div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="fw-semibold text-muted">2pm</div>
+                                        <i class="ti ti-cloud-bolt fs-2 my-1 d-block"></i>
+                                        <div class="fw-semibold">74°</div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="fw-semibold text-muted">3pm</div>
+                                        <i class="ti ti-sun-high fs-2 my-1 d-block"></i>
+                                        <div class="fw-semibold">76°</div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="fw-semibold text-muted">4pm</div>
+                                        <i class="ti ti-sun fs-2 my-1 d-block"></i>
+                                        <div class="fw-semibold">75°</div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="fw-semibold text-muted">5pm</div>
+                                        <i class="ti ti-cloud-rain fs-2 my-1 d-block"></i>
+                                        <div class="fw-semibold">71°</div>
+                                    </div>
+                                </div> <!-- end row-->
+                            </div> <!-- end p-3-->
+
+                        </div>
+                        <!-- end card-->
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card text-white overflow-hidden">
+
+                                    <div style="background:url('assets/images/stock/small-4.jpg') center/cover;">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-end p-3 bg-dark bg-gradient bg-opacity-75">
+                                            <div class="fw-bold fs-28">78°</div>
+                                            <div class="fw-semibold fs-5">Berlin</div>
+                                            <div class="text-white-50">Cloudy</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center px-3 py-2 bg-dark text-white text-opacity-75">
+                                        <div class="d-flex align-items-center gap-1">
+                                            <i class="ti ti-wind"></i> <span>12m/s</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <i class="ti ti-compass"></i> <span>NE</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end col-->
+
+                            <div class="col-sm-6">
+                                <div class="card text-white overflow-hidden">
+
+                                    <div style="background:url('assets/images/stock/small-5.jpg') center/cover;">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-end p-3 bg-dark bg-gradient bg-opacity-75">
+                                            <div class="fw-bold fs-28">64°</div>
+                                            <div class="fw-semibold fs-5">Paris</div>
+                                            <div class="text-white-50">Light Rain</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center px-3 py-2 bg-dark text-white text-opacity-75">
+                                        <div class="d-flex align-items-center gap-1">
+                                            <i class="ti ti-wind"></i> <span>8 m/s</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <i class="ti ti-compass"></i> <span>SW</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div> <!-- end col-->
+                        </div> <!-- end row-->
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row-->
+            </div>
+            <!-- container -->
+
+            @@include('./partials/footer.html')
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End of Main Content -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+
+    <!-- Custom table -->
+    <script src="assets/js/pages/custom-table.js"></script>
+</body>
+
+</html>

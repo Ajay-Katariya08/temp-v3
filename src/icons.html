@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Icons"}) @@include('./partials/head-css.html')
+
+        <style>
+            td:empty {
+                background-color: #ffe6e6; /* light red */
+                color: #d00;
+                text-align: center;
+                font-weight: bold;
+            }
+            td:has(> i.ti.ti-:only-child),
+            td:has(> i.ri.ri-:only-child),
+            td:has(> i.bx.bx-:only-child) {
+                background-color: #ffe6e6; /* light red */
+                color: #d00;
+                text-align: center;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"title":"Icons"})
+
+                    <div class="row justify-content-center">
+                        <div class="col-xxl-10">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="app-search">
+                                        <input id="icon-search" type="search" class="form-control" placeholder="Search icons..." />
+                                        <i data-lucide="search" class="app-search-icon text-muted"></i>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+                                    <div id="icons" class="d-flex flex-wrap align-items-center text-center gap-2"></div>
+                                </div>
+                                <!-- end card-body-->
+                            </div>
+                            <!-- end card-->
+                        </div>
+                        <!-- end col-->
+                    </div>
+                    <!-- end row-->
+                </div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html')
+
+        <script src="assets/js/pages/icons.js"></script>
+
+        @@include('./partials/footer-scripts.html')
+    </body>
+</html>

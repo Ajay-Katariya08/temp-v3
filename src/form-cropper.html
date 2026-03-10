@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Image Cropper"})
+
+        <!-- Cropper Plugin CSS -->
+        <link rel="stylesheet" href="assets/plugins/cropperjs/cropper.min.css" type="text/css" />
+
+        @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle": "Forms", "title":"Image Cropper"})
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-header d-flex align-items-center gap-2">
+                                    <h5 class="mb-0">Upload & Crop Image</h5>
+                                    <span class="ms-auto small text-muted">Default demo image is used until user uploads.</span>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="row g-3 align-items-end">
+                                        <div class="col-lg-8">
+                                            <label for="fileInput" class="form-label">Choose an image</label>
+                                            <input type="file" id="fileInput" accept="image/*" class="form-control" />
+                                        </div>
+                                        <div class="col-lg-4 d-grid gap-2">
+                                            <button id="useDemoBtn" class="btn btn-outline-secondary">Use Demo Image</button>
+                                            <button id="clearInputBtn" class="btn btn-outline-light border">Clear File Input</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-4 mt-1">
+                                        <div class="col-lg-8">
+                                            <div class="ratio ratio-4x3 bg-white border rounded">
+                                                <!-- Default demo image -->
+                                                <img id="image" src="assets/images/stock/small-1.jpg" alt="Upload to crop" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <button class="btn btn-outline-primary" id="zoomInBtn">Zoom In</button>
+                                                <button class="btn btn-outline-primary" id="zoomOutBtn">Zoom Out</button>
+                                                <button class="btn btn-outline-primary" id="rotateLeftBtn">Rotate -45°</button>
+                                                <button class="btn btn-outline-primary" id="rotateRightBtn">Rotate +45°</button>
+                                                <button class="btn btn-outline-secondary" id="resetBtn">Reset</button>
+                                                <div class="ms-auto d-flex align-items-center gap-2">
+                                                    <label for="aspect" class="form-label mb-0">Aspect:</label>
+                                                    <select id="aspect" class="form-select form-select-sm" style="width: auto">
+                                                        <option value="NaN" selected>Free</option>
+                                                        <option value="1">1:1</option>
+                                                        <option value="16/9">16:9</option>
+                                                        <option value="4/3">4:3</option>
+                                                        <option value="3/4">3:4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <p class="fw-semibold mt-4">Live Preview</p>
+                                            <div class="cropper-img-preview"></div>
+
+                                            <div id="croppedResult" class="mt-4 d-none">
+                                                <p class="fw-semibold mb-2">Cropped Output</p>
+                                                <img class="img-thumbnail" alt="Cropped result will appear here" />
+                                            </div>
+
+                                            <div class="mt-4 d-grid gap-2">
+                                                <button id="cropBtn" class="btn btn-primary">Crop & Preview</button>
+                                                <a id="downloadBtn" class="btn btn-outline-secondary disabled" download="cropped.png">Download Cropped</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+
+        <!-- Image Cropper Plugin Js -->
+        <script src="assets/plugins/cropperjs/cropper.min.js"></script>
+
+        <!-- Color Picker Demo Js -->
+        <script src="assets/js/pages/form-image-cropper.js"></script>
+    </body>
+</html>

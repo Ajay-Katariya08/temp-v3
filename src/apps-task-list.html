@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Tasks"}) @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle": "Apps", "title":"Tasks"})
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div data-table data-table-rows-per-page="8" class="card">
+                                <div class="card-header border-light justify-content-between">
+                                    <div class="d-flex gap-2">
+                                        <!-- Search -->
+                                        <div class="app-search">
+                                            <input data-table-search type="search" class="form-control" placeholder="Search task..." />
+                                            <span data-icon="search" class="app-search-icon text-muted"></span>
+                                        </div>
+
+                                        <!-- Delete Selected -->
+                                        <button data-table-delete-selected class="btn btn-danger d-none">Delete</button>
+                                    </div>
+
+                                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                                        <span class="me-2 fw-semibold">Filter By:</span>
+
+                                        <!-- Task Status Filter -->
+                                        <div class="app-search">
+                                            <select data-table-filter="status" class="form-select form-control my-1 my-md-0">
+                                                <option value="All">Task Status</option>
+                                                <option value="New">New</option>
+                                                <option value="In Progress">In Progress</option>
+                                                <option value="Completed">Completed</option>
+                                                <option value="In Review">In Review</option>
+                                                <option value="Cancelled">Cancelled</option>
+                                            </select>
+                                            <span data-icon="list" class="app-search-icon text-muted"></span>
+                                        </div>
+
+                                        <!-- Priority Filter -->
+                                        <div class="app-search">
+                                            <select data-table-filter="priority" class="form-select form-control my-1 my-md-0">
+                                                <option value="All">Priority</option>
+                                                <option value="High">High</option>
+                                                <option value="Medium">Medium</option>
+                                                <option value="Low">Low</option>
+                                            </select>
+                                            <span data-icon="alert-triangle" class="app-search-icon text-muted"></span>
+                                        </div>
+
+                                        <!-- Records Per Page -->
+                                        <div>
+                                            <select data-table-set-rows-per-page class="form-select form-control my-1 my-md-0">
+                                                <option value="5">5</option>
+                                                <option value="10" selected>10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex gap-1">
+                                        <a href="apps-task-create.html" class="btn btn-primary ms-1"> <span data-icon="plus" class="fs-sm me-2"></span> Add Task </a>
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="table table-custom table-centered table-select table-hover w-100 mb-0">
+                                        <thead class="bg-light align-middle bg-opacity-25 thead-sm">
+                                            <tr class="text-uppercase fs-xxs">
+                                                <th class="ps-3" style="width: 1%">
+                                                    <input data-table-select-all class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </th>
+                                                <th data-table-sort>Task Title</th>
+                                                <th data-table-sort>Assigned To</th>
+                                                <th data-table-sort>Due Date</th>
+                                                <th data-table-sort>Progress</th>
+                                                <th data-table-sort data-column="status">Status</th>
+                                                <th data-table-sort data-column="priority">Priority</th>
+                                                <th data-table-sort>Comments</th>
+                                                <th class="text-center" style="width: 1%">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Task 1 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+
+                                                <td>
+                                                    <h5 class="fs-base mb-0">
+                                                        <a href="apps-task-details.html" class="link-reset"> Complete Presentation Slides for Meeting </a>
+                                                    </h5>
+                                                    <p class="text-muted fs-xs mb-0">Created: 9 May, 2025 <small class="text-muted">10:10 AM</small></p>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-2.jpg" alt="Cruise ⚒️" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-base fw-semibold">Cruise ⚒️</h6>
+                                                            <p class="text-muted fs-xs mb-0">+2 members</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span data-icon="calendar" class="text-muted me-1"></span> Today</td>
+
+                                                <td><span data-icon="list-details" class="text-muted me-1"></span> 0/7</td>
+
+                                                <td>
+                                                    <span class="badge badge-outline-warning fs-xxs">New</span>
+                                                </td>
+
+                                                <td>
+                                                    <span class="badge badge-soft-danger fs-xxs">High</span>
+                                                </td>
+
+                                                <td><span data-icon="messages" class="text-muted fs-sm me-1"></span> 1</td>
+
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="apps-task-details.html" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Task 2 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+
+                                                <td>
+                                                    <h5 class="fs-base mb-0">
+                                                        <a href="apps-task-details.html" class="link-reset"> Finalize Product Roadmap for Launch </a>
+                                                    </h5>
+                                                    <p class="text-muted fs-xs mb-0">Created: 8 Oct, 2025 <small class="text-muted">2:30 PM</small></p>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-5.jpg" alt="Maria 💻" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-base fw-semibold">Maria 💻</h6>
+                                                            <p class="text-muted fs-xs mb-0">+2 members</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span data-icon="calendar" class="text-muted me-1"></span> 29 Oct, 2025</td>
+                                                <td><span data-icon="list-details" class="text-muted me-1"></span> 5/10</td>
+                                                <td><span class="badge badge-outline-success fs-xxs">In Progress</span></td>
+                                                <td><span class="badge badge-soft-warning fs-xxs">Medium</span></td>
+                                                <td><span data-icon="messages" class="text-muted me-1"></span> 14</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="apps-task-details.html" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Task 3 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+
+                                                <td>
+                                                    <h5 class="fs-base mb-0">
+                                                        <a href="apps-task-details.html" class="link-reset"> Design Marketing Campaign Assets </a>
+                                                    </h5>
+                                                    <p class="text-muted fs-xs mb-0">Created: 6 Oct, 2025 <small class="text-muted">5:45 PM</small></p>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-3.jpg" alt="Kevin" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-base fw-semibold">Kevin</h6>
+                                                            <p class="text-muted fs-xs mb-0">+1 member</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span data-icon="calendar" class="text-muted me-1"></span> 29 Oct, 2025</td>
+                                                <td><span data-icon="list-details" class="text-muted me-1"></span> 6/8</td>
+                                                <td><span class="badge badge-outline-success fs-xxs">In Progress</span></td>
+                                                <td><span class="badge badge-soft-danger fs-xxs">High</span></td>
+                                                <td><span data-icon="messages" class="text-muted me-1"></span> 9</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="apps-task-details.html" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Task 4 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+
+                                                <td>
+                                                    <h5 class="fs-base mb-0">
+                                                        <a href="apps-task-details.html" class="link-reset"> Prepare Monthly Financial Report </a>
+                                                    </h5>
+                                                    <p class="text-muted fs-xs mb-0">Created: 4 Oct, 2025 <small class="text-muted">11:00 AM</small></p>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-4.jpg" alt="Thomas 🏠" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-base fw-semibold">Thomas 🏠</h6>
+                                                            <p class="text-muted fs-xs mb-0">+1 member</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span data-icon="calendar" class="text-danger me-1"></span> 20 Sep, 2025</td>
+                                                <td><span data-icon="list-details" class="text-muted me-1"></span> 2/5</td>
+                                                <td><span class="badge badge-outline-success fs-xxs">In Progress</span></td>
+                                                <td><span class="badge badge-soft-warning fs-xxs">Medium</span></td>
+                                                <td><span data-icon="messages" class="text-muted me-1"></span> 6</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="apps-task-details.html" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Task 5 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+
+                                                <td>
+                                                    <h5 class="fs-base mb-0">
+                                                        <a href="apps-task-details.html" class="link-reset"> Conduct Team Retrospective Meeting </a>
+                                                    </h5>
+                                                    <p class="text-muted fs-xs mb-0">Created: 2 Oct, 2025 <small class="text-muted">4:00 PM</small></p>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-6.jpg" alt="James" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-base fw-semibold">James</h6>
+                                                            <p class="text-muted fs-xs mb-0">Solo</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span data-icon="calendar" class="text-muted me-1"></span> Yesterday</td>
+                                                <td><span data-icon="list-details" class="text-muted me-1"></span> 4/4</td>
+                                                <td><span class="badge badge-outline-success fs-xxs">Completed</span></td>
+                                                <td><span class="badge badge-soft-success fs-xxs">Low</span></td>
+                                                <td><span data-icon="messages" class="text-muted me-1"></span> 2</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="apps-task-details.html" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Task 6 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+
+                                                <td>
+                                                    <h5 class="fs-base mb-0">
+                                                        <a href="apps-task-details.html" class="link-reset"> Review UI/UX Prototype for Dashboard </a>
+                                                    </h5>
+                                                    <p class="text-muted fs-xs mb-0">Created: 1 Oct, 2025 <small class="text-muted">9:45 AM</small></p>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-7.jpg" alt="Sophia 🚀" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-base fw-semibold">Sophia 🚀</h6>
+                                                            <p class="text-muted fs-xs mb-0">+3 members</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span data-icon="calendar" class="text-muted me-1"></span> 22 Oct, 2025</td>
+                                                <td><span data-icon="list-details" class="text-muted me-1"></span> 1/6</td>
+                                                <td><span class="badge badge-outline-warning fs-xxs">New</span></td>
+                                                <td><span class="badge badge-soft-danger fs-xxs">High</span></td>
+                                                <td><span data-icon="messages" class="text-muted me-1"></span> 11</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="apps-task-details.html" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Task 7 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+
+                                                <td>
+                                                    <h5 class="fs-base mb-0">
+                                                        <a href="apps-task-details.html" class="link-reset"> Update Documentation and API References </a>
+                                                    </h5>
+                                                    <p class="text-muted fs-xs mb-0">Created: 28 Sep, 2025 <small class="text-muted">1:20 PM</small></p>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-8.jpg" alt="Liam" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-base fw-semibold">Liam</h6>
+                                                            <p class="text-muted fs-xs mb-0">+1 member</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span data-icon="calendar" class="text-danger me-1"></span> 19 Sep, 2025</td>
+                                                <td><span data-icon="list-details" class="text-muted me-1"></span> 7/8</td>
+                                                <td><span class="badge badge-outline-danger fs-xxs">Cancelled</span></td>
+                                                <td><span class="badge badge-soft-warning fs-xxs">Medium</span></td>
+                                                <td><span data-icon="messages" class="text-muted me-1"></span> 5</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="apps-task-details.html" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="edit" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="delete" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Task 8 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+
+                                                <td>
+                                                    <h5 class="fs-base mb-0">
+                                                        <a href="apps-task-details.html" class="link-reset"> Implement User Authentication Module </a>
+                                                    </h5>
+                                                    <p class="text-muted fs-xs mb-0">Created: 10 Oct, 2025 <small class="text-muted">9:00 AM</small></p>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-9.jpg" alt="Olivia" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-base fw-semibold">Olivia</h6>
+                                                            <p class="text-muted fs-xs mb-0">+2 members</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span data-icon="calendar" class="text-muted me-1"></span> Tomorrow</td>
+                                                <td><span data-icon="list-details" class="text-muted me-1"></span> 3/10</td>
+                                                <td><span class="badge badge-outline-warning fs-xxs">New</span></td>
+                                                <td><span class="badge badge-soft-danger fs-xxs">High</span></td>
+                                                <td><span data-icon="messages" class="text-muted me-1"></span> 8</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="apps-task-details.html" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Task 9 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+
+                                                <td>
+                                                    <h5 class="fs-base mb-0">
+                                                        <a href="apps-task-details.html" class="link-reset"> Write Test Cases for API Endpoints </a>
+                                                    </h5>
+                                                    <p class="text-muted fs-xs mb-0">Created: 9 Oct, 2025 <small class="text-muted">10:45 AM</small></p>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-10.jpg" alt="Ethan" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-base fw-semibold">Ethan</h6>
+                                                            <p class="text-muted fs-xs mb-0">Solo</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span data-icon="calendar" class="text-muted me-1"></span> 12 Nov, 2025</td>
+                                                <td><span data-icon="list-details" class="text-muted me-1"></span> 1/8</td>
+                                                <td><span class="badge badge-outline-warning fs-xxs">In Review</span></td>
+                                                <td><span class="badge badge-soft-warning fs-xxs">Medium</span></td>
+                                                <td><span data-icon="messages" class="text-muted me-1"></span> 3</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="apps-task-details.html" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Task 10 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+
+                                                <td>
+                                                    <h5 class="fs-base mb-0">
+                                                        <a href="apps-task-details.html" class="link-reset"> Migrate Legacy Data to New Database </a>
+                                                    </h5>
+                                                    <p class="text-muted fs-xs mb-0">Created: 5 Oct, 2025 <small class="text-muted">8:00 PM</small></p>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-4.jpg" alt="Charlotte" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-base fw-semibold">Charlotte</h6>
+                                                            <p class="text-muted fs-xs mb-0">+1 member</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span data-icon="calendar" class="text-muted me-1"></span> Next Week</td>
+                                                <td><span data-icon="list-details" class="text-muted me-1"></span> 2/12</td>
+                                                <td><span class="badge badge-outline-success fs-xxs">In Progress</span></td>
+                                                <td><span class="badge badge-soft-warning fs-xxs">Medium</span></td>
+                                                <td><span data-icon="messages" class="text-muted me-1"></span> 10</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="apps-task-details.html" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Task 11 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+
+                                                <td>
+                                                    <h5 class="fs-base mb-0">
+                                                        <a href="apps-task-details.html" class="link-reset"> QA Review and Regression Testing </a>
+                                                    </h5>
+                                                    <p class="text-muted fs-xs mb-0">Created: 3 Oct, 2025 <small class="text-muted">3:10 PM</small></p>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-2.jpg" alt="Grace" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-base fw-semibold">Grace</h6>
+                                                            <p class="text-muted fs-xs mb-0">QA Team</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span data-icon="calendar" class="text-danger me-1"></span> 12 Sep, 2025</td>
+                                                <td><span data-icon="list-details" class="text-muted me-1"></span> 9/10</td>
+                                                <td><span class="badge badge-outline-danger fs-xxs">Cancelled</span></td>
+                                                <td><span class="badge badge-soft-danger fs-xxs">High</span></td>
+                                                <td><span data-icon="messages" class="text-muted me-1"></span> 17</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="apps-task-details.html" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Task 12 -->
+                                            <tr>
+                                                <td class="ps-3">
+                                                    <input class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                </td>
+
+                                                <td>
+                                                    <h5 class="fs-base mb-0">
+                                                        <a href="apps-task-details.html" class="link-reset"> Optimize Application Performance Metrics </a>
+                                                    </h5>
+                                                    <p class="text-muted fs-xs mb-0">Created: 1 Oct, 2025 <small class="text-muted">12:05 PM</small></p>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-6.jpg" alt="Noah" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0 fs-base fw-semibold">Noah</h6>
+                                                            <p class="text-muted fs-xs mb-0">DevOps</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td><span data-icon="calendar" class="text-muted me-1"></span> 18 Oct, 2025</td>
+                                                <td><span data-icon="list-details" class="text-muted me-1"></span> 2/7</td>
+                                                <td><span class="badge badge-outline-success fs-xxs">In Progress</span></td>
+                                                <td><span class="badge badge-soft-warning fs-xxs">Medium</span></td>
+                                                <td><span data-icon="messages" class="text-muted me-1"></span> 6</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-center gap-1">
+                                                        <a href="apps-task-details.html" class="btn btn-default btn-icon btn-sm">
+                                                            <span data-icon="eye" class="fs-lg"></span>
+                                                        </a>
+                                                        <a href="#" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                        <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="card-footer border-0">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div data-table-pagination-info="tasks"></div>
+                                        <div data-table-pagination></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+
+        <!-- Custom table -->
+        <script src="assets/js/pages/custom-table.js"></script>
+    </body>
+</html>

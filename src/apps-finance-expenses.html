@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Expenses"}) @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle": "Finance", "title":"Expenses"})
+
+                    <div class="row row-cols-xxl-4 row-cols-md-2 row-cols-1">
+                        <!-- Total Expenses Widget -->
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar fs-60 avatar-img-size flex-shrink-0">
+                                            <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-24">
+                                                <span data-icon="wallet"></span>
+                                            </span>
+                                        </div>
+                                        <div class="text-end">
+                                            <h3 class="mb-2 fw-normal">$<span data-target="15240">0</span></h3>
+                                            <p class="mb-0 text-muted"><span>Total Expenses</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+
+                        <!-- Approved Expenses Widget -->
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar fs-60 avatar-img-size flex-shrink-0">
+                                            <span class="avatar-title bg-success-subtle text-success rounded-circle fs-24">
+                                                <span data-icon="check-circle"></span>
+                                            </span>
+                                        </div>
+                                        <div class="text-end">
+                                            <h3 class="mb-2 fw-normal">$<span data-target="10780">0</span></h3>
+                                            <p class="mb-0 text-muted"><span>Approved Expenses</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+
+                        <!-- Pending Approval Widget -->
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar fs-60 avatar-img-size flex-shrink-0">
+                                            <span class="avatar-title bg-warning-subtle text-warning rounded-circle fs-24">
+                                                <span data-icon="hourglass"></span>
+                                            </span>
+                                        </div>
+                                        <div class="text-end">
+                                            <h3 class="mb-2 fw-normal">$<span data-target="2940">0</span></h3>
+                                            <p class="mb-0 text-muted"><span>Pending Approval</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+
+                        <!-- Reimbursed Expenses Widget -->
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar fs-60 avatar-img-size flex-shrink-0">
+                                            <span class="avatar-title bg-info-subtle text-info rounded-circle fs-24">
+                                                <span data-icon="refresh"></span>
+                                            </span>
+                                        </div>
+                                        <div class="text-end">
+                                            <h3 class="mb-2 fw-normal">$<span data-target="1520">0</span></h3>
+                                            <p class="mb-0 text-muted"><span>Reimbursed</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div data-table data-table-rows-per-page="8" class="card">
+                                <div class="card-header border-light justify-content-between">
+                                    <div class="d-flex gap-2">
+                                        <!-- Search -->
+                                        <div class="app-search">
+                                            <input data-table-search type="search" class="form-control" placeholder="Search expenses..." />
+                                            <span data-icon="search" class="app-search-icon text-muted"></span>
+                                        </div>
+
+                                        <!-- Add New Expense -->
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addExpenseModal"><span data-icon="plus" class="me-1"></span> Add Expense</button>
+
+                                        <!-- Delete Selected -->
+                                        <button data-table-delete-selected class="btn btn-danger d-none">Delete</button>
+                                    </div>
+
+                                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                                        <span class="me-2 fw-semibold">Filter By:</span>
+
+                                        <!-- Category Filter -->
+                                        <div class="app-search">
+                                            <select data-table-filter="expense-category" class="form-select form-control my-1 my-md-0">
+                                                <option value="">Category</option>
+                                                <option value="Office Supplies">Office Supplies</option>
+                                                <option value="Travel">Travel</option>
+                                                <option value="Meals">Meals</option>
+                                                <option value="Entertainment">Entertainment</option>
+                                                <option value="Equipment">Equipment</option>
+                                                <option value="Utilities">Utilities</option>
+                                                <option value="Maintenance">Maintenance</option>
+                                            </select>
+                                            <span data-icon="category" class="app-search-icon text-muted"></span>
+                                        </div>
+
+                                        <!-- Status Filter -->
+                                        <div class="app-search">
+                                            <select data-table-filter="status" class="form-select form-control my-1 my-md-0">
+                                                <option value="">Status</option>
+                                                <option value="Approved">Approved</option>
+                                                <option value="Pending">Pending</option>
+                                                <option value="Rejected">Rejected</option>
+                                                <option value="Reimbursed">Reimbursed</option>
+                                            </select>
+                                            <span data-icon="check-circle" class="app-search-icon text-muted"></span>
+                                        </div>
+
+                                        <!-- Records Per Page -->
+                                        <div>
+                                            <select data-table-set-rows-per-page class="form-select form-control my-1 my-md-0">
+                                                <option value="5">5</option>
+                                                <option value="10" selected>10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-custom table-centered table-select table-hover w-100 mb-0">
+                                            <thead class="bg-light align-middle bg-opacity-25 thead-sm text-nowrap">
+                                                <tr class="text-uppercase fs-xxs">
+                                                    <th class="ps-3" style="width: 1%">
+                                                        <input data-table-select-all class="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
+                                                    </th>
+                                                    <th data-table-sort>ID</th>
+                                                    <th>Expense Title</th>
+                                                    <th data-table-sort data-column="expense-category">Category</th>
+                                                    <th>Payment Method</th>
+                                                    <th data-table-sort>Amount</th>
+                                                    <th data-table-sort data-column="status">Status</th>
+                                                    <th data-table-sort>Date</th>
+                                                    <th data-table-sort>Added By</th>
+                                                    <th class="text-center" style="width: 1%">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-nowrap">
+                                                <tr>
+                                                    <td class="ps-3">
+                                                        <input class="form-check-input form-check-input-light fs-14 product-item-check mt-0" type="checkbox" />
+                                                    </td>
+                                                    <td><a href="#!" class="fw-semibold link-reset">#EXP-1023</a></td>
+                                                    <td>Office Stationery</td>
+                                                    <td data-column="category">Office Supplies</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/cards/mastercard.svg" alt="MasterCard" class="me-2" height="26" />
+                                                            <span>**** 4421</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$248.50</td>
+                                                    <td><span class="badge bg-success-subtle text-success badge-label">Approved</span></td>
+                                                    <td>02 Oct, 2025 <small class="text-muted">09:45 AM</small></td>
+                                                    <td>
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <img src="assets/images/users/user-5.jpg" alt="John Miller" class="avatar-xs rounded-circle" />
+                                                            <span>John Miller</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center gap-1">
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                                <span data-icon="eye" class="fs-lg"></span>
+                                                            </a>
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm">
+                                                                <span data-icon="edit" class="fs-lg"></span>
+                                                            </a>
+                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm">
+                                                                <span data-icon="delete" class="fs-lg"></span>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="ps-3">
+                                                        <input class="form-check-input form-check-input-light fs-14 product-item-check mt-0" type="checkbox" />
+                                                    </td>
+                                                    <td><a href="#!" class="fw-semibold link-reset">#EXP-1024</a></td>
+                                                    <td>Flight to New York</td>
+                                                    <td data-column="category">Travel</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/cards/visa.svg" alt="Visa" class="me-2" height="26" />
+                                                            <span>**** 6783</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$820.00</td>
+                                                    <td><span class="badge bg-warning-subtle text-warning badge-label">Pending</span></td>
+                                                    <td>04 Oct, 2025 <small class="text-muted">02:10 PM</small></td>
+                                                    <td>
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <img src="assets/images/users/user-7.jpg" alt="Sarah Lee" class="avatar-xs rounded-circle" />
+                                                            <span>Sarah Lee</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center gap-1">
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="ps-3">
+                                                        <input class="form-check-input form-check-input-light fs-14 product-item-check mt-0" type="checkbox" />
+                                                    </td>
+                                                    <td><a href="#!" class="fw-semibold link-reset">#EXP-1025</a></td>
+                                                    <td>Team Dinner</td>
+                                                    <td data-column="category">Meals</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/cards/paypal.svg" alt="PayPal" class="me-2" height="26" />
+                                                            <span>PayPal</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$185.75</td>
+                                                    <td><span class="badge bg-success-subtle text-success badge-label">Approved</span></td>
+                                                    <td>03 Oct, 2025 <small class="text-muted">08:00 PM</small></td>
+                                                    <td>
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <img src="assets/images/users/user-6.jpg" alt="David Wilson" class="avatar-xs rounded-circle" />
+                                                            <span>David Wilson</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center gap-1">
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="ps-3">
+                                                        <input class="form-check-input form-check-input-light fs-14 product-item-check mt-0" type="checkbox" />
+                                                    </td>
+                                                    <td><a href="#!" class="fw-semibold link-reset">#EXP-1026</a></td>
+                                                    <td>Printer Repair & Service</td>
+                                                    <td data-column="category">Maintenance</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/cards/american-express.svg" alt="Amex" class="me-2" height="26" />
+                                                            <span>**** 9124</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$96.20</td>
+                                                    <td><span class="badge bg-danger-subtle text-danger badge-label">Rejected</span></td>
+                                                    <td>01 Oct, 2025 <small class="text-muted">03:40 PM</small></td>
+                                                    <td>
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <img src="assets/images/users/user-9.jpg" alt="Olivia Brown" class="avatar-xs rounded-circle" />
+                                                            <span>Olivia Brown</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center gap-1">
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="ps-3">
+                                                        <input class="form-check-input form-check-input-light fs-14 product-item-check mt-0" type="checkbox" />
+                                                    </td>
+                                                    <td><a href="#!" class="fw-semibold link-reset">#EXP-1027</a></td>
+                                                    <td>Software Subscription</td>
+                                                    <td data-column="category">Utilities</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/cards/mastercard.svg" alt="MasterCard" class="me-2" height="26" />
+                                                            <span>**** 2217</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$59.99</td>
+                                                    <td><span class="badge bg-success-subtle text-success badge-label">Reimbursed</span></td>
+                                                    <td>30 Sep, 2025 <small class="text-muted">11:20 AM</small></td>
+                                                    <td>
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <img src="assets/images/users/user-10.jpg" alt="Ethan Brooks" class="avatar-xs rounded-circle" />
+                                                            <span>Ethan Brooks</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center gap-1">
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="ps-3">
+                                                        <input class="form-check-input form-check-input-light fs-14 product-item-check mt-0" type="checkbox" />
+                                                    </td>
+                                                    <td><a href="#!" class="fw-semibold link-reset">#EXP-1028</a></td>
+                                                    <td>Office Coffee Machine</td>
+                                                    <td data-column="category">Equipment</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/cards/visa.svg" alt="Visa" class="me-2" height="26" />
+                                                            <span>**** 3328</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$342.60</td>
+                                                    <td><span class="badge bg-warning-subtle text-warning badge-label">Pending</span></td>
+                                                    <td>28 Sep, 2025 <small class="text-muted">09:05 AM</small></td>
+                                                    <td>
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <img src="assets/images/users/user-1.jpg" alt="Liam Davis" class="avatar-xs rounded-circle" />
+                                                            <span>Liam Davis</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center gap-1">
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="ps-3">
+                                                        <input class="form-check-input form-check-input-light fs-14 product-item-check mt-0" type="checkbox" />
+                                                    </td>
+                                                    <td><a href="#!" class="fw-semibold link-reset">#EXP-1029</a></td>
+                                                    <td>Office Internet Bill</td>
+                                                    <td data-column="category">Utilities</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/cards/visa.svg" alt="Visa" class="me-2" height="26" />
+                                                            <span>**** 5454</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$129.00</td>
+                                                    <td><span class="badge bg-success-subtle text-success badge-label">Approved</span></td>
+                                                    <td>27 Sep, 2025 <small class="text-muted">01:25 PM</small></td>
+                                                    <td>
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <img src="assets/images/users/user-3.jpg" alt="Emily Clark" class="avatar-xs rounded-circle" />
+                                                            <span>Emily Clark</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center gap-1">
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="ps-3">
+                                                        <input class="form-check-input form-check-input-light fs-14 product-item-check mt-0" type="checkbox" />
+                                                    </td>
+                                                    <td><a href="#!" class="fw-semibold link-reset">#EXP-1030</a></td>
+                                                    <td>Client Entertainment</td>
+                                                    <td data-column="category">Entertainment</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/cards/mastercard.svg" alt="MasterCard" class="me-2" height="26" />
+                                                            <span>**** 9128</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$298.40</td>
+                                                    <td><span class="badge bg-warning-subtle text-warning badge-label">Pending</span></td>
+                                                    <td>25 Sep, 2025 <small class="text-muted">07:55 PM</small></td>
+                                                    <td>
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <img src="assets/images/users/user-2.jpg" alt="Daniel Ray" class="avatar-xs rounded-circle" />
+                                                            <span>Daniel Ray</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center gap-1">
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="ps-3">
+                                                        <input class="form-check-input form-check-input-light fs-14 product-item-check mt-0" type="checkbox" />
+                                                    </td>
+                                                    <td><a href="#!" class="fw-semibold link-reset">#EXP-1031</a></td>
+                                                    <td>Conference Registration</td>
+                                                    <td data-column="category">Training & Events</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/cards/american-express.svg" alt="Amex" class="me-2" height="26" />
+                                                            <span>**** 7742</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$560.00</td>
+                                                    <td><span class="badge bg-success-subtle text-success badge-label">Approved</span></td>
+                                                    <td>24 Sep, 2025 <small class="text-muted">09:20 AM</small></td>
+                                                    <td>
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <img src="assets/images/users/user-4.jpg" alt="Emma Johnson" class="avatar-xs rounded-circle" />
+                                                            <span>Emma Johnson</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center gap-1">
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="ps-3">
+                                                        <input class="form-check-input form-check-input-light fs-14 product-item-check mt-0" type="checkbox" />
+                                                    </td>
+                                                    <td><a href="#!" class="fw-semibold link-reset">#EXP-1032</a></td>
+                                                    <td>Office Furniture Purchase</td>
+                                                    <td data-column="category">Equipment</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/cards/visa.svg" alt="Visa" class="me-2" height="26" />
+                                                            <span>**** 2398</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$1,125.00</td>
+                                                    <td><span class="badge bg-success-subtle text-success badge-label">Reimbursed</span></td>
+                                                    <td>22 Sep, 2025 <small class="text-muted">04:50 PM</small></td>
+                                                    <td>
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <img src="assets/images/users/user-8.jpg" alt="Lucas Martin" class="avatar-xs rounded-circle" />
+                                                            <span>Lucas Martin</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center gap-1">
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="ps-3">
+                                                        <input class="form-check-input form-check-input-light fs-14 product-item-check mt-0" type="checkbox" />
+                                                    </td>
+                                                    <td><a href="#!" class="fw-semibold link-reset">#EXP-1033</a></td>
+                                                    <td>Taxi Fare - Client Visit</td>
+                                                    <td data-column="category">Travel</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="assets/images/cards/paypal.svg" alt="PayPal" class="me-2" height="26" />
+                                                            <span>PayPal</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>$42.50</td>
+                                                    <td><span class="badge bg-danger-subtle text-danger badge-label">Rejected</span></td>
+                                                    <td>20 Sep, 2025 <small class="text-muted">05:35 PM</small></td>
+                                                    <td>
+                                                        <div class="d-flex gap-2 align-items-center">
+                                                            <img src="assets/images/users/user-7.jpg" alt="Sophia Turner" class="avatar-xs rounded-circle" />
+                                                            <span>Sophia Turner</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex justify-content-center gap-1">
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- end table responsive-->
+                                </div>
+                                <!-- end card-body-->
+
+                                <div class="card-footer border-0">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div data-table-pagination-info="Expenses"></div>
+                                        <div data-table-pagination></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end card-->
+                        </div>
+                        <!-- end col-->
+                    </div>
+                    <!-- end row-->
+
+                    <!-- Add New Expense Modal -->
+                    <div class="modal fade" id="addExpenseModal" tabindex="-1" aria-labelledby="addExpenseModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content border-0 shadow-sm">
+                                <div class="modal-header bg-light border-bottom">
+                                    <h5 class="modal-title fw-semibold" id="addExpenseModalLabel">Add New Expense</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <form id="addExpenseForm">
+                                    <div class="modal-body">
+                                        <div class="row g-3">
+                                            <!-- Expense Title -->
+                                            <div class="col-md-6">
+                                                <label for="expenseTitle" class="form-label">Expense Title <span class="text-danger">*</span></label>
+                                                <input type="text" id="expenseTitle" class="form-control" placeholder="Enter expense title" required />
+                                            </div>
+
+                                            <!-- Amount -->
+                                            <div class="col-md-6">
+                                                <label for="expenseAmount" class="form-label">Amount ($) <span class="text-danger">*</span></label>
+                                                <input type="number" step="0.01" id="expenseAmount" class="form-control" placeholder="Enter amount" required />
+                                            </div>
+
+                                            <!-- Category -->
+                                            <div class="col-md-6">
+                                                <label for="expenseCategory" class="form-label">Category <span class="text-danger">*</span></label>
+                                                <select id="expenseCategory" class="form-select" required>
+                                                    <option value="">Select category</option>
+                                                    <option value="Office Supplies">Office Supplies</option>
+                                                    <option value="Travel">Travel</option>
+                                                    <option value="Meals">Meals</option>
+                                                    <option value="Entertainment">Entertainment</option>
+                                                    <option value="Equipment">Equipment</option>
+                                                    <option value="Utilities">Utilities</option>
+                                                    <option value="Maintenance">Maintenance</option>
+                                                    <option value="Training & Events">Training & Events</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Payment Method -->
+                                            <div class="col-md-6">
+                                                <label for="expensePayment" class="form-label">Payment Method</label>
+                                                <select id="expensePayment" class="form-select">
+                                                    <option value="">Select payment method</option>
+                                                    <option value="Credit Card">Credit Card</option>
+                                                    <option value="Debit Card">Debit Card</option>
+                                                    <option value="Cash">Cash</option>
+                                                    <option value="PayPal">PayPal</option>
+                                                    <option value="Bank Transfer">Bank Transfer</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Status -->
+                                            <div class="col-md-6">
+                                                <label for="expenseStatus" class="form-label">Status</label>
+                                                <select id="expenseStatus" class="form-select">
+                                                    <option value="">Select status</option>
+                                                    <option value="Pending">Pending</option>
+                                                    <option value="Approved">Approved</option>
+                                                    <option value="Rejected">Rejected</option>
+                                                    <option value="Reimbursed">Reimbursed</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Date -->
+                                            <div class="col-md-6">
+                                                <label for="expenseDate" class="form-label">Date & Time</label>
+                                                <input type="text" data-provider="flatpickr" data-date-format="d M, Y" id="expenseDate" class="form-control" />
+                                            </div>
+
+                                            <!-- Description -->
+                                            <div class="col-12">
+                                                <label for="expenseDesc" class="form-label">Description</label>
+                                                <textarea id="expenseDesc" class="form-control" rows="3" placeholder="Optional notes or description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer border-top">
+                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary"><span data-icon="save" class="me-1"></span> Save Expense</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- end modal content-->
+                        </div>
+                        <!-- end modal dialog-->
+                    </div>
+                    <!-- end modal-->
+                </div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+
+        <!-- Custom table -->
+        <script src="assets/js/pages/custom-table.js"></script>
+    </body>
+</html>

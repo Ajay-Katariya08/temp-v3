@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Banks & cards"}) @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle": "Finance", "title":"Banks & cards"})
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <!-- Bank Accounts Section -->
+                                    <div class="row mb-2">
+                                        <!-- Section Header -->
+                                        <div class="col-12 d-flex justify-content-between align-items-center mb-3">
+                                            <h5 class="fw-semibold fs-base text-muted text-uppercase mb-0">Bank Accounts</h5>
+                                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addBankModal"><span data-icon="plus" class="me-1"></span> Add Bank</button>
+                                        </div>
+
+                                        <!-- Bank Account 1 -->
+                                        <div class="col-md-6 col-xxl-4">
+                                            <div class="card border border-dashed shadow-none">
+                                                <div class="card-body d-flex justify-content-between">
+                                                    <div class="d-flex gap-3">
+                                                        <div class="avatar avatar-lg flex-shrink-0">
+                                                            <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-24">
+                                                                <span data-icon="bank"></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <h5 class="fw-semibold mb-1">Chase Bank</h5>
+                                                            <p class="text-muted mb-3 fs-sm">Balance: $12,875.61 USD</p>
+
+                                                            <ul class="list-unstyled mb-0">
+                                                                <li><strong class="text-muted">Account Holder:</strong> John Doe</li>
+                                                                <li><strong class="text-muted">Account No:</strong> 1234 5678 2045</li>
+                                                                <li><strong class="text-muted">Account Type:</strong> Checking</li>
+                                                                <li><strong class="text-muted">Branch:</strong> New York Downtown</li>
+                                                            </ul>
+                                                            <div class="mt-3">
+                                                                <button class="btn btn-sm btn-default">Edit</button>
+                                                                <button class="btn btn-sm btn-default">Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <span class="badge bg-success-subtle text-success mb-2">Active</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Bank Account 2 -->
+                                        <div class="col-md-6 col-xxl-4">
+                                            <div class="card border border-dashed shadow-none">
+                                                <div class="card-body d-flex justify-content-between">
+                                                    <div class="d-flex gap-3">
+                                                        <div class="avatar avatar-lg flex-shrink-0">
+                                                            <span class="avatar-title bg-info-subtle text-info rounded-circle fs-24">
+                                                                <span data-icon="bank"></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <h5 class="fw-semibold mb-1">Bank of America</h5>
+                                                            <p class="text-muted mb-3 fs-sm">Balance: $9,432.18 USD</p>
+
+                                                            <ul class="list-unstyled mb-0">
+                                                                <li><strong class="text-muted">Account Holder:</strong> Emily Smith</li>
+                                                                <li><strong class="text-muted">Account No:</strong> 9876 5432 1089</li>
+                                                                <li><strong class="text-muted">Account Type:</strong> Savings</li>
+                                                                <li><strong class="text-muted">Branch:</strong> Los Angeles Central</li>
+                                                            </ul>
+                                                            <div class="mt-3">
+                                                                <button class="btn btn-sm btn-default">Edit</button>
+                                                                <button class="btn btn-sm btn-default">Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <span class="badge bg-warning-subtle text-warning mb-2">Inactive</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Bank Account 3 -->
+                                        <div class="col-md-6 col-xxl-4">
+                                            <div class="card border border-dashed shadow-none">
+                                                <div class="card-body d-flex justify-content-between">
+                                                    <div class="d-flex gap-3">
+                                                        <div class="avatar avatar-lg flex-shrink-0">
+                                                            <span class="avatar-title bg-danger-subtle text-danger rounded-circle fs-24">
+                                                                <span data-icon="bank"></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <h5 class="fw-semibold mb-1">Wells Fargo</h5>
+                                                            <p class="text-muted mb-3 fs-sm">Balance: $18,210.42 USD</p>
+
+                                                            <ul class="list-unstyled mb-0">
+                                                                <li><strong class="text-muted">Account Holder:</strong> Michael Johnson</li>
+                                                                <li><strong class="text-muted">Account No:</strong> 4455 2299 6574</li>
+                                                                <li><strong class="text-muted">Account Type:</strong> Business</li>
+                                                                <li><strong class="text-muted">Branch:</strong> Chicago West Loop</li>
+                                                            </ul>
+                                                            <div class="mt-3">
+                                                                <button class="btn btn-sm btn-default">Edit</button>
+                                                                <button class="btn btn-sm btn-default">Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <span class="badge bg-success-subtle text-success mb-2">Active</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end bank accounts section -->
+
+                                    <!-- Payment Cards Section -->
+                                    <div class="row">
+                                        <!-- Section Header -->
+                                        <div class="col-12 d-flex justify-content-between align-items-center mb-3">
+                                            <h5 class="fw-semibold fs-base text-muted text-uppercase mb-0">Cards</h5>
+                                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addCardModal"><span data-icon="plus" class="me-1"></span> Add Card</button>
+                                        </div>
+
+                                        <!-- Visa Card -->
+                                        <div class="col-md-6 col-xxl-3">
+                                            <div class="card border border-dashed shadow-none">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <img src="assets/images/cards/visa.svg" alt="Visa" height="36" />
+                                                        <span class="badge bg-success-subtle text-success">Active</span>
+                                                    </div>
+                                                    <h4 class="fw-semibold mt-3">**** **** **** 3294</h4>
+                                                    <p class="text-muted fs-sm mb-0">Exp: 08/28</p>
+                                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                                        <span class="fw-medium text-dark">John Miller</span>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-sm btn-light btn-icon rounded-circle" data-bs-toggle="dropdown">
+                                                                <span data-icon="dots-vertical"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                <li><a class="dropdown-item" href="#">Set as Default</a></li>
+                                                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                <li><a class="dropdown-item text-danger" href="#">Remove</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- MasterCard -->
+                                        <div class="col-md-6 col-xxl-3">
+                                            <div class="card border border-dashed shadow-none">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <img src="assets/images/cards/mastercard.svg" alt="MasterCard" height="36" />
+                                                        <span class="badge bg-success-subtle text-success">Active</span>
+                                                    </div>
+                                                    <h4 class="fw-semibold mt-3">**** **** **** 7841</h4>
+                                                    <p class="text-muted fs-sm mb-0">Exp: 12/26</p>
+                                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                                        <span class="fw-medium text-dark">Emma Thompson</span>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-sm btn-light btn-icon rounded-circle" data-bs-toggle="dropdown">
+                                                                <span data-icon="dots-vertical"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                <li><a class="dropdown-item" href="#">Set as Default</a></li>
+                                                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                <li><a class="dropdown-item text-danger" href="#">Remove</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- American Express -->
+                                        <div class="col-md-6 col-xxl-3">
+                                            <div class="card border border-dashed shadow-none">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <img src="assets/images/cards/american-express.svg" alt="American Express" height="36" />
+                                                        <span class="badge bg-warning-subtle text-warning">Inactive</span>
+                                                    </div>
+                                                    <h4 class="fw-semibold mt-3">**** **** **** 4428</h4>
+                                                    <p class="text-muted fs-sm mb-0">Exp: 03/27</p>
+                                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                                        <span class="fw-medium text-dark">Liam Carter</span>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-sm btn-light btn-icon rounded-circle" data-bs-toggle="dropdown">
+                                                                <span data-icon="dots-vertical"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                <li><a class="dropdown-item" href="#">Set as Default</a></li>
+                                                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                <li><a class="dropdown-item text-danger" href="#">Remove</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Discover Card -->
+                                        <div class="col-md-6 col-xxl-3">
+                                            <div class="card border border-dashed shadow-none">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <img src="assets/images/cards/discover-card.svg" alt="Discover" height="36" />
+                                                        <span class="badge bg-danger-subtle text-danger">Expired</span>
+                                                    </div>
+                                                    <h4 class="fw-semibold mt-3">**** **** **** 9812</h4>
+                                                    <p class="text-muted fs-sm mb-0">Exp: 11/24</p>
+                                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                                        <span class="fw-medium text-dark">Sophia Lewis</span>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-sm btn-light btn-icon rounded-circle" data-bs-toggle="dropdown">
+                                                                <span data-icon="dots-vertical"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                <li><a class="dropdown-item" href="#">Set as Default</a></li>
+                                                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                <li><a class="dropdown-item text-danger" href="#">Remove</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end payment cards section -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add Bank Modal -->
+                    <div class="modal fade" id="addBankModal" tabindex="-1" aria-labelledby="addBankModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title fw-semibold" id="addBankModalLabel">Add New Bank Account</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form id="bankForm">
+                                        <div class="mb-3">
+                                            <label class="form-label">Bank Name</label>
+                                            <input type="text" class="form-control" placeholder="Enter bank name" required />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Account Holder</label>
+                                            <input type="text" class="form-control" placeholder="Enter account holder name" required />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Account Number</label>
+                                            <input type="text" class="form-control" placeholder="Enter account number" required />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Account Type</label>
+                                            <select class="form-select" required>
+                                                <option value="">Select type</option>
+                                                <option>Checking</option>
+                                                <option>Savings</option>
+                                                <option>Business</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Branch</label>
+                                            <input type="text" class="form-control" placeholder="Enter branch name" required />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Balance</label>
+                                            <input type="number" class="form-control" placeholder="Enter balance amount" required />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Status</label>
+                                            <select class="form-select">
+                                                <option>Active</option>
+                                                <option>Inactive</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer border-0 pt-0">
+                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="submit" form="bankForm" class="btn btn-primary">Save Bank</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end modal-->
+
+                    <!-- Add Card Modal -->
+                    <div class="modal fade" id="addCardModal" tabindex="-1" aria-labelledby="addCardModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title fw-semibold" id="addCardModalLabel">Add New Card</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form id="cardForm">
+                                        <div class="mb-3">
+                                            <label class="form-label">Card Holder Name</label>
+                                            <input type="text" class="form-control" placeholder="Enter card holder name" required />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Card Number</label>
+                                            <input type="text" class="form-control" placeholder="XXXX XXXX XXXX XXXX" required />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Card Type</label>
+                                            <select class="form-select" required>
+                                                <option value="">Select type</option>
+                                                <option>Credit Card</option>
+                                                <option>Debit Card</option>
+                                                <option>Prepaid Card</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Expiry Date</label>
+                                            <input type="text" data-provider="flatpickr" data-date-format="M, Y" class="form-control" required />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">CVV</label>
+                                            <input type="password" class="form-control" placeholder="***" maxlength="3" required />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Bank Name</label>
+                                            <input type="text" class="form-control" placeholder="Enter bank name" required />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Status</label>
+                                            <select class="form-select">
+                                                <option>Active</option>
+                                                <option>Inactive</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer border-0 pt-0">
+                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="submit" form="cardForm" class="btn btn-primary">Save Card</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+    </body>
+</html>

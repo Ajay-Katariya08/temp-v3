@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Tour"})
+
+        <!-- Tour Page style -->
+        <link href="assets/plugins/tourguidejs/tour.min.css" rel="stylesheet" />
+
+        @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle": "Plugins", "title":"Tour"})
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="text-center mt-4 mb-5">
+                                <div class="auth-brand text-center mb-4">
+                                    <a href="index.html" class="logo-dark">
+                                        <img src="assets/images/logo-black.png" alt="dark logo" height="32" />
+                                    </a>
+                                    <a href="index.html" class="logo-light">
+                                        <img src="assets/images/logo.png" alt="logo" height="32" />
+                                    </a>
+                                </div>
+
+                                <h5 class="fs-lg mb-2">Versatile & Scalable Admin Panel Template</h5>
+                                <p class="text-muted fs-sm">
+                                    Build modern web applications faster with our feature-rich admin panel. Compatible with multiple frameworks and packed with diverse demos, it offers seamless customization and a consistent UI across all your projects.
+                                </p>
+
+                                <!-- Buttons -->
+                                <div class="d-flex justify-content-center mt-4 flex-wrap gap-2">
+                                    <button id="tourTrigger" class="btn btn-primary">
+                                        <span data-icon="player" class="me-1"></span>
+                                        Start Guided Tour
+                                    </button>
+
+                                    <a href="#" class="btn btn-dark" data-tg-order="1" data-tg-tour="Click here to get started and explore our framework-rich admin panel. 🚀" data-tg-title="Getting Started">
+                                        <span data-icon="compass" class="me-1"></span>
+                                        Discover Features
+                                    </a>
+
+                                    <a href="#!" class="btn btn-danger" data-tg-order="2" data-tg-tour="Ready to supercharge your project? Click here to purchase the template!" data-tg-title="Buy Now">
+                                        <span data-icon="shopping-cart" class="me-1"></span>
+                                        Get the Template
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="container" data-tg-order="3" data-tg-tour="Learn more about the versatile services and modules we provide to enhance development." data-tg-title="Core Features">
+                        <div class="row">
+                            <div class="col-xl-3">
+                                <div class="card border-0 p-2 card-h-100">
+                                    <div class="card-body pb-0">
+                                        <div class="avatar-xl mb-3">
+                                            <span class="avatar-title text-bg-secondary rounded-circle fs-22">
+                                                <span data-icon="desktop"></span>
+                                            </span>
+                                        </div>
+                                        <h4 class="fw-semibold mb-2">Multiple Frameworks</h4>
+                                        <p class="text-muted mb-3">Support for Bootstrap, Tailwind, React, Vue, Angular, Laravel, and more — use what suits your stack.</p>
+                                    </div>
+                                    <div class="card-footer border-0 pt-0">
+                                        <a class="link-primary fw-semibold" href="#">
+                                            Know more
+                                            <span data-icon="arrow-right" class="ms-1 align-middle"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3">
+                                <div class="card border-0 p-2 card-h-100">
+                                    <div class="card-body pb-0">
+                                        <div class="avatar-xl mb-3">
+                                            <span class="avatar-title text-bg-secondary rounded-circle fs-22">
+                                                <span data-icon="layout"></span>
+                                            </span>
+                                        </div>
+                                        <h4 class="fw-semibold mb-2">Multiple Demos</h4>
+                                        <p class="text-muted mb-3">Choose from a variety of pre-built demos to match your use case — from CRM to SaaS dashboards.</p>
+                                    </div>
+                                    <div class="card-footer border-0 pt-0">
+                                        <a class="link-primary fw-semibold" href="#">
+                                            Know more
+                                            <span data-icon="arrow-right" class="ms-1 align-middle"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3">
+                                <div class="card border-0 p-2 card-h-100">
+                                    <div class="card-body pb-0">
+                                        <div class="avatar-xl mb-3">
+                                            <span class="avatar-title text-bg-secondary rounded-circle fs-22">
+                                                <span data-icon="brush"></span>
+                                            </span>
+                                        </div>
+                                        <h4 class="fw-semibold mb-2">Customizable UI</h4>
+                                        <p class="text-muted mb-3">Easily tailor colors, layouts, and components to match your branding and requirements.</p>
+                                    </div>
+                                    <div class="card-footer border-0 pt-0">
+                                        <a class="link-primary fw-semibold" href="#">
+                                            Know more
+                                            <span data-icon="arrow-right" class="ms-1 align-middle"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3">
+                                <div class="card border-0 p-2 card-h-100">
+                                    <div class="card-body pb-0">
+                                        <div class="avatar-xl mb-3">
+                                            <span class="avatar-title text-bg-secondary rounded-circle fs-22">
+                                                <span data-icon="rocket"></span>
+                                            </span>
+                                        </div>
+                                        <h4 class="fw-semibold mb-2">High Performance</h4>
+                                        <p class="text-muted mb-3">Optimized for speed and efficiency, our admin panel ensures a seamless experience for developers and users alike.</p>
+                                    </div>
+                                    <div class="card-footer border-0 pt-0">
+                                        <a class="link-primary fw-semibold" href="#">
+                                            Know more
+                                            <span data-icon="arrow-right" class="ms-1 align-middle"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                    </div>
+                </div>
+
+                <!-- end Container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+
+        <!-- Tour Plugin Js-->
+        <script src="assets/plugins/tourguidejs/tour.js"></script>
+
+        <!-- Tour Page Js-->
+        <script src="assets/js/pages/plugins-tour.js"></script>
+    </body>
+</html>

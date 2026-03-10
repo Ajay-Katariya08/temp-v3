@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Task Details"}) @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle": "Tasks", "title":"Task Details"})
+
+                    <div class="row">
+                        <div class="col-xxl-12">
+                            <div class="row g-0">
+                                <!-- Project Main Details -->
+                                <div class="col-xl-9">
+                                    <div class="card card-h-100 rounded-0 rounded-start border-end border-dashed">
+                                        <div class="card-header align-items-start p-4">
+                                            <div>
+                                                <h3 class="mb-1 d-flex fs-xl align-items-center">Complete Presentation Slides for Meeting</h3>
+                                                <p class="text-muted mb-2 fs-xxs">Updated 10 minutes ago</p>
+                                                <span class="badge badge-soft-warning fs-xxs badge-label">New</span>
+                                            </div>
+                                            <div class="ms-auto">
+                                                <a href="javascript:void(0);" class="btn btn-light">
+                                                    <span data-icon="pencil" class="me-1"></span>
+                                                    Edit Task
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body px-4">
+                                            <div class="mb-4">
+                                                <h5 class="fs-base mb-2">Task Description:</h5>
+                                                <p class="text-muted">Prepare and finalize the presentation slides for the upcoming business strategy meeting. Include sections for overview, KPIs, and next quarter goals to ensure clarity and alignment.</p>
+                                                <p class="text-muted mb-0">The task requires coordination with the marketing and finance teams for data verification. Final review and approval must be completed before the meeting date.</p>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <div class="col-md-4 col-xl-3">
+                                                    <h6 class="mb-1 text-muted text-uppercase">Created Date:</h6>
+                                                    <p class="fw-medium mb-0">May 9, 2025</p>
+                                                </div>
+                                                <div class="col-md-4 col-xl-3">
+                                                    <h6 class="mb-1 text-muted text-uppercase">Due Date:</h6>
+                                                    <p class="fw-medium mb-0 text-danger">Today</p>
+                                                </div>
+                                                <div class="col-md-4 col-xl-3">
+                                                    <h6 class="mb-1 text-muted text-uppercase">Assigned To:</h6>
+                                                    <p class="fw-medium mb-0">Cruise +2 Members</p>
+                                                </div>
+                                                <div class="col-md-4 col-xl-3">
+                                                    <h6 class="mb-1 text-muted text-uppercase">Priority:</h6>
+                                                    <p class="fw-medium mb-0 text-danger">High</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Tabs -->
+                                            <ul class="nav nav-tabs nav-bordered mb-3" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-bs-toggle="tab" href="#comments" role="tab">
+                                                        <span data-icon="message-rounded" class="fs-lg me-md-1 align-middle"></span>
+                                                        <span class="d-none d-md-inline-block align-middle">Comments</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#activity" role="tab">
+                                                        <span data-icon="activity" class="fs-lg me-md-1 align-middle"></span>
+                                                        <span class="d-none d-md-inline-block align-middle">Activity</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade active show" id="comments" role="tabpanel">
+                                                    <form action="#" class="mb-3">
+                                                        <div class="mb-3">
+                                                            <textarea class="form-control" id="form-control-textarea" rows="4" placeholder="Enter your messages..."></textarea>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <button type="submit" class="btn btn-secondary btn-sm">
+                                                                Comment
+                                                                <span data-icon="send" class="align-baseline ms-1"></span>
+                                                            </button>
+                                                        </div>
+                                                    </form>
+
+                                                    <h4 class="mb-3 fs-md">Comments (15)</h4>
+
+                                                    <div class="d-flex mb-2 border border-dashed rounded p-3">
+                                                        <div class="flex-shrink-0">
+                                                            <img src="assets/images/users/user-6.jpg" alt="" class="avatar-sm rounded-circle shadow-sm" />
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-2">
+                                                            <h5 class="mb-1">
+                                                                Daniel West
+                                                                <small class="text-muted">14 Apr 2025 · 04:15PM</small>
+                                                            </h5>
+                                                            <p class="mb-2">You can also clear the browser cache or try a different browser. We had a similar issue with Chrome extensions interfering before.</p>
+                                                            <a href="javascript:void(0);" class="badge bg-light text-muted d-inline-flex align-items-center gap-1">
+                                                                <span data-icon="reply" class="fs-lg"></span>
+                                                                Reply
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="d-flex mb-3 border border-dashed rounded p-3">
+                                                        <div class="flex-shrink-0">
+                                                            <img src="assets/images/users/user-10.jpg" alt="" class="avatar-sm rounded-circle shadow-sm" />
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-2">
+                                                            <h5 class="mb-1">
+                                                                Nina Bryant
+                                                                <small class="text-muted">16 Apr 2025 · 08:04AM</small>
+                                                            </h5>
+                                                            <p>
+                                                                The
+                                                                <a href="javascript:void(0)" class="text-decoration-underline">System Status Page</a>
+                                                                has been updated. We're actively monitoring and will release a patch within 24 hours.
+                                                            </p>
+
+                                                            <a href="javascript:void(0);" class="badge bg-light text-muted d-inline-flex align-items-center gap-1">
+                                                                <span data-icon="reply" class="fs-lg"></span>
+                                                                Reply
+                                                            </a>
+
+                                                            <div class="d-flex mt-4">
+                                                                <div class="flex-shrink-0">
+                                                                    <img src="assets/images/users/user-6.jpg" alt="" class="avatar-sm rounded-circle shadow-sm" />
+                                                                </div>
+                                                                <div class="flex-grow-1 ms-2">
+                                                                    <h5 class="mb-1">
+                                                                        Daniel West
+                                                                        <small class="text-muted">16 Apr 2025 · 08:30AM</small>
+                                                                    </h5>
+                                                                    <p>Thanks for the update! We'll notify the customers and let them know the issue is being resolved.</p>
+                                                                    <a href="javascript:void(0);" class="badge bg-light text-muted d-inline-flex align-items-center gap-1">
+                                                                        <span data-icon="reply" class="fs-lg"></span>
+                                                                        Reply
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <ul class="pagination pagination-rounded pagination-boxed justify-content-center mb-0">
+                                                        <li class="page-item previous disabled">
+                                                            <a href="#" class="page-link">
+                                                                <span data-icon="chevron-left"></span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-item active">
+                                                            <a href="#" class="page-link">1</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a href="#" class="page-link">2</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a href="#" class="page-link">3</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a href="#" class="page-link">...</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a href="#" class="page-link">5</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a href="#" class="page-link">6</a>
+                                                        </li>
+                                                        <li class="page-item next">
+                                                            <a href="#" class="page-link">
+                                                                <span data-icon="chevron-right"></span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="tab-pane fade" id="activity" role="tabpanel">
+                                                    <div class="d-flex gap-1 border-bottom border-dashed pb-3">
+                                                        <div class="me-2 flex-shrink-0">
+                                                            <img src="assets/images/users/user-1.jpg" class="avatar-md rounded-circle" alt="" />
+                                                        </div>
+                                                        <div class="flex-grow-1 text-muted">
+                                                            <span class="fw-medium text-body">Daniel Martinez</span>
+                                                            uploaded a revised contract file.
+                                                            <p class="fs-xs mb-0 text-body-secondary">Today 10:15 am - 24 Apr, 2025</p>
+                                                        </div>
+                                                        <p class="fs-xs text-body-secondary">5m ago</p>
+                                                    </div>
+
+                                                    <div class="d-flex gap-1 border-bottom border-dashed py-3">
+                                                        <div class="me-2 flex-shrink-0">
+                                                            <img src="assets/images/users/user-2.jpg" class="avatar-md rounded-circle" alt="" />
+                                                        </div>
+                                                        <div class="flex-grow-1 text-muted">
+                                                            <span class="fw-medium text-body">Nina Patel</span>
+                                                            commented on your design update.
+                                                            <p class="fs-xs mb-0 text-body-secondary">Today 8:00 am - 24 Apr, 2025</p>
+                                                        </div>
+                                                        <p class="fs-xs text-body-secondary">2h ago</p>
+                                                    </div>
+
+                                                    <div class="d-flex gap-1 border-bottom border-dashed py-3">
+                                                        <div class="me-2 flex-shrink-0">
+                                                            <img src="assets/images/users/user-3.jpg" class="avatar-md rounded-circle" alt="" />
+                                                        </div>
+                                                        <div class="flex-grow-1 text-muted">
+                                                            <span class="fw-medium text-body">Jason Lee</span>
+                                                            completed the feedback review.
+                                                            <p class="fs-xs mb-0 text-body-secondary">Yesterday 6:10 pm - 23 Apr, 2025</p>
+                                                        </div>
+                                                        <p class="fs-xs text-body-secondary">16h ago</p>
+                                                    </div>
+
+                                                    <div class="d-flex gap-1 border-bottom border-dashed py-3">
+                                                        <div class="me-2 flex-shrink-0">
+                                                            <img src="assets/images/users/user-4.jpg" class="avatar-md rounded-circle" alt="" />
+                                                        </div>
+                                                        <div class="flex-grow-1 text-muted">
+                                                            <span class="fw-medium text-body">Emma Davis</span>
+                                                            shared a link in the marketing group chat.
+                                                            <p class="fs-xs mb-2 text-body-secondary">Yesterday 3:25 pm - 23 Apr, 2025</p>
+                                                            <a href="#!" class="btn btn-default border px-1 py-0">
+                                                                <span data-icon="link" class="me-1"></span>
+                                                                View
+                                                            </a>
+                                                        </div>
+                                                        <p class="fs-xs text-body-secondary">19h ago</p>
+                                                    </div>
+
+                                                    <div class="d-flex gap-1 border-bottom border-dashed py-3">
+                                                        <div class="me-2 flex-shrink-0">
+                                                            <img src="assets/images/users/user-5.jpg" class="avatar-md rounded-circle" alt="" />
+                                                        </div>
+                                                        <div class="flex-grow-1 text-muted position-relative">
+                                                            <span class="fw-medium text-body">Leo Zhang</span>
+                                                            sent you a private message.
+                                                            <p class="fs-xs text-body-secondary">2 days ago 11:45 am - 22 Apr, 2025</p>
+
+                                                            <div class="py-2 px-3 bg-light bg-opacity-50">"Let’s sync up on the product roadmap tomorrow afternoon, does 2 PM work for you?"</div>
+                                                        </div>
+                                                        <p class="fs-xs flex-shrink-0 text-body-secondary">30h ago</p>
+                                                    </div>
+
+                                                    <div class="d-flex align-items-center justify-content-center gap-2 p-3">
+                                                        <strong>Loading...</strong>
+                                                        <div class="spinner-border spinner-border-sm text-danger" role="status" aria-hidden="true"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end card-body -->
+                                    </div>
+                                    <!-- end card -->
+                                </div>
+                                <!-- end col-xl-9 -->
+
+                                <!-- Team Sidebar -->
+                                <div class="col-xl-3">
+                                    <div class="card card-h-100 rounded-0 rounded-end  border-start border-dashed shadow-none">
+                                        <div class="card-body p-0">
+                                            <div class="p-3 border-bottom border-dashed">
+                                                <h5 class="mb-2">Status</h5>
+                                                <div class="app-search">
+                                                    <select class="form-select form-control my-1 my-md-0">
+                                                        <option>Status</option>
+                                                        <option selected value="New">New</option>
+                                                        <option value="In Progress">In Progress</option>
+                                                        <option value="On Hold">On Hold</option>
+                                                        <option value="Completed">Completed</option>
+                                                    </select>
+                                                    <span data-icon="calendar-clock" class="app-search-icon text-muted"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="p-3 border-bottom border-dashed">
+                                                <div class="d-flex mb-3 justify-content-between align-items-center">
+                                                    <h5 class="mb-0">Team Members:</h5>
+                                                    <a href="javascript: void(0);" class="btn btn-light btn-sm btn-icon rounded-circle">
+                                                        <span data-icon="plus"></span>
+                                                    </a>
+                                                </div>
+
+                                                <!-- team member -->
+                                                <div class="d-flex justify-content-between align-items-center pb-2">
+                                                    <div class="d-flex align-items-center py-1 gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-3.jpg" alt="avatar-3" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h5 class="text-nowrap mb-0 lh-base">
+                                                                <a href="#!" class="link-reset">Ava Brooks</a>
+                                                            </h5>
+                                                            <p class="text-muted fs-xxs mb-0">UI/UX Designer</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <a href="#" class="btn btn-sm btn-icon btn-default" title="Message">
+                                                            <span data-icon="message" class="text-muted fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between align-items-center pb-2">
+                                                    <div class="d-flex align-items-center py-1 gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-4.jpg" alt="avatar-4" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h5 class="text-nowrap mb-0 lh-base">
+                                                                <a href="#!" class="link-reset">Liam Carter</a>
+                                                            </h5>
+                                                            <p class="text-muted fs-xxs mb-0">Frontend Developer</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <a href="#" class="btn btn-sm btn-icon btn-default" title="Message">
+                                                            <span data-icon="message" class="text-muted fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between align-items-center pb-2">
+                                                    <div class="d-flex align-items-center py-1 gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-9.jpg" alt="avatar-9" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h5 class="text-nowrap mb-0 lh-base">
+                                                                <a href="#!" class="link-reset">Olivia Reed</a>
+                                                            </h5>
+                                                            <p class="text-muted fs-xxs mb-0">Product Owner</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <a href="#" class="btn btn-sm btn-icon btn-default" title="Message">
+                                                            <span data-icon="message" class="text-muted fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-10.jpg" alt="avatar-10" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h5 class="text-nowrap mb-0 lh-base">
+                                                                <a href="#!" class="link-reset">Daniel Craig</a>
+                                                            </h5>
+                                                            <p class="text-muted fs-xxs mb-0">Data Scientist</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <a href="#" class="btn btn-sm btn-icon btn-default" title="Message">
+                                                            <span data-icon="message" class="text-muted fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <!-- End -->
+                                            </div>
+
+                                            <div class="px-3 pt-3 border-bottom border-dashed">
+                                                <div class="d-flex mb-3 justify-content-between align-items-center">
+                                                    <h5 class="mb-0">Files:</h5>
+                                                    <a href="javascript: void(0);" class="btn btn-light btn-sm btn-icon rounded-circle">
+                                                        <span data-icon="plus"></span>
+                                                    </a>
+                                                </div>
+
+                                                <!-- Download Files -->
+                                                <div class="d-flex justify-content-between align-items-center pb-2">
+                                                    <div class="d-flex align-items-center py-1 gap-2">
+                                                        <div class="flex-shrink-0 avatar-md bg-light bg-opacity-50 text-muted rounded-2 d-flex align-items-center justify-content-center">
+                                                            <span data-icon="file-text" class="fs-xl"></span>
+                                                        </div>
+                                                        <div class="flex-grow-1">
+                                                            <h5 class="mb-1 fs-base">
+                                                                <a href="#!" class="link-reset">Project-Brief.pdf</a>
+                                                            </h5>
+                                                            <p class="text-muted mb-0 fs-xs">2.1MB</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <a href="#" class="btn btn-sm btn-icon btn-default" title="Download">
+                                                            <span data-icon="download" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between align-items-center pb-2">
+                                                    <div class="d-flex align-items-center py-1 gap-2">
+                                                        <div class="flex-shrink-0 avatar-md bg-light bg-opacity-50 text-muted rounded-2 d-flex align-items-center justify-content-center">
+                                                            <span data-icon="music" class="fs-xl avatar-title"></span>
+                                                        </div>
+                                                        <div class="flex-grow-1">
+                                                            <h5 class="mb-1 fs-base">
+                                                                <a href="#!" class="link-reset">Team-Intro.mp3</a>
+                                                            </h5>
+                                                            <p class="text-muted mb-0 fs-xs">5.6MB</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <a href="#" class="btn btn-sm btn-icon btn-default" title="Download">
+                                                            <span data-icon="download" class="fs-lg"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex align-items-center justify-content-center gap-2 p-3">
+                                                    <strong>Loading...</strong>
+                                                    <div class="spinner-border spinner-border-sm text-danger" role="status" aria-hidden="true"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end card-body -->
+                                    </div>
+                                    <!-- end card -->
+                                </div>
+                                <!-- end col-xl-3 -->
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end col-xxl-10 -->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+    </body>
+</html>

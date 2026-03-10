@@ -1,0 +1,1416 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Social Widgets"}) @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    
+                    @@include("./partials/page-title.html", {"subtitle": "Widgets", "title":"Social"})
+
+                    <div class="container-xxl">
+                        <div class="row">
+                            <div class="col-xxl-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="mb-2">What's on your mind?</h5>
+
+                                        <!-- Post Form -->
+                                        <form action="#">
+                                            <textarea rows="3" class="form-control" placeholder="Share your thoughts..."></textarea>
+
+                                            <div class="d-flex pt-2 justify-content-between align-items-center">
+                                                <div class="d-flex gap-1">
+                                                    <a href="#" class="btn btn-sm btn-icon btn-light">
+                                                        <span data-icon="user" class="fs-md"></span>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-icon btn-light">
+                                                        <span data-icon="map-pin" class="fs-md"></span>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-icon btn-light">
+                                                        <span data-icon="camera" class="fs-md"></span>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-icon btn-light">
+                                                        <span data-icon="mood-smile" class="fs-md"></span>
+                                                    </a>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-dark btn-sm">Post</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- end card-body-->
+                                </div>
+                                <!-- end card-->
+
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <!-- Icon and Title -->
+                                        <h1 class="mb-2">🏆</h1>
+                                        <h4 class="mb-1 fw-semibold">Congratulations, __username__! 🎉</h4>
+
+                                        <!-- Achievement Message -->
+                                        <p class="text-muted fst-italic mb-3">
+                                            Congratulations! You’ve reached
+                                            <strong>5,000 subscribers</strong>
+                                            ! Your community is growing fast!
+                                        </p>
+
+                                        <!-- Stats (optional) -->
+                                        <div class="d-flex justify-content-center mb-3">
+                                            <div class="me-4 text-center">
+                                                <h6 class="mb-0">Posts</h6>
+                                                <span class="fw-bold">250</span>
+                                            </div>
+                                            <div class="me-4 text-center">
+                                                <h6 class="mb-0">Likes</h6>
+                                                <span class="fw-bold">15,200</span>
+                                            </div>
+                                            <div class="text-center">
+                                                <h6 class="mb-0">Subscribers</h6>
+                                                <span class="fw-bold">5,000</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Call to Action -->
+                                        <button class="btn btn-sm btn-outline-success me-2">
+                                            <span data-icon="share" class="me-1"></span>
+                                            Share Achievement
+                                        </button>
+                                        <a href="#!" class="btn btn-sm btn-primary">
+                                            <span data-icon="user" class="me-1"></span>
+                                            View Profile
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body pb-2">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img class="me-2 avatar-md rounded-circle" src="assets/images/users/user-10.jpg" alt="Generic placeholder image" />
+                                            <div class="w-100">
+                                                <h5 class="m-0">
+                                                    <a href="#!" class="link-reset">Sophia Martinez</a>
+                                                </h5>
+                                                <p class="text-muted mb-0">
+                                                    <small>about 5 minutes ago</small>
+                                                </p>
+                                            </div>
+                                            <div class="dropdown ms-auto">
+                                                <a href="#" class="dropdown-toggle text-muted drop-arrow-none card-drop p-0" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="edit" class="me-2"></span>
+                                                        Edit Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="delete" class="me-2"></span>
+                                                        Delete Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="share" class="me-2"></span>
+                                                        Share
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="pin" class="me-2"></span>
+                                                        Pin to Top
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="flag" class="me-2"></span>
+                                                        Report Post
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>Story inspired by the beauty of changing seasons — a nature-themed animation coming soon!</p>
+
+                                        <div class="row g-1">
+                                            <!-- Left tall image -->
+                                            <div class="col-md-6">
+                                                <img src="assets/images/gallery/10.jpg" class="img-fluid w-100 h-100 rounded" style="aspect-ratio: 3/4; object-fit: cover" alt="Tall Image" />
+                                            </div>
+
+                                            <!-- Right column with two stacked images -->
+                                            <div class="col-md-6 d-flex flex-column gap-1">
+                                                <img src="assets/images/gallery/2.jpg" class="img-fluid w-100 rounded" style="aspect-ratio: 4/3; object-fit: cover" alt="Top Right" />
+                                                <img src="assets/images/gallery/3.jpg" class="img-fluid w-100 rounded" style="aspect-ratio: 4/3; object-fit: cover" alt="Bottom Right" />
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-2">
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="reply" class="me-1"></span>
+                                                Reply
+                                            </a>
+                                            <span class="btn btn-sm fs-sm btn-link text-muted" data-toggler="on">
+                                                <span data-toggler-on class="align-middle">
+                                                    <span data-icon="heart-filled" class="text-danger"></span>
+                                                    Liked!
+                                                </span>
+                                                <span data-toggler-off class="d-none align-middle">
+                                                    <span data-icon="heart" class="text-muted"></span>
+                                                    Like
+                                                </span>
+                                            </span>
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="share" class="me-1"></span>
+                                                Share
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body pb-2">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img class="me-2 avatar-sm rounded-circle" src="assets/images/users/user-4.jpg" alt="Generic placeholder image" />
+                                            <div class="w-100">
+                                                <h5 class="m-0">
+                                                    <a href="#!" class="link-reset">Liam Anderson</a>
+                                                </h5>
+                                                <p class="text-muted mb-0">
+                                                    <small>about 30 minutes ago</small>
+                                                </p>
+                                            </div>
+                                            <div class="dropdown ms-auto">
+                                                <a href="#" class="dropdown-toggle text-muted drop-arrow-none card-drop p-0" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="edit" class="me-2"></span>
+                                                        Edit Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="delete" class="me-2"></span>
+                                                        Delete Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="share" class="me-2"></span>
+                                                        Share
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="pin" class="me-2"></span>
+                                                        Pin to Top
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="flag" class="me-2"></span>
+                                                        Report Post
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="fs-16 text-center mt-3 mb-4 fst-italic">
+                                            <span data-icon="quote" class="fs-20"></span>
+                                            Spent the weekend exploring the local trails! Captured some amazing nature shots and can’t wait to post them soon. 🌿📸
+                                        </div>
+
+                                        <div class="bg-light-subtle mx-n3 p-3 border-top border-bottom border-dashed">
+                                            <div class="d-flex align-items-start">
+                                                <img class="me-2 avatar-sm rounded-circle" src="assets/images/users/user-5.jpg" alt="Generic placeholder image" />
+                                                <div class="w-100">
+                                                    <h5 class="mt-0 mb-1">
+                                                        <a href="#!" class="link-reset">Ethan Reynolds</a>
+                                                        <small class="text-muted fw-normal float-end">20 minutes ago</small>
+                                                    </h5>
+                                                    Loved your recent project! Really curious to see how you implemented the animations.
+                                                    <br />
+                                                    <a href="javascript:void(0);" class="text-muted font-13 d-inline-block mt-2">
+                                                        <span data-icon="reply"></span>
+                                                        Reply
+                                                    </a>
+
+                                                    <div class="d-flex align-items-start mt-3">
+                                                        <a class="pe-2" href="#">
+                                                            <img src="assets/images/users/user-6.jpg" class="avatar-sm rounded-circle" alt="Generic placeholder image" />
+                                                        </a>
+                                                        <div class="w-100">
+                                                            <h5 class="mt-0 mb-1">
+                                                                <a href="#!" class="link-reset">Mia Thompson</a>
+                                                                <small class="text-muted fw-normal float-end">12 minutes ago</small>
+                                                            </h5>
+                                                            I created something similar in Angular last month — would love to swap tips!
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex align-items-start mt-3">
+                                                <a class="pe-2" href="#">
+                                                    <img src="assets/images/users/user-3.jpg" class="rounded-circle" alt="Generic placeholder image" height="31" />
+                                                </a>
+                                                <div class="w-100">
+                                                    <input type="text" id="simpleinput" class="form-control form-control-sm" placeholder="Add a comment..." />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-2">
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="reply" class="me-1"></span>
+                                                Reply
+                                            </a>
+                                            <span class="btn btn-sm fs-sm btn-link text-muted" data-toggler="off">
+                                                <span data-toggler-on class="d-none align-middle">
+                                                    <span data-icon="heart-filled" class="text-danger"></span>
+                                                    Liked!
+                                                </span>
+                                                <span data-toggler-off class="align-middle">
+                                                    <span data-icon="heart" class="text-muted"></span>
+                                                    Likes (45)
+                                                </span>
+                                            </span>
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="share" class="me-1"></span>
+                                                Share
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- end card-body-->
+                                </div>
+                                <!-- end card-->
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- User Info -->
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img class="me-2 avatar-sm rounded-circle" src="assets/images/users/user-2.jpg" alt="Profile photo of Anika Roy" />
+                                            <div class="w-100">
+                                                <h5 class="m-0">
+                                                    <a href="#!" class="link-reset">Anika Roy</a>
+                                                </h5>
+                                                <p class="text-muted mb-0">
+                                                    <small>Posted 2 hours ago</small>
+                                                </p>
+                                            </div>
+                                            <!-- Dropdown Menu -->
+                                            <div class="dropdown ms-auto">
+                                                <a href="#" class="dropdown-toggle text-muted drop-arrow-none card-drop p-0" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="edit" class="me-2"></span>
+                                                        Edit Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="delete" class="me-2"></span>
+                                                        Delete Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="share" class="me-2"></span>
+                                                        Share
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="pin" class="me-2"></span>
+                                                        Pin to Top
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="flag" class="me-2"></span>
+                                                        Report Post
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Event Details -->
+                                        <h5 class="mb-2">
+                                            🌿 Save the Date:
+                                            <strong>Nature Photography Workshop 2025</strong>
+                                        </h5>
+                                        <p class="text-muted mb-2">Join fellow creatives and outdoor enthusiasts for an inspiring weekend of nature photography tips, live field sessions, and community networking.</p>
+                                        <ul class="list-unstyled mb-3">
+                                            <li class="pb-2">
+                                                <strong>Date:</strong>
+                                                Saturday, 14th September 2025
+                                            </li>
+                                            <li class="pb-2">
+                                                <strong>Time:</strong>
+                                                10:00 AM – 4:00 PM
+                                            </li>
+                                            <li>
+                                                <strong>Location:</strong>
+                                                Green Valley National Park (Meeting point to be shared)
+                                            </li>
+                                        </ul>
+
+                                        <!-- Call to Action -->
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-sm btn-outline-primary">
+                                                <span data-icon="bell" class="me-1"></span>
+                                                Interested
+                                            </button>
+                                            <button class="btn btn-sm btn-primary">
+                                                <span data-icon="user-plus" class="me-1"></span>
+                                                Join Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body pb-2">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img class="me-2 avatar-sm rounded-circle" src="assets/images/users/user-1.jpg" alt="Profile photo of Anika Roy" />
+                                            <div class="w-100">
+                                                <h5 class="m-0">
+                                                    <a href="#!" class="link-reset">__username__</a>
+                                                </h5>
+                                                <p class="text-muted mb-0">
+                                                    <small>Posted 2 hours ago</small>
+                                                </p>
+                                            </div>
+                                            <div class="dropdown ms-auto">
+                                                <a href="#" class="dropdown-toggle text-muted drop-arrow-none card-drop p-0" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="edit" class="me-2"></span>
+                                                        Edit Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="delete" class="me-2"></span>
+                                                        Delete Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="share" class="me-2"></span>
+                                                        Share
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="pin" class="me-2"></span>
+                                                        Pin to Top
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="flag" class="me-2"></span>
+                                                        Report Post
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p>Sharing a couple of timelapses from my recent Iceland trip. Let me know which one you like most!</p>
+
+                                        <div class="row g-2">
+                                            <div class="col-md-6">
+                                                <div class="ratio ratio-16x9 rounded overflow-hidden">
+                                                    <iframe src="https://player.vimeo.com/video/1084537" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="ratio ratio-16x9 rounded overflow-hidden">
+                                                    <iframe src="https://player.vimeo.com/video/76979871" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-2">
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="reply" class="me-1"></span>
+                                                Reply
+                                            </a>
+                                            <span class="btn btn-sm fs-sm btn-link text-muted" data-toggler="on">
+                                                <span data-toggler-on class="align-middle">
+                                                    <span data-icon="heart-filled" class="text-danger"></span>
+                                                    Liked!
+                                                </span>
+                                                <span data-toggler-off class="d-none align-middle">
+                                                    <span data-icon="heart" class="text-muted"></span>
+                                                    Like
+                                                </span>
+                                            </span>
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="share" class="me-1"></span>
+                                                Share
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- end card-body-->
+                                </div>
+                                <!-- end card-->
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- User Info -->
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img class="me-2 avatar-sm rounded-circle" src="assets/images/users/user-6.jpg" alt="Profile photo of David Kim" />
+                                            <div class="w-100">
+                                                <h5 class="m-0">
+                                                    <a href="#!" class="link-reset">David Kim</a>
+                                                </h5>
+                                                <p class="text-muted mb-0">
+                                                    <small>Posted 10 hours ago</small>
+                                                </p>
+                                            </div>
+                                            <!-- Dropdown Menu -->
+                                            <div class="dropdown ms-auto">
+                                                <a href="#" class="dropdown-toggle text-muted drop-arrow-none card-drop p-0" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="edit" class="me-2"></span>
+                                                        Edit Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="delete" class="me-2"></span>
+                                                        Delete Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="share" class="me-2"></span>
+                                                        Share
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="pin" class="me-2"></span>
+                                                        Pin to Top
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="flag" class="me-2"></span>
+                                                        Report Post
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Poll Content -->
+                                        <h5 class="mb-3">🔥 Quick Poll: What’s your go-to front-end framework in 2025?</h5>
+                                        <p class="text-muted">We’re gathering developer preferences for our next project. Cast your vote below! 💻</p>
+
+                                        <!-- Poll Form -->
+                                        <form>
+                                            <div class="form-check mb-1">
+                                                <input class="form-check-input" type="radio" name="framework_poll" id="optionReact" />
+                                                <label class="form-check-label" for="optionReact">React (Meta)</label>
+                                            </div>
+                                            <div class="form-check mb-1">
+                                                <input class="form-check-input" type="radio" name="framework_poll" id="optionVue" />
+                                                <label class="form-check-label" for="optionVue">Vue.js (Evan You)</label>
+                                            </div>
+                                            <div class="form-check mb-1">
+                                                <input class="form-check-input" type="radio" name="framework_poll" id="optionAngular" />
+                                                <label class="form-check-label" for="optionAngular">Angular (Google)</label>
+                                            </div>
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" name="framework_poll" id="optionSvelte" />
+                                                <label class="form-check-label" for="optionSvelte">Svelte (Emerging Favorite)</label>
+                                            </div>
+                                            <button type="submit" class="btn btn-sm btn-primary">Submit Vote</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+
+                                    <!-- Header -->
+                                    <div class="card-body pb-2 d-flex align-items-center">
+                                        <img src="assets/images/users/user-6.jpg" class="avatar-md rounded-circle me-2">
+                                        <div class="flex-grow-1">
+                                            <h5 class="fw-semibold mb-0"><a href="#!" class="link-reset">Sarah Mitchell</a></h5>
+                                            <small class="text-muted">Posted 4 hours ago</small>
+                                        </div>
+
+                                        <div class="dropdown">
+                                            <a href="#" class="text-muted" data-bs-toggle="dropdown">
+                                                <span data-icon="dots-vertical" class="fs-lg"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                <li><a class="dropdown-item" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                <li><a class="dropdown-item" href="#"><span data-icon="flag" class="me-2"></span>Report</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Job Content -->
+                                    <div class="px-3 pb-3">
+                                        <div class="border rounded-3 p-3 bg-light-subtle">
+                                            <h5 class="fw-bold mb-1">🌟 Hiring: Front-End Developer</h5>
+                                            <p class="text-muted mb-3">Our team is growing! Looking for a talented developer experienced with modern JS frameworks.</p>
+
+                                            <ul class="list-unstyled mb-3">
+                                                <li><strong>Role:</strong> Front-End Developer</li>
+                                                <li><strong>Skills:</strong> React, Vue, ESBuild, Tailwind</li>
+                                                <li><strong>Location:</strong> Remote (Worldwide)</li>
+                                            </ul>
+
+                                            <button class="btn btn-primary w-100 rounded-pill">Apply Now</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Footer -->
+                                    <div class="card-footer border-0 pt-0 d-flex gap-3">
+                                        <div>
+                                            <span class="btn btn-sm fs-sm btn-link text-muted" data-toggler="off">
+                                                <span data-toggler-on class="d-none align-middle">
+                                                    <span data-icon="heart-filled" class="text-danger"></span>
+                                                    Saved!
+                                                </span>
+                                                <span data-toggler-off class="align-middle">
+                                                    <span data-icon="heart" class="text-muted"></span>
+                                                    Save
+                                                </span>
+                                            </span>
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="share" class="me-1"></span>
+                                                Share
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- end card -->
+
+                                <div class="card">
+
+                                    <!-- Header -->
+                                    <div class="card-body pb-0 d-flex align-items-center">
+                                        <img src="assets/images/users/user-3.jpg" class="avatar-md rounded-circle me-2">
+                                        <div class="flex-grow-1">
+                                            <h5 class="fw-semibold mb-0"><a href="#!" class="link-reset">Daniel Carter</a></h5>
+                                            <small class="text-muted">6 hours ago</small>
+                                        </div>
+                                        <div class="dropdown">
+                                            <a href="#" data-bs-toggle="dropdown" class="text-muted">
+                                                <span data-icon="dots-vertical" class="fs-lg"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                <li><a class="dropdown-item" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                <li><a class="dropdown-item" href="#"><span data-icon="flag" class="me-2"></span>Report</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Shared Link -->
+                                    <div class="p-3 pb-1">
+                                        <p class="text-muted mb-2">Found this helpful tool for UI designers — bookmarking it for future projects!</p>
+
+                                        <a href="#!" class="d-block border border-light rounded-4 text-reset overflow-hidden shadow-sm">
+                                            <div class="d-flex">
+                                                <img src="assets/images/gallery/7.jpg" class="img-fluid" style="width: 140px; object-fit: cover;">
+                                                <div class="p-3">
+                                                    <h6 class="fw-bold mb-1">UI Component Library Explorer</h6>
+                                                    <p class="small text-muted mb-0">Browse, compare and preview hundreds of UI components for modern frameworks.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Footer -->
+                                    <div class="card-footer border-0 pt-3 d-flex gap-2">
+                                        <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                            <span data-icon="reply" class="me-1"></span>
+                                            Reply
+                                        </a>
+                                        <span class="btn btn-sm fs-sm btn-link text-muted" data-toggler="on">
+                                            <span data-toggler-on class="align-middle">
+                                                <span data-icon="heart-filled" class="text-danger"></span>
+                                                Liked!
+                                            </span>
+                                            <span data-toggler-off class="d-none align-middle">
+                                                <span data-icon="heart" class="text-muted"></span>
+                                                Like
+                                            </span>
+                                        </span>
+                                        <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                            <span data-icon="share" class="me-1"></span>
+                                            Share
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- end card -->
+
+                                <div class="card">
+
+                                    <!-- Header -->
+                                    <div class="card-body pb-0 d-flex align-items-center">
+                                        <img src="assets/images/users/user-10.jpg" class="avatar-md rounded-circle me-2">
+                                        
+                                        <div class="flex-grow-1">
+                                            <h5 class="fw-semibold mb-0"><a href="#!" class="link-reset">Evelyn Brooks</a></h5>
+                                            <small class="text-muted">Just now</small>
+                                        </div>
+
+                                        <div class="dropdown">
+                                            <a href="#" class="text-muted" data-bs-toggle="dropdown">
+                                                <span data-icon="dots-vertical" class="fs-lg"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><span data-icon="flag" class="me-2"></span>Report</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Weather Card -->
+                                    <div class="px-3 pb-3 pt-2">
+                                        <div class="bg-primary bg-opacity-10 text-primary rounded-3 p-4 text-center">
+                                            <h1 class="display-6 mb-0">🌤️</h1>
+                                            <h3 class="fw-bold mb-2">23°C</h3>
+                                            <p class="mb-0 fst-italic">Clear skies in <strong>Vancouver</strong></p>
+                                        </div>
+
+                                        <p class="mt-3 text-muted text-center">
+                                            Perfect weather for a walk by the water today 🌊✨
+                                        </p>
+                                    </div>
+
+                                    <!-- Footer -->
+                                    <div class="card-footer border-0 pt-0 d-flex justify-content-center gap-2">
+                                        <span class="btn btn-sm fs-sm btn-link text-muted" data-toggler="off">
+                                            <span data-toggler-on class="align-middle">
+                                                <span data-icon="heart-filled" class="text-danger"></span>
+                                                Liked!
+                                            </span>
+                                            <span data-toggler-off class="d-none align-middle">
+                                                <span data-icon="heart" class="text-muted"></span>
+                                                Like
+                                            </span>
+                                        </span>
+
+                                        <a href="#" class="btn btn-sm fs-sm btn-link text-muted"><span data-icon="reply" class="me-1"></span>Comment</a>
+                                        <a href="#" class="btn btn-sm fs-sm btn-link text-muted"><span data-icon="share" class="me-1"></span>Share</a>
+                                    </div>
+
+                                </div> <!-- end card-->
+
+                                <div class="card">
+
+                                    <!-- Header -->
+                                    <div class="card-body pb-2 d-flex align-items-center">
+                                        <img src="assets/images/users/user-8.jpg" class="avatar-sm rounded-circle me-2">
+                                        <div class="flex-grow-1">
+                                            <h5 class="fw-semibold mb-0"><a href="#!" class="link-reset">Emma Wilson</a></h5>
+                                            <small class="text-muted">3 hours ago</small>
+                                        </div>
+
+                                        <div class="dropdown">
+                                            <a href="#" class="text-muted" data-bs-toggle="dropdown">
+                                                <span data-icon="dots-vertical" class="fs-lg"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                <li><a class="dropdown-item" href="#"><span data-icon="flag" class="me-2"></span>Report</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Song Info -->
+                                    <div class="px-3">
+                                        <h5 class="fw-bold mb-1 mt-3">🎧 Song of the Day</h5>
+                                        <p class="text-muted mb-2">Found this calming track for focus sessions — highly recommend giving it a listen.</p>
+
+                                        <!-- Audio Player -->
+                                        <div class="bg-light-subtle rounded-4 p-3 shadow-sm">
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/images/gallery/5.jpg" class="rounded me-3" style="height: 60px; width: 60px; object-fit: cover;">
+                                                
+                                                <div class="flex-grow-1">
+                                                    <div class="fw-semibold">Dreamscape Horizon</div>
+                                                    <small class="text-muted">By SynthWaves</small>
+
+                                                    <!-- Free Online Audio -->
+                                                    <audio controls class="w-100 mt-2" style="height: 32px;">
+                                                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                                                        Your browser does not support the audio element.
+                                                    </audio>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Actions -->
+                                    <div class="card-footer border-0 d-flex gap-3">
+                                        <div>
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="reply" class="me-1"></span>
+                                                Reply
+                                            </a>
+                                            <span class="btn btn-sm fs-sm btn-link text-muted" data-toggler="on">
+                                                <span data-toggler-on class="align-middle">
+                                                    <span data-icon="heart-filled" class="text-danger"></span>
+                                                    Liked!
+                                                </span>
+                                                <span data-toggler-off class="d-none align-middle">
+                                                    <span data-icon="heart" class="text-muted"></span>
+                                                    Like
+                                                </span>
+                                            </span>
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="share" class="me-1"></span>
+                                                Share
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end card-->
+                            
+                            </div> <!-- end col-->
+
+                            <div class="col-xxl-6">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="flex-grow-1">
+                                                <h5 class="fw-semibold mb-0">Create a Post</h5>
+                                                <span class="text-muted fs-xs">Share updates with your network</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- New Post Form -->
+                                        <form action="#">
+                                            <div class="position-relative">
+                                                <textarea rows="3" class="form-control rounded-3" placeholder="Write something meaningful..."></textarea>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between align-items-center mt-3">
+
+                                                <!-- New Icon Bar -->
+                                                <div class="d-flex gap-2">
+                                                    <button type="button" class="btn btn-light btn-sm d-flex align-items-center gap-1 px-2">
+                                                        <span data-icon="user" class="fs-md"></span>
+                                                        <span class="d-none d-sm-inline">Tag</span>
+                                                    </button>
+
+                                                    <button type="button" class="btn btn-light btn-sm d-flex align-items-center gap-1 px-2">
+                                                        <span data-icon="map-pin" class="fs-md"></span>
+                                                        <span class="d-none d-sm-inline">Location</span>
+                                                    </button>
+
+                                                    <button type="button" class="btn btn-light btn-sm d-flex align-items-center gap-1 px-2">
+                                                        <span data-icon="camera" class="fs-md"></span>
+                                                        <span class="d-none d-sm-inline">Photo</span>
+                                                    </button>
+
+                                                    <button type="button" class="btn btn-light btn-sm d-flex align-items-center gap-1 px-2">
+                                                        <span data-icon="mood-smile" class="fs-md"></span>
+                                                        <span class="d-none d-sm-inline">Feeling</span>
+                                                    </button>
+                                                </div>
+
+                                                <!-- New Post Button -->
+                                                <button type="submit" class="btn btn-primary btn-sm px-3">Publish</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <!-- end card-->
+
+                                <div class="card overflow-hidden">
+
+                                    <!-- Ribbon Header -->
+                                    <div class="bg-primary-subtle text-primary py-3 px-4 position-relative">
+                                        <h4 class="fw-bold mb-0">Achievement Unlocked</h4>
+                                        <span class="position-absolute top-50 end-0 translate-middle-y text-bg-warning fw-semibold px-2 py-1 rounded-start">
+                                            🏅 Level Up
+                                        </span>
+                                    </div>
+
+                                    <!-- Main Content -->
+                                    <div class="card-body text-center py-4">
+                                        <div class="mb-3">
+                                            <h1 class="display-6 mb-0">💡</h1>
+                                        </div>
+
+                                        <h4 class="fw-semibold mb-1">Impressive Progress, __username__!</h4>
+                                        <p class="text-muted mb-4">
+                                            You’ve just reached <strong>Milestone Tier 3</strong> for your outstanding activity.
+                                            Keep up the great momentum!
+                                        </p>
+
+                                        <!-- Stat Badges -->
+                                        <div class="d-flex justify-content-center gap-2 mb-4">
+                                            <div class="px-3 py-2 rounded border border-dashed">
+                                                <h6 class="mb-0 text-muted">Achievements</h6>
+                                                <div class="fw-bold fs-5">28</div>
+                                            </div>
+                                            <div class="px-3 py-2 rounded border border-dashed">
+                                                <h6 class="mb-0 text-muted">Followers</h6>
+                                                <div class="fw-bold fs-5">7,840</div>
+                                            </div>
+                                            <div class="px-3 py-2 rounded border border-dashed">
+                                                <h6 class="mb-0 text-muted">Score</h6>
+                                                <div class="fw-bold fs-5">1,920</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Action Buttons -->
+                                        <div class="d-flex justify-content-center gap-2">
+                                            <button class="btn btn-outline-primary btn-sm">
+                                                <span data-icon="share" class="me-1"></span>
+                                                Share
+                                            </button>
+
+                                            <a href="#!" class="btn btn-success btn-sm">
+                                                <span data-icon="user" class="me-1"></span>
+                                                Profile
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-body pb-2">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img class="me-2 avatar-md rounded-circle" src="assets/images/users/user-10.jpg" alt="Generic placeholder image" />
+                                            <div class="w-100">
+                                                <h5 class="m-0">
+                                                    <a href="#!" class="link-reset">Sophia Martinez</a>
+                                                </h5>
+                                                <p class="text-muted mb-0">
+                                                    <small>about 5 minutes ago</small>
+                                                </p>
+                                            </div>
+                                            <div class="dropdown ms-auto">
+                                                <a href="#" class="dropdown-toggle text-muted drop-arrow-none card-drop p-0" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="edit" class="me-2"></span>
+                                                        Edit Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="delete" class="me-2"></span>
+                                                        Delete Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="share" class="me-2"></span>
+                                                        Share
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="pin" class="me-2"></span>
+                                                        Pin to Top
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="flag" class="me-2"></span>
+                                                        Report Post
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>Story inspired by the beauty of changing seasons — a nature-themed animation coming soon!</p>
+
+                                        <div class="row g-2">
+                                            <div class="col-12">
+                                                <img src="assets/images/gallery/5.jpg" class="img-fluid w-100 rounded-3" style="height: 260px; object-fit: cover;">
+                                            </div>
+
+                                            <div class="col-6">
+                                                <img src="assets/images/gallery/7.jpg" class="img-fluid w-100 rounded-3" style="height: 150px; object-fit: cover;">
+                                            </div>
+
+                                            <div class="col-6">
+                                                <img src="assets/images/gallery/8.jpg" class="img-fluid w-100 rounded-3" style="height: 150px; object-fit: cover;">
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-2">
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="reply" class="me-1"></span>
+                                                Reply
+                                            </a>
+                                            <span class="btn btn-sm fs-sm btn-link text-muted" data-toggler="on">
+                                                <span data-toggler-on class="align-middle">
+                                                    <span data-icon="heart-filled" class="text-danger"></span>
+                                                    Liked!
+                                                </span>
+                                                <span data-toggler-off class="d-none align-middle">
+                                                    <span data-icon="heart" class="text-muted"></span>
+                                                    Like
+                                                </span>
+                                            </span>
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="share" class="me-1"></span>
+                                                Share
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card overflow-hidden">
+
+                                    <!-- Post Header -->
+                                    <div class="card-body pb-0">
+                                        <div class="d-flex align-items-center">
+                                            <img src="assets/images/users/user-4.jpg" class="avatar-md rounded-circle me-2" alt="User">
+
+                                            <div class="flex-grow-1">
+                                                <h5 class="m-0">
+                                                    <a href="#!" class="link-reset">Liam Anderson</a>
+                                                </h5>
+                                                <p class="text-muted mb-0">
+                                                    <small>30 minutes ago</small>
+                                                </p>
+                                            </div>
+
+                                            <!-- Options -->
+                                            <div class="dropdown">
+                                                <a href="#" data-bs-toggle="dropdown" class="text-muted">
+                                                    <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                    <li><a class="dropdown-item" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                    <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                    <li><a class="dropdown-item" href="#"><span data-icon="pin" class="me-2"></span>Pin</a></li>
+                                                    <li><a class="dropdown-item" href="#"><span data-icon="flag" class="me-2"></span>Report</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Quote Style Post Content -->
+                                        <div class="border-start border-3 border-primary ps-3 mt-3 mb-4">
+                                            <p class="text-muted mb-0 fst-italic fs-15">
+                                                <span data-icon="quote" class="me-2 fs-20 opacity-75"></span>
+                                                Discovering peaceful nature trails today — captured some beautiful shots I can't wait to share. 🌲✨
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Comment Thread -->
+                                    <div class="bg-light-subtle px-3 py-3 border-top">
+
+                                        <!-- Top Comment -->
+                                        <div class="d-flex align-items-start mb-3">
+                                            <img src="assets/images/users/user-5.jpg" class="avatar-sm rounded-circle me-3" alt="User">
+
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between">
+                                                    <h6 class="fw-semibold mb-0 fs-sm"><a href="#!" class="link-reset">Ethan Reynolds</a></h6>
+                                                    <small class="text-muted">20 minutes ago</small>
+                                                </div>
+
+                                                <p class="mb-1 text-muted">
+                                                    This sounds amazing! Excited to see the photos — the last set you shared was incredible.
+                                                </p>
+
+                                                <a href="javascript:void(0);" class="small text-muted">
+                                                    <span data-icon="reply" class="me-1"></span>Reply
+                                                </a>
+
+                                                <!-- Nested Reply -->
+                                                <div class="d-flex align-items-start mt-3 ps-4 border-start">
+                                                    <img src="assets/images/users/user-6.jpg" class="avatar-sm rounded-circle me-3" alt="User">
+
+                                                    <div class="flex-grow-1">
+                                                        <div class="d-flex justify-content-between">
+                                                            <h6 class="fw-semibold fs-sm mb-0"><a href="#!" class="link-reset">Mia Thompson</a></h6>
+                                                            <small class="text-muted">12 minutes ago</small>
+                                                        </div>
+
+                                                        <p class="mb-0 text-muted">
+                                                            I hiked there last month! Those trails are perfect for photography — can't wait to see your shots!
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Add Comment Box -->
+                                        <div class="d-flex align-items-center mt-3">
+                                            <img src="assets/images/users/user-3.jpg" class="avatar-sm rounded-circle me-2" alt="User">
+                                            <input type="text" class="form-control form-control-sm rounded-pill" placeholder="Write a comment...">
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Footer Reactions -->
+                                    <div class="p-2">
+                                        <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                            <span data-icon="reply" class="me-1"></span>
+                                            Reply
+                                        </a>
+                                        <span class="btn btn-sm fs-sm btn-link text-muted" data-toggler="on">
+                                            <span data-toggler-on class="align-middle">
+                                                <span data-icon="heart-filled" class="text-danger"></span>
+                                                Liked!
+                                            </span>
+                                            <span data-toggler-off class="d-none align-middle">
+                                                <span data-icon="heart" class="text-muted"></span>
+                                                Like
+                                            </span>
+                                        </span>
+                                        <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                            <span data-icon="share" class="me-1"></span>
+                                            Share
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- end card-->
+
+                                <div class="card overflow-hidden">
+
+                                    <!-- Event Banner -->
+                                    <div class="position-relative">
+                                        <img src="assets/images/gallery/2.jpg" class="img-fluid w-100" style="height: 180px; object-fit: cover;" alt="Event Banner">
+
+                                        <span class="badge bg-primary position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">
+                                            📸 Photography Event
+                                        </span>
+
+                                        <!-- Dropdown -->
+                                        <div class="dropdown position-absolute top-0 end-0 m-3">
+                                            <a href="#" class="text-white" data-bs-toggle="dropdown">
+                                                <span data-icon="dots-vertical" class="fs-lg"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                <li><a class="dropdown-item" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                <li><a class="dropdown-item" href="#"><span data-icon="pin" class="me-2"></span>Pin</a></li>
+                                                <li><a class="dropdown-item" href="#"><span data-icon="flag" class="me-2"></span>Report</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Body -->
+                                    <div class="card-body">
+
+                                        <!-- Author Info -->
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="assets/images/users/user-2.jpg" class="avatar-md rounded-circle me-2" alt="User">
+                                            <div>
+                                                <h5 class="fw-semibold mb-0"><a href="#!" class="link-reset">Anika Roy</a></h5>
+                                                <small class="text-muted">2 hours ago</small>
+                                            </div>
+                                        </div>
+
+                                        <!-- Event Title -->
+                                        <h4 class="fw-bold mb-2">Nature Photography Workshop 2025</h4>
+                                        <p class="text-muted">
+                                            A weekend event designed for photographers and outdoor lovers to learn, collaborate, and capture stunning nature moments together.
+                                        </p>
+
+                                        <!-- Info Boxes -->
+                                        <div class="row g-2 mb-3">
+                                            <div class="col-12 col-md-4">
+                                                <div class="bg-light-subtle border border-light-subtle border-dashed rounded-3 p-3 h-100">
+                                                    <small class="text-muted text-uppercase fw-bold">Date</small>
+                                                    <div class="fw-semibold mt-1">14 September 2025</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <div class="bg-light-subtle border border-light-subtle border-dashed rounded-3 p-3 h-100">
+                                                    <small class="text-muted text-uppercase fw-bold">Time</small>
+                                                    <div class="fw-semibold mt-1">10:00 AM – 4:00 PM</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <div class="bg-light-subtle border border-light-subtle border-dashed rounded-3 p-3 h-100">
+                                                    <small class="text-muted text-uppercase fw-bold">Location</small>
+                                                    <div class="fw-semibold mt-1">Green Valley National Park</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- CTA Buttons -->
+                                        <div class="d-flex justify-content-center gap-2 mt-2">
+                                            <button class="btn btn-outline-primary btn-sm">
+                                                <span data-icon="bell" class="me-1"></span> Remind Me
+                                            </button>
+                                            <button class="btn btn-primary btn-sm">
+                                                <span data-icon="user-plus" class="me-1"></span> Register
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- end card-->
+
+                                <div class="card">
+                                    <div class="card-body pb-2">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img class="me-2 avatar-sm rounded-circle" src="assets/images/users/user-1.jpg" alt="Profile photo of Anika Roy" />
+                                            <div class="w-100">
+                                                <h5 class="m-0">
+                                                    <a href="#!" class="link-reset">__username__</a>
+                                                </h5>
+                                                <p class="text-muted mb-0">
+                                                    <small>Posted 2 hours ago</small>
+                                                </p>
+                                            </div>
+                                            <div class="dropdown ms-auto">
+                                                <a href="#" class="dropdown-toggle text-muted drop-arrow-none card-drop p-0" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="edit" class="me-2"></span>
+                                                        Edit Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="delete" class="me-2"></span>
+                                                        Delete Post
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="share" class="me-2"></span>
+                                                        Share
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="pin" class="me-2"></span>
+                                                        Pin to Top
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        <span data-icon="flag" class="me-2"></span>
+                                                        Report Post
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p>Sharing a couple of timelapses from my recent Iceland trip. Let me know which one you like most!</p>
+
+                                        <div class="ratio ratio-16x9 rounded overflow-hidden">
+                                            <iframe src="https://player.vimeo.com/video/1084537" allowfullscreen></iframe>
+                                        </div>
+
+                                        <div class="mt-2">
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="reply" class="me-1"></span>
+                                                Reply
+                                            </a>
+                                            <span class="btn btn-sm fs-sm btn-link text-muted" data-toggler="on">
+                                                <span data-toggler-on class="align-middle">
+                                                    <span data-icon="heart-filled" class="text-danger"></span>
+                                                    Liked!
+                                                </span>
+                                                <span data-toggler-off class="d-none align-middle">
+                                                    <span data-icon="heart" class="text-muted"></span>
+                                                    Like
+                                                </span>
+                                            </span>
+                                            <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                                <span data-icon="share" class="me-1"></span>
+                                                Share
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- end card-body-->
+                                </div>
+                                <!-- end card-->
+
+                                <div class="card">
+
+                                    <!-- Header -->
+                                    <div class="card-body pb-0">
+                                        <div class="d-flex align-items-center">
+
+                                            <!-- Avatar -->
+                                            <img src="assets/images/users/user-6.jpg" class="avatar-sm rounded-circle me-2" alt="User">
+
+                                            <!-- User Info -->
+                                            <div class="flex-grow-1">
+                                                <h5 class="fw-semibold mb-0">
+                                                    <a href="#!" class="link-reset">David Kim</a>
+                                                </h5>
+                                                <small class="text-muted">10 hours ago</small>
+                                            </div>
+
+                                            <!-- Dropdown -->
+                                            <div class="dropdown">
+                                                <a href="#" class="text-muted" data-bs-toggle="dropdown">
+                                                    <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit Post</a></li>
+                                                    <li><a class="dropdown-item" href="#"><span data-icon="delete" class="me-2"></span>Delete Post</a></li>
+                                                    <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                    <li><a class="dropdown-item" href="#"><span data-icon="pin" class="me-2"></span>Pin to Top</a></li>
+                                                    <li><a class="dropdown-item" href="#"><span data-icon="flag" class="me-2"></span>Report Post</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Poll Title -->
+                                        <div class="mt-3">
+                                            <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill mb-2">📊 Community Poll</span>
+                                            <h5 class="fw-bold mb-1">Choose your favorite front-end framework in 2025</h5>
+                                            <p class="text-muted mb-2">Your vote helps us decide what to adopt for our next UI toolkit update.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Poll Section -->
+                                    <div class="px-3 pb-3">
+                                        <div class="bg-light-subtle p-3 ps-4 rounded-3 border">
+
+                                            <!-- Poll Options -->
+                                            <form class="poll-form">
+                                                <div class="form-check mb-2 p-2 card-bg rounded-3 shadow-sm">
+                                                    <input class="form-check-input" type="radio" name="poll" id="pollReact">
+                                                    <label class="form-check-label fw-semibold" for="pollReact">
+                                                        React (Meta)
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check mb-2 p-2 card-bg rounded-3 shadow-sm">
+                                                    <input class="form-check-input" type="radio" name="poll" id="pollVue">
+                                                    <label class="form-check-label fw-semibold" for="pollVue">
+                                                        Vue.js (Evan You)
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check mb-2 p-2 card-bg rounded-3 shadow-sm">
+                                                    <input class="form-check-input" type="radio" name="poll" id="pollAngular">
+                                                    <label class="form-check-label fw-semibold" for="pollAngular">
+                                                        Angular (Google)
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check mb-3 p-2 card-bg rounded-3 shadow-sm">
+                                                    <input class="form-check-input" type="radio" name="poll" id="pollSvelte">
+                                                    <label class="form-check-label fw-semibold" for="pollSvelte">
+                                                        Svelte (Emerging Favorite)
+                                                    </label>
+                                                </div>
+
+                                                <!-- Submit Button -->
+                                                <button type="submit" class="btn btn-primary w-100 rounded-pill">
+                                                    Submit Vote
+                                                </button>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end card-->
+
+                                <div class="card">
+
+                                    <!-- Header -->
+                                    <div class="card-body pb-0 d-flex align-items-center">
+                                        <img src="assets/images/users/user-7.jpg" class="avatar-sm rounded-circle me-2">
+                                        <div class="flex-grow-1">
+                                            <h5 class="fw-semibold mb-0"><a href="#!" class="link-reset">Ava Thompson</a></h5>
+                                            <small class="text-muted">1 hour ago</small>
+                                        </div>
+                                        <div class="dropdown">
+                                            <a href="#" class="text-muted" data-bs-toggle="dropdown">
+                                                <span data-icon="dots-vertical" class="fs-lg"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                <li><a class="dropdown-item" href="#"><span data-icon="flag" class="me-2"></span>Report</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Story Image -->
+                                    <div class="p-3 pb-0">
+                                        <div class="rounded-4 overflow-hidden shadow-sm">
+                                            <img src="assets/images/gallery/8.jpg" class="img-fluid w-100" style="height: 260px; object-fit: cover;">
+                                        </div>
+                                    </div>
+
+                                    <!-- Caption -->
+                                    <div class="px-3 py-2">
+                                        <p class="mb-2 text-muted">
+                                            Dropping my favorite shot from yesterday's sunset hike. 🌅  
+                                            Nature always surprises me.
+                                        </p>
+                                    </div>
+
+                                    <!-- Actions -->
+                                    <div class="p-2">
+                                        <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                            <span data-icon="reply" class="me-1"></span>
+                                            Reply
+                                        </a>
+                                        <span class="btn btn-sm fs-sm btn-link text-muted" data-toggler="on">
+                                            <span data-toggler-on class="align-middle">
+                                                <span data-icon="heart-filled" class="text-danger"></span>
+                                                Liked!
+                                            </span>
+                                            <span data-toggler-off class="d-none align-middle">
+                                                <span data-icon="heart" class="text-muted"></span>
+                                                Like
+                                            </span>
+                                        </span>
+                                        <a href="javascript: void(0);" class="btn btn-sm fs-sm btn-link text-muted">
+                                            <span data-icon="share" class="me-1"></span>
+                                            Share
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- end card-->
+
+                                <div class="card overflow-hidden">
+
+                                    <!-- Background Quote Block -->
+                                    <div class="position-relative">
+                                        <img src="assets/images/gallery/12.jpg" class="img-fluid w-100" style="height: 200px; object-fit: cover; filter: brightness(0.5);">
+
+                                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white px-4">
+                                            <span data-icon="quote" class="fs-1 opacity-75 mb-2"></span>
+                                            <h4 class="fw-bold mb-1">“Creativity is intelligence having fun.”</h4>
+                                            <p class="small mb-0 opacity-75">A reminder to keep exploring, learning, and building.</p>
+                                        </div>
+
+                                        <!-- Dropdown -->
+                                        <div class="dropdown position-absolute top-0 end-0 m-3">
+                                            <a href="#" class="text-white" data-bs-toggle="dropdown">
+                                                <span data-icon="dots-vertical" class="fs-lg"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                <li><a class="dropdown-item" href="#"><span data-icon="flag" class="me-2"></span>Report</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- User Footer -->
+                                    <div class="card-body d-flex align-items-center">
+                                        <img src="assets/images/users/user-4.jpg" class="avatar-md rounded-circle me-2">
+
+                                        <div class="flex-grow-1">
+                                            <h5 class="fw-semibold mb-0"><a href="#!" class="link-reset">Noah Carter</a></h5>
+                                            <small class="text-muted">Shared an inspiration</small>
+                                        </div>
+
+                                        <span class="text-muted fs-xl" data-toggler="off">
+                                            <span data-toggler-on class="d-none align-middle">
+                                                <span data-icon="heart-filled" class="text-danger"></span>
+                                            </span>
+                                            <span data-toggler-off class="align-middle">
+                                                <span data-icon="heart" class="text-muted"></span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- end card-->
+
+                            </div> <!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div>
+                    <!-- end container-xxl-->
+                </div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+    </body>
+</html>

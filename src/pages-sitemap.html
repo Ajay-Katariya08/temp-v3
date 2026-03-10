@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        @@include("./partials/title-meta.html", {"title": "Sitemap"}) @@include('./partials/head-css.html')
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Main Content -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="container-fluid">
+                    @@include("./partials/page-title.html", {"subtitle": "Pages", "title":"Sitemap"})
+
+                    <div class="row">
+                        <!-- Column 1: AI Dashboards -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-uppercase">AI Dashboards</h5>
+                                    <ul class="list-unstyled sitemap-list mt-3">
+                                        <li>
+                                            <a href="#" class="link-reset fw-semibold">Analytics</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="link-reset">Model Metrics</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="link-reset">User Insights</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="link-reset">Prediction Logs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="link-reset">Real-Time Monitor</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="link-reset">Data Pipelines</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="link-reset fw-semibold">Model Hub</a>
+                                            <ul>
+                                                <li><a href="#" class="link-reset">Overview</a></li>
+                                                <li>
+                                                    <a href="#" class="link-reset">Upload Model</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="link-reset">Version Control</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="link-reset fw-semibold">AI Documentation</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="link-reset fw-semibold">Sign In</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="link-reset fw-semibold">Create Account</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: AI Applications -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-uppercase">AI Applications</h5>
+                                    <ul class="list-unstyled sitemap-list mt-3">
+                                        <li>
+                                            <a href="#" class="link-reset fw-semibold">
+                                                <span data-icon="calendar" class="me-1 text-muted"></span>
+                                                Training Scheduler
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="link-reset fw-semibold">
+                                                <span data-icon="email" class="me-1 text-muted"></span>
+                                                Notifications
+                                            </a>
+                                            <ul>
+                                                <li><a href="#" class="link-reset">Inbox</a></li>
+                                                <li><a href="#" class="link-reset">Alerts</a></li>
+                                                <li>
+                                                    <a href="#" class="link-reset">Send Message</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="link-reset fw-semibold">
+                                                <span data-icon="users" class="me-1 text-muted"></span>
+                                                Teams
+                                            </a>
+                                            <ul>
+                                                <li><a href="#" class="link-reset">Members</a></li>
+                                                <li><a href="#" class="link-reset">Invite</a></li>
+                                                <li>
+                                                    <a href="#" class="link-reset">Permissions</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="link-reset fw-semibold">
+                                                <span data-icon="briefcase" class="me-1 text-muted"></span>
+                                                AI Projects
+                                            </a>
+                                            <ul>
+                                                <li><a href="#" class="link-reset">Overview</a></li>
+                                                <li>
+                                                    <a href="#" class="link-reset">New Project</a>
+                                                </li>
+                                                <li><a href="#" class="link-reset">Tasks</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 3: AI Reports & Settings -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-uppercase">AI Reports & Settings</h5>
+                                    <ul class="list-unstyled sitemap-list mt-3">
+                                        <li>
+                                            <a href="#" class="link-primary fw-semibold">
+                                                <span data-icon="bar-chart" class="me-1"></span>
+                                                Reports
+                                            </a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="link-reset">Model Accuracy</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="link-reset">User Activity</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="link-reset">Performance Trends</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="link-info fw-semibold">
+                                                <span data-icon="wallet" class="me-1"></span>
+                                                Billing
+                                            </a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="link-reset">Subscriptions</a>
+                                                </li>
+                                                <li><a href="#" class="link-reset">Payments</a></li>
+                                                <li><a href="#" class="link-reset">Credits</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="link-danger fw-semibold">
+                                                <span data-icon="settings" class="me-1"></span>
+                                                Settings
+                                            </a>
+                                            <ul>
+                                                <li><a href="#" class="link-reset">General</a></li>
+                                                <li>
+                                                    <a href="#" class="link-reset">Appearance</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="link-reset">Integrations</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="link-reset">Audit Logs</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="link-reset fw-semibold">
+                                                <span data-icon="logout" class="me-1"></span>
+                                                Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- end row-->
+                </div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End of Main Content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+    </body>
+</html>

@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "Attendance"}) @@include('./partials/head-css.html')
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div class="wrapper">
+        @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+        <!-- ============================================================== -->
+        <!-- Start Main Content -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="container-fluid">
+                @@include("./partials/page-title.html", {"subtitle": "HRM", "title":"Attendance"})
+
+                <div class="row row-cols-xxl-5 row-cols-md-3 row-cols-1 g-2">
+                    <!-- Total Working Days -->
+                    <div class="col">
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                <div class="d-flex gap-3">
+                                    <div class="avatar-lg rounded-circle text-bg-light d-flex align-items-center justify-content-center">
+                                        <span data-icon="calendar-clock" class="fs-xxl"></span>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="mb-2 d-flex justify-content-between align-items-center">
+                                            <h5 class="fs-xl mb-0">22</h5>
+                                            <span>
+                                                +5%
+                                                <span data-icon="arrow-up" class="text-success"></span>
+                                            </span>
+                                        </div>
+                                        <p class="text-muted mb-0">Total working days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Days Present -->
+                    <div class="col">
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                <div class="d-flex gap-3">
+                                    <div class="avatar-lg rounded-circle text-bg-light d-flex align-items-center justify-content-center">
+                                        <span data-icon="user-check" class="fs-xxl"></span>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="mb-2 d-flex justify-content-between align-items-center">
+                                            <h5 class="fs-xl mb-0">18</h5>
+                                            <span>
+                                                +2.4%
+                                                <span data-icon="arrow-up" class="text-success"></span>
+                                            </span>
+                                        </div>
+                                        <p class="text-muted mb-0">Days present</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Days On Leave -->
+                    <div class="col">
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                <div class="d-flex gap-3">
+                                    <div class="avatar-lg rounded-circle text-bg-light d-flex align-items-center justify-content-center">
+                                        <span data-icon="plane" class="fs-xxl"></span>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="mb-2 d-flex justify-content-between align-items-center">
+                                            <h5 class="fs-xl mb-0">2</h5>
+                                            <span>
+                                                -1.0%
+                                                <span data-icon="arrow-down" class="text-danger"></span>
+                                            </span>
+                                        </div>
+                                        <p class="text-muted mb-0">Days on leave</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Days Absent -->
+                    <div class="col">
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                <div class="d-flex gap-3">
+                                    <div class="avatar-lg rounded-circle text-bg-light d-flex align-items-center justify-content-center">
+                                        <span data-icon="user-circle" class="fs-xxl"></span>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="mb-2 d-flex justify-content-between align-items-center">
+                                            <h5 class="fs-xl mb-0">1</h5>
+                                            <span>
+                                                0%
+                                            </span>
+                                        </div>
+                                        <p class="text-muted mb-0">Days absent</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Average Hours Per Day -->
+                    <div class="col">
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                <div class="d-flex gap-3">
+                                    <div class="avatar-lg rounded-circle text-bg-light d-flex align-items-center justify-content-center">
+                                        <span data-icon="clock" class="fs-xxl"></span>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="mb-2 d-flex justify-content-between align-items-center">
+                                            <h5 class="fs-xl mb-0">
+                                                9.2
+                                                <small class="fs-6">hrs/day</small>
+                                            </h5>
+                                            <span>+0.8%</span>
+                                        </div>
+                                        <p class="text-muted mb-0">Average working hours</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end row-->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div data-table data-table-rows-per-page="10" class="card">
+                            <div class="card-header border-light justify-content-between">
+                                <div class="d-flex gap-2">
+                                    <!-- Search -->
+                                    <div class="app-search">
+                                        <input data-table-search type="search" class="form-control" placeholder="Search records..." />
+                                        <span data-icon="search" class="app-search-icon text-muted"></span>
+                                    </div>
+
+                                    <!-- Add New Attendance -->
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAttendanceModal">
+                                        <span data-icon="plus" class="me-1"></span>
+                                        Add Record
+                                    </button>
+
+                                    <!-- Delete Selected -->
+                                    <button data-table-delete-selected class="btn btn-danger d-none">
+                                        Delete
+                                    </button>
+                                </div>
+
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="me-2 fw-semibold">Filter By:</span>
+
+                                    <!-- Status Filter -->
+                                    <div class="app-search">
+                                        <select data-table-filter="status" class="form-select form-control my-1 my-md-0">
+                                            <option value="">Status</option>
+                                            <option value="Present">Present</option>
+                                            <option value="Late">Late</option>
+                                            <option value="Half Day">Half Day</option>
+                                            <option value="On Leave">On Leave</option>
+                                            <option value="Absent">Absent</option>
+                                        </select>
+                                        <span data-icon="user-check" class="app-search-icon text-muted"></span>
+                                    </div>
+
+                                    <!-- Shift Type Filter -->
+                                    <div class="app-search">
+                                        <select data-table-filter="shift" class="form-select form-control my-1 my-md-0">
+                                            <option value="">Shift Type</option>
+                                            <option value="Day Shift">Day Shift</option>
+                                            <option value="Night Shift">Night Shift</option>
+                                            <option value="Mid Shift">Mid Shift</option>
+                                        </select>
+                                        <span data-icon="clock" class="app-search-icon text-muted"></span>
+                                    </div>
+
+                                    <!-- Records Per Page -->
+                                    <div>
+                                        <select data-table-set-rows-per-page class="form-select form-control my-1 my-md-0">
+                                            <option value="5">5</option>
+                                            <option value="10" selected>10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-custom table-centered table-hover w-100 mb-0">
+                                        <thead class="bg-light align-middle bg-opacity-25 thead-sm text-nowrap">
+                                            <tr class="text-uppercase fs-xxs">
+                                                <th class="ps-3" data-table-sort>Date</th>
+                                                <th data-table-sort data-column="status">Status</th>
+                                                <th data-table-sort data-column="shift">Shift Type</th>
+                                                <th data-table-sort>Clock In</th>
+                                                <th data-table-sort>Clock Out</th>
+                                                <th data-table-sort>Production</th>
+                                                <th data-table-sort>Break</th>
+                                                <th data-table-sort>Overtime</th>
+                                                <th>Progress</th>
+                                                <th data-table-sort>Total Hours</th>
+                                                <th data-table-sort>Leave Type</th>
+                                                <th data-table-sort>Approval</th>
+                                                <th data-table-sort>Approval By</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-nowrap">
+
+                                            <!-- 27 Oct -->
+                                            <tr>
+                                                <td class="ps-3">27 Oct 2025</td>
+                                                <td><span class="badge bg-success-subtle text-success">Present</span></td>
+                                                <td>Day Shift</td>
+                                                <td>09:03 AM</td>
+                                                <td>06:50 PM</td>
+                                                <td>8h 25m</td>
+                                                <td>0h 50m</td>
+                                                <td>0h 15m</td>
+                                                <td>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-success" style="width:90%;"></div>
+                                                    </div>
+                                                </td>
+                                                <td>9h 30m</td>
+                                                <td>--</td>
+                                                <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+
+                                            <!-- 26 Oct -->
+                                            <tr>
+                                                <td class="ps-3">26 Oct 2025</td>
+                                                <td><span class="badge bg-success-subtle text-success">Present</span></td>
+                                                <td>Day Shift</td>
+                                                <td>09:10 AM</td>
+                                                <td>07:05 PM</td>
+                                                <td>8h 30m</td>
+                                                <td>1h 00m</td>
+                                                <td>0h 25m</td>
+                                                <td>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-success" style="width:88%;"></div>
+                                                    </div>
+                                                </td>
+                                                <td>9h 55m</td>
+                                                <td>--</td>
+                                                <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+
+                                            <!-- 25 Oct -->
+                                            <tr>
+                                                <td class="ps-3">25 Oct 2025</td>
+                                                <td><span class="badge bg-warning-subtle text-warning">Late</span></td>
+                                                <td>Day Shift</td>
+                                                <td>09:45 AM</td>
+                                                <td>07:30 PM</td>
+                                                <td>8h 10m</td>
+                                                <td>0h 55m</td>
+                                                <td>0h 00m</td>
+                                                <td>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-warning" style="width:75%;"></div>
+                                                    </div>
+                                                </td>
+                                                <td>9h 05m</td>
+                                                <td>--</td>
+                                                <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+
+                                            <!-- 24 Oct -->
+                                            <tr>
+                                                <td class="ps-3">24 Oct 2025</td>
+                                                <td><span class="badge bg-info-subtle text-info">On Leave</span></td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>
+                                                    <div class="progress progress-sm bg-light"></div>
+                                                </td>
+                                                <td>--</td>
+                                                <td>Sick Leave</td>
+                                                <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+
+                                            <!-- 23 Oct -->
+                                            <tr>
+                                                <td class="ps-3">23 Oct 2025</td>
+                                                <td><span class="badge bg-success-subtle text-success">Present</span></td>
+                                                <td>Night Shift</td>
+                                                <td>07:20 PM</td>
+                                                <td>04:10 AM</td>
+                                                <td>8h 35m</td>
+                                                <td>0h 40m</td>
+                                                <td>0h 25m</td>
+                                                <td>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-success" style="width:92%;"></div>
+                                                    </div>
+                                                </td>
+                                                <td>9h 40m</td>
+                                                <td>--</td>
+                                                <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+
+                                            <!-- 22 Oct -->
+                                            <tr>
+                                                <td class="ps-3">22 Oct 2025</td>
+                                                <td><span class="badge bg-warning-subtle text-warning">Half Day</span></td>
+                                                <td>Day Shift</td>
+                                                <td>09:40 AM</td>
+                                                <td>01:15 PM</td>
+                                                <td>3h 30m</td>
+                                                <td>0h 15m</td>
+                                                <td>--</td>
+                                                <td>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-warning" style="width:40%;"></div>
+                                                    </div>
+                                                </td>
+                                                <td>3h 45m</td>
+                                                <td>--</td>
+                                                <td><span class="badge bg-warning-subtle text-warning">Pending</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+
+                                            <!-- 21 Oct -->
+                                            <tr>
+                                                <td class="ps-3">21 Oct 2025</td>
+                                                <td><span class="badge bg-danger-subtle text-danger">Absent</span></td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>
+                                                    <div class="progress progress-sm bg-light"></div>
+                                                </td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td><span class="badge bg-danger-subtle text-danger">Rejected</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+
+                                            <!-- 20 Oct -->
+                                            <tr>
+                                                <td class="ps-3">20 Oct 2025</td>
+                                                <td><span class="badge bg-success-subtle text-success">Present</span></td>
+                                                <td>Day Shift</td>
+                                                <td>09:00 AM</td>
+                                                <td>06:40 PM</td>
+                                                <td>8h 15m</td>
+                                                <td>1h 00m</td>
+                                                <td>0h 20m</td>
+                                                <td>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-success" style="width:88%;"></div>
+                                                    </div>
+                                                </td>
+                                                <td>9h 35m</td>
+                                                <td>--</td>
+                                                <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+
+                                            <!-- 19 Oct -->
+                                            <tr>
+                                                <td class="ps-3">19 Oct 2025</td>
+                                                <td><span class="badge bg-success-subtle text-success">Present</span></td>
+                                                <td>Day Shift</td>
+                                                <td>09:12 AM</td>
+                                                <td>06:55 PM</td>
+                                                <td>8h 40m</td>
+                                                <td>0h 55m</td>
+                                                <td>0h 10m</td>
+                                                <td>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-success" style="width:90%;"></div>
+                                                    </div>
+                                                </td>
+                                                <td>9h 45m</td>
+                                                <td>--</td>
+                                                <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+
+                                            <!-- 18 Oct -->
+                                            <tr>
+                                                <td class="ps-3">18 Oct 2025</td>
+                                                <td><span class="badge bg-success-subtle text-success">Present</span></td>
+                                                <td>Day Shift</td>
+                                                <td>09:08 AM</td>
+                                                <td>06:48 PM</td>
+                                                <td>8h 20m</td>
+                                                <td>0h 50m</td>
+                                                <td>0h 15m</td>
+                                                <td>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-success" style="width:88%;"></div>
+                                                    </div>
+                                                </td>
+                                                <td>9h 25m</td>
+                                                <td>--</td>
+                                                <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+
+                                            <!-- 17 Oct -->
+                                            <tr>
+                                                <td class="ps-3">17 Oct 2025</td>
+                                                <td><span class="badge bg-info-subtle text-info">On Leave</span></td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>
+                                                    <div class="progress progress-sm bg-light"></div>
+                                                </td>
+                                                <td>--</td>
+                                                <td>Casual Leave</td>
+                                                <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+
+                                            <!-- 16 Oct -->
+                                            <tr>
+                                                <td class="ps-3">16 Oct 2025</td>
+                                                <td><span class="badge bg-success-subtle text-success">Present</span></td>
+                                                <td>Night Shift</td>
+                                                <td>07:10 PM</td>
+                                                <td>03:50 AM</td>
+                                                <td>8h 00m</td>
+                                                <td>0h 45m</td>
+                                                <td>0h 25m</td>
+                                                <td>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-success" style="width:86%;"></div>
+                                                    </div>
+                                                </td>
+                                                <td>9h 10m</td>
+                                                <td>--</td>
+                                                <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+
+                                            <!-- 15 Oct -->
+                                            <tr>
+                                                <td class="ps-3">15 Oct 2025</td>
+                                                <td><span class="badge bg-warning-subtle text-warning">Late</span></td>
+                                                <td>Day Shift</td>
+                                                <td>09:55 AM</td>
+                                                <td>07:20 PM</td>
+                                                <td>7h 55m</td>
+                                                <td>1h 05m</td>
+                                                <td>0h 15m</td>
+                                                <td>
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-warning" style="width:70%;"></div>
+                                                    </div>
+                                                </td>
+                                                <td>9h 15m</td>
+                                                <td>--</td>
+                                                <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                <td>Maria Smith</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- end table-respo.-->
+                            </div>
+                            <!-- end card-body-->
+
+                            <div class="card-footer border-0">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div data-table-pagination-info="records"></div>
+                                    <div data-table-pagination></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end card-->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end row-->
+
+                <!-- Add Attendance Modal -->
+                <div class="modal fade" id="addAttendanceModal" tabindex="-1" aria-labelledby="addAttendanceLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addAttendanceLabel">Add New Attendance Record</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <form id="addAttendanceForm">
+                                <div class="modal-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <label for="attendance-date" class="form-label">Date</label>
+                                            <input type="date" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" id="attendance-date" required />
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="shift-type" class="form-label">Shift Type</label>
+                                            <select id="shift-type" class="form-select" required>
+                                                <option value="">Select Shift</option>
+                                                <option>Day Shift</option>
+                                                <option>Night Shift</option>
+                                                <option>Mid Shift</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="atte-status" class="form-label">Status</label>
+                                            <select id="atte-status" class="form-select" required>
+                                                <option value="">Select Status</option>
+                                                <option>Present</option>
+                                                <option>Late</option>
+                                                <option>Half Day</option>
+                                                <option>On Leave</option>
+                                                <option>Absent</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="clock-in" class="form-label">Clock In</label>
+                                            <input type="time" id="clock-in" data-provider="timepickr" data-time-basic="true" class="form-control" />
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="clock-out" class="form-label">Clock Out</label>
+                                            <input type="time" id="clock-out" data-provider="timepickr" data-time-basic="true" class="form-control" />
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="leave-type" class="form-label">Leave Type</label>
+                                            <select id="leave-type" class="form-select">
+                                                <option value="">None</option>
+                                                <option>Sick Leave</option>
+                                                <option>Casual Leave</option>
+                                                <option>Paid Leave</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="approval" class="form-label">Approval Status</label>
+                                            <select id="approval" class="form-select">
+                                                <option>Approved</option>
+                                                <option>Pending</option>
+                                                <option>Rejected</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="approval-by" class="form-label">Approved By</label>
+                                            <input type="text" id="approval-by" class="form-control" placeholder="e.g. Maria Smith" />
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label for="remarks" class="form-label">Remarks</label>
+                                            <textarea id="remarks" class="form-control" rows="3" placeholder="Optional remarks"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <span data-icon="save" class="me-1"></span> Save Record
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- container -->
+
+            @@include('./partials/footer.html')
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End of Main Content -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+
+    <!-- Custom table -->
+    <script src="assets/js/pages/custom-table.js"></script>
+</body>
+
+</html>

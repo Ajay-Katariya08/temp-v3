@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "Kanban Board"}) @@include('./partials/head-css.html')
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div class="wrapper">
+        @@include('./partials/topbar.html') @@include('./partials/sidenav.html')
+
+        <!-- ============================================================== -->
+        <!-- Start Main Content -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="container-fluid">
+                @@include("./partials/page-title.html", {"subtitle": "Apps", "title":"Kanban Board"})
+
+                <div class="outlook-box kanban-app">
+                    <div class="card h-100 mb-0 flex-grow-1">
+                        <div class="card-header border-light align-items-center gap-2">
+                            <!-- Search Bar -->
+                            <div class="app-search">
+                                <input type="search" class="form-control" placeholder="Search by task name, assignee..." />
+                                <span data-icon="search" class="app-search-icon text-muted"></span>
+                            </div>
+
+                            <!-- Filter Controls -->
+                            <div class="d-flex flex-wrap align-items-center gap-2">
+
+                                <!-- Team Filter -->
+                                <div class="app-search">
+                                    <select class="form-select form-control">
+                                        <option selected>Team</option>
+                                        <option value="Product">Product</option>
+                                        <option value="Engineering">Engineering</option>
+                                        <option value="UX Design">UX Design</option>
+                                        <option value="Customer Success">Customer Success</option>
+                                        <option value="Support">Support</option>
+                                    </select>
+                                    <span data-icon="users" class="app-search-icon text-muted"></span>
+                                </div>
+
+                                <!-- Priority Filter -->
+                                <div class="app-search">
+                                    <select class="form-select form-control">
+                                        <option selected>Priority</option>
+                                        <option value="Normal">Normal</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="High">High</option>
+                                        <option value="Urgent">Urgent</option>
+                                    </select>
+                                    <span data-icon="flag" class="app-search-icon text-muted"></span>
+                                </div>
+
+                                <!-- Status Filter -->
+                                <div class="app-search">
+                                    <select class="form-select form-control">
+                                        <option selected>Status</option>
+                                        <option value="To Do">To Do</option>
+                                        <option value="In Progress">In Progress</option>
+                                        <option value="Review">Review</option>
+                                        <option value="Completed">Completed</option>
+                                    </select>
+                                    <span data-icon="check-circle" class="app-search-icon text-muted"></span>
+                                </div>
+
+                            </div>
+
+                            <!-- Add New Card Button -->
+                            <button type="button" class="btn btn-primary ms-lg-auto" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+                                <span data-icon="plus" class="me-1"></span>
+                                Add New Task
+                            </button>
+
+                        </div>
+
+
+                        <div class="card-body p-0">
+                            <div class="kanban-content bg-light bg-opacity-40">
+                                <!-- TODO Data-->
+                                <div class="kanban-board">
+                                    <div class="kanban-item py-2 px-3 d-flex align-items-center">
+                                        <h5 class="m-0">To Do (5)</h5>
+                                        <a href="#!" class="ms-auto btn btn-sm btn-icon rounded-circle btn-primary">
+                                            <span data-icon="plus"></span>
+                                        </a>
+                                    </div>
+                                    <div class="kanban-board-group px-2" data-simplebar data-simplebar-md>
+                                        <ul data-plugins="sortable">
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-danger-subtle text-danger badge-label">High</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li>
+                                                                            <a class="dropdown-item" href="#">
+                                                                                <span data-icon="share" class="me-2"></span> Share
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="dropdown-item" href="#">
+                                                                                <span data-icon="edit" class="me-2"></span> Edit
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="dropdown-item text-danger" href="#">
+                                                                                <span data-icon="delete" class="me-2"></span> Delete
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <h5 class="mb-2">
+                                                            <a href="#!" class="link-reset">Design onboarding flow for new user sign-up journey.</a>
+                                                        </h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-5.jpg" class="rounded-circle me-2" width="28" height="28" alt="">
+                                                            <span class="text-muted fw-medium">Ava Mitchell</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center mb-n1 text-muted">
+                                                            <span>4 Days</span>
+                                                            <span><span data-icon="list"></span> 3</span>
+                                                            <span><span data-icon="link"></span> 2</span>
+                                                            <span><span data-icon="messages"></span> 9</span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- end kanban item-->
+
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-success-subtle text-success badge-label">Normal</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Create dark/light theme switcher with local storage.</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-8.jpg" width="28" height="28" class="rounded-circle me-2">
+                                                            <span class="text-muted fw-medium">Mia Johnson</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center mb-n1 text-muted">
+                                                            <span>2 Days</span>
+                                                            <span><span data-icon="list"></span> 4</span>
+                                                            <span><span data-icon="link"></span> 1</span>
+                                                            <span><span data-icon="messages"></span> 6</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-warning-subtle text-warning badge-label">Medium</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Write documentation for project setup and deployment.</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-9.jpg" width="28" height="28" class="rounded-circle me-2">
+                                                            <span class="text-muted fw-medium">Emma Scott</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center mb-n1 text-muted">
+                                                            <span>6 Days</span>
+                                                            <span><span data-icon="list"></span> 3</span>
+                                                            <span><span data-icon="link"></span> 1</span>
+                                                            <span><span data-icon="messages"></span> 10</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-danger-subtle text-danger badge-label">High</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Fix payment failed callback issue in checkout API.</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-3.jpg" width="28" height="28" class="rounded-circle me-2">
+                                                            <span class="text-muted fw-medium">Noah Parker</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center mb-n1 text-muted">
+                                                            <span>1 Day</span>
+                                                            <span><span data-icon="list"></span> 5</span>
+                                                            <span><span data-icon="link"></span> 2</span>
+                                                            <span><span data-icon="messages"></span> 14</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-danger text-white badge-label">Urgent</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Resolve server downtime and restore access logs.</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-7.jpg" width="28" height="28" class="rounded-circle me-2">
+                                                            <span class="text-muted fw-medium">Lucas Martin</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center mb-n1 text-muted">
+                                                            <span>8 Hours</span>
+                                                            <span><span data-icon="list"></span> 7</span>
+                                                            <span><span data-icon="link"></span> 3</span>
+                                                            <span><span data-icon="messages"></span> 18</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- end TODO Data-->
+
+                                <!-- IN Progress Data-->
+                                <div class="kanban-board">
+                                    <div class="py-2 px-3 d-flex align-items-center">
+                                        <h5 class="m-0">In Progress (3)</h5>
+                                        <a href="#!" class="ms-auto btn btn-sm btn-icon rounded-circle btn-primary">
+                                            <span data-icon="plus"></span>
+                                        </a>
+                                    </div>
+                                    <div class="kanban-board-group px-2" data-simplebar data-simplebar-md>
+                                        <ul data-plugins="sortable">
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-danger-subtle text-danger badge-label">High</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Implement role-based access control for admin panel.</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-4.jpg" class="rounded-circle me-2" width="28" height="28">
+                                                            <span class="text-muted fw-medium">Sophia Wilson</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center mb-n1 text-muted">
+                                                            <span>3 Days</span>
+                                                            <span><span data-icon="list"></span> 5</span>
+                                                            <span><span data-icon="link"></span> 4</span>
+                                                            <span><span data-icon="messages"></span> 11</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <!-- end kanban item-->
+
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-warning-subtle text-warning badge-label">Medium</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Refactor project directory structure for clarity.</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-7.jpg" class="rounded-circle me-2" width="28" height="28">
+                                                            <span class="text-muted fw-medium">Hannah Green</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center mb-n1 text-muted">
+                                                            <span>5 Days</span>
+                                                            <span><span data-icon="list"></span> 3</span>
+                                                            <span><span data-icon="link"></span> 1</span>
+                                                            <span><span data-icon="messages"></span> 7</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-danger text-white badge-label">Urgent</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Resolve 500 errors occurring on user authentication.</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-9.jpg" class="rounded-circle me-2" width="28" height="28">
+                                                            <span class="text-muted fw-medium">Evelyn Clark</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center mb-n1 text-muted">
+                                                            <span>6 Hours</span>
+                                                            <span><span data-icon="list"></span> 8</span>
+                                                            <span><span data-icon="link"></span> 5</span>
+                                                            <span><span data-icon="messages"></span> 21</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- end IN Progress Data-->
+
+                                <!-- In Review Data-->
+                                <div class="kanban-board">
+                                    <div class="kanban-item py-2 px-3 d-flex align-items-center">
+                                        <h5 class="m-0">In Review (4)</h5>
+                                        <a href="#!" class="ms-auto btn btn-sm btn-icon rounded-circle btn-primary">
+                                            <span data-icon="plus"></span>
+                                        </a>
+                                    </div>
+                                    <div class="kanban-board-group px-2" data-simplebar data-simplebar-md>
+                                        <ul data-plugins="sortable">
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-warning-subtle text-warning badge-label">Medium</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Add placeholder loading animations (skeleton screens).</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-10.jpg" class="rounded-circle me-2" width="28" height="28">
+                                                            <span class="text-muted fw-medium">Benjamin Hill</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center mb-n1 text-muted">
+                                                            <span>4 Days</span>
+                                                            <span><span data-icon="list"></span> 4</span>
+                                                            <span><span data-icon="link"></span> 0</span>
+                                                            <span><span data-icon="messages"></span> 8</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-success-subtle text-success badge-label">Normal</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Improve success/error toast notification styles.</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-6.jpg" class="rounded-circle me-2" width="28" height="28">
+                                                            <span class="text-muted fw-medium">Andrew Carter</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center mb-n1 text-muted">
+                                                            <span>5 Days</span>
+                                                            <span><span data-icon="list"></span> 1</span>
+                                                            <span><span data-icon="link"></span> 0</span>
+                                                            <span><span data-icon="messages"></span> 3</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-danger-subtle text-danger badge-label">High</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Integrate analytics dashboard with real-time API data.</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-7.jpg" class="rounded-circle me-2" width="28" height="28">
+                                                            <span class="text-muted fw-medium">Logan Brooks</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center mb-n1 text-muted">
+                                                            <span>3 Days</span>
+                                                            <span><span data-icon="list"></span> 6</span>
+                                                            <span><span data-icon="link"></span> 3</span>
+                                                            <span><span data-icon="messages"></span> 12</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-warning-subtle text-warning badge-label">Medium</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Add pagination support to activity feed list.</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-1.jpg" width="28" height="28" class="rounded-circle me-2">
+                                                            <span class="text-muted fw-medium">Mark Evans</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between text-muted">
+                                                            <span>4 Days</span>
+                                                            <span><span data-icon="list"></span> 3</span>
+                                                            <span><span data-icon="link"></span> 1</span>
+                                                            <span><span data-icon="messages"></span> 5</span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <!-- end kanban item-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- end In Review Data-->
+
+                                <!-- Done Data-->
+                                <div class="kanban-board">
+                                    <div class="py-2 px-3 d-flex align-items-center">
+                                        <h5 class="m-0">Done (2)</h5>
+                                        <a href="#!" class="ms-auto btn btn-sm btn-icon rounded-circle btn-primary">
+                                            <span data-icon="plus"></span>
+                                        </a>
+                                    </div>
+                                    <div class="kanban-board-group px-2" data-simplebar data-simplebar-md>
+                                        <ul data-plugins="sortable">
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-success-subtle text-success badge-label">Completed</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Completed UI redesign for profile settings page.</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-3.jpg" class="rounded-circle me-2" width="28" height="28">
+                                                            <span class="text-muted fw-medium">Harper Lee</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center text-muted">
+                                                            <span>Completed</span>
+                                                            <span><span data-icon="list"></span> 4</span>
+                                                            <span><span data-icon="link"></span> 1</span>
+                                                            <span><span data-icon="messages"></span> 3</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li class="kanban-item">
+                                                <div class="card mb-2 border border-light">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <span class="badge bg-success-subtle text-success badge-label">Completed</span>
+                                                            <div class="ms-auto mt-n2">
+                                                                <div class="dropdown">
+                                                                    <a href="#" class="btn btn-icon btn-sm btn-ghost-light text-muted" data-bs-toggle="dropdown">
+                                                                        <span data-icon="dots-vertical" class="fs-lg"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="share" class="me-2"></span>Share</a></li>
+                                                                        <li><a class="dropdown-item" href="#"><span data-icon="edit" class="me-2"></span>Edit</a></li>
+                                                                        <li><a class="dropdown-item text-danger" href="#"><span data-icon="delete" class="me-2"></span>Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <h5 class="mb-2"><a href="#!" class="link-reset">Launched new email notification templating system.</a></h5>
+
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <img src="assets/images/users/user-5.jpg" class="rounded-circle me-2" width="28" height="28">
+                                                            <span class="text-muted fw-medium">Jacob Miller</span>
+                                                        </div>
+
+                                                        <div class="d-flex justify-content-between align-items-center text-muted">
+                                                            <span>Completed</span>
+                                                            <span><span data-icon="list"></span> 5</span>
+                                                            <span><span data-icon="link"></span> 0</span>
+                                                            <span><span data-icon="messages"></span> 2</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <!-- end kanban item-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- end Done Data-->
+                            </div>
+                            <!-- End Kanban-content-->
+                        </div>
+                        <!-- end card-body-->
+                    </div>
+                    <!-- end card-->
+                </div>
+                <!-- end row-->
+
+                <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-semibold" id="addTaskModalLabel">Add New Task</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <form id="taskForm">
+
+                                    <!-- Task Title -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Task Title</label>
+                                        <input type="text" class="form-control" placeholder="Enter task name..." required>
+                                    </div>
+
+                                    <!-- Assignee -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Assign To</label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select user</option>
+                                            <option value="Liam Carter">Liam Carter</option>
+                                            <option value="Ava Mitchell">Ava Mitchell</option>
+                                            <option value="Noah Parker">Noah Parker</option>
+                                            <option value="Emma Scott">Emma Scott</option>
+                                            <option value="Logan Brooks">Logan Brooks</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Priority -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Priority</label>
+                                        <select class="form-select">
+                                            <option value="Normal" selected>Normal</option>
+                                            <option value="Medium">Medium</option>
+                                            <option value="High">High</option>
+                                            <option value="Urgent">Urgent</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Due Date -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Due Date</label>
+                                        <input type="date" class="form-control" data-provider="flatpickr" data-date-format="d M, Y">
+                                    </div>
+
+                                    <!-- Description -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Description</label>
+                                        <textarea class="form-control" rows="3" placeholder="Brief details..."></textarea>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                <button class="btn btn-primary">
+                                    <span data-icon="check" class="me-1"></span>
+                                    Save Task
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- container -->
+
+            @@include('./partials/footer.html')
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End of Main Content -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+
+    <!-- Sortable js -->
+    <script src="assets/plugins/sortablejs/Sortable.min.js"></script>
+
+    <!-- Kanban Page js -->
+    <script src="assets/js/pages/apps-kanban.js"></script>
+</body>
+
+</html>
