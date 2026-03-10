@@ -2,7 +2,6 @@
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): Datatables Basic
- * Version: __version__
  */
 document.addEventListener('DOMContentLoaded', () => {
     new DataTable('[data-tables="basic"]', {

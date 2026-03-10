@@ -2,7 +2,6 @@
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): Datatables JavaScript Source
- * Version: __version__
  */
 
 const dataSet = [

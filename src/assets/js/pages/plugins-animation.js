@@ -1,8 +1,7 @@
 /**
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
- * Module/App (File Name): Plugins Animation
- * Version: __version__
+ * Module/App (File Name): Pages Animation
  */
 
 document.addEventListener('DOMContentLoaded', function () {

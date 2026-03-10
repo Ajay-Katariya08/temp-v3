@@ -102,7 +102,7 @@ $theme-aurora-colors: (
 
         // Image Menu
         &[data-menu-color='image'] {
-            --#{$prefix}sidenav-bg: #{linear-gradient(to bottom right, rgba(16, 16, 30, 0.85), #183c52), url('/src/lib/assets/images/sidenav-bg.jpg') center/cover no-repeat};
+            --#{$prefix}sidenav-bg: #{linear-gradient(to bottom right, rgba(16, 16, 30, 0.85), #183c52), url('../images/sidenav-bg.jpg') center/cover no-repeat};
             --#{$prefix}sidenav-border-color: null;
             --#{$prefix}sidenav-item-color: #799cb7;
             --#{$prefix}sidenav-item-hover-color: #bccee4;
@@ -334,7 +334,7 @@ html[data-skin='aurora'] {
     }
 
     @each $state in map-keys($theme-colors) {
-
+        
         .btn-soft-#{$state},.btn-outline-#{$state} {
             outline: 1px dashed rgba(var(--#{$prefix}#{$state}-rgb), 0.5) !important;
 

@@ -2,7 +2,6 @@
  * Template Name: __name__ - Multipurpose Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): Chart Apex Bubble
- * Version: __version__
  */
 
 //

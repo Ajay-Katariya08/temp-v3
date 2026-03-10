@@ -2,7 +2,6 @@
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): Apps Kanban
- * Version: __version__
  */
 document.addEventListener('DOMContentLoaded', () => {
     const sortableElements = document.querySelectorAll('[data-plugins="sortable"]');

@@ -2,7 +2,6 @@
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): Datatables Child Rows
- * Version: __version__
  */
 
 // Formatting function for row details - modify as you need

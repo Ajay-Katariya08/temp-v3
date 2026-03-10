@@ -1,19 +1,22 @@
 <!doctype html>
 <html lang="en">
     <head>
-        @@include("./partials/title-meta.html", {"title": "Login with PIN"}) @@include('./partials/head-css.html')
+        @@include("./partials/title-meta.html", {"title": "Login with Pin"}) @@include('./partials/head-css.html')
     </head>
 
     <body>
         <div class="auth-box p-0 w-100">
             <div class="row w-100 g-0">
-                <div class="col-md-auto">
+                <div class="col">
+                    <div class="h-100 position-relative card-side-img rounded-0 overflow-hidden" style="background-image: url(&quot;assets/images/auth.jpg&quot;)">
+                        <div class="p-4 card-img-overlay auth-overlay d-flex align-items-end justify-content-center"></div>
+                    </div>
+                </div>
+
+                <div class="col-xl-auto">
                     <!--Auth Box content -->
                     <div class="card auth-box-form border-0 mb-0">
-                        <div class="position-absolute top-0 end-0" style="width: 180px">
-                            <img src="assets/images/auth-card-bg.svg" class="auth-card-bg-img" alt="auth-card-bg" />
-                        </div>
-                        <div class="card-body min-vh-100 position-relative d-flex flex-column justify-content-center">
+                        <div class="card-body min-vh-100 d-flex flex-column justify-content-center">
                             <div class="auth-brand mb-0 text-center">
                                 <a href="index.html" class="logo-dark">
                                     <img src="assets/images/logo-black.png" alt="dark logo" />
@@ -23,28 +26,27 @@
                                 </a>
                             </div>
 
-                            <div class="mt-auto">
-                                <p class="text-muted text-center auth-sub-text mx-auto">This screen is locked. Enter your PIN to continue.</p>
+                            <div class="mt-auto text-center">
+                                <h4 class="fw-bold">Welcome to Admin</h4>
+                                <p class="text-muted mx-auto mb-5">This screen is locked. Enter your PIN to continue.</p>
 
                                 <div class="text-center mb-4">
                                     <img src="assets/images/users/user-1.jpg" class="rounded-circle img-thumbnail avatar-xxl mb-2" alt="thumbnail" />
                                     <h5 class="fs-md">__username__</h5>
                                 </div>
 
-                                <form class="mt-4">
-                                    <div class="mb-3">
-                                        <label class="form-label d-flex">
-                                            Enter your 6-digit code
-                                            <span class="text-danger">*</span>
-                                        </label>
-                                        <div class="d-flex gap-2 two-factor">
-                                            <input type="text" class="form-control text-center" required />
-                                            <input type="text" class="form-control text-center" required />
-                                            <input type="text" class="form-control text-center" required />
-                                            <input type="text" class="form-control text-center" required />
-                                            <input type="text" class="form-control text-center" required />
-                                            <input type="text" class="form-control text-center" required />
-                                        </div>
+                                <form>
+                                    <label class="form-label d-flex">
+                                        Enter your 6-digit code
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="d-flex gap-2 mb-3 two-factor">
+                                        <input type="password" class="form-control py-2 bg-light bg-opacity-40 border-light text-center" required />
+                                        <input type="password" class="form-control py-2 bg-light bg-opacity-40 border-light text-center" required />
+                                        <input type="password" class="form-control py-2 bg-light bg-opacity-40 border-light text-center" required />
+                                        <input type="password" class="form-control py-2 bg-light bg-opacity-40 border-light text-center" required />
+                                        <input type="password" class="form-control py-2 bg-light bg-opacity-40 border-light text-center" required />
+                                        <input type="password" class="form-control py-2 bg-light bg-opacity-40 border-light text-center" required />
                                     </div>
 
                                     <div class="d-grid">
@@ -70,11 +72,6 @@
                     </div>
                     <!-- End Auth Box Content -->
                 </div>
-                <div class="col">
-                    <div class="h-100 position-relative card-side-img rounded-0 overflow-hidden" style="background-image: url(assets/images/auth.jpg)">
-                        <div class="p-4 card-img-overlay auth-overlay d-flex align-items-end justify-content-center"></div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -82,8 +79,5 @@
 
         <!-- Two Factor Validator Js -->
         <script src="assets/js/pages/auth-two-factor.js"></script>
-
-        <!-- Password Suggestion Js -->
-        <script src="assets/js/pages/auth-password.js"></script>
     </body>
 </html>

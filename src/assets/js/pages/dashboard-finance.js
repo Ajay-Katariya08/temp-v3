@@ -44,7 +44,6 @@ new CustomApexChart({
             }
         },
         series: [{
-            name: "Total Income",
             data: [25, 28, 32, 38, 43, 55, 60, 48, 42, 51, 35]
         }],
         stroke: {
@@ -102,7 +101,6 @@ new CustomApexChart({
             }
         },
         series: [{
-            name: "Total Expenses",
             data: [10, 18, 25, 28, 35, 50, 48, 43, 20, 31, 15]
         }],
         stroke: {
@@ -160,7 +158,6 @@ new CustomApexChart({
             }
         },
         series: [{
-            name: "Investments",
             data: [10, 14, 18, 22, 26, 30, 20, 10, 5, 25, 35]
         }],
         stroke: {
@@ -218,7 +215,6 @@ new CustomApexChart({
             }
         },
         series: [{
-            name: "Savings",
             data: [45, 38, 36, 22, 32, 36, 45, 55, 50, 42, 25]
         }],
         stroke: {
@@ -376,7 +372,19 @@ new CustomApexChart({
             },
         },
         legend: {
-            show: true
+            show: true,
+            horizontalAlign: "center",
+            offsetX: 0,
+            offsetY: -5,
+            markers: {
+                width: 9,
+                height: 9,
+                radius: 6,
+            },
+            itemMargin: {
+                horizontal: 10,
+                vertical: 0,
+            },
         },
         plotOptions: {
             bar: {

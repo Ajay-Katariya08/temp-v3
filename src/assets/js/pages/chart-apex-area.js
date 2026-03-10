@@ -2,7 +2,6 @@
  * Template Name: __name__ - Multipurpose Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): Chart Apex Area
- * Version: __version__
  */
 
 //
@@ -599,7 +598,7 @@ new CustomApexChart({
                 colors: {
                     threshold: 0,
                     colorAboveThreshold: [theme('chart-alpha')],
-                    colorBelowThreshold: [theme('chart-alpha')],
+                    colorBelowThreshold: [theme('chart-beta')],
                 },
             },
         },

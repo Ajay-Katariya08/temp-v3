@@ -275,6 +275,7 @@ html[data-bs-theme='dark'] {
     i {
         height: 22px;
         width: 22px;
+        animation: 2s linear infinite spinner-border;
     }
 }
 

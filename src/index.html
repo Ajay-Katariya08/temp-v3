@@ -1,7 +1,12 @@
 <!doctype html>
 <html lang="en">
     <head>
-        @@include("./partials/title-meta.html", {"title": "Dashboard"}) @@include('./partials/head-css.html')
+        @@include("./partials/title-meta.html", {"title": "eCommerce Dashboard"})
+
+        <!-- Vector Maps css -->
+        <link href="assets/plugins/jsvectormap/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+        @@include('./partials/head-css.html')
     </head>
 
     <body>
@@ -13,7 +18,12 @@
             <!-- Start Main Content -->
             <!-- ============================================================== -->
 
-            <div class="content-page">@@include('./partials/footer.html')</div>
+            <div class="content-page">
+                <div class="container-fluid">@@include("./partials/page-title.html", {"subtitle": "Dashboard", "title":"eCommerce"})</div>
+                <!-- container -->
+
+                @@include('./partials/footer.html')
+            </div>
 
             <!-- ============================================================== -->
             <!-- End of Main Content -->
@@ -22,5 +32,19 @@
         <!-- END wrapper -->
 
         @@include('./partials/customizer.html') @@include('./partials/footer-scripts.html')
+
+        <!-- Apex Chart js -->
+        <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
+
+        <!-- Vector Map Js -->
+        <script src="assets/plugins/jsvectormap/jsvectormap.min.js"></script>
+        <script src="assets/js/maps/world-merc.js"></script>
+        <script src="assets/js/maps/world.js"></script>
+
+        <!-- Custom table -->
+        <script src="assets/js/pages/custom-table.js"></script>
+
+        <!-- Dashboard js -->
+        <script src="assets/js/pages/dashboard-ecommerce.js"></script>
     </body>
 </html>

@@ -19,3 +19,7 @@
         font-weight: $font-weight-medium;
     }
 }
+
+.chat-content-bar {
+    max-height: calc(100vh - 340px);
+}

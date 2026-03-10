@@ -5,209 +5,180 @@
  * 
 */
 
+const xLabels = Array.from({length: 15}, (_, i) => `Day ${i + 1}`);
 
-//
-// TRACKER START/STOP
-//
-
-const timeDisplay = document.getElementById("tracker-time");
-const trackerBtn = document.querySelector(".time-tracker-btn");
-
-if (!timeDisplay || !trackerBtn) {
-    console.error("Projects Dashboard: Elements not found.");
-}
-
-let timerInterval = null;
-let isRunning = false;
-
-// Convert "HH:MM:SS" → seconds
-function timeToSeconds(timeStr) {
-    const [h, m, s] = timeStr.split(":").map(Number);
-    return h * 3600 + m * 60 + s;
-}
-
-// Format seconds → "HH:MM:SS"
-function formatTime(seconds) {
-    const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
-    const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
-    const s = String(seconds % 60).padStart(2, "0");
-    return `${h}:${m}:${s}`;
-}
-
-let currentSeconds = timeToSeconds(timeDisplay.textContent);
-
-// Start / Stop tracker
-trackerBtn.addEventListener("click", () => {
-    if (!isRunning) {
-        // Start
-        trackerBtn.textContent = "Stop Tracker";
-        trackerBtn.classList.remove("btn-info");
-        trackerBtn.classList.add("btn-danger");
-
-        isRunning = true;
-
-        timerInterval = setInterval(() => {
-            currentSeconds++;
-            timeDisplay.textContent = formatTime(currentSeconds);
-        }, 1000);
-
-    } else {
-        // Stop
-        trackerBtn.textContent = "Start Tracker";
-        trackerBtn.classList.remove("btn-danger");
-        trackerBtn.classList.add("btn-info");
-
-        isRunning = false;
-        clearInterval(timerInterval);
-    }
-});
-
-
-//
-// Project Status Breakdown
-//
-new CustomApexChart({
-    selector: '#project-status-chart',
+new CustomEChart({
+    selector: '#revenue-chart',
     options: () => ({
-        chart: {
-            height: 329,
-            type: 'radialBar',
-        },
-        plotOptions: {
-            circle: {
-                dataLabels: {
-                    showOn: 'hover'
-                }
-            },
-            radialBar: {
-                track: {
-                    margin: 22,
-                    background: "rgba(170,184,197, 0.2)"
-                },
-                hollow: {
-                    size: '1%',
-                },
-                dataLabels: {
-                    name: {
-                        show: true,
-                    },
-                    value: {
-                        show: true,
-                    }
-                }
+        textStyle: {
+            fontFamily: getComputedStyle(document.body).fontFamily
+        }, tooltip: {
+            trigger: "axis",
+            padding: [5, 0],
+            backgroundColor: theme("secondary-bg"),
+            borderColor: theme("border-color"),
+            textStyle: {color: theme("light-text-emphasis")},
+            borderWidth: 1,
+            transitionDuration: 0.125,
+            axisPointer: {type: "none"},
+            shadowBlur: 2,
+            shadowColor: "rgba(76, 76, 92, 0.15)",
+            shadowOffsetX: 0,
+            shadowOffsetY: 1,
+            formatter: function (params) {
+                const title = params[0].name;
+                let content = `<div style="font-size: 14px; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid ${theme("border-color")}; margin-bottom: 8px; padding: 3px 10px 8px;">${title}</div>`;
+                params.forEach(item => {
+                    let valueLabel = item.seriesName === "Total Revenue" ? `$${item.value}` : `${item.value} sales`;
+                    content += `<div style="margin-top: 4px; padding: 3px 15px;">
+                            <span style="display:inline-block;margin-right:5px;border-radius:50%;width:10px;height:10px;background-color:${item.color};"></span>
+                            ${item.seriesName} : <strong>${valueLabel}</strong>
+                        </div>`;
+                });
+                return content;
             }
-        },
-        stroke: {
-            lineCap: 'round'
-        },
-        colors: [theme('chart-primary'), theme('chart-gamma'), theme('chart-secondary'), theme('chart-beta')],
-        series: [44, 55, 67, 22],
-        labels: ['Completed', 'In Progress', 'Yet to Start', 'Cancelled'],
-        responsive: [{
-            breakpoint: 380,
-            options: {
-                chart: {
-                    height: 260,
-                }
-            }
-        }]
-    }),
-})
-
-//
-// Projects Performance Overview
-//
-new CustomApexChart({
-    selector: '#dash-projects-overviews',
-    options: () => ({
-        series: [{
-            name: 'Project Revenue',
-            type: 'area',
-            data: [30, 35, 40, 45, 50, 58, 62, 68, 72, 78, 80, 70] // Jan–Dec
-        }, {
-            name: 'Project Orders',
-            type: 'line',
-            data: [20, 24, 28, 30, 33, 35, 38, 40, 42, 45, 48, 50] // Jan–Dec
-        }, {
-            name: 'Project Users',
-            type: 'bar',
-            data: [15, 18, 22, 25, 28, 30, 35, 38, 40, 45, 48, 50] // Jan–Dec
-        }, {
-            name: 'Active Projects Count',
-            type: 'bar',
-            data: [10, 12, 15, 18, 20, 24, 26, 28, 30, 35, 38, 40] // Jan–Dec
-        }],
-        chart: {
-            type: 'line',
-            height: 309,
-            toolbar: {
+        }, xAxis: {
+            type: "category", data: xLabels, boundaryGap: false, axisLine: {
                 show: false
-            },
-            offsetX: 0
-        },
-        stroke: {
-            width: [2, 2, 0, 0],
-            curve: "smooth",
-            dashArray: [0, 3, 0, 0],
-        },
-        colors: [theme('chart-gray'), theme('chart-gamma'), theme('chart-primary'), theme('chart-zeta')],
-        grid: {
-            strokeDashArray: 1,
-        },
-        zoom: {
-            enabled: false
-        },
-        xaxis: {
-            categories: [
-                'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-            ],
-            type: 'category',
-            axisBorder: {
-                show: false,
-            },
-            labels: {
-                offsetY: 1
-            },
-        },
-
-        yaxis: {
-            min: 0,
-            labels: {
-                formatter: function (val) {
-                    return val + "k";
-                },
-                offsetX: -10
-            },
-            axisBorder: {
-                show: false,
-            }
-        },
-        plotOptions: {
-            bar: {
-                horizontal: false,
-                columnWidth: '50%',
-                borderRadius: 3,
-            },
-        },
-        legend: {
-            show: false
-        },
-        dataLabels: {
-            enabled: false
-        },
-        markers: {
-            size: 0,
-        },
-        fill: {
-            opacity: [0.2, 1, 1, 1]
-        },
-        tooltip: {
-            y: {
-                formatter: function (value, { seriesIndex }) {
-                    return "$" + value + "k";
+            }, axisTick: {show: false}, axisLabel: {
+                color: theme("secondary-color"), margin: 15
+            }, splitLine: {show: false}
+        }, yAxis: {
+            type: "value", splitLine: {
+                lineStyle: {
+                    color: "#676b891f", type: "dashed"
                 }
-            }
+            }, boundaryGap: false, axisLabel: {
+                show: true, color: theme("secondary-color"), margin: 15, formatter: function (value) {
+                    return "$" + value;  // Format x-axis labels with a dollar sign
+                }
+            }, axisTick: {show: false}, axisLine: {show: false}
+        }, series: [{
+            name: "Total Revenue",
+            type: "line",
+            smooth: true,
+            symbolSize: 2,
+            itemStyle: {
+                color: theme("primary"), borderColor: theme("primary"), borderWidth: 2
+            },
+            areaStyle: {
+                opacity: 0.2, color: theme("primary")
+            },
+            lineStyle: {
+                color: theme("primary")
+            },
+            symbol: "circle",
+            stack: "data",
+            data: [45, 88, 120, 160, 210, 240, 350, 420, 380, 500, 640, 710, 890, 1150, 1200]
+        }, {
+            name: "Orders",
+            type: "line",
+            smooth: true,
+            symbolSize: 2,
+            itemStyle: {
+                color: theme("secondary"), borderColor: theme("secondary"), borderWidth: 2
+            },
+            areaStyle: {
+                opacity: 0.2, color: theme("secondary")
+            },
+            lineStyle: {
+                color: theme("secondary")
+            },
+            symbol: "circle",
+            stack: "data",
+            data: [15, 30, 35, 50, 55, 75, 95, 120, 135, 160, 180, 210, 250, 390, 450]
+        }], grid: {
+            right: 20, left: 5, bottom: 5, top: 8, containLabel: true
         }
-    }),
+    })
 })
+
+
+new CustomEChart({
+    selector: '#project-progress-chart',
+    options: () => ({
+        tooltip: {
+            trigger: 'item',
+            padding: [8, 15],
+            backgroundColor: theme("secondary-bg"),
+            borderColor: theme("border-color"),
+            textStyle: {color: theme("light-text-emphasis")},
+            borderWidth: 1,
+            transitionDuration: 0.125,
+            axisPointer: {type: "none"},
+            shadowBlur: 2,
+            shadowColor: "rgba(76, 76, 92, 0.15)",
+            shadowOffsetX: 0,
+            shadowOffsetY: 1,
+        }, textStyle: {
+            fontFamily: getComputedStyle(document.body).fontFamily
+        }, series: [{
+            name: 'Project Progress',
+            type: 'pie',
+            radius: [60, 100],
+            center: ['50%', '50%'],
+            roseType: 'area',
+            itemStyle: {
+                borderRadius: 8
+            },
+            label: {
+                color: theme("secondary-color")
+            },
+            data: [{value: 85, name: 'Website Redesign', itemStyle: {color: theme("primary")}}, {
+                value: 70,
+                name: 'Mobile App',
+                itemStyle: {color: theme("secondary")}
+            }, {value: 55, name: 'CRM Integration', itemStyle: {color: theme("info")}}, {
+                value: 60,
+                name: 'Product Launch',
+                itemStyle: {color: theme("success")}
+            }, {value: 75, name: 'Backend Refactor', itemStyle: {color: theme("light")}}, {
+                value: 50,
+                name: 'Client Dashboard',
+                itemStyle: {color: theme("warning")}
+            }]
+        }]
+    })
+})
+
+
+// Function to generate random charity data
+function generateRandomData() {
+    const charityNames = ['Charity A', 'Charity B', 'Charity C'];
+    const randomData = charityNames.map(name => ({
+        name: name, value: Math.floor(Math.random() * 100) + 1
+    }));
+    const total = randomData.reduce((sum, item) => sum + item.value, 0);
+    randomData.forEach(item => {
+        item.value = (item.value / total) * 100;
+    });
+    return randomData;
+}
+
+function initDonutChart(element) {
+
+    const charityData = generateRandomData();
+
+    new CustomEChart({
+        selector: element,
+        options: () => ({
+            tooltip: {show: false}, series: [{
+                type: 'pie',
+                radius: ['60%', '100%'],
+                hoverAnimation: false,
+                label: {show: false},
+                labelLine: {show: false},
+                data: charityData.map((item, index) => ({
+                    value: item.value, itemStyle: {
+                        color: index === 0 ? theme("primary") : index === 1 ? theme("secondary") : "#bbcae14d"
+                    }
+                }))
+            }]
+        })
+    })
+}
+
+const donutCharts = document.querySelectorAll('.donut-chart');
+if (donutCharts) {
+    donutCharts.forEach(initDonutChart)
+}

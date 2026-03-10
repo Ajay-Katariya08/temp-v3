@@ -17,121 +17,86 @@
                 <div class="container-fluid">
                     @@include("./partials/page-title.html", {"subtitle": "Support", "title":"Tickets"})
 
-                    <div class="row row-cols-xxl-5 row-cols-md-3 row-cols-1 g-2">
-                        <!-- Open Tickets -->
+                    <div class="row row-cols-xxl-4 row-cols-md-2 row-cols-1">
+                        <!-- Open Tickets Widget -->
                         <div class="col">
-                            <div class="card mb-2">
+                            <div class="card">
                                 <div class="card-body">
-                                    <div class="d-flex gap-3">
-                                        <div class="avatar-lg rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center">
-                                            <span data-icon="ticket" class="fs-xxl"></span>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar fs-60 avatar-img-size flex-shrink-0">
+                                            <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-24">
+                                                <span data-icon="ticket"></span>
+                                            </span>
                                         </div>
-                                        <div class="flex-grow-1">
-                                            <div class="mb-2 d-flex justify-content-between align-items-center">
-                                                <h5 class="fs-xl mb-0">148</h5>
-                                                <span>
-                                                    +3%
-                                                    <span data-icon="arrow-up" class="text-success"></span>
-                                                </span>
-                                            </div>
-                                            <p class="text-muted mb-0">Open Tickets</p>
+                                        <div class="text-end">
+                                            <h3 class="mb-2 fw-normal"><span data-target="148">0</span></h3>
+                                            <p class="mb-0 text-muted"><span>Open Tickets</span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- end col -->
 
-                        <!-- Resolved Tickets -->
+                        <!-- Resolved Tickets Widget -->
                         <div class="col">
-                            <div class="card mb-2">
+                            <div class="card">
                                 <div class="card-body">
-                                    <div class="d-flex gap-3">
-                                        <div class="avatar-lg rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center">
-                                            <span data-icon="check-circle" class="fs-xxl"></span>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar fs-60 avatar-img-size flex-shrink-0">
+                                            <span class="avatar-title bg-success-subtle text-success rounded-circle fs-24">
+                                                <span data-icon="check"></span>
+                                            </span>
                                         </div>
-                                        <div class="flex-grow-1">
-                                            <div class="mb-2 d-flex justify-content-between align-items-center">
-                                                <h5 class="fs-xl mb-0">1,289</h5>
-                                                <span>
-                                                    +12%
-                                                    <span data-icon="arrow-up" class="text-success"></span>
-                                                </span>
-                                            </div>
-                                            <p class="text-muted mb-0">Resolved Tickets</p>
+                                        <div class="text-end">
+                                            <h3 class="mb-2 fw-normal"><span data-target="1289">0</span></h3>
+                                            <p class="mb-0 text-muted"><span>Resolved Tickets</span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- end col -->
 
-                        <!-- Pending Tickets -->
+                        <!-- Pending Tickets Widget -->
                         <div class="col">
-                            <div class="card mb-2">
+                            <div class="card">
                                 <div class="card-body">
-                                    <div class="d-flex gap-3">
-                                        <div class="avatar-lg rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center">
-                                            <span data-icon="hourglass" class="fs-xxl"></span>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar fs-60 avatar-img-size flex-shrink-0">
+                                            <span class="avatar-title bg-info-subtle text-info rounded-circle fs-24">
+                                                <span data-icon="hourglass"></span>
+                                            </span>
                                         </div>
-                                        <div class="flex-grow-1">
-                                            <div class="mb-2 d-flex justify-content-between align-items-center">
-                                                <h5 class="fs-xl mb-0">93</h5>
-                                                <span>
-                                                    -2.1%
-                                                    <span data-icon="arrow-down" class="text-danger"></span>
-                                                </span>
-                                            </div>
-                                            <p class="text-muted mb-0">Pending Tickets</p>
+                                        <div class="text-end">
+                                            <h3 class="mb-2 fw-normal"><span data-target="93">0</span></h3>
+                                            <p class="mb-0 text-muted"><span>Pending Tickets</span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- end col -->
 
-                        <!-- Escalated Tickets -->
+                        <!-- Escalated Tickets Widget -->
                         <div class="col">
-                            <div class="card mb-2">
+                            <div class="card">
                                 <div class="card-body">
-                                    <div class="d-flex gap-3">
-                                        <div class="avatar-lg rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center">
-                                            <span data-icon="alert-circle" class="fs-xxl"></span>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar fs-60 avatar-img-size flex-shrink-0">
+                                            <span class="avatar-title bg-danger-subtle text-danger rounded-circle fs-24">
+                                                <span data-icon="alert-triangle"></span>
+                                            </span>
                                         </div>
-                                        <div class="flex-grow-1">
-                                            <div class="mb-2 d-flex justify-content-between align-items-center">
-                                                <h5 class="fs-xl mb-0">25</h5>
-                                                <span>
-                                                    +1.8%
-                                                    <span data-icon="arrow-up" class="text-warning"></span>
-                                                </span>
-                                            </div>
-                                            <p class="text-muted mb-0">Escalated Tickets</p>
+                                        <div class="text-end">
+                                            <h3 class="mb-2 fw-normal"><span data-target="25">0</span></h3>
+                                            <p class="mb-0 text-muted"><span>Escalated Tickets</span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Average Response Time -->
-                        <div class="col">
-                            <div class="card mb-2">
-                                <div class="card-body">
-                                    <div class="d-flex gap-3">
-                                        <div class="avatar-lg rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center">
-                                            <span data-icon="clock" class="fs-xxl"></span>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <div class="mb-2 d-flex justify-content-between align-items-center">
-                                                <h5 class="fs-xl mb-0">
-                                                    8.4
-                                                    <small class="fs-6">hrs</small>
-                                                </h5>
-                                                <span>+0.5%</span>
-                                            </div>
-                                            <p class="text-muted mb-0">Average Response Time</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- end col -->
                     </div>
                     <!-- end row -->
 
@@ -166,7 +131,7 @@
 
                                         <!-- Priority Filter -->
                                         <div class="app-search">
-                                            <select data-table-filter="priority" class="form-select form-control my-1 my-md-0">
+                                            <select data-table-range-filter="priority" class="form-select form-control my-1 my-md-0">
                                                 <option value="">Priority</option>
                                                 <option value="Low">Low</option>
                                                 <option value="Medium">Medium</option>
@@ -232,9 +197,9 @@
                                                     <td>08 Aug, 2025</td>
                                                     <td>
                                                         <div class="d-flex justify-content-center gap-1">
-                                                            <a href="apps-ticket-details.html" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                            <a href="apps-ticket-details.html" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="delete" class="fs-lg"></span></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -262,9 +227,9 @@
                                                     <td>10 Aug, 2025</td>
                                                     <td>
                                                         <div class="d-flex justify-content-center gap-1">
-                                                            <a href="apps-ticket-details.html" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                            <a href="apps-ticket-details.html" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="delete" class="fs-lg"></span></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -294,9 +259,9 @@
                                                     <td>07 Aug, 2025</td>
                                                     <td>
                                                         <div class="d-flex justify-content-center gap-1">
-                                                            <a href="apps-ticket-details.html" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                            <a href="apps-ticket-details.html" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="delete" class="fs-lg"></span></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -326,9 +291,9 @@
                                                     <td>06 Aug, 2025</td>
                                                     <td>
                                                         <div class="d-flex justify-content-center gap-1">
-                                                            <a href="apps-ticket-details.html" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                            <a href="apps-ticket-details.html" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="delete" class="fs-lg"></span></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -358,9 +323,9 @@
                                                     <td>08 Aug, 2025</td>
                                                     <td>
                                                         <div class="d-flex justify-content-center gap-1">
-                                                            <a href="apps-ticket-details.html" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                            <a href="apps-ticket-details.html" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="delete" class="fs-lg"></span></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -390,9 +355,9 @@
                                                     <td>06 Aug, 2025</td>
                                                     <td>
                                                         <div class="d-flex justify-content-center gap-1">
-                                                            <a href="apps-ticket-details.html" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                            <a href="apps-ticket-details.html" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="delete" class="fs-lg"></span></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -422,9 +387,9 @@
                                                     <td>05 Aug, 2025</td>
                                                     <td>
                                                         <div class="d-flex justify-content-center gap-1">
-                                                            <a href="apps-ticket-details.html" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                            <a href="apps-ticket-details.html" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="delete" class="fs-lg"></span></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -454,9 +419,9 @@
                                                     <td>09 Aug, 2025</td>
                                                     <td>
                                                         <div class="d-flex justify-content-center gap-1">
-                                                            <a href="apps-ticket-details.html" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                            <a href="apps-ticket-details.html" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="delete" class="fs-lg"></span></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -486,9 +451,9 @@
                                                     <td>08 Aug, 2025</td>
                                                     <td>
                                                         <div class="d-flex justify-content-center gap-1">
-                                                            <a href="apps-ticket-details.html" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                            <a href="apps-ticket-details.html" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="delete" class="fs-lg"></span></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -518,9 +483,9 @@
                                                     <td>06 Aug, 2025</td>
                                                     <td>
                                                         <div class="d-flex justify-content-center gap-1">
-                                                            <a href="apps-ticket-details.html" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                            <a href="apps-ticket-details.html" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="delete" class="fs-lg"></span></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -550,9 +515,9 @@
                                                     <td>07 Aug, 2025</td>
                                                     <td>
                                                         <div class="d-flex justify-content-center gap-1">
-                                                            <a href="apps-ticket-details.html" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                            <a href="apps-ticket-details.html" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="delete" class="fs-lg"></span></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -582,9 +547,9 @@
                                                     <td>06 Aug, 2025</td>
                                                     <td>
                                                         <div class="d-flex justify-content-center gap-1">
-                                                            <a href="apps-ticket-details.html" class="btn btn-default btn-icon btn-sm"><span data-icon="eye" class="fs-lg"></span></a>
-                                                            <a href="#!" class="btn btn-default btn-icon btn-sm"><span data-icon="edit" class="fs-lg"></span></a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm"><span data-icon="delete" class="fs-lg"></span></a>
+                                                            <a href="apps-ticket-details.html" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="eye" class="fs-lg"></span></a>
+                                                            <a href="#!" class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="edit" class="fs-lg"></span></a>
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle"><span data-icon="delete" class="fs-lg"></span></a>
                                                         </div>
                                                     </td>
                                                 </tr>

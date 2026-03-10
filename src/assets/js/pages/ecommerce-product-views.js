@@ -2,7 +2,6 @@
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): ECommerce Product Views
- * Version: __version__
  */
 
 // Function to generate random data

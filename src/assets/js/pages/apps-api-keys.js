@@ -53,24 +53,3 @@ const clipboardElements = document.querySelectorAll('[data-clipboard-target]')
 if (clipboardElements) {
   new ClipboardJS('[data-clipboard-target]')
 }
-
-function generateApiKey(length = 27) {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-    let key = ""
-
-    for (let i = 0; i < length; i++) {
-        key += chars.charAt(Math.floor(Math.random() * chars.length))
-    }
-
-    return key
-}
-
-const inputElement = document.getElementById("apiKeyInput")
-const generateApiKeyBtn = document.getElementById("generateApiKey")
-
-if (inputElement && generateApiKeyBtn) {
-    generateApiKeyBtn.addEventListener("click", (e) => {
-        e.preventDefault()
-        inputElement.value = generateApiKey()
-    })
-}

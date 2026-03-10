@@ -2,7 +2,6 @@
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): Form Quilljs
- * Version: __version__
  */
 
 if (typeof Quill != 'undefined') {

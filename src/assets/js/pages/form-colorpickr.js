@@ -2,7 +2,6 @@
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): Form Colorpickr
- * Version: __version__
  */
 
 function initPickr(selector, options = {}) {

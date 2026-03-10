@@ -4,411 +4,304 @@
  * Module/App (File Name): Analytics Dashboard
 */
 
-//
-// Total Orders
-//
 
-var categories = [];
-for (var i = 1; i <= 15; i++) {
-    categories.push(i + 'D');
+function generateRandomData(count, min, max) {
+    return Array.from({ length: count }, () => Math.floor(Math.random() * (max - min + 1)) + min)
 }
 
-function getRandomOrders(length) {
-    var d = [];
-    for (var idx = 0; idx < length; idx++) {
-        d.push(Math.floor(Math.random() * 90) + 30); // 30–120 orders
-    }
-    return d;
+function generateSessionAndPageViewData(count) {
+    const sessions = generateRandomData(count, 250, 450)
+    const pageViews = sessions.map(
+        (session) => Math.floor(session * (2 + Math.random() * 0.1)) // Page Views are 2x to 2.5x of Sessions
+    )
+    return { sessions, pageViews }
 }
 
-// Refunds = 5% to 15% of Orders
-function getRefundsFromOrders(orders) {
-    return orders.map(v => {
-        var percent = (Math.random() * (15 - 5) + 5) / 100; // 5–15%
-        return Math.round(v * percent);
-    });
-}
-
-var ordersData = getRandomOrders(15);
-var refundsData = getRefundsFromOrders(ordersData);
+const { sessions, pageViews } = generateSessionAndPageViewData(19)
 
 new CustomApexChart({
-    selector: '#total-orders-chart',
+    selector: "#analytics-overview-chart",
     options: () => ({
         chart: {
-            height: 263,
-            type: 'bar',
-            stacked: true,
-            toolbar: {
-                show: false  
-            }
-        },
-
-        plotOptions: {
-            bar: {
-                horizontal: false,
-                endingShape: "rounded",
-                columnWidth: "35%"
-            }
-        },
-
-        series: [
-            {
-                name: 'Orders',
-                data: ordersData
-            },
-            {
-                name: 'Refunds',
-                data: refundsData
-            }
-        ],
-
-        dataLabels: {
-            enabled: false
-        },
-
-        markers: {
-            size: 0,
-            style: 'hollow',
-        },
-
-        colors: [
-            theme('chart-primary'),
-            theme('chart-alpha')
-        ],
-        tooltip: {
-            shared: true,
-            intersect: false,
-            y: {
-                formatter: function (val) {
-                    return val;
-                }
-            }
-        },
-        xaxis: {
-            categories: categories,
-            tickAmount: 6,
-            labels: {
-                rotate: 0,
-                formatter: function (val) {
-                    return val + 'D';   // add "Day" to each visible label
-                },
-                style: {
-                    fontSize: '11px',
-                    whiteSpace: 'nowrap'
-                }
-            },
-            tickPlacement: 'on'
-        },
-        legend: {
-            offsetY: 15,
-        },
-        grid: {
-            borderColor: [theme('chart-order-color')],
-            padding: {
-                top: -10,
-                right: 0,
-                bottom: -10,
-                left: 10,
-            },
-        },
-
-    })
-});
-
-//
-// Sessions Overview
-//
-const sessionButtons = document.querySelectorAll('.nav-link[id]');
-
-const sessionsChart = new CustomApexChart({
-    selector: '#sessions-overview-users',
-    options: () => getMetricChartConfig('session-users', theme),
-});
-
-sessionButtons.forEach(button => {
-    button.addEventListener('click', function () {
-        sessionButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-
-        const metricId = this.id;
-        const newOptions = getMetricChartConfig(metricId, theme);
-
-        sessionsChart.chart.updateOptions(newOptions, true);
-    });
-});
-
-function getMetricChartConfig(metric, theme) {
-    const generateRandomData = (count, min, max) => {
-        return Array.from({ length: count }, () => Math.floor(Math.random() * (max - min + 1)) + min);
-    };
-
-    const metricSettings = {
-        'session-users': {
-            visitors: [16, 19, 19, 16, 16, 14, 15, 15, 17, 17, 19, 19, 18, 18, 20, 20, 18, 18, 22, 22, 20, 20, 18, 18, 20, 20, 18, 20, 20, 22],
-            pageViews: [21, 24, 24, 21, 21, 19, 20, 20, 22, 22, 24, 24, 23, 23, 25, 25, 23, 23, 27, 27, 25, 25, 23, 23, 25, 25, 23, 25, 25, 27],
-            formatter: (val) => val + "k"
-        },
-        'total-sessions': {
-            visitors: generateRandomData(30, 20, 40),
-            pageViews: generateRandomData(30, 25, 50),
-            formatter: (val) => val + "k"
-        },
-        'session-bounce-rate': {
-            visitors: generateRandomData(30, 30, 60),
-            pageViews: generateRandomData(30, 40, 70),
-            formatter: (val) => val + "%"
-        },
-        'session-duration': {
-            visitors: generateRandomData(30, 60, 200),
-            pageViews: generateRandomData(30, 100, 300),
-            formatter: (val) => {
-                const mins = Math.floor(val / 60);
-                const secs = val % 60;
-                return `${mins}m ${secs}s`;
-            }
-        }
-    };
-
-    const setting = metricSettings[metric] || metricSettings['session-users'];
-
-    return {
-        series: [{
-            name: 'Visitors',
-            data: setting.visitors
-        }, {
-            name: 'Page Views',
-            data: setting.pageViews
-        }],
-        chart: {
-            type: 'area',
-            height: 328,
+            height: 326,
+            type: "area",
             toolbar: { show: false },
         },
-        stroke: {
-            width: [2, 2],
-            dashArray: [0, 5],
-            curve: 'smooth'
+        dataLabels: {
+            enabled: false,
         },
-        colors: [theme('chart-primary'), theme('chart-gamma')],
-        grid: {
-            strokeDashArray: 7,
+        stroke: {
+            width: 2,
+            curve: "smooth",
+        },
+        colors: [theme("chart-primary"), theme("chart-secondary")],
+        series: [
+            {
+                name: "Sessions",
+                data: sessions,
+            },
+            {
+                name: "Page Views",
+                data: pageViews,
+            },
+        ],
+        legend: {
+            offsetY: 5,
         },
         xaxis: {
-            type: 'category',
+            categories: ["", "8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM", "10 PM", "11 PM", "12 AM", ""],
             axisBorder: { show: false },
-            labels: { offsetY: 2 },
-        },
-        yaxis: {
-            tickAmount: 3,
-            min: 0,
+            axisTicks: { show: false },
+            tickAmount: 6,
             labels: {
-                formatter: setting.formatter,
-                offsetX: -10
-            }
-        },
-        legend: { show: false },
-        dataLabels: { enabled: false },
-        fill: {
-            type: 'gradient',
-            gradient: {
-                shadeIntensity: 1,
-                opacityFrom: 0.35,
-                opacityTo: 0,
-                stops: [0, 95]
+                style: {
+                    fontSize: "12px",
+                },
             },
         },
         tooltip: {
+            shared: true,
             y: {
-                formatter: setting.formatter
-            }
-        }
-    };
-}
-
-
-// Active Users Countdown
-function animateCounter(element, start, end, duration = 800) {
-    const range = end - start;
-    const startTime = performance.now();
-
-    function update(now) {
-        const progress = Math.min((now - startTime) / duration, 1);
-        const value = Math.floor(start + range * progress);
-        element.textContent = value;
-
-        if (progress < 1) requestAnimationFrame(update);
-    }
-
-    requestAnimationFrame(update);
-}
-
-
-// Check if the elements exist before trying to animate them
-const activeUsersEl = document.getElementById("active-users-count");
-const activeViewsEl = document.getElementById("active-views-count");
-
-if (!activeUsersEl || !activeViewsEl) {
-    console.error('Elements active-users-count or active-views-count not found');
-}
-
-setInterval(() => {
-    const ac = Math.floor(Math.random() * 150 + 150);
-    const views = Math.floor(Math.random() * ac + 25);
-
-    // animate counters
-    animateCounter(activeUsersEl, Number(activeUsersEl.textContent), ac);
-    animateCounter(activeViewsEl, Number(activeViewsEl.textContent), views);
-
-}, 2000);
-
-//
-// Audience Insights Chart
-//
-new CustomApexChart({
-    selector: '#total-users-chart',
-    options: () => ({
-        chart: {
-            height: 160,
-            type: 'donut',
-        },
-        legend: {
-            show: false
-        },
-        stroke: {
-            width: 0
-        },
-
-        plotOptions: {
-            pie: {
-                donut: {
-                    size: '75%',
-                    labels: {
-                        show: true,
-                        total: {
-                            showAlways: true,
-                            show: true,
-                            formatter: function (w) {
-                                return (w.globals.seriesTotals.reduce((a, b) => {
-                                    return a + b;
-                                }, 0)) + "k";
-                            }
-                        },
+                formatter: function (val, { seriesIndex }) {
+                    if (seriesIndex === 0) {
+                        return val + " Sessions"
+                    } else if (seriesIndex === 1) {
+                        return val + " Page Views"
                     }
-                }
-            }
+                    return val
+                },
+            },
         },
-        series: [44, 55, 41],
-        labels: ["Organic", "Referral", "Paid"],
-        colors: [theme('chart-primary'), theme('chart-zeta'), theme('chart-alpha')],
-        dataLabels: {
-            enabled: false
+        fill: {
+            type: "gradient",
+            gradient: {
+                shadeIntensity: 1,
+                opacityFrom: 0.4,
+                opacityTo: 0.2,
+                stops: [15, 120, 100],
+            },
         },
-        responsive: [{
-            breakpoint: 480,
-            options: {
-                chart: {
-                    width: 180
-                }
-            }
-        }]
+        grid: {
+            borderColor: [theme("border-color")],
+            padding: {
+                bottom: 5,
+            },
+        },
     }),
 })
 
-
-//
-// Sessions by Country Map
-//
-class VectorMap {
-
-    currentResizeHandler = null;
-
-    init() {
-        this.initWorldMarkerLine()
+function generateRandomDeviceData(name, minY, maxY, count = 10) {
+    const data = []
+    for (let i = 1; i <= count; i++) {
+        const y = Math.floor(Math.random() * (maxY - minY + 1)) + minY
+        const z = Math.floor(Math.random() * (35 - 15 + 1)) + 15
+        data.push({ x: i, y: y, z: z })
     }
-
-    initVectorMap(selector, options = {}) {
-        let element = null
-
-        if (selector instanceof Element) {
-            element = selector
-        } else {
-            element = document.querySelector(selector)
-        }
-
-        if (element) {
-
-            const svgElement = element.querySelector('svg');
-
-            if (svgElement) {
-                const mapInstance = element.jsVectorMap;
-
-                if (mapInstance && typeof mapInstance.destroy === 'function') {
-                    mapInstance.destroy();
-                } else {
-                    // Fallback for cases where the instance is missing but the SVG remains.
-                    element.innerHTML = '';
-                }
-            }
-
-            if (this.currentResizeHandler) {
-                window.removeEventListener("resize", this.currentResizeHandler);
-                this.currentResizeHandler = null
-            }
-
-            const map = new jsVectorMap({
-                selector: element,
-                ...options,
-            })
-
-            const debouncedUpdate = debounce(() => {
-                map.updateSize()
-            }, 200);
-
-            this.currentResizeHandler = debouncedUpdate;
-
-            window.addEventListener(
-                "resize",
-                this.currentResizeHandler
-            );
-        }
-    }
-
-    initWorldMarkerLine() {
-        this.initVectorMap('#session-by-countries', {
-            map: 'world',
-            zoomOnScroll: false,
-            zoomButtons: true,
-
-            regionStyle: {
-                initial: {
-                    stroke: '#aab9d14d',
-                    strokeWidth: 0.25,
-                    fill: '#aab9d14d',
-                    fillOpacity: 1
-                },
-                selected: {
-                    fill: theme('primary')   // highlight color
-                }
-            },
-
-            selectedRegions: ['CA', 'US', 'RU', 'IN'], // highlight these countries
-        });
-
-    }
-
+    return { name, data }
 }
 
-document.addEventListener('DOMContentLoaded', function (e) {
-    new VectorMap().init()
+new CustomApexChart({
+    selector: "#devices-chart",
+    options: () => ({
+        chart: {
+            height: 208, // Increased height for spacing
+            type: "bubble",
+            toolbar: {
+                show: false,
+            },
+        },
+        dataLabels: {
+            enabled: false,
+        },
+        series: [generateRandomDeviceData("Desktop", 20, 150), generateRandomDeviceData("Mobile", 20, 120), generateRandomDeviceData("Tablet", 20, 60)],
+        fill: {
+            opacity: 0.8,
+            gradient: {
+                enabled: false,
+            },
+        },
+        colors: [theme("chart-primary"), theme("chart-secondary"), theme("chart-beta")],
+        xaxis: {
+            min: 0,
+            max: 11,
+            show: false,
+            labels: { show: false },
+            axisBorder: { show: false },
+            axisTicks: { show: false },
+        },
+        yaxis: {
+            min: 0,
+            max: 170,
+            show: false,
+            labels: { show: false },
+            axisBorder: { show: false },
+            axisTicks: { show: false },
+        },
+
+        grid: {
+            padding: {
+                top: -20,
+                right: 20,
+                bottom: 0,
+                left: 20,
+            },
+            borderColor: theme("border-color"),
+        },
+
+        legend: {
+            show: true,
+            position: "top",
+            horizontalAlign: "center",
+        },
+    }),
 })
 
-// Observe theme changes
-const mapObserver = new MutationObserver(() => {
-    new VectorMap().init();
+new CustomApexChart({
+    selector: "#orders-chart",
+    options: () => ({
+        series: [
+            {
+                type: "column",
+                data: [
+                    [0, 2],
+                    [1, 3],
+                    [2, 4],
+                    [3, 8],
+                    [4, 5],
+                    [5, 12],
+                    [6, 17],
+                    [7, 19],
+                    [8, 6],
+                    [9, 9],
+                    [10, 14],
+                    [11, 17],
+                    [12, 12],
+                    [13, 6],
+                    [14, 4],
+                ],
+            },
+            {
+                type: "column",
+                data: [
+                    [0, 9],
+                    [1, 7],
+                    [2, 4],
+                    [3, 8],
+                    [4, 4],
+                    [5, 12],
+                    [6, 4],
+                    [7, 6],
+                    [8, 5],
+                    [9, 10],
+                    [10, 4],
+                    [11, 5],
+                    [12, 10],
+                    [13, 2],
+                    [14, 6],
+                ],
+            },
+        ],
+        chart: {
+            height: 60,
+            width: 205,
+            parentHeightOffset: 0,
+            stacked: true,
+            sparkline: {
+                enabled: true,
+            },
+        },
+        states: {
+            hover: {
+                filter: {
+                    type: "none",
+                },
+            },
+            active: {
+                filter: {
+                    type: "none",
+                },
+            },
+        },
+        colors: [theme("chart-primary"), theme("chart-gray")],
+        plotOptions: {
+            bar: {
+                columnWidth: "60%",
+            },
+        },
+        stroke: {
+            curve: "straight",
+            lineCap: "square",
+        },
+        tooltip: {
+            enabled: false,
+            onDatasetHover: {
+                highlightDataSeries: false,
+            },
+            x: {
+                show: false,
+            },
+        },
+    }),
 })
 
-mapObserver.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ["data-skin", "data-bs-theme"],
+new CustomApexChart({
+    selector: "#posts-chart",
+    options: () => ({
+        chart: {
+            type: "area",
+            height: 60,
+            sparkline: {
+                enabled: true,
+            },
+        },
+        stroke: {
+            curve: "smooth",
+            width: 1.5,
+        },
+        fill: {
+            opacity: 1,
+            gradient: {
+                shade: "#1ab394",
+                type: "horizontal",
+                shadeIntensity: 0.5,
+                inverseColors: true,
+                opacityFrom: 0.1,
+                opacityTo: 0.2,
+                stops: [0, 80, 100],
+                colorStops: [],
+            },
+        },
+        series: [
+            {
+                data: [4, 8, 5, 10, 4, 16, 5, 11, 6, 11, 30, 10, 13, 4, 6, 3, 6],
+            },
+        ],
+        yaxis: {
+            min: 0,
+        },
+        colors: [theme("chart-primary")],
+        tooltip: {
+            enabled: false,
+        },
+    }),
 })
+
+// Function to generate a random number between min and max
+let currentVisitors = getRandomNumber(500, 800) // Start with a reasonable base value
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+function updateLiveVisitors() {
+    // Generate a new number close to the current one
+    const change = getRandomNumber(-20, 20) // Small fluctuation
+    currentVisitors = Math.max(100, currentVisitors + change) // Prevent going below 100
+    document.getElementById("live-visitors").textContent = currentVisitors
+}
+
+// Initial display
+document.getElementById("live-visitors").textContent = currentVisitors
+
+// Update every 2 seconds
+setInterval(updateLiveVisitors, 1000)

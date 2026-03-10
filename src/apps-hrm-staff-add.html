@@ -18,301 +18,299 @@
                     @@include("./partials/page-title.html", {"subtitle": "HRM", "title":"Add Staff"})
 
                     <!-- Add New Staff Form -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header card-tabs d-flex align-items-center">
-                                    <div class="flex-grow-1">
-                                        <h4 class="card-title">Fill Details</h4>
+                    <div class="container-xxl">
+                        <div class="card">
+                            <div class="card-header card-tabs d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <h4 class="card-title">Fill Details</h4>
+                                </div>
+                                <!-- Nav Tabs -->
+                                <ul class="nav nav-tabs fw-semibold card-header-tabs nav-bordered" id="staffTabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button">Personal Info</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="job-tab" data-bs-toggle="tab" data-bs-target="#job" type="button">Job Details</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="bank-tab" data-bs-toggle="tab" data-bs-target="#bank" type="button">Bank & Salary</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="emergency-tab" data-bs-toggle="tab" data-bs-target="#emergency" type="button">Emergency Contact</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="access-tab" data-bs-toggle="tab" data-bs-target="#access" type="button">System Access</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <form id="addStaffForm">
+                                    <div class="tab-content" id="staffTabsContent">
+                                        <!-- Personal Info -->
+                                        <div class="tab-pane fade show active" id="personal">
+                                            <div class="row g-3">
+                                                <div class="col-md-4">
+                                                    <label for="firstName" class="form-label">First Name</label>
+                                                    <input id="firstName" type="text" class="form-control" required />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="lastName" class="form-label">Last Name</label>
+                                                    <input id="lastName" type="text" class="form-control" required />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="email" class="form-label">Email</label>
+                                                    <input id="email" type="email" class="form-control" required />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="phone" class="form-label">Phone</label>
+                                                    <input id="phone" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="gender" class="form-label">Gender</label>
+                                                    <select id="gender" class="form-select">
+                                                        <option>Male</option>
+                                                        <option>Female</option>
+                                                        <option>Other</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="dob" class="form-label">Date of Birth</label>
+                                                    <input id="dob" type="date" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="maritalStatus" class="form-label">Marital Status</label>
+                                                    <select id="maritalStatus" class="form-select">
+                                                        <option>Single</option>
+                                                        <option>Married</option>
+                                                        <option>Divorced</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="nationality" class="form-label">Nationality</label>
+                                                    <input id="nationality" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="bloodGroup" class="form-label">Blood Group</label>
+                                                    <select id="bloodGroup" class="form-select">
+                                                        <option>O+</option>
+                                                        <option>O-</option>
+                                                        <option>A+</option>
+                                                        <option>A-</option>
+                                                        <option>B+</option>
+                                                        <option>B-</option>
+                                                        <option>AB+</option>
+                                                        <option>AB-</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label for="address" class="form-label">Address</label>
+                                                    <textarea id="address" class="form-control" rows="2"></textarea>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="city" class="form-label">City</label>
+                                                    <input id="city" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="state" class="form-label">State</label>
+                                                    <input id="state" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="country" class="form-label">Country</label>
+                                                    <input id="country" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="postalCode" class="form-label">Postal Code</label>
+                                                    <input id="postalCode" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="idType" class="form-label">ID Type</label>
+                                                    <select id="idType" class="form-select">
+                                                        <option>Passport</option>
+                                                        <option>National ID</option>
+                                                        <option>Driving License</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="idNumber" class="form-label">ID Number</label>
+                                                    <input id="idNumber" type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Job Details -->
+                                        <div class="tab-pane fade" id="job">
+                                            <div class="row g-3">
+                                                <div class="col-md-4">
+                                                    <label for="employeeId" class="form-label">Employee ID</label>
+                                                    <input id="employeeId" type="text" class="form-control" value="EMP-8941" placeholder="EMP-XXXX" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="department" class="form-label">Department</label>
+                                                    <select id="department" class="form-select">
+                                                        <option>IT</option>
+                                                        <option>HR</option>
+                                                        <option>Finance</option>
+                                                        <option>Design</option>
+                                                        <option>Sales</option>
+                                                        <option>Operations</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="designation" class="form-label">Designation</label>
+                                                    <input id="designation" type="text" class="form-control" placeholder="e.g., Software Engineer" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="team" class="form-label">Team</label>
+                                                    <input id="team" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="joiningDate" class="form-label">Joining Date</label>
+                                                    <input id="joiningDate" type="date" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="shift" class="form-label">Shift</label>
+                                                    <select id="shift" class="form-select">
+                                                        <option>Morning</option>
+                                                        <option>Mid Shift</option>
+                                                        <option>Night Shift</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="employmentType" class="form-label">Employment Type</label>
+                                                    <select id="employmentType" class="form-select">
+                                                        <option>Full-Time</option>
+                                                        <option>Part-Time</option>
+                                                        <option>Contract</option>
+                                                        <option>Intern</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="workMode" class="form-label">Work Mode</label>
+                                                    <select id="workMode" class="form-select">
+                                                        <option>Onsite</option>
+                                                        <option>Hybrid</option>
+                                                        <option>Remote</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="manager" class="form-label">Manager / Reporting To</label>
+                                                    <input id="manager" type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Bank & Salary -->
+                                        <div class="tab-pane fade" id="bank">
+                                            <div class="row g-3">
+                                                <div class="col-md-4">
+                                                    <label for="bankName" class="form-label">Bank Name</label>
+                                                    <input id="bankName" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="accountNumber" class="form-label">Account Number</label>
+                                                    <input id="accountNumber" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="ifscCode" class="form-label">IFSC / SWIFT Code</label>
+                                                    <input id="ifscCode" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="branch" class="form-label">Branch</label>
+                                                    <input id="branch" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="taxId" class="form-label">PAN / Tax ID</label>
+                                                    <input id="taxId" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="salary" class="form-label">Salary (Monthly)</label>
+                                                    <input id="salary" type="number" class="form-control" placeholder="USD $" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="paymentMode" class="form-label">Payment Mode</label>
+                                                    <select id="paymentMode" class="form-select">
+                                                        <option>Bank Transfer</option>
+                                                        <option>Cheque</option>
+                                                        <option>Cash</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="pfNumber" class="form-label">PF Number</label>
+                                                    <input id="pfNumber" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="esiNumber" class="form-label">ESI Number</label>
+                                                    <input id="esiNumber" type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Emergency Contact -->
+                                        <div class="tab-pane fade" id="emergency">
+                                            <div class="row g-3">
+                                                <div class="col-md-4">
+                                                    <label for="emergencyName" class="form-label">Name</label>
+                                                    <input id="emergencyName" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="emergencyRelation" class="form-label">Relation</label>
+                                                    <input id="emergencyRelation" type="text" class="form-control" placeholder="e.g., Mother" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="emergencyPhone" class="form-label">Phone Number</label>
+                                                    <input id="emergencyPhone" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label for="emergencyAddress" class="form-label">Address</label>
+                                                    <textarea id="emergencyAddress" class="form-control" rows="2"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- System Access -->
+                                        <div class="tab-pane fade" id="access">
+                                            <div class="row g-3">
+                                                <div class="col-md-4">
+                                                    <label for="username" class="form-label">Username</label>
+                                                    <input id="username" type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="password" class="form-label">Password</label>
+                                                    <input id="password" type="password" class="form-control" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="role" class="form-label">Role</label>
+                                                    <select id="role" class="form-select">
+                                                        <option>Admin</option>
+                                                        <option>Manager</option>
+                                                        <option>Staff</option>
+                                                        <option>HR</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="ac-status" class="form-label">Status</label>
+                                                    <select id="ac-status" class="form-select">
+                                                        <option>Active</option>
+                                                        <option>Inactive</option>
+                                                        <option>Suspended</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-check">
+                                                        <input id="sendCredentials" class="form-check-input" type="checkbox" />
+                                                        <label for="sendCredentials" class="form-check-label"> Send login credentials to staff via email </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <!-- Nav Tabs -->
-                                    <ul class="nav nav-tabs fw-semibold card-header-tabs nav-bordered" id="staffTabs" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button">Personal Info</button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="job-tab" data-bs-toggle="tab" data-bs-target="#job" type="button">Job Details</button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="bank-tab" data-bs-toggle="tab" data-bs-target="#bank" type="button">Bank & Salary</button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="emergency-tab" data-bs-toggle="tab" data-bs-target="#emergency" type="button">Emergency Contact</button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="access-tab" data-bs-toggle="tab" data-bs-target="#access" type="button">System Access</button>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-body">
-                                    <form id="addStaffForm">
-                                        <div class="tab-content" id="staffTabsContent">
-                                            <!-- Personal Info -->
-                                            <div class="tab-pane fade show active" id="personal">
-                                                <div class="row g-3">
-                                                    <div class="col-md-4">
-                                                        <label for="firstName" class="form-label">First Name</label>
-                                                        <input id="firstName" type="text" class="form-control" required />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="lastName" class="form-label">Last Name</label>
-                                                        <input id="lastName" type="text" class="form-control" required />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="email" class="form-label">Email</label>
-                                                        <input id="email" type="email" class="form-control" required />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="phone" class="form-label">Phone</label>
-                                                        <input id="phone" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="gender" class="form-label">Gender</label>
-                                                        <select id="gender" class="form-select">
-                                                            <option>Male</option>
-                                                            <option>Female</option>
-                                                            <option>Other</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="dob" class="form-label">Date of Birth</label>
-                                                        <input id="dob" type="date" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="maritalStatus" class="form-label">Marital Status</label>
-                                                        <select id="maritalStatus" class="form-select">
-                                                            <option>Single</option>
-                                                            <option>Married</option>
-                                                            <option>Divorced</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="nationality" class="form-label">Nationality</label>
-                                                        <input id="nationality" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="bloodGroup" class="form-label">Blood Group</label>
-                                                        <select id="bloodGroup" class="form-select">
-                                                            <option>O+</option>
-                                                            <option>O-</option>
-                                                            <option>A+</option>
-                                                            <option>A-</option>
-                                                            <option>B+</option>
-                                                            <option>B-</option>
-                                                            <option>AB+</option>
-                                                            <option>AB-</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <label for="address" class="form-label">Address</label>
-                                                        <textarea id="address" class="form-control" rows="2"></textarea>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="city" class="form-label">City</label>
-                                                        <input id="city" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="state" class="form-label">State</label>
-                                                        <input id="state" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="country" class="form-label">Country</label>
-                                                        <input id="country" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="postalCode" class="form-label">Postal Code</label>
-                                                        <input id="postalCode" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="idType" class="form-label">ID Type</label>
-                                                        <select id="idType" class="form-select">
-                                                            <option>Passport</option>
-                                                            <option>National ID</option>
-                                                            <option>Driving License</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="idNumber" class="form-label">ID Number</label>
-                                                        <input id="idNumber" type="text" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <!-- Job Details -->
-                                            <div class="tab-pane fade" id="job">
-                                                <div class="row g-3">
-                                                    <div class="col-md-4">
-                                                        <label for="employeeId" class="form-label">Employee ID</label>
-                                                        <input id="employeeId" type="text" class="form-control" value="EMP-8941" placeholder="EMP-XXXX" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="department" class="form-label">Department</label>
-                                                        <select id="department" class="form-select">
-                                                            <option>IT</option>
-                                                            <option>HR</option>
-                                                            <option>Finance</option>
-                                                            <option>Design</option>
-                                                            <option>Sales</option>
-                                                            <option>Operations</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="designation" class="form-label">Designation</label>
-                                                        <input id="designation" type="text" class="form-control" placeholder="e.g., Software Engineer" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="team" class="form-label">Team</label>
-                                                        <input id="team" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="joiningDate" class="form-label">Joining Date</label>
-                                                        <input id="joiningDate" type="date" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="shift" class="form-label">Shift</label>
-                                                        <select id="shift" class="form-select">
-                                                            <option>Morning</option>
-                                                            <option>Mid Shift</option>
-                                                            <option>Night Shift</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="employmentType" class="form-label">Employment Type</label>
-                                                        <select id="employmentType" class="form-select">
-                                                            <option>Full-Time</option>
-                                                            <option>Part-Time</option>
-                                                            <option>Contract</option>
-                                                            <option>Intern</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="workMode" class="form-label">Work Mode</label>
-                                                        <select id="workMode" class="form-select">
-                                                            <option>Onsite</option>
-                                                            <option>Hybrid</option>
-                                                            <option>Remote</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="manager" class="form-label">Manager / Reporting To</label>
-                                                        <input id="manager" type="text" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Bank & Salary -->
-                                            <div class="tab-pane fade" id="bank">
-                                                <div class="row g-3">
-                                                    <div class="col-md-4">
-                                                        <label for="bankName" class="form-label">Bank Name</label>
-                                                        <input id="bankName" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="accountNumber" class="form-label">Account Number</label>
-                                                        <input id="accountNumber" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="ifscCode" class="form-label">IFSC / SWIFT Code</label>
-                                                        <input id="ifscCode" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="branch" class="form-label">Branch</label>
-                                                        <input id="branch" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="taxId" class="form-label">PAN / Tax ID</label>
-                                                        <input id="taxId" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="salary" class="form-label">Salary (Monthly)</label>
-                                                        <input id="salary" type="number" class="form-control" placeholder="USD $" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="paymentMode" class="form-label">Payment Mode</label>
-                                                        <select id="paymentMode" class="form-select">
-                                                            <option>Bank Transfer</option>
-                                                            <option>Cheque</option>
-                                                            <option>Cash</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="pfNumber" class="form-label">PF Number</label>
-                                                        <input id="pfNumber" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="esiNumber" class="form-label">ESI Number</label>
-                                                        <input id="esiNumber" type="text" class="form-control" />
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Emergency Contact -->
-                                            <div class="tab-pane fade" id="emergency">
-                                                <div class="row g-3">
-                                                    <div class="col-md-4">
-                                                        <label for="emergencyName" class="form-label">Name</label>
-                                                        <input id="emergencyName" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="emergencyRelation" class="form-label">Relation</label>
-                                                        <input id="emergencyRelation" type="text" class="form-control" placeholder="e.g., Mother" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="emergencyPhone" class="form-label">Phone Number</label>
-                                                        <input id="emergencyPhone" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <label for="emergencyAddress" class="form-label">Address</label>
-                                                        <textarea id="emergencyAddress" class="form-control" rows="2"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- System Access -->
-                                            <div class="tab-pane fade" id="access">
-                                                <div class="row g-3">
-                                                    <div class="col-md-4">
-                                                        <label for="username" class="form-label">Username</label>
-                                                        <input id="username" type="text" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="password" class="form-label">Password</label>
-                                                        <input id="password" type="password" class="form-control" />
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="role" class="form-label">Role</label>
-                                                        <select id="role" class="form-select">
-                                                            <option>Admin</option>
-                                                            <option>Manager</option>
-                                                            <option>Staff</option>
-                                                            <option>HR</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label for="ac-status" class="form-label">Status</label>
-                                                        <select id="ac-status" class="form-select">
-                                                            <option>Active</option>
-                                                            <option>Inactive</option>
-                                                            <option>Suspended</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-check">
-                                                            <input id="sendCredentials" class="form-check-input" type="checkbox" />
-                                                            <label for="sendCredentials" class="form-check-label"> Send login credentials to staff via email </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Buttons -->
-                                        <div class="d-flex justify-content-end gap-2 mt-4">
-                                            <button type="reset" class="btn btn-light">Reset</button>
-                                            <button type="submit" class="btn btn-success">Save Staff</button>
-                                        </div>
-                                    </form>
-                                </div>
+                                    <!-- Buttons -->
+                                    <div class="d-flex justify-content-end gap-2 mt-4">
+                                        <button type="reset" class="btn btn-light">Reset</button>
+                                        <button type="submit" class="btn btn-success">Save Staff</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

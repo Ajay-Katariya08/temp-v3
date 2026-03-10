@@ -7,13 +7,16 @@
     <body>
         <div class="auth-box p-0 w-100">
             <div class="row w-100 g-0">
-                <div class="col-md-auto">
+                <div class="col">
+                    <div class="h-100 position-relative card-side-img rounded-0 overflow-hidden" style="background-image: url(&quot;assets/images/auth.jpg&quot;)">
+                        <div class="p-4 card-img-overlay auth-overlay d-flex align-items-end justify-content-center"></div>
+                    </div>
+                </div>
+
+                <div class="col-xl-auto">
                     <!--Auth Box content -->
                     <div class="card auth-box-form border-0 mb-0">
-                        <div class="position-absolute top-0 end-0" style="width: 180px">
-                            <img src="assets/images/auth-card-bg.svg" class="auth-card-bg-img" alt="auth-card-bg" />
-                        </div>
-                        <div class="card-body min-vh-100 position-relative d-flex flex-column justify-content-center">
+                        <div class="card-body min-vh-100 d-flex flex-column justify-content-center">
                             <div class="auth-brand mb-0 text-center">
                                 <a href="index.html" class="logo-dark">
                                     <img src="assets/images/logo-black.png" alt="dark logo" />
@@ -23,12 +26,12 @@
                                 </a>
                             </div>
 
-                            <div class="mt-auto">
-                                <form class="mt-4">
+                            <div class="mt-auto text-center">
+                                <form>
                                     <div class="mb-4">
                                         <div class="avatar-xxl mx-auto mt-2">
                                             <div class="avatar-title bg-light-subtle border border-light border-dashed rounded-circle">
-                                                <img src="assets/images/checkmark.png" alt="checkmark" height="64" />
+                                                <img src="assets/images/checkmark.png" alt="dark logo" height="64" />
                                             </div>
                                         </div>
                                     </div>
@@ -36,7 +39,7 @@
                                     <h4 class="fw-bold text-center mb-4">Well Done! Email verified Successfully</h4>
 
                                     <div class="d-grid">
-                                        <a href="index.html" class="btn btn-primary fw-semibold py-2">Bake to Dashboard</a>
+                                        <button type="submit" class="btn btn-primary fw-semibold py-2">Bake to Dashboard</button>
                                     </div>
                                 </form>
                             </div>
@@ -57,11 +60,6 @@
                         </div>
                     </div>
                     <!-- End Auth Box Content -->
-                </div>
-                <div class="col">
-                    <div class="h-100 position-relative card-side-img rounded-0 overflow-hidden" style="background-image: url(assets/images/auth.jpg)">
-                        <div class="p-4 card-img-overlay auth-overlay d-flex align-items-end justify-content-center"></div>
-                    </div>
                 </div>
             </div>
         </div>

@@ -2,7 +2,6 @@
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): Matrics
- * Version: __version__
  */
 
 //
@@ -258,14 +257,14 @@ new CustomEChart({
                 type: 'bar',
                 stack: 'total',
                 barWidth: '40%',
-                itemStyle: { color: ins('primary') },
+                itemStyle: { color: theme('primary') },
                 data: [120, 132, 101, 134, 98, 145, 160],
             },
             {
                 name: 'Product B',
                 type: 'bar',
                 stack: 'total',
-                itemStyle: { color: ins('secondary') },
+                itemStyle: { color: theme('secondary') },
                 data: [220, 182, 191, 234, 210, 198, 176],
             },
             {
@@ -330,7 +329,7 @@ new CustomEChart({
                 type: 'line',
                 data: [120, 132, 101, 134, 90, 230, 210],
                 smooth: true,
-                areaStyle: { color: ins('white-rgb', 0.5) },
+                areaStyle: { color: theme('white-rgb', 0.5) },
                 lineStyle: { width: 0 },
                 symbol: 'none',
             },
@@ -339,7 +338,7 @@ new CustomEChart({
                 type: 'line',
                 data: [220, 182, 191, 234, 290, 330, 310],
                 smooth: true,
-                areaStyle: { color: ins('white-rgb', 0.5) },
+                areaStyle: { color: theme('white-rgb', 0.5) },
                 lineStyle: { width: 0 },
                 symbol: 'none',
             },
@@ -399,7 +398,7 @@ new CustomEChart({
                 data: [4, 8, 5, 10, 4, 16, 5, 11, 6, 11, 30, 10, 13, 4, 6, 3, 6],
                 smooth: true,
                 lineStyle: {
-                    color: ins('primary'),
+                    color: theme('primary'),
                     width: 2,
                 },
                 symbol: 'none',

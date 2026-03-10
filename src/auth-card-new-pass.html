@@ -5,21 +5,15 @@
     </head>
 
     <body>
-        <div class="position-absolute top-0 end-0">
-            <img src="assets/images/auth-card-bg.svg" class="auth-card-bg-img" alt="auth-card-bg" />
-        </div>
-        <div class="position-absolute bottom-0 start-0" style="transform: rotate(180deg)">
-            <img src="assets/images/auth-card-bg.svg" class="auth-card-bg-img" alt="auth-card-bg" />
-        </div>
         <div class="auth-box d-flex align-items-center">
             <div class="container-xxl">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-10">
-                        <div class="card">
+                        <div class="card rounded-4">
                             <div class="row justify-content-between g-0">
                                 <div class="col-lg-6">
                                     <div class="card-body">
-                                        <div class="auth-brand text-center mb-4 position-relative">
+                                        <div class="auth-brand text-center mb-4">
                                             <a href="index.html" class="logo-dark">
                                                 <img src="assets/images/logo-black.png" alt="dark logo" />
                                             </a>
@@ -36,9 +30,11 @@
                                                     Email address
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <div class="app-search">
-                                                    <input type="email" class="form-control" id="userEmail" placeholder="you&#64;example.com" disabled />
-                                                    <span data-icon="email" class="app-search-icon text-muted"></span>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-light">
+                                                        <span data-icon="email" class="fs-xl text-muted"></span>
+                                                    </span>
+                                                    <input type="email" class="form-control" id="userEmail" placeholder="you@example.com" disabled />
                                                 </div>
                                             </div>
 
@@ -62,9 +58,11 @@
                                                     Password
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <div class="app-search">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-light">
+                                                        <span data-icon="lock-password" class="fs-xl text-muted"></span>
+                                                    </span>
                                                     <input type="password" class="form-control" id="userPassword" placeholder="••••••••" required />
-                                                    <span data-icon="lock-password" class="app-search-icon text-muted"></span>
                                                 </div>
                                                 <div class="password-bar my-2"></div>
                                                 <p class="text-muted fs-xs mb-0">Use 8+ characters with letters, numbers & symbols.</p>
@@ -75,9 +73,11 @@
                                                     Confirm New Password
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <div class="app-search">
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-light">
+                                                        <span data-icon="lock-password" class="fs-xl text-muted"></span>
+                                                    </span>
                                                     <input type="password" class="form-control" id="confirmPassword" placeholder="••••••••" required />
-                                                    <span data-icon="lock-password" class="app-search-icon text-muted"></span>
                                                 </div>
                                             </div>
 
@@ -116,8 +116,8 @@
                                 </div>
 
                                 <div class="col-lg-6 d-none d-lg-block">
-                                    <div class="h-100 position-relative card-side-img rounded-end overflow-hidden" style="background-image: url(assets/images/auth.jpg)">
-                                        <div class="p-4 card-img-overlay rounded-end auth-overlay d-flex align-items-end justify-content-center"></div>
+                                    <div class="h-100 position-relative card-side-img rounded-end-4 rounded-end rounded-0 overflow-hidden" style="background-image: url(&quot;assets/images/auth.jpg&quot;)">
+                                        <div class="p-4 card-img-overlay rounded-4 rounded-start-0 auth-overlay d-flex align-items-end justify-content-center"></div>
                                     </div>
                                 </div>
                             </div>

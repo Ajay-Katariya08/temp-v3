@@ -2,7 +2,6 @@
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): Auth Two Factor
- * Version: __version__
  */
 
 class TwoFactorAuth {

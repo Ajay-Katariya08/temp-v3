@@ -2,7 +2,6 @@
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): ECommerce Seller Details
- * Version: __version__
  */
 
 // Function to generate random data
@@ -81,7 +80,19 @@ new CustomApexChart({
             },
         },
         legend: {
-            show: true
+            show: true,
+            horizontalAlign: 'center',
+            offsetX: 0,
+            offsetY: 5,
+            markers: {
+                width: 9,
+                height: 9,
+                radius: 6,
+            },
+            itemMargin: {
+                horizontal: 10,
+                vertical: 0,
+            },
         },
         plotOptions: {
             bar: {

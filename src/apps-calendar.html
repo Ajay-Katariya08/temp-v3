@@ -17,8 +17,8 @@
                 <div class="container-fluid">
                     @@include("./partials/page-title.html", {"subtitle": "Apps", "title":"Calendar"})
 
-                    <div class="d-flex gap-1">
-                        <div class="card d-none d-lg-flex rounded-end-0">
+                    <div class="outlook-box">
+                        <div class="card h-100 mb-0 d-none d-lg-flex rounded-end-0">
                             <div class="card-body">
                                 <button class="btn btn-primary w-100 btn-new-event">
                                     <span data-icon="plus" class="me-2 align-middle"></span>
@@ -27,47 +27,40 @@
 
                                 <div id="external-events">
                                     <p class="text-muted mt-2 fst-italic fs-xs mb-3">Drag and drop your event or click in the calendar</p>
-
-                                    <div class="external-event fc-event bg-primary-subtle text-primary fw-semibold" data-class="bg-primary-subtle text-primary border-primary">
+                                    <div class="external-event fc-event bg-primary-subtle text-primary border-start border-3 border-primary fw-semibold" data-class="bg-primary-subtle text-primary border-start border-3 border-primary">
                                         <span data-icon="circle-filled" class="me-2"></span>
-                                        Design Review
+                                        Project Kickoff
                                     </div>
-
-                                    <div class="external-event fc-event bg-secondary-subtle text-secondary fw-semibold" data-class="bg-secondary-subtle text-secondary border-secondary">
+                                    <div class="external-event fc-event bg-secondary-subtle text-secondary border-start border-3 border-secondary fw-semibold" data-class="bg-secondary-subtle text-secondary border-start border-3 border-secondary">
                                         <span data-icon="circle-filled" class="me-2"></span>
-                                        Marketing Strategy
+                                        Team Sync-up
                                     </div>
-
-                                    <div class="external-event fc-event bg-success-subtle text-success fw-semibold" data-class="bg-success-subtle text-success border-success">
+                                    <div class="external-event fc-event bg-success-subtle text-success border-start border-3 border-success fw-semibold" data-class="bg-success-subtle text-success border-start border-3 border-success">
                                         <span data-icon="circle-filled" class="me-2"></span>
-                                        Sales Demo
+                                        Client Meeting
                                     </div>
-
-                                    <div class="external-event fc-event bg-danger-subtle text-danger fw-semibold" data-class="bg-danger-subtle text-danger border-danger">
+                                    <div class="external-event fc-event bg-danger-subtle text-danger border-start border-3 border-danger fw-semibold" data-class="bg-danger-subtle text-danger border-start border-3 border-danger">
                                         <span data-icon="circle-filled" class="me-2"></span>
-                                        Deadline Submission
+                                        Product Launch
                                     </div>
-
-                                    <div class="external-event fc-event bg-info-subtle text-info fw-semibold" data-class="bg-info-subtle text-info border-info">
+                                    <div class="external-event fc-event bg-info-subtle text-info border-start border-3 border-info fw-semibold" data-class="bg-info-subtle text-info border-start border-3 border-info">
                                         <span data-icon="circle-filled" class="me-2"></span>
-                                        Training Session
+                                        Internal Review
                                     </div>
-
-                                    <div class="external-event fc-event bg-warning-subtle text-warning fw-semibold" data-class="bg-warning-subtle text-warning border-warning">
+                                    <div class="external-event fc-event bg-warning-subtle text-warning border-start border-3 border-warning fw-semibold" data-class="bg-warning-subtle text-warning border-start border-3 border-warning">
                                         <span data-icon="circle-filled" class="me-2"></span>
-                                        Budget Review
+                                        Quarterly Planning
                                     </div>
-
-                                    <div class="external-event fc-event bg-dark-subtle text-dark fw-semibold" data-class="bg-dark-subtle text-dark border-dark">
+                                    <div class="external-event fc-event bg-dark-subtle text-dark border-start border-3 border-dark fw-semibold" data-class="bg-dark-subtle text-dark border-start border-3 border-dark">
                                         <span data-icon="circle-filled" class="me-2"></span>
-                                        Board Meeting
+                                        Year-End Celebration
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- end card-->
 
-                        <div class="card rounded-start-0 flex-grow-1 border-start-0">
+                        <div class="card h-100 mb-0 rounded-start-0 flex-grow-1 border-start-0">
                             <div class="d-lg-none d-inline-flex card-header">
                                 <button class="btn btn-primary btn-new-event">
                                     <span data-icon="plus" class="me-2 align-middle"></span>
@@ -75,7 +68,7 @@
                                 </button>
                             </div>
 
-                            <div class="card-body">
+                            <div class="card-body" style="height: calc(100% - 350px)" data-simplebar data-simplebar-md>
                                 <div id="calendar"></div>
                             </div>
                             <!-- end card-body -->
@@ -107,13 +100,13 @@
                                                     <label class="control-label form-label" for="event-category">Category</label>
                                                     <select class="form-select" name="category" id="event-category" required>
                                                         <option value="" disabled>Select a category</option>
-                                                        <option value="bg-primary-subtle text-primary" selected>Primary</option>
-                                                        <option value="bg-secondary-subtle text-secondary">Secondary</option>
-                                                        <option value="bg-success-subtle text-success">Success</option>
-                                                        <option value="bg-info-subtle text-info">Info</option>
-                                                        <option value="bg-warning-subtle text-warning">Warning</option>
-                                                        <option value="bg-danger-subtle text-danger">Danger</option>
-                                                        <option value="bg-dark-subtle text-dark">Dark</option>
+                                                        <option value="bg-primary-subtle text-primary border-start border-3 border-primary" selected>Primary</option>
+                                                        <option value="bg-secondary-subtle text-secondary border-start border-3 border-secondary">Secondary</option>
+                                                        <option value="bg-success-subtle text-success border-start border-3 border-success">Success</option>
+                                                        <option value="bg-info-subtle text-info border-start border-3 border-info">Info</option>
+                                                        <option value="bg-warning-subtle text-warning border-start border-3 border-warning">Warning</option>
+                                                        <option value="bg-danger-subtle text-danger border-start border-3 border-danger">Danger</option>
+                                                        <option value="bg-dark-subtle text-dark border-start border-3 border-dark">Dark</option>
                                                     </select>
 
                                                     <div class="invalid-feedback">Please select a valid event category</div>

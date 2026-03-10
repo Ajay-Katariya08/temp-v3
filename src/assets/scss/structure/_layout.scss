@@ -309,10 +309,10 @@ html[data-bs-theme="dark"] {
 //
 
 html[dir="rtl"] {
-    .offcanvas-end {
+    .offcanvas-end.show {
         transform: translateX(-100%);
     }
-    .offcanvas-start {
+    .offcanvas-start.show {
         transform: translateX(100%);
     }
     .form-select {

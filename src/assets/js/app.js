@@ -996,7 +996,7 @@ class LayoutCustomizer {
     if (width <= 767.98) {
       this.changeSidenavSize('offcanvas', false)
     } else if (width <= 1140 && !['offcanvas'].includes(size)) {
-      this.changeSidenavSize('condensed', false)
+      this.changeSidenavSize(size === 'on-hover' ? 'condensed' : 'condensed', false)
     } else {
       this.changeSidenavSize(size)
     }

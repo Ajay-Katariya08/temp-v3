@@ -18,89 +18,139 @@
                     @@include("./partials/page-title.html", {"subtitle": "CRM", "title":"Campaign"})
 
                     <div class="row row-cols-xxl-5 row-cols-md-3 row-cols-1 g-2">
-                        <!-- Total Campaigns Widget -->
+                        <!-- Total Deals Widget -->
                         <div class="col">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <div class="mb-3 d-flex justify-content-between align-items-center">
-                                        <h5 class="fs-xl mb-0">11</h5>
-                                        <span>
-                                            +22.2%
-                                            <span data-icon="arrow-up" class="text-success"></span>
-                                        </span>
+                                    <div class="d-flex gap-3">
+                                        <div class="avatar-lg rounded-circle text-bg-light d-flex align-items-center justify-content-center">
+                                            <span data-icon="megaphone" class="fs-xxl"></span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="mb-2 d-flex justify-content-between align-items-center">
+                                                <h5 class="fs-xl mb-0">11</h5>
+                                                <span>
+                                                    +22.2%
+                                                    <span data-icon="arrow-up" class="text-success"></span>
+                                                </span>
+                                            </div>
+                                            <p class="text-muted mb-0">Total campaigns launched</p>
+                                        </div>
                                     </div>
-                                    <p class="text-muted mb-0">Total campaigns launched</p>
+                                    <!-- end .d-flex-->
                                 </div>
+                                <!-- end card-body-->
                             </div>
+                            <!-- end card-->
                         </div>
+                        <!-- end col-->
 
-                        <!-- Successful Campaigns Widget -->
+                        <!-- Deals Won Widget -->
                         <div class="col">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <div class="mb-3 d-flex justify-content-between align-items-center">
-                                        <h5 class="fs-xl mb-0">4</h5>
-                                        <span>
-                                            +36.3%
-                                            <span data-icon="arrow-up" class="text-success"></span>
-                                        </span>
+                                    <div class="d-flex gap-3">
+                                        <div class="avatar-lg rounded-circle text-bg-light d-flex align-items-center justify-content-center">
+                                            <span data-icon="medal" class="fs-xxl"></span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="mb-2 d-flex justify-content-between align-items-center">
+                                                <h5 class="fs-xl mb-0">4</h5>
+                                                <span>
+                                                    +36.3%
+                                                    <span data-icon="arrow-up" class="text-success"></span>
+                                                </span>
+                                            </div>
+                                            <p class="text-muted mb-0">Successful campaigns</p>
+                                        </div>
                                     </div>
-                                    <p class="text-muted mb-0">Successful campaigns</p>
+                                    <!-- end .d-flex-->
                                 </div>
+                                <!-- end card-body-->
                             </div>
+                            <!-- end card-->
                         </div>
+                        <!-- end col-->
 
-                        <!-- Failed Campaigns Widget -->
+                        <!-- Deals Lost Widget -->
                         <div class="col">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <div class="mb-3 d-flex justify-content-between align-items-center">
-                                        <h5 class="fs-xl mb-0">2</h5>
-                                        <span>
-                                            -18.1%
-                                            <span data-icon="arrow-down" class="text-danger"></span>
-                                        </span>
+                                    <div class="d-flex gap-3">
+                                        <div class="avatar-lg rounded-circle text-bg-light d-flex align-items-center justify-content-center">
+                                            <span data-icon="close" class="fs-xxl"></span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="mb-2 d-flex justify-content-between align-items-center">
+                                                <h5 class="fs-xl mb-0">2</h5>
+                                                <span>
+                                                    -18.1%
+                                                    <span data-icon="arrow-down" class="text-danger"></span>
+                                                </span>
+                                            </div>
+                                            <p class="text-muted mb-0">Failed campaigns</p>
+                                        </div>
                                     </div>
-                                    <p class="text-muted mb-0">Failed campaigns</p>
+                                    <!-- end .d-flex-->
                                 </div>
+                                <!-- end card-body-->
                             </div>
+                            <!-- end card-->
                         </div>
+                        <!-- end col-->
 
-                        <!-- Highest Campaign Budget Widget -->
+                        <!-- Highest Deal Value Widget -->
                         <div class="col">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <div class="mb-3 d-flex justify-content-between align-items-center">
-                                        <h5 class="fs-xl mb-0">$85,000</h5>
-                                        <span>
-                                            Top spend
-                                            <span data-icon="dollar" class="text-warning"></span>
-                                        </span>
+                                    <div class="d-flex gap-3">
+                                        <div class="avatar-lg rounded-circle text-bg-light d-flex align-items-center justify-content-center">
+                                            <span data-icon="dollar" class="fs-xxl"></span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="mb-2 d-flex justify-content-between align-items-center">
+                                                <h5 class="fs-xl mb-0">$85,000</h5>
+                                                <span>Top spend</span>
+                                            </div>
+                                            <p class="text-muted mb-0">Highest campaign budget</p>
+                                        </div>
                                     </div>
-                                    <p class="text-muted mb-0">Highest campaign budget</p>
+                                    <!-- end .d-flex-->
                                 </div>
+                                <!-- end card-body-->
                             </div>
+                            <!-- end card-->
                         </div>
+                        <!-- end col-->
 
-                        <!-- Avg. Campaign Duration Widget -->
+                        <!-- Avg. Deal Close Time Widget -->
                         <div class="col-lg col-md-auto">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <div class="mb-3 d-flex justify-content-between align-items-center">
-                                        <h5 class="fs-xl mb-0">
-                                            5.7
-                                            <small class="fs-6">days</small>
-                                        </h5>
-                                        <span>
-                                            +1.4%
-                                            <span data-icon="clock" class="text-warning"></span>
-                                        </span>
+                                    <div class="d-flex gap-3">
+                                        <div class="avatar-lg rounded-circle text-bg-light d-flex align-items-center justify-content-center">
+                                            <span data-icon="clock" class="fs-xxl"></span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="mb-2 d-flex justify-content-between align-items-center">
+                                                <h5 class="fs-xl mb-0">
+                                                    5.7
+                                                    <small class="fs-6">days</small>
+                                                </h5>
+                                                <span>+1.4%</span>
+                                            </div>
+                                            <p class="text-muted mb-0">Avg. campaign duration</p>
+                                        </div>
                                     </div>
-                                    <p class="text-muted mb-0">Avg. campaign duration</p>
+                                    <!-- end .d-flex-->
                                 </div>
+                                <!-- end card-body-->
                             </div>
+                            <!-- end card-->
                         </div>
+                        <!-- end col-->
                     </div>
+                    <!-- end row-->
 
                     <div class="row">
                         <div class="col-12">
@@ -206,13 +256,13 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex align-items-center justify-content-center gap-1">
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="eye" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="edit" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="delete" class="fs-lg"></span>
                                                             </a>
                                                         </div>
@@ -246,13 +296,13 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex align-items-center justify-content-center gap-1">
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="eye" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="edit" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="delete" class="fs-lg"></span>
                                                             </a>
                                                         </div>
@@ -286,13 +336,13 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex align-items-center justify-content-center gap-1">
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="eye" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="edit" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="delete" class="fs-lg"></span>
                                                             </a>
                                                         </div>
@@ -326,13 +376,13 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex align-items-center justify-content-center gap-1">
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="eye" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="edit" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="delete" class="fs-lg"></span>
                                                             </a>
                                                         </div>
@@ -366,13 +416,13 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex align-items-center justify-content-center gap-1">
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="eye" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="edit" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="delete" class="fs-lg"></span>
                                                             </a>
                                                         </div>
@@ -406,13 +456,13 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex align-items-center justify-content-center gap-1">
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="eye" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="edit" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="delete" class="fs-lg"></span>
                                                             </a>
                                                         </div>
@@ -446,13 +496,13 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex align-items-center justify-content-center gap-1">
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="eye" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="edit" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="delete" class="fs-lg"></span>
                                                             </a>
                                                         </div>
@@ -486,13 +536,13 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex align-items-center justify-content-center gap-1">
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="eye" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="edit" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="delete" class="fs-lg"></span>
                                                             </a>
                                                         </div>
@@ -526,13 +576,13 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex align-items-center justify-content-center gap-1">
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="eye" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="edit" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="delete" class="fs-lg"></span>
                                                             </a>
                                                         </div>
@@ -566,13 +616,13 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex align-items-center justify-content-center gap-1">
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="eye" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="edit" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="delete" class="fs-lg"></span>
                                                             </a>
                                                         </div>
@@ -606,13 +656,13 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex align-items-center justify-content-center gap-1">
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="eye" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="edit" class="fs-lg"></span>
                                                             </a>
-                                                            <a href="#" data-table-delete-row class="btn btn-default btn-icon btn-sm rounded">
+                                                            <a href="#" data-table-delete-row class="btn btn-light btn-icon btn-sm rounded-circle">
                                                                 <span data-icon="delete" class="fs-lg"></span>
                                                             </a>
                                                         </div>
@@ -707,6 +757,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- end modal-->
                 </div>
                 <!-- container -->
 

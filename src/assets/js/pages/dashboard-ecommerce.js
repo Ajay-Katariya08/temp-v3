@@ -3,376 +3,325 @@
  * By (Author): __author__
  * Module/App (File Name): Ecommerce Dashboard
  */
-
-// Clock
-let clockInterval = setInterval(() => {
-    document.getElementById("clock-widget").innerText = new Date().toLocaleTimeString()
-}, 1000)
-
-window.addEventListener("beforeunload", () => {
-    clearInterval(clockInterval)
-})
-
-//
-// Store Performance Analytics
-//
-new CustomApexChart({
-    selector: "#total-sales-chart",
-    options: () => ({
-        chart: {
-            height: 210,
-            type: "donut",
-        },
-        legend: {
-            show: false,
-        },
-        stroke: {
-            width: 0,
-        },
-
-        plotOptions: {
-            pie: {
-                donut: {
-                    size: "75%",
-                    labels: {
-                        show: true,
-                        total: {
-                            showAlways: true,
-                            show: true,
-                            formatter: function (w) {
-                                return (
-                                    w.globals.seriesTotals.reduce((a, b) => {
-                                        return a + b
-                                    }, 0) + "k"
-                                )
-                            },
-                        },
-                    },
-                },
-            },
-        },
-        series: [44, 55, 41],
-        labels: ["Direct", "Affiliate", "Sponsored"],
-        colors: [theme("chart-primary"), theme("chart-gamma"), theme("chart-gray")],
-        dataLabels: {
-            enabled: false,
-        },
-        responsive: [
-            {
-                breakpoint: 480,
-                options: {
-                    chart: {
-                        width: 180,
-                    },
-                },
-            },
-        ],
-    }),
-})
-
-//
-// Weekly Performance Insights
-//
-new CustomApexChart({
-    selector: "#weekly-performance-chart",
-    options: () => ({
-        series: [
-            {
-                data: [
-                    {
-                        x: "Mon",
-                        y: [28, 45],
-                    },
-                    {
-                        x: "Tue",
-                        y: [32, 41],
-                    },
-                    {
-                        x: "Wed",
-                        y: [29, 78],
-                    },
-                    {
-                        x: "Thu",
-                        y: [30, 46],
-                    },
-                    {
-                        x: "Fri",
-                        y: [35, 41],
-                    },
-                    {
-                        x: "Sat",
-                        y: [45, 65],
-                    },
-                    {
-                        x: "Sun",
-                        y: [41, 56],
-                    },
-                ],
-            },
-        ],
-        chart: {
-            height: 247,
-            type: "rangeBar",
-            toolbar: {
-                show: false,
-            },
-            zoom: {
-                enabled: false,
-            },
-        },
-        plotOptions: {
-            bar: {
-                horizontal: true,
-                isDumbbell: true,
-                dumbbellColors: [[theme("chart-primary"), theme("chart-primary")]],
-            },
-        },
-        legend: {
-            show: false,
-        },
-        fill: {
-            type: "gradient",
-            gradient: {
-                gradientToColors: [theme("chart-primary"), theme("chart-gamma"), theme("chart-gray")],
-                inverseColors: false,
-                stops: [0, 100],
-            },
-        },
-        xaxis: {
-            type: "string",
-            axisBorder: {
-                show: false,
-            },
-        },
-        yaxis: {
-            axisBorder: {
-                show: false,
-            },
-            labels: {
-                offsetX: 10,
-            },
-        },
-        grid: {
-            borderColor: [theme("chart-order-color")],
-            padding: {
-                top: -20,
-                right: 0,
-                bottom: -10,
-                left: 0,
-            },
-        },
-    }),
-})
-
-//
-// Sales Report Chart
-//
-new CustomApexChart({
-    selector: "#sales-report-chart",
-    options: () => ({
-        series: [
-            {
-                name: "Total Revenue",
-                type: "area",
-                data: [21, 21, 21, 35, 35, 35, 44, 44, 44, 54, 54, 54, 48, 48, 76, 76, 95, 95, 76, 76, 32, 32, 46, 48, 48],
-            },
-            {
-                name: "Orders",
-                type: "line",
-                data: [40, 40, 40, 50, 50, 35, 27, 27, 27, 15, 15, 27, 27, 36, 36, 33, 33, 34, 35, 33, 50, 50, 55, 55, 55],
-            },
-        ],
-        chart: {
-            type: "line",
-            height: 342,
-            toolbar: {
-                show: false,
-            },
-            offsetX: 0,
-        },
-        stroke: {
-            width: [3, 2],
-            curve: "smooth",
-            dashArray: [0, 8],
-        },
-        colors: [theme("chart-secondary"), theme("chart-alpha")],
-        grid: {
-            strokeDashArray: 7,
-        },
-        zoom: {
-            enabled: false,
-        },
-        xaxis: {
-            type: "string",
-            axisBorder: {
-                show: false,
-            },
-            labels: {
-                offsetY: 2,
-            },
-        },
-        yaxis: {
-            tickAmount: 4,
-            min: 0,
-            max: 100,
-            labels: {
-                show: true,
-                formatter: function (value) {
-                    return value + "k"
-                },
-                offsetX: -10,
-            },
-            axisBorder: {
-                show: false,
-            },
-        },
-        dataLabels: {
-            enabled: false,
-        },
-        markers: {
-            size: 0,
-            style: "hollow",
-        },
-        tooltip: {
-            x: {
-                format: "dd MMM yyyy",
-            },
-            y: {
-                formatter: function (val) {
-                    return "$" + val + "k"
-                },
-            },
-        },
-        fill: {
-            opacity: [1, 0.5],
-            type: ["gradient", "solid"],
-            gradient: {
-                type: "vertical",
-                //   shadeIntensity: 1,
-                inverseColors: false,
-                opacityFrom: 0.5,
-                opacityTo: 0,
-                stops: [0, 70],
-            },
-        },
-        legend: {
-            offsetY: 15,
-        },
-    }),
-})
-
-class VectorMap {
-
-    currentResizeHandler = null;
-
-    init() {
-        this.initWorldMarkerLine()
-    }
-
-    initVectorMap(selector, options = {}) {
-        let element = null
-
-        if (selector instanceof Element) {
-            element = selector
-        } else {
-            element = document.querySelector(selector)
-        }
-
-        if (element) {
-
-            const svgElement = element.querySelector('svg');
-
-            if (svgElement) {
-                const mapInstance = element.jsVectorMap;
-
-                if (mapInstance && typeof mapInstance.destroy === 'function') {
-                    mapInstance.destroy();
-                } else {
-                    // Fallback for cases where the instance is missing but the SVG remains.
-                    element.innerHTML = '';
-                }
-            }
-
-            if (this.currentResizeHandler) {
-                window.removeEventListener("resize", this.currentResizeHandler);
-                this.currentResizeHandler = null
-            }
-
-            const map = new jsVectorMap({
-                selector: element,
-                ...options,
-            })
-
-            const debouncedUpdate = debounce(() => {
-                map.updateSize()
-            }, 200);
-
-            this.currentResizeHandler = debouncedUpdate;
-
-            window.addEventListener(
-                "resize",
-                this.currentResizeHandler
-            );
-        }
-    }
-
-    initWorldMarkerLine() {
-        this.initVectorMap("#revenue-by-location", {
-            map: "world_merc",
-            zoomOnScroll: false,
-            zoomButtons: false,
-            markers: [
-                { name: "Australia", coords: [-25.2744, 133.7751] },
-                { name: "India", coords: [20.5937, 78.9629] },
-                { name: "Japan", coords: [36.2048, 138.2529] },
-                { name: "South Africa", coords: [-30.5595, 22.9375] },
-                { name: "Germany", coords: [51.1657, 10.4515] },
-                { name: "United Kingdom", coords: [55.3781, -3.436] },
-                { name: "Mexico", coords: [23.6345, -102.5528] },
-                { name: "Argentina", coords: [-38.4161, -63.6167] },
-                { name: "Saudi Arabia", coords: [23.8859, 45.0792] },
-                { name: "Indonesia", coords: [-0.7893, 113.9213] },
-            ],
-            lines: [
-                { from: "India", to: "Australia" },
-                { from: "Japan", to: "Germany" },
-                { from: "Mexico", to: "United Kingdom" },
-                { from: "Argentina", to: "South Africa" },
-                { from: "Saudi Arabia", to: "India" },
-                { from: "Indonesia", to: "Japan" },
-                { from: "United Kingdom", to: "Germany" },
-                { from: "Australia", to: "Indonesia" },
-            ],
-            regionStyle: {
-                initial: {
-                    stroke: "#aab9d14d",
-                    strokeWidth: 0.25,
-                    fill: "#aab9d14d",
-                    fillOpacity: 1,
-                },
-            },
-            markerStyle: {
-                initial: { fill: theme("secondary") },
-                selected: { fill: theme("secondary") },
-            },
-            lineStyle: {
-                animation: true,
-                strokeDasharray: "1 2 3 4 5 6",
-            },
-        })
-    }
+// Function to generate random data
+function generateRandomData() {
+    const dataName = ['A', 'B', 'C'];
+    const randomData = dataName.map(name => ({
+        name: name,
+        value: Math.floor(Math.random() * 100) + 1
+    }));
+    const total = randomData.reduce((sum, item) => sum + item.value, 0);
+    randomData.forEach(item => {
+        item.value = (item.value / total) * 100;
+    });
+    return randomData;
 }
 
-document.addEventListener("DOMContentLoaded", function (e) {
-    new VectorMap().init()
+function initDonutChart(element) {
+
+    const productData = generateRandomData();
+
+    new CustomEChart({
+        selector: element,
+        options: () => ({
+            tooltip: {show: false},
+            series: [
+                {
+                    type: 'pie',
+                    radius: ['65%', '100%'],
+                    hoverAnimation: false,
+                    label: {show: false},
+                    labelLine: {show: false},
+                    data: productData.map((item, index) => ({
+                        value: item.value,
+                        itemStyle: {
+                            color: index === 0 ? theme("primary") : index === 1 ? theme("secondary") : "#bbcae14d"
+                        }
+                    }))
+                }
+            ]
+        })
+    })
+}
+
+const donutCharts = document.querySelectorAll('.donut-chart');
+if (donutCharts) {
+    donutCharts.forEach(initDonutChart)
+}
+
+
+let category = [];
+let today = new Date();
+let completedOrders = [];
+let processingOrders = [];
+let cancelledOrders = [];
+
+for (let i = -14; i <= 0; i++) {
+    let currentDate = new Date();
+    currentDate.setDate(today.getDate() + i);
+
+    // Format: 03 May 25
+    const formattedDate = currentDate.toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: '2-digit'
+    });
+    category.push(formattedDate);
+
+    // Random order counts
+    let completed = Math.floor(Math.random() * 200);
+    let processing = Math.floor(Math.random() * 150);
+    let cancelled = Math.floor(Math.random() * 50);
+
+    completedOrders.push(completed);
+    processingOrders.push(processing);
+    cancelledOrders.push(cancelled);
+}
+
+new CustomEChart({
+    selector: '#orders-chart',
+    options: () => ({
+        tooltip: {
+            trigger: 'axis',
+            padding: [8, 15],
+            backgroundColor: theme("secondary-bg"),
+            borderColor: theme("border-color"),
+            textStyle: {color: theme("light-text-emphasis")},
+            borderWidth: 1,
+            transitionDuration: 0.125,
+            axisPointer: {type: "none"},
+            shadowBlur: 2,
+            shadowColor: "rgba(76, 76, 92, 0.15)",
+            shadowOffsetX: 0,
+            shadowOffsetY: 1,
+            formatter: function (params) {
+                const rawDate = new Date();
+                rawDate.setDate(today.getDate() - 14 + params[0].dataIndex);
+
+                const formattedDate = rawDate.toLocaleDateString('en-GB', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric'
+                });
+
+                const seriesInfo = params.map(item => {
+                    return `${item.marker} ${item.seriesName}: <span class="fw-bold">${item.value}</span> Orders`;
+                }).join('<br/>');
+
+                return `<div class="mb-1 text-body">${formattedDate}</div>${seriesInfo}`;
+            }
+        },
+        legend: {
+            data: ['Completed', 'Processing', 'Cancelled'],
+            top: 15,
+            textStyle: {
+                color: theme("body-color")
+            }
+        },
+        textStyle: {
+            fontFamily: getComputedStyle(document.body).fontFamily
+        },
+        xAxis: {
+            data: category,
+            axisLine: {
+                lineStyle: {
+                    type: 'dashed',
+                    color: theme("border-color")
+                }
+            },
+            axisLabel: {
+                show: true,
+                color: theme("secondary-color")
+            },
+            splitLine: {
+                lineStyle: {
+                    color: theme("border-color"),
+                    type: 'dashed'
+                }
+            }
+        },
+        yAxis: {
+            axisLine: {
+                lineStyle: {
+                    type: 'dashed',
+                    color: theme("border-color")
+                }
+            },
+            axisLabel: {
+                show: true,
+                color: theme("secondary-color")
+            },
+            splitLine: {
+                show: false,
+                lineStyle: {
+                    color: theme("border-color"),
+                    type: 'dashed'
+                }
+            }
+        },
+        grid: {
+            left: 25,
+            right: 25,
+            bottom: 25,
+            top: 60,
+            containLabel: true
+        },
+        series: [
+            {
+                name: 'Completed',
+                type: 'line',
+                smooth: true,
+                itemStyle: {
+                    color: theme("success")
+                },
+                showAllSymbol: true,
+                symbol: 'emptyCircle',
+                symbolSize: 5,
+                data: completedOrders
+            },
+            {
+                name: 'Processing',
+                type: 'bar',
+                barWidth: 14,
+                itemStyle: {
+                    borderRadius: [5, 5, 0, 0],
+                    color: theme("secondary")
+                },
+                data: processingOrders
+            },
+            {
+                name: 'Cancelled',
+                type: 'bar',
+                barWidth: 14,
+                itemStyle: {
+                    borderRadius: [5, 5, 0, 0],
+                    color: "#bbcae14d"
+                },
+                data: cancelledOrders
+            }
+        ]
+    })
 })
 
-// Observe theme changes
-const mapObserver = new MutationObserver(() => {
-    new VectorMap().init();
-})
 
-mapObserver.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ["data-skin", "data-bs-theme"],
-})
+const map = new jsVectorMap({
+    map: "world",
+    selector: "#map_1",
+    zoomOnScroll: true,
+    zoomButtons: false,
+    selectedMarkers: [1, 1],
+    markersSelectable: true,
+    selectedRegions: ['CA', 'US', 'AU'],
+    regionStyle: {
+        initial: {
+            stroke: "#a2abbd",
+            strokeWidth: 0.5,
+            fillOpacity: 0.1
+        },
+        selected: {fill: theme("primary")},
+    },
+    markers: [
+        {
+            name: "Russia",
+            coords: [61.524, 105.3188],
+        },
+        {
+            name: "Canada", coords: [56.1304, -106.3468],
+            style: {
+                initial: {
+                    image: 'assets/images/location-pin.png' // Add a marker image for particular marker.
+                }
+            }
+        },
+        {name: "Australia", coords: [-25.2744, 133.7751]},
+        {name: "Greenland", coords: [71.7069, -42.6043]},
+    ],
+    lines: [{
+        from: "Russia",
+        to: "Canada"
+    },
+        {
+            from: "Australia",
+            to: "Canada"
+        },
+        {
+            from: "Greenland",
+            to: "Canada"
+        },
+        {
+            from: "Brazil",
+            to: "Canada"
+        },
+    ],
+    markerStyle: {
+        initial: {
+            fill: theme("primary"),
+            stroke: theme("primary"),
+            fillOpacity: 0.3,
+            strokeWidth: 2,
+            r: 2
+        },
+        selected: {
+            fill: theme("primary"),
+            stroke: theme("primary"),
+            strokeWidth: 1
+        },
+    },
+    labels: {
+        markers: {
+            render: (marker) => marker.name,
+        },
+    },
+    lineStyle: {
+        animation: true,
+        strokeDasharray: "6 3 6",
+    },
+});
+
+window.addEventListener('resize', debounce(() => {
+    map.updateSize();
+}, 200));
+
+
+function showToast() {
+
+    let container = document.getElementById('toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toast-container';
+        container.className = 'toast-container position-fixed top-0 end-0 p-3';
+        container.style.zIndex = 1100;
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = 'toast text-bg-primary border-0 fade';
+    toast.setAttribute('role', 'alert');
+    toast.setAttribute('aria-live', 'assertive');
+    toast.setAttribute('aria-atomic', 'true');
+
+    toast.innerHTML = `
+        <div class="toast-header bg-white bg-opacity-10 text-white border-0">
+            <img src="assets/images/logo-sm.png" alt="brand-logo" height="16" class="me-1" />
+            <strong class="me-auto text-white">INSPINIA</strong>
+            <small>Now</small>
+            <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Welcome to WrapBootstrap’s <strong>No. 1</strong> Bootstrap 5 Admin Dashboard Template.
+        </div>
+    `;
+
+    container.appendChild(toast);
+
+    const bsToast = new bootstrap.Toast(toast, {delay: 5000});
+    bsToast.show();
+
+    toast.addEventListener('hidden.bs.toast', () => {
+        toast.remove();
+    });
+}
+
+setTimeout(() => {
+    showToast()
+}, 2000)

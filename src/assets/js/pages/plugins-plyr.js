@@ -2,7 +2,6 @@
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): Video Player Js
- * Version: __version__
  */
 
 // standard HTML5 players

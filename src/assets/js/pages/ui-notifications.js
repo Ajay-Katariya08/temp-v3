@@ -2,7 +2,6 @@
  * Template Name: __name__ - Admin & Dashboard Template
  * By (Author): __author__
  * Module/App (File Name): UI Notifications
- * Version: __version__
  */
 
 const toastTrigger = document.querySelector('#liveToastBtn')

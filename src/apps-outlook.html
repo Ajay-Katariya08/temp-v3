@@ -17,9 +17,9 @@
                 <div class="container-fluid">
                     @@include("./partials/page-title.html", {"subtitle": "Apps", "title":"Outlook View"})
 
-                    <div class="outlook-box gap-1">
+                    <div class="outlook-box">
                         <div class="offcanvas-lg offcanvas-start outlook-left-menu" tabindex="-1" id="outlookSidebaroffcanvas" aria-labelledby="outlookSidebaroffcanvasLabel">
-                            <div class="card h-100 mb-0 rounded-0 border-0" data-simplebar>
+                            <div class="card h-100 mb-0 rounded-end-0" data-simplebar>
                                 <div class="card-body p-0">
                                     <ul class="list-group list-group-flush outlook-list mb-0" role="tablist">
                                         <li class="list-group-item p-0" role="presentation">
@@ -156,7 +156,7 @@
                             <!-- end card-->
                         </div>
 
-                        <div class="card h-100 mb-0 rounded-0 border-0 flex-grow-1" data-simplebar data-simplebar-md>
+                        <div class="card h-100 mb-0 rounded-start-0 border-start-0 flex-grow-1" data-simplebar data-simplebar-md>
                             <div class="card-header d-lg-none d-flex">
                                 <button class="btn btn-sm btn-default btn-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#outlookSidebaroffcanvas" aria-controls="outlookSidebaroffcanvas">
                                     <span data-icon="menu-icon" class="fs-lg"></span>
