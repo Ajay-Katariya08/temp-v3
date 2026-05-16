@@ -5,14 +5,19 @@ import {
   HostListener,
   Renderer2,
   Inject,
+  DestroyRef,
+  inject,
 } from '@angular/core';
 import { ScrollService } from '../services/scroll.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Directive({
   selector: '[appScrollClass]',
   standalone: true,
 })
 export class ScrollClassDirective {
+  private destroyRef = inject(DestroyRef);
+
   constructor(
     private el: ElementRef,
     private renderer: Renderer2,
@@ -27,12 +32,15 @@ export class ScrollClassDirective {
   }
 
   ngOnInit() {
-    this.scrollService.getScrollObservable().subscribe((position: any) => {
-      if (position > 72) {
-        this.renderer.removeClass(this.el.nativeElement, 'hidden');
-      } else {
-        this.renderer.addClass(this.el.nativeElement, 'hidden');
-      }
-    });
+    this.scrollService
+      .getScrollObservable()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((position: any) => {
+        if (position > 72) {
+          this.renderer.removeClass(this.el.nativeElement, 'hidden');
+        } else {
+          this.renderer.addClass(this.el.nativeElement, 'hidden');
+        }
+      });
   }
 }

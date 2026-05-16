@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, OnDestroy, OnInit } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 import { SwiperOptions } from 'swiper/types';
 import { imageData } from '../../data';
@@ -13,7 +13,7 @@ register();
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
   
-export class Hero {
+export class Hero implements OnInit, OnDestroy {
   imageData = imageData;
 
   swiperConfig: SwiperOptions = {
@@ -58,9 +58,16 @@ export class Hero {
   private currentTextIndex = 0;
   private currentCharIndex = 0;
   private deleting = false;
+  private timeoutId: any;
 
   ngOnInit(): void {
     this.typeText();
+  }
+
+  ngOnDestroy(): void {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
   }
 
   private typeText(): void {
@@ -76,15 +83,17 @@ export class Hero {
     this.cdr.detectChanges();
 
     if (!this.deleting && this.currentCharIndex > text.length) {
-      setTimeout(() => {
+      this.timeoutId = setTimeout(() => {
         this.deleting = true;
+        this.typeText();
       }, 800);
+      return;
     } else if (this.deleting && this.currentCharIndex < 0) {
       this.deleting = false;
       this.currentTextIndex = (this.currentTextIndex + 1) % this.typewriterTexts.length;
       this.currentCharIndex = 0;
     }
 
-    setTimeout(() => this.typeText(), this.deleting ? 50 : 80);
+    this.timeoutId = setTimeout(() => this.typeText(), this.deleting ? 50 : 80);
   }
 }

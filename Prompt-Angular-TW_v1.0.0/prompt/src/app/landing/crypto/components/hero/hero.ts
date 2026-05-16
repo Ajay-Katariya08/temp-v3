@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './hero.html',
   styles: ``,
 })
-export class Hero {
+export class Hero implements OnInit, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   typewriterTexts = ['Crypto', 'NFT'];
@@ -16,9 +16,16 @@ export class Hero {
   private currentTextIndex = 0;
   private currentCharIndex = 0;
   private deleting = false;
+  private timeoutId: any;
 
   ngOnInit(): void {
     this.typeText();
+  }
+
+  ngOnDestroy(): void {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
   }
 
   private typeText(): void {
@@ -34,7 +41,7 @@ export class Hero {
 
     if (!this.deleting && this.currentCharIndex === text.length + 1) {
       this.deleting = true;
-      setTimeout(() => this.typeText(), 800);
+      this.timeoutId = setTimeout(() => this.typeText(), 800);
       return;
     }
 
@@ -44,6 +51,6 @@ export class Hero {
       this.currentCharIndex = 0;
     }
 
-    setTimeout(() => this.typeText(), this.deleting ? 80 : 150);
+    this.timeoutId = setTimeout(() => this.typeText(), this.deleting ? 80 : 150);
   }
 }

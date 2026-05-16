@@ -1,13 +1,16 @@
 
-import { Injectable } from '@angular/core'
+import { DestroyRef, Injectable, inject } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router'
 import { filter } from 'rxjs/operators'
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
 
 @Injectable({
   providedIn: 'root',
 })
 export class TitleService {
+  private destroyRef = inject(DestroyRef)
+
   constructor(
     private titleService: Title,
     private router: Router,
@@ -16,7 +19,10 @@ export class TitleService {
 
   init(): void {
     this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        takeUntilDestroyed(this.destroyRef)
+      )
       .subscribe(() => {
         this.updateTitle()
       })

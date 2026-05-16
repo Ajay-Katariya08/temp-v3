@@ -37,6 +37,7 @@ export class Login implements OnInit, OnDestroy {
     this.renderer.removeClass(document.body, 'tracking-wide');
   }
 
+  // Demo-only placeholder values
   email = 'admin@example.com';
   password = 'password';
   error = '';

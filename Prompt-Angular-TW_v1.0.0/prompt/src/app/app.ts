@@ -1,7 +1,8 @@
-import { Component, ElementRef, Input, Renderer2, ViewChild } from '@angular/core';
+import { Component, DestroyRef, Input, Renderer2, inject } from '@angular/core';
 import { Event, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { TitleService } from './services/title.service';
 import * as AOS from 'aos';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,9 @@ import * as AOS from 'aos';
   
 export class App {
   @Input() isCustomClassEnabled: boolean = false;
-  @ViewChild('el') el!: ElementRef;
+
+  private destroyRef = inject(DestroyRef);
+
   constructor(
     private router: Router,
     private titleService: TitleService,
@@ -23,7 +26,7 @@ export class App {
     AOS.init();
     this.updateBodyClass()
     this.titleService.init();
-    this.router.events.subscribe((event: Event) => {
+    this.router.events.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         setTimeout(() => window.HSStaticMethods.autoInit(), 100);
       }

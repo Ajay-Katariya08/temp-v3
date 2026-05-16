@@ -5,7 +5,7 @@ import GLightbox from 'glightbox';
   selector: '[appGlightbox]',
 })
 export class GlightboxDirective implements AfterViewInit, OnDestroy {
-  private lightbox: any;
+  private lightbox?: ReturnType<typeof GLightbox>;
 
   ngAfterViewInit(): void {
     setTimeout(() => {
