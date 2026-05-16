@@ -1,0 +1,25 @@
+<section class="bg-default-100 xl:py-24 py-16">
+    <div class="container" data-aos="fade-up" data-aos-duration="1500">
+        <div class="text-center">
+            <span class="text-xs bg-primary/10 text-primary/90 rounded-full px-3 py-1">Integrations</span>
+            <h1 class="text-3xl/tight font-medium mt-3 mb-4">Sync your data anywhere</h1>
+            <p class="text-default-500">Sync your campaigns or other marketing data <span class="text-primary">anywhere.</span></p>
+        </div>
+
+        <div class="pt-16">
+            <div class="grid xl:grid-cols-2 grid-cols-1 gap-7">
+                @for (item of integrationData; track $index) {
+                <div>
+                    <div class="bg-white flex items-center rounded gap-5 p-5">
+                        <img [src]="item.image" [class]="item.imgClass">
+                        <div>
+                            <h1 class="mb-3">{{ item.name }}</h1>
+                            <p class="text-default-500">{{ item.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

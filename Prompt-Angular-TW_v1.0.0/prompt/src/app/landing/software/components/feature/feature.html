@@ -1,0 +1,67 @@
+<!-- feature Section Start -->
+<section class="py-16 sm:py-24">
+    <div class="container">
+        @for (section of featuresData; track $index) {
+        <div [class.py-16]="!$first" [class.sm:py-24]="!$first">
+            <div class="grid lg:grid-cols-2 grid-cols-1 2xl:gap-24 gap-10 items-center">
+
+                <div [class.order-2]="section.imageOrder === 'left'" [class.order-1]="section.imageOrder === 'right'" [class.lg:order-1]="section.imageOrder === 'right'" [class.lg:order-2]="section.imageOrder === 'left'" data-aos="fade-right" data-aos-duration="600">
+                    <span class="text-sm bg-red-500/10 text-red-600 rounded-full px-3 py-1"> {{ section.badge }}</span>
+                    <h1 class="text-3xl/tight font-medium mt-3 mb-4"> {{ section.title }}</h1>
+                    <p class="text-default-500"> {{ section.description }}</p>
+
+                    <div class="flex flex-col gap-4 mt-10">
+                        @for (item of section.items; track $index) {
+                        <div class="flex items-center gap-4">
+                            <div class="bg-primary/10 rounded-lg flex items-center justify-center h-12 w-12">
+                                <iconify-icon [icon]="item.icon" height="24" width="24" class="text-primary"></iconify-icon>
+                            </div>
+                            <h1 class="font-medium">{{ item.text }}</h1>
+                        </div>
+                        }
+                    </div>
+                </div>
+
+                <div [class.order-1]="section.imageOrder === 'left'" [class.order-2]="section.imageOrder === 'right'" [class.lg:order-2]="section.imageOrder === 'right'" [class.lg:order-1]="section.imageOrder === 'left'" data-aos="fade-left" data-aos-duration="700">
+                    <img [src]="section.image">
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-duration="700">
+        <div class="bg-yellow-50 p-12">
+
+            <div class="grid lg:grid-cols-3 grid-cols-1 items-center">
+                <div class="lg:col-span-2">
+                    <h4 class="text-base mb-10">Prompt works on Every Device</h4>
+
+                    <div class="flex flex-wrap gap-10">
+                        @for (item of platformData; track $index) {
+                        <div class="text-center">
+                            <iconify-icon [icon]="item.icon" height="40" width="40" class="mx-auto text-black"></iconify-icon>
+                            <h6>{{ item.label }}</h6>
+                        </div>
+                        }
+                    </div>
+                </div>
+
+                <div>
+                    <div class="inline-flex mt-14">
+                        <a [routerLink]="[]" class="flex items-center py-2 px-4 rounded border border-primary bg-primary text-white hover:shadow-lg hover:shadow-primary/50 focus:outline focus:outline-primary/50 transition-all duration-500">
+                            Get Propmt for Free <iconify-icon icon="fa6-solid:arrow-right" class="ms-2"></iconify-icon>
+                        </a>
+                    </div>
+                    <div class="mt-2">
+                        <p class="inline-flex text-xs">Looking for other platforms?
+                            <a [routerLink]="[]" class="hover:text-primary"> Click Here</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- feature Section end -->

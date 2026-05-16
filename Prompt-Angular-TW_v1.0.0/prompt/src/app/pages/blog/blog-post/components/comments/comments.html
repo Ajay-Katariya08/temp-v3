@@ -1,0 +1,113 @@
+<section class="lg:py-24 py-14">
+  <div class="container">
+    <div class="flex items-center gap-2">
+      <h1 class="tracking-wider">Comments</h1>
+      <span class="bg-default-200 px-2 rounded-md">3</span>
+    </div>
+
+    <div>
+      <div class="flex gap-3 my-6">
+        <img src="assets/images/avatars/img-4.jpg" class="h-11 w-11 rounded-md" />
+        <div>
+          <h6 class="text-sm mb-1">Sansa Stark</h6>
+          <p class="text-sm text-default-500">2 days ago</p>
+          <p class="text-sm/relaxed tracking-wider text-default-600 mt-2">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+            voluptatum deleniti atque.
+          </p>
+          <a [routerLink]="[]" class="text-primary text-sm"
+            ><iconify-icon icon="fa6-regular:comment" class="me-1"></iconify-icon> Reply</a
+          >
+
+          <div class="flex gap-3 my-6">
+            <img src="assets/images/avatars/img-1.jpg" class="h-11 w-11 rounded-md" />
+            <div>
+              <h6 class="text-sm mb-1">Cersei Lannister</h6>
+              <p class="text-sm text-default-500">1 days ago</p>
+              <p class="text-sm/relaxed tracking-wider text-default-600 mt-2">
+                Itaque earum rerum hic tenetur sapiente delectus aut reiciendis voluptatibus maiores
+                alias consequatur aut perferendis
+              </p>
+              <a [routerLink]="[]" class="text-primary text-sm"><iconify-icon icon="fa6-regular:comment" class="me-1"></iconify-icon> Reply</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-b border-default-200"></div>
+
+      <div class="flex gap-3 my-6">
+        <img src="assets/images/avatars/img-2.jpg" class="h-11 w-11 rounded-md" />
+        <div>
+          <h6 class="text-sm mb-1">Sansa Stark</h6>
+          <p class="text-sm text-default-500">2 days ago</p>
+          <p class="text-sm/relaxed tracking-wider text-default-600 mt-2">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+            voluptatum deleniti atque.
+          </p>
+          <a [routerLink]="[]" class="text-primary text-sm"
+            ><iconify-icon icon="fa6-regular:comment" class="me-1"></iconify-icon> Reply</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-14">
+      <div class="border border-default-200 bg-white rounded p-6">
+        <h1>Post a comment</h1>
+
+        <div class="flex flex-col gap-5 mt-5">
+          <div class="grid md:grid-cols-2 grid-cols-1 gap-5">
+            <div>
+              <input
+                class="rounded border-default-300 focus:border-default-400 focus:ring-0 w-full text-sm"
+                type="text"
+                id="fname"
+                name="fname"
+                placeholder="Name"
+              />
+            </div>
+            <div>
+              <input
+                class="rounded border-default-300 focus:border-default-400 focus:ring-0 w-full text-sm"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+
+          <div>
+            <input
+              class="rounded border-default-300 focus:border-default-400 focus:ring-0 w-full text-sm"
+              type="text"
+              id="Subject"
+              name="Subject"
+              placeholder="Subject"
+            />
+          </div>
+
+          <div>
+            <textarea
+              class="rounded border-default-300 focus:border-default-400 focus:ring-0 w-full text-sm"
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Message"
+            ></textarea>
+          </div>
+
+          <button class="flex">
+            <a
+              [routerLink]="[]"
+              class="bg-black/70 text-white rounded-md text-sm font-semibold flex-none shadow shadow-black hover:shadow-lg hover:shadow-black/30 focus:shadow-none focus:outline focus:outline-black/50 px-5 py-3"
+              >Submit</a
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

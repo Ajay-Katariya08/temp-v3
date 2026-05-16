@@ -1,0 +1,202 @@
+<header
+  class="@@link-color fixed top-0 inset-x-0 flex items-center z-40 w-full bg-white transition-all py-3.5"
+>
+  <div class="container">
+    <nav class="flex items-center">
+      <!-- Navbar Brand Logo -->
+      <a routerLink="/">
+        <img src="assets/images/logo-dark.png" class="h-8 logo-dark" alt="Logo Dark" />
+        <img src="assets/images/logo-light.png" class="h-8 logo-light" alt="Logo Light" />
+      </a>
+
+      <!-- Nevigation Menu -->
+      <div class="hidden lg:block mx-auto grow">
+        <ul
+          id="navbar-navlist"
+          class="grow flex flex-col lg:flex-row lg:items-center lg:justify-center mt-4 lg:mt-0"
+        >
+          @for (item of adminNavData; track $index) {
+            <li class="nav-item pe-4">
+              <a
+                class="nav-link flex items-center font-medium py-2 px-4 lg:py-0 transition-all"
+                [ngClass]="item.active ? 'text-primary' : 'text-default-700 hover:text-primary'"
+                [routerLink]="item.link"
+              >
+                <iconify-icon [icon]="item.icon" width="20" height="20" class="me-2">
+                </iconify-icon>
+
+                <span class="grow">{{ item.label }}</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="block grow ms-auto lg:shrink me-4 lg:me-0">
+        <ul class="navbar-nav flex gap-x-3 items-center justify-end lg:justify-center">
+          <li class="nav-item">
+            <div class="hs-dropdown [--trigger:hover] [--placement:bottom] relative">
+              <a
+                [routerLink]="[]"
+                class="nav-link hs-dropdown-toggle after:absolute hover:after:-bottom-10 after:inset-0"
+              >
+                <span class="h-full hover:text-primary">
+                  <iconify-icon
+                    icon="solar:notification-unread-lines-bold-duotone"
+                    width="24"
+                    height="24"
+                  ></iconify-icon>
+                </span>
+              </a>
+
+              <div
+                class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 hs-dropdown-open:translate-y-0 translate-y-3 origin-center opacity-0 hidden w-72 min-w-72 border border-default-200 p-2 bg-white shadow-lg rounded-lg mt-2 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="hs-dropdown-default"
+              >
+                <div class="space-y-0.5">
+                  <!-- Dropdown item -->
+                  @for (item of notificationData; track $index) {
+                    <div class="nav-item">
+                      <a class="nav-link p-3 hover:bg-default-100" [routerLink]="[]">
+                        <div class="flex items-center -ms-1.5">
+                          <span
+                            class="{{ item.bgClass }} {{ item.iconColor }} flex justify-center items-center w-8 h-8 shadow rounded me-3"
+                          >
+                            <iconify-icon [icon]="item.icon" width="24" height="24"></iconify-icon>
+                          </span>
+
+                          <div class="flex-grow-1">
+                            <p class="text-xs/none">{{ item.title }}</p>
+                            <span class="text-default-400 text-xs">
+                              <small>{{ item.time }}</small>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  }
+
+                  <a
+                    [routerLink]="[]"
+                    class="w-full bg-default-100 inline-flex items-center justify-center text-sm text-default-800 py-1.5 px-3"
+                  >
+                    View All
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Inner Page Dropdown -->
+          <li class="nav-item">
+            <div class="hs-dropdown [--trigger:hover] [--placement:bottom] relative">
+              <a
+                [routerLink]="[]"
+                class="nav-link hs-dropdown-toggle after:absolute hover:after:-bottom-10 after:inset-0"
+              >
+                <div class="flex items-center">
+                  <div class="shrink">
+                    <div class="h-8 w-8 me-2">
+                      <img
+                        src="assets/images/avatars/img-8.jpg"
+                        class="avatar h-full w-full rounded-full me-2"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="hidden lg:block grow ms-1 leading-normal">
+                    <span class="block text-sm font-medium">Greeva N</span>
+                    <span class="block text-default-400 text-xs">Admin</span>
+                  </div>
+                </div>
+              </a>
+
+              <div
+                class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 hs-dropdown-open:translate-y-0 translate-y-3 origin-center opacity-0 hidden w-48 min-w-48 border border-default-200 p-2 bg-white shadow-lg rounded-lg mt-2 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="hs-dropdown-default"
+              >
+                <div class="flex flex-col gap-0.5">
+                  @for (item of profileData; track $index) {
+                    <!-- Divider -->
+                    @if (item.divider) {
+                      <hr class="-mx-2 my-1 border-default-200" />
+                    }
+
+                    <!-- Dropdown item -->
+                    @if (!item.divider) {
+                      <div class="nav-item rounded hover:bg-default-100 transition-all">
+                        <a class="nav-link !p-2" [routerLink]="[]">
+                          <iconify-icon
+                            [icon]="item.icon"
+                            width="16"
+                            height="16"
+                            class="me-2"
+                          ></iconify-icon>
+                          {{ item.label }}
+                        </a>
+                      </div>
+                    }
+                  }
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Moblie Menu Toggle Button (Offcanvas Button) -->
+      <div class="lg:hidden flex items-center ms-auto px-2.5">
+        <button
+          type="button"
+          class="py-3 px-4 inline-flex items-center"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          aria-controls="adminMobileMenu"
+          data-hs-overlay="#adminMobileMenu"
+        >
+          <iconify-icon icon="fa6-solid:bars" class="text-2xl text-default-500"></iconify-icon>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div id="adminMobileMenu" class="hs-overlay hs-overlay-open:translate-x-0 hidden -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full max-w-xs w-full z-80 bg-white border-e border-default-200" role="dialog" tabindex="-1" aria-labelledby="adminMobileMenu-label">
+    <div class="flex flex-col h-full divide-y-2 divide-default-200">
+        <!-- Mobile Menu Topbar Logo (Header) -->
+        <div class="p-6 flex items-center justify-between">
+            <a routerLink="/">
+                <img src="assets/images/logo-dark.png" class="h-8" alt="Logo">
+            </a>
+
+            <button type="button" class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none" aria-label="Close" data-hs-overlay="#adminMobileMenu">
+                <span class="sr-only">Close</span>
+                <iconify-icon icon="fa6-solid:xmark" class="text-xl"></iconify-icon>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Link List -->
+        <div class="p-6 overflow-scroll h-full">
+            <ul class="navbar-nav flex flex-col gap-2">
+                <!-- Home Page Link -->
+                 @for(item of mobileMenuData; track $index){
+                 <li class="nav-item">
+                    <a [routerLink]="item.link" class="nav-link" (click)="closeMenu()">
+                        <iconify-icon [icon]="item.icon" width="20" height="20" class="me-2"></iconify-icon>
+                        <span class="grow">{{item.label}}</span>
+                    </a>
+                </li>
+                 }
+            </ul>
+        </div>
+
+        <!-- Mobile Menu User (Footer) -->
+        <div class="px-6 py-4 flex items-center">
+            <button class="bg-primary w-full text-white p-3 rounded flex items-center justify-center text-sm">Download</button>
+        </div>
+    </div>
+</div>

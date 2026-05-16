@@ -1,0 +1,38 @@
+<section class="py-8 overflow-x-hidden">
+  <div class="container">
+    <h3 class="text-2xl mb-12">Feedback From Client</h3>
+    <div>
+      <div class="relative">
+        <div class="hidden sm:block">
+          <div
+            class="before:w-24 before:h-24 before:absolute before:-top-8 before:-end-8 before:bg-[url('assets/images/pattern/dot5.svg')]"
+          ></div>
+          <div
+            class="after:w-24 after:h-24 after:absolute after:-bottom-8 after:-start-8 after:bg-[url('assets/images/pattern/dot2.svg')]"
+          ></div>
+        </div>
+        <div id="swiper_one" class="swiper relative">
+          <swiper-container class="swiper-wrapper z-10" [config]="swiperConfig" init="false">
+            @for (item of testimonialData; track $index) {
+              <swiper-slide class="p-10 border border-default-200 rounded-xl bg-white shadow">
+                <iconify-icon
+                  icon="fa6-solid:quote-left"
+                  class="text-default-500 text-5xl"
+                ></iconify-icon>
+                <p class="my-4">{{ item.text }}</p>
+                <div class="border-b border-default-200 w-full my-7"></div>
+                <div class="flex items-center gap-2">
+                  <img [src]="item.image" class="h-10 w-10 rounded-full" />
+                  <div>
+                    <h1 class="text-sm mb-1">{{ item.name }}</h1>
+                    <p class="text-default-500 text-xs">{{ item.role }}</p>
+                  </div>
+                </div>
+              </swiper-slide>
+            }
+          </swiper-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

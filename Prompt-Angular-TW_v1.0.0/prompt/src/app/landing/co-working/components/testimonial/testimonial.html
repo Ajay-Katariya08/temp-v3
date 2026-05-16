@@ -1,0 +1,49 @@
+<section class="py-20" data-aos="fade-up">
+  <div class="container">
+    <div class="relative z-20">
+      <div class="flex items-center justify-between pb-14">
+        <div>
+          <h2 class="md:text-3xl text-xl my-5">See what our members are saying</h2>
+        </div>
+        <div class="flex items-center gap-5">
+          <div class="button-prev"><iconify-icon icon="fa6-solid:arrow-left" class="text-primary"></iconify-icon></div>
+          <div class="button-next"><iconify-icon icon="fa6-solid:arrow-right" class="text-primary"></iconify-icon></div>
+        </div>
+      </div>
+
+      <div>
+        <!-- Swiper -->
+        <div id="swiper_two" class="swiper">
+          <swiper-container [config]="swiperTestimonial" init="false" class="swiper-wrapper">
+            @for (item of testimonialData; track $index) {
+              <swiper-slide>
+                <div [class]="item.padding + ' border border-default-200 rounded'">
+                  <h5 class="font-light">
+                    {{ item.text }}
+                  </h5>
+
+                  <div class="flex items-center justify-between mt-5">
+                    <div class="flex items-center gap-3">
+                      <div>
+                        <img [src]="item.image" class="w-10 rounded-full" />
+                      </div>
+
+                      <div>
+                        <h6 class="text-sm">{{ item.name }}</h6>
+                        <p class="text-sm text-default-500">{{ item.role }}</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <img [src]="item.brand" class="w-24" />
+                    </div>
+                  </div>
+                </div>
+              </swiper-slide>
+            }
+          </swiper-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

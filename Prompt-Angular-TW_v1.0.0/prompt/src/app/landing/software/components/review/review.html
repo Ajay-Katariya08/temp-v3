@@ -1,0 +1,45 @@
+<section class="py-16">
+    <div class="container">
+
+        <div class="grid xl:grid-cols-2 grid-cols-1 items-center">
+            <div>
+                <p class="text-base font-medium">Join 10,000+ other companies who are using Prompt</p>
+                <div class="flex flex-wrap md:flex-nowrap gap-10 mt-7">
+                    @for(item of brandImage;track $index){
+                    <div>
+                        <img [src]="item" class="w-28">
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <div>
+                <div class="flex xl:justify-end items-center mt-7">
+                    <div class="flex items-center">
+                        <p class="text-base font-medium">Score 9.5 out of 10 on</p>
+                        <img src="assets/images/brands/mr.svg" class="w-12 h-8">
+                    </div>
+                </div>
+
+                <div class="flex xl:justify-end gap-3 mt-7">
+                    <div class="h-8 w-8 bg-green-400 text-white rounded flex items-center justify-center">
+                        <iconify-icon icon="fa6-regular:star" class="text-lg"></iconify-icon>
+                    </div>
+                    <div class="h-8 w-8 bg-green-400 text-white rounded flex items-center justify-center">
+                        <iconify-icon icon="fa6-regular:star" class="text-lg"></iconify-icon>
+                    </div>
+                    <div class="h-8 w-8 bg-green-400 text-white rounded flex items-center justify-center">
+                        <iconify-icon icon="fa6-regular:star" class="text-lg"></iconify-icon>
+                    </div>
+                    <div class="h-8 w-8 bg-green-400 text-white rounded flex items-center justify-center">
+                        <iconify-icon icon="fa6-regular:star" class="text-lg"></iconify-icon>
+                    </div>
+                    <div class="h-8 w-8 bg-green-400 text-white rounded flex items-center justify-center">
+                        <iconify-icon icon="fa6-regular:star" class="text-lg"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

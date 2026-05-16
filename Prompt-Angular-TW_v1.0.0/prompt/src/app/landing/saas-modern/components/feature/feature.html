@@ -1,0 +1,122 @@
+<!-- feature Section Start -->
+<section class="overflow-hidden">
+    <div class="xl:py-24 py-16">
+        <div class="container">
+
+            <div class="text-center">
+                <span class="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">Features</span>
+                <h1 class="text-3xl/tight font-medium mt-3 mb-4">Better Management. Better Performance</h1>
+                <p class="text-default-500">Start working with <span class="text-primary">Prompt</span> to manage
+                    your workforce better</p>
+            </div>
+
+            <div class="xl:pt-16 xl:pb-28 py-16">
+                <div class="grid lg:grid-cols-2 grid-cols-1 gap-6 items-center">
+
+                    <div class="relative">
+                        <div class="hidden sm:block">
+                            <div class="after:w-20 after:h-20 after:absolute after:-top-8 after:-start-8 2xl:after:end-0 after:bg-[url('assets/images/pattern/dot5.svg')]">
+                            </div>
+                            <div class="before:w-20 before:h-20 before:absolute before:-bottom-8 before:-end-8 before:bg-[url('assets/images/pattern/dot2.svg')]">
+                            </div>
+                        </div>
+                        <img src="assets/images/hero/saas1.png" alt="saas1" data-aos="fade-right" data-aos-duration="400">
+                    </div>
+
+                    <div class="lg:ms-24">
+                        <div class="hs-accordion-group" data-aos="fade-up" data-aos-duration="500">
+                            @for (item of accordionData; track $index) {
+                            <div class="hs-accordion" [class.active]="item.active">
+                                <button class="hs-accordion-toggle active pt-2 inline-flex items-center gap-x-4 w-full font-medium text-left text-default-800 transition-all hover:text-default-500 dark:text-default-200 dark:hover:text-default-400" [class.active]="item.active">
+                                    <div class="rounded-lg flex items-center justify-center h-12 w-12" [class]="item.iconBg">
+                                        <iconify-icon [icon]="item.icon" [class]="item.iconColor" height="24" width="24"></iconify-icon>
+                                    </div>
+                                    <h1 class="font-medium mb-4 mt-2">{{ item.title }}</h1>
+                                </button>
+
+                                <div class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 ps-16" [class.hidden]="!item.active">
+                                    <p class="text-default-700 dark:text-default-300">
+                                        {{ item.content }}
+                                    </p>
+                                    <div class="mt-7 flex items-center">
+                                        <a [routerLink]="[]" class="text-primary flex items-center">
+                                            Learn more <iconify-icon icon="fa6-solid:arrow-right" class="ms-2"></iconify-icon>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            @if ($index < accordionData.length - 1) { <div class="border-b border-default-200 my-6">
+                        </div>
+                        }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="grid lg:grid-cols-2 grid-cols-1n gap-6 items-center">
+                <div class="order-2 lg:order-1 2xl:w-9/12" data-aos="fade-up" data-aos-duration="500">
+
+                    <div class="h-12 w-12 bg-primary/10 flex items-center justify-center rounded-lg">
+                        <iconify-icon icon="solar:star-circle-bold-duotone" class="text-primary" height="28" width="28"></iconify-icon>
+                    </div>
+
+                    <h1 class="text-3xl/tight font-medium mt-6 mb-4">Smart Payroll. Paying your people couldn't
+                        be easier</h1>
+                    <p class="text-default-500">You can modify your pages with drag-dropping , can import demos
+                        with just ” One Click” and can modify theme setting easy-to-use options panel.</p>
+                    <div class="flex items-center mt-12">
+                        <a [routerLink]="[]" class="text-primary">Learn more <iconify-icon icon="fa6-solid:arrow-right" class="ms-2"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative order-1 lg:order-2">
+                    <div class="hidden sm:block">
+                        <div class="after:w-20 after:h-20 after:absolute after:-top-8 after:-end-8 2xl:after:-end-8 after:bg-[url('assets/images/pattern/dot2.svg')]">
+                        </div>
+                        <div class="before:w-20 before:h-20 before:absolute before:-bottom-8 before:-start-8 before:bg-[url('assets/images/pattern/dot5.svg')]">
+                        </div>
+                    </div>
+
+                    <img src="assets/images/hero/saas2.png" alt="saas2" data-aos="fade-left" data-aos-duration="400">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <div class="xl:py-24 py-16">
+        <div class="container" data-aos="fade-up" data-aos-duration="600">
+
+            <div class="text-center">
+                <h1 class="text-2xl font-medium">Any many more powerful features</h1>
+            </div>
+
+            <div class="py-16">
+                <div class="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
+                    @for (column of featuresData; track $index) {
+                    <div [class]="column.order">
+                        <div class="flex flex-col gap-5">
+                            @for (item of column.items; track $index) {
+                            <p class="flex items-center gap-3"> <iconify-icon icon="fa6-solid:check" class="text-green-500 text-xl"></iconify-icon> {{item}}
+                            </p>
+                            }
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <button class="flex items-center justify-center mx-auto">
+                <a [routerLink]="[]" class="bg-primary flex items-center text-white rounded-lg text-sm font-semibold flex-none hover:shadow-lg  hover:shadow-primary/30 focus:shadow-none focus:outline focus:outline-primary/40 px-6 py-3">Sign
+                    Up Now <iconify-icon icon="fa6-solid:arrow-right" class="ms-2"></iconify-icon> </a>
+            </button>
+
+        </div>
+    </div>
+
+</section>
+<!-- feature Section end -->

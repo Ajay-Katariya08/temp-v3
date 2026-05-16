@@ -1,0 +1,36 @@
+<div class="bg-white">
+    <div class="p-6">
+        <div class="flex flex-wrap lg:flex-nowrap items-center sm:justify-between gap-y-2">
+            <div class="w-1/2">
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" class="rounded border-default-300" [id]="item.id">
+                    <label class="text-sm font-semibold text-default-700" [for]="item.id">
+                        {{ item.title }}
+                    </label>
+                </div> <!-- end checkbox -->
+            </div> <!-- end col -->
+            <div class="lg:w-1/3">
+                <span class="inline-flex items-center gap-1.5 py-0.5 px-2 rounded-full text-sm font-semibold" [class]="item.timeClass"> {{ item.time }}</span>
+            </div>
+            <div class="lg:w-1/3">
+                <div class="flex items-center justify-end gap-6">
+                    <div class="">
+                        <div class="inline-flex items-center gap-2">
+                            <iconify-icon icon="tabler:list" height="20" width="20" class="text-default-800 inline"></iconify-icon>
+                            <span class="text-sm text-default-800 font-medium">{{ item.progress }}</span>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="inline-flex items-center gap-2">
+                            <iconify-icon icon="tabler:list" height="20" width="20" class="text-default-800 inline"></iconify-icon>
+                            <span class="text-sm text-default-800 font-medium">{{ item.comments }}</span>
+                        </div>
+                    </div>
+
+                    <span class="inline-flex items-center gap-1.5 py-0.5 px-2 rounded-md text-xs font-semibold" [class]="item.priorityClass"> {{ item.priority }}</span>
+                </div>
+            </div> <!-- end col -->
+        </div>
+    </div>
+</div><!-- end task -->

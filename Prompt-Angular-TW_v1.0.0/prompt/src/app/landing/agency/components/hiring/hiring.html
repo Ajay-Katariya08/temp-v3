@@ -1,0 +1,43 @@
+<section class="py-20">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h1 class="text-3xl font-medium my-3">We're Hiring</h1>
+      <p class="font-medium text-default-500 mb-8">
+        We're a team of lifelong learners. We're equal parts left and right brained.
+      </p>
+      <a
+        [routerLink]="[]"
+        class="py-3 px-6 rounded border border-black font-medium text-white bg-black hover:shadow-lg hover:shadow-black/50 focus:outline focus:outline-black/50 transition-all duration-500"
+        >Learn about our culture</a
+      >
+    </div>
+
+    <div class="my-10 grid gap-y-4">
+      @for (item of jobData; track $index) {
+        <a [routerLink]="[]">
+          <div
+            class="max-w-3xl mx-auto"
+            [attr.data-aos]="item.aosOnParent ? 'fade-up' : null"
+            [attr.data-aos-duration]="item.aosOnParent ? item.aosDuration : null"
+          >
+            <div
+              class="border border-default-200 p-4 rounded-md"
+              [attr.data-aos]="!item.aosOnParent ? 'fade-up' : null"
+              [attr.data-aos-duration]="!item.aosOnParent ? item.aosDuration : null"
+            >
+              <div class="flex flex-wrap items-center justify-between">
+                <h5>{{ item.title }}</h5>
+
+                <div class="flex items-center">
+                  <p class="text-default-500">{{ item.location }}</p>
+
+                  <iconify-icon icon="fa6-solid:angle-right" class="ms-28"> </iconify-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>

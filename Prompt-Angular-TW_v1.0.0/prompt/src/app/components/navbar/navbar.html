@@ -1,0 +1,125 @@
+<ul class="navbar-nav flex gap-x-3 items-center justify-center">
+  @for (menu of menuItems; track $index) {
+    <!-- LINK -->
+    @if (menu.type === 'link') {
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="menu.url" [class.active]="isActive(menu)">{{ menu.label }}</a>
+      </li>
+    }
+
+    <!-- MEGA MENU (Landing) -->
+    @if (menu.type === 'mega') {
+      <li class="nav-item">
+        <div class="hs-dropdown [--trigger:hover] [--placement:bottom] relative">
+          <a
+            [routerLink]="[]"
+             [class.active]="isChildActive(menu)"
+            class="nav-link hs-dropdown-toggle after:absolute hover:after:-bottom-10 after:inset-0"
+          >
+            {{ menu.label }}
+            <iconify-icon icon="fa6-solid:angle-down" class="ms-2 align-middle"></iconify-icon>
+          </a>
+
+          <div
+            class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 hs-dropdown-open:translate-y-0 translate-y-3 origin-center opacity-0 hidden w-96 min-w-96 border border-default-200 p-2 bg-white shadow-lg rounded-lg mt-2 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full"
+          >
+            <div class="grid grid-cols-2 gap-1.5">
+              @for (child of menu.children; track $index) {
+                <div class="nav-item">
+                  <a class="nav-link" [routerLink]="child.url" [class.active]="isActive(child)">
+                    <div class="flex items-center -ms-1.5">
+                      <span
+                        class="{{
+                          child.bg
+                        }} flex justify-center items-center w-8 h-8 shadow rounded me-3"
+                      >
+                        <iconify-icon
+                          [icon]="child.icon"
+                          width="24"
+                          height="24"
+                          [ngClass]="child.color"
+                        ></iconify-icon>
+                      </span>
+                      <div class="flex-grow-1">
+                        {{ child.label }}
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </li>
+    }
+
+    <!-- DROPDOWN -->
+    @if (menu.type === 'dropdown') {
+      <li class="nav-item">
+        <div class="hs-dropdown [--trigger:hover] relative">
+          <a
+            [routerLink]="[]"
+            [class.active]="isChildActive(menu)"
+            class="nav-link hs-dropdown-toggle after:absolute hover:after:-bottom-10 after:inset-0"
+          >
+            {{ menu.label }}
+            <iconify-icon icon="fa6-solid:angle-down" class="ms-2 align-middle"></iconify-icon>
+          </a>
+
+          <div
+            class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 hs-dropdown-open:translate-y-0 translate-y-3 origin-center opacity-0 hidden w-48 min-w-48 border border-default-200 p-2 bg-white shadow-lg rounded-lg mt-2 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full"
+          >
+            <div class="space-y-0.5">
+              @for (child of menu.children; track $index) {
+                <!-- DIVIDER -->
+                @if (child.isDivider) {
+                  <hr class="-mx-2 my-2 border-default-200" />
+                }
+
+                <!-- SUB DROPDOWN -->
+                @if (child.children) {
+                  <div class="nav-item">
+                    <div class="hs-dropdown [--trigger:hover] [--placement:right-start] relative">
+                      <a
+                        [routerLink]="[]"
+                        [class.active]="isChildActive(child)"
+                        type="button"
+                        class="nav-link hs-dropdown-toggle after:absolute after:inset-0 after:-end-10"
+                      >
+                        {{ child.label }}
+                        <iconify-icon
+                          icon="fa6-solid:angle-right"
+                          class="ms-auto align-middle"
+                        ></iconify-icon>
+                      </a>
+
+                      <div
+                        class="hs-dropdown-menu !ms-2 w-48 min-w-48 z-50 transition-[opacity,margin] translate-y-3 duration hs-dropdown-open:translate-y-0 hs-dropdown-open:opacity-100 opacity-0 hidden bg-white shadow-lg border border-default-200 p-2 space-y-1.5 rounded-lg mt-2"
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby="hs-split-dropleft"
+                      >
+                        @for (sub of child.children; track $index) {
+                          <div class="nav-item">
+                            <a class="nav-link" [routerLink]="sub.url" [class.active]="isActive(sub)">{{ sub.label }}</a>
+                          </div>
+                        }
+                      </div>
+                    </div>
+                  </div>
+                }
+
+                <!-- NORMAL LINK -->
+                @if (!child.children && !child.isDivider) {
+                  <div class="nav-item">
+                    <a class="nav-link" [routerLink]="child.url">{{ child.label }}</a>
+                  </div>
+                }
+              }
+            </div>
+          </div>
+        </div>
+      </li>
+    }
+  }
+</ul>

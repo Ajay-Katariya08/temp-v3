@@ -1,0 +1,78 @@
+ <footer class="bg-default-100">
+        <div class="container">
+
+            <div class="py-14 pb-10">
+                <div class="grid sm:grid-cols-2 grid-cols-1 gap-5 pt-14">
+
+                    <div>
+                        <a routerLink="/">
+                            <img src="assets/images/logo-dark.png" class="w-32 mb-3">
+                        </a>
+                        <p class="text-sm/relaxed tracking-wider text-default-500">Nemo enim ipsam voluptatem quia
+                            voluptas sit aspernatur aut odit aut fugit sed consequuntur ratione voluptatem sequi
+                            nesciunt.</p>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-start sm:justify-end lg:gap-32 gap-14">
+                            <div>
+                                <div class="flex flex-col gap-4 text-sm">
+                                    <h5 class="mb-3">Resources</h5>
+                                    <div class="text-default-500/80"><a [routerLink]="[]">Blog</a></div>
+                                    <div class="text-default-500/80"><a [routerLink]="[]">FAQ</a></div>
+                                    <div class="text-default-500/80"><a [routerLink]="[]">Team of service</a>
+                                    </div>
+                                    <div class="text-default-500/80"><a [routerLink]="[]">Privacy policy</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex flex-col gap-4 text-sm">
+                                    <h5 class="mb-3">Company</h5>
+                                    <div class="text-default-500/80"><a [routerLink]="[]">About</a></div>
+                                    <div class="text-default-500/80"><a [routerLink]="[]">Contact Us</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="border-b border-default-200"></div>
+
+            <div class="py-5">
+                <div class="grid sm:grid-cols-2 text-center sm:text-start gap-6">
+
+                    <div>
+                        <p class="text-default-500/80 text-sm">
+                           {{currentYear}}© Prompt. All rights reserved.
+                            Crafted
+                            by <a [routerLink]="[]" class="text-default-800 hover:text-primary transition-all">Coderthemes</a>
+                        </p>
+                    </div>
+
+                    <div class="flex justify-center sm:justify-end gap-7">
+                        <span>
+                            <a [routerLink]="[]">
+                                <iconify-icon icon="tabler:brand-facebook" width="20" height="20" class="hover:text-primary transition-all"></iconify-icon>
+                            </a>
+                        </span>
+                        <span>
+                            <a [routerLink]="[]">
+                                <iconify-icon icon="tabler:brand-x" width="20" height="20" class="hover:text-primary transition-all"></iconify-icon>
+                            </a>
+                        </span>
+                        <span>
+                            <a [routerLink]="[]">
+                                <iconify-icon icon="tabler:brand-instagram" width="20" height="20" class="hover:text-primary transition-all"></iconify-icon>
+                            </a>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>

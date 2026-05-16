@@ -1,0 +1,32 @@
+<section class="py-20">
+  <div class="container">
+    <div>
+      <h2 class="md:text-3xl text-xl font-semibold my-5">What I Do</h2>
+      <p class="text-default-400 font-medium">
+        Connecting brands and companies with their customers through
+        <span class="text-red-500">good design</span>.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 pt-14">
+      @for (item of serviceCardData; track $index) {
+        <div class="group" data-aos="fade-up" [attr.data-aos-duration]="item.aosDuration">
+          <div class="p-6 rounded-md shadow group-hover:shadow-lg transition-all duration-500">
+            <div
+              class="w-12 h-12 bg-red-500/10 flex items-center justify-center rounded-tr-xl rounded-bl-xl group-hover:rounded-tr-none group-hover:rounded-bl-none group-hover:rounded-tl-xl group-hover:rounded-br-xl transition-all duration-500"
+            >
+              <iconify-icon [icon]="item.icon" width="32" height="32" class="text-red-500">
+              </iconify-icon>
+            </div>
+
+            <h4 class="text-lg mt-6">{{ item.title }}</h4>
+
+            <p class="text-base text-default-400 leading-7 mt-2">
+              {{ item.description }}
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,90 @@
+<section class="pb-20">
+    <div class="container">
+        <div class="text-center">
+            <!-- image -->
+            <div>
+                <img src="assets/images/blog/hero-post.png" class="rounded-md">
+            </div>
+            <!-- image caption -->
+            <p class="text-sm text-default-400 mt-2">The image caption referencing the above image</p>
+        </div>
+
+        <!-- description start -->
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6 mt-16">
+            <div>
+                <h3 class="text-2xl">About Client</h3>
+                <p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit officia neque
+                    beatae at
+                    inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio
+                    eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta
+                    maiores, eos culpa.</p>
+            </div>
+
+            <div>
+                <h3 class="text-2xl">Project Description</h3>
+                <p class="mt-5">Voluptatum animi, voluptate sint aperiam facere a nam, ex reiciendis eum nemo ipsum
+                    nobis,
+                    rem illum cupiditate at quaerat amet qui recusandae hic, atque laboriosam perspiciatis? Esse
+                    quidem minima, voluptas necessitatibus, officia culpa quo nulla, cupiditate iste vel unde magni.
+                </p>
+            </div>
+        </div>
+        <!-- description end -->
+
+        <!-- portfolio item images start -->
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6 mt-16">
+            <img src="assets/images/photos/14.jpg" class="rounded-md">
+            <img src="assets/images/photos/13.jpg" class="rounded-md">
+        </div>
+        <!-- portfolio item images end -->
+
+        <!-- work description start -->
+        <div class="mt-16">
+            <div>
+                <h3 class="text-2xl">What We Did?</h3>
+                <p class="text-default-800 mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit
+                    officia neque beatae at
+                    inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio
+                    eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta
+                    maiores, eos culpa.</p>
+            </div>
+            <div class="grid md:grid-cols-3 grid-cols-1 gap-6 my-12">
+                @for (service of portfolioData; track $index) {
+                    <div class="flex items-center gap-5">
+                        <div class="w-12 h-12 bg-primary/10 flex items-center justify-center rounded-md">
+                            <iconify-icon [icon]="service.icon" height="32" width="32" class="text-primary"></iconify-icon>
+                        </div>
+                        <div>
+                            <h5 class="text-base">{{ service.title }}</h5>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <p class="text-default-800"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit officia
+                neque beatae at
+                inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio
+                eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta
+                maiores, eos culpa.
+            </p>
+            <h5 class="text-base mt-10">Technologies Used</h5>
+            <p class="flex items-center gap-2 text-default-700 font-medium mt-3">
+                <iconify-icon icon="fa6-solid:minus"></iconify-icon>
+                Sketch & Illustrator
+            </p>
+            <p class="flex items-center gap-2 text-default-700 font-medium mt-3">
+                <iconify-icon icon="fa6-solid:minus"></iconify-icon>
+                Raact JS
+            </p>
+            <p class="flex items-center gap-2 text-default-700 font-medium mt-3">
+                <iconify-icon icon="fa6-solid:minus"></iconify-icon>
+                Django - A Web Framework in Python
+            </p>
+            <p class="flex items-center gap-2 text-default-700 font-medium mt-3">
+                <iconify-icon icon="fa6-solid:minus"></iconify-icon>
+                PostgreSQL - Relational Database System
+            </p>
+        </div>
+        <!-- work description end -->
+    </div>
+</section>

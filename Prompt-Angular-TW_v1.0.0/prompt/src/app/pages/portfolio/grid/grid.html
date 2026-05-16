@@ -1,0 +1,82 @@
+<!-- Hero Section Start -->
+<section class="pt-36 pb-24 bg-default-100">
+  <div class="container">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="md:text-5xl/tight text-3xl font-semibold mb-5">Portfolio Grid</h2>
+      <p class="lg:text-lg text-default-500 leading-7">
+        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed consequuntur
+        ratione voluptatem sequi nesciunt.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- Hero Section End -->
+
+<section class="py-20 relative">
+  <div class="container">
+    <div>
+      <ul class="filter-options flex flex-wrap justify-center gap-2">
+        <li class="inline-block active" data-group="all" [class.active]="selectedFilter === ''">
+          <a [routerLink]="[]" (click)="filterItems('')">All</a>
+        </li>
+        <li
+          class="inline-block"
+          data-group="web-design"
+          [class.active]="selectedFilter === 'web-design'"
+        >
+          <a [routerLink]="[]" (click)="filterItems('web-design')">Web Design</a>
+        </li>
+        <li
+          class="inline-block"
+          data-group="graphic-design"
+          [class.active]="selectedFilter === 'graphic-design'"
+        >
+          <a [routerLink]="[]" (click)="filterItems('graphic-design')">Graphic Design</a>
+        </li>
+        <li
+          class="inline-block"
+          data-group="illustrator"
+          [class.active]="selectedFilter === 'illustrator'"
+        >
+          <a [routerLink]="[]" (click)="filterItems('illustrator')">Illustrator</a>
+        </li>
+        <li
+          class="inline-block"
+          data-group="photography"
+          [class.active]="selectedFilter === 'photography'"
+        >
+          <a [routerLink]="[]" (click)="filterItems('photography')">Photography</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="gallery-wrapper" class="md:flex flex-wrap justify-center mx-auto mt-6">
+      @for (item of item; track item.id) {
+        <div class="lg:w-1/3 md:w-1/2 p-2 picture-item" [attr.data-groups]="item.groups">
+          <div>
+            <div class="border border-default-200 p-2 rounded shadow">
+              <div class="overflow-hidden">
+                <a class="image-popup" [href]="item.image" appGlightbox>
+                  <img
+                    [src]="item.image"
+                    class="transition-all duration-500 origin-center hover:scale-[1.1]"
+                  />
+                </a>
+              </div>
+              <h5 class="text-base font-medium mt-6">{{ item.title }}</h5>
+              <p class="text-default-400 mt-2">{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="flex items-center justify-center mt-20">
+      <a
+        [routerLink]="[]"
+        class="py-3 px-6 rounded text-white bg-primary transition-all duration-500 hover:shadow-lg hover:shadow-primary/25 focus:outline focus:outline-primary/50"
+        ><iconify-icon icon="fa6-solid:arrows-rotate" class="me-2"></iconify-icon> Load More</a
+      >
+    </div>
+  </div>
+</section>

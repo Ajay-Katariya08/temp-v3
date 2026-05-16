@@ -1,0 +1,91 @@
+<div class="min-h-screen flex items-center justify-center">
+    <div class="container">
+        <div>
+            <div class="bg-white shadow rounded mb-6">
+                <div class="grid md:grid-cols-12">
+                    <div class="bg-white shadow-md p-12 rounded-s xl:col-span-5 md:col-span-6">
+                        <div class="mb-12">
+                            <a routerLink="/">
+                                <img src="assets/images/logo-dark.png" alt="logo-img" class="h-8">
+                            </a>
+                        </div>
+                        <h6 class="text-base/[1.6] font-semibold text-default-600 mb-0 mt-4">Welcome back!</h6>
+
+                        <p class="text-default-500 text-sm/[1.6] mt-1 mb-6">Enter your email address and password to access admin panel.</p>
+
+                        <form (ngSubmit)="onSubmit()">
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium mb-1 text-default-600">Email <small>*</small></label>
+                                <input type="email" id="email" name="email" class="py-2 px-4 leading-6 block w-full border-default-300 rounded text-sm focus:border-default-300 focus:ring-0" placeholder="Your Name" [(ngModel)]="email">
+                            </div>
+
+                            <div class="mb-4">
+                                <a routerLink="/account/forget-password" class="float-right text-default-500 text-xs border-b border-dashed pb-1 ms-1">Forgot your password?</a>
+                                <label for="password" class="block text-sm font-medium mb-1 text-default-600">Password <small>*</small></label>
+                                <input type="password" id="password" name="password" class="py-2 px-4 leading-6 block w-full border-default-300 rounded text-sm focus:border-default-300 focus:ring-0" placeholder="Enter your password" [(ngModel)]="password">
+                            </div>
+                            @if(error){
+                            <p class="text-red-500 mb-3">
+                                {{ error }}
+                            </p>
+                            }
+                            <div class="flex items-center mb-4">
+                                <input id="remember" type="checkbox" class="shrink-0 border-default-400 rounded text-blue-600">
+                                <label for="remember" class="text-xs/none text-default-700 font-medium ms-3">Remember me</label>
+                            </div>
+
+                            <div class="mb-0 text-center">
+                                <button class="w-full bg-primary text-white font-medium leading-6 text-center align-middle select-none py-2 px-4 text-base rounded-md transition-all hover:shadow-lg hover:shadow-primary/30" type="submit">Log In</button>
+                            </div>
+                        </form>
+
+                        <div class="py-4 text-center"><span class="fs-13 fw-bold">OR</span></div>
+
+                        <div class="w-full">
+                            <a [routerLink]="[]" class="block border border-default-200 text-default-500 font-medium leading-6 text-center align-middle select-none py-2 px-4 text-sm rounded-md transition-all hover:shadow-md">
+                                <span class="flex items-center justify-center gap-2">
+                                    <iconify-icon icon="tabler:brand-github" height="24" width="24"></iconify-icon>
+                                    Github
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden md:block xl:col-span-7 md:col-span-6">
+                        <div class="max-w-[80%] mx-auto">
+                            <div class="my-12 py-12">
+                                <div class="flex items-center justify-center h-full">
+                                    <div class="swiper" id="swiper_one">
+                                        <swiper-container class="swiper-wrapper" [config]="swiperConfig" init="false">
+
+                                            @for (item of sliderData; track item.title) {
+                                            <swiper-slide>
+                                                <div class="swiper-slide-content">
+                                                    <div class="text-center w-3/5 mx-auto">
+                                                        <img [src]="item.image" class="w-full" />
+                                                    </div>
+                                                    <div class="text-center my-6 pb-12">
+                                                        <h5 class="font-medium text-base/[1.6] text-default-600 my-2.5"> {{ item.title }}
+                                                        </h5>
+                                                        <p class="text-sm/[1.6] text-default-500 mb-4" [innerHTML]="item.description">{{ item.description }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </swiper-slide>
+                                            }
+
+                                        </swiper-container>
+                                        <!-- swiper-wrapper End -->
+                                        <div class="swiper-pagination !bottom-0"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full text-center">
+                <p class="text-default-500 leading-6 text-base">Don't have an account? <a routerLink="/account/signup" class="text-primary font-semibold ms-1">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+</div>

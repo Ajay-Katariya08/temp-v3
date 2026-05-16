@@ -1,0 +1,116 @@
+<section class="py-20 relative">
+  <div class="container">
+    <div class="grid lg:grid-cols-3 grid-cols-1 gap-6">
+      <div class="lg:col-span-2 cols-span-1">
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-5">
+          @for (item of helpData; track $index) {
+            <div>
+              <iconify-icon [icon]="item.icon" width="48" height="48" class="text-primary">
+              </iconify-icon>
+
+              <h4 class="text-lg my-4">{{ item.title }}</h4>
+
+              <div class="grid gap-y-4 mb-4">
+                @for (link of item.links; track $index) {
+                  <a [routerLink]="[]" class="font-medium text-default-400">
+                    {{ link }}
+                  </a>
+                }
+              </div>
+
+              <a [routerLink]="[]">
+                <div class="flex items-center gap-3">
+                  <p class="text-primary font-medium">View More</p>
+                  <iconify-icon icon="fa6-solid:angle-right" class="text-primary"></iconify-icon>
+                </div>
+              </a>
+            </div>
+          }
+        </div>
+
+        <h4 class="text-base mt-24">Frequently Asked Questions</h4>
+
+        <p class="text-default-400 mt-1">
+          Here are some of the basic types of questions for our customers
+        </p>
+
+        <div class="mt-10 lg:me-36">
+          <div class="hs-accordion-group">
+            @for (item of accordionData; track $index) {
+              <div
+                class="hs-accordion rounded border border-default-200 mt-2"
+                [class.active]="item.isActive"
+                [class.mt-0]="$index === 0"
+              >
+                <button
+                  class="hs-accordion-toggle sm:text-base p-5 inline-flex items-center gap-x-3 w-full font-medium text-default-800 transition hover:text-default-500"
+                >
+                  {{ item.question }}
+
+                  <iconify-icon
+                    icon="fa6-solid:angle-down"
+                    class="ms-auto transition-all hs-accordion-active:-rotate-90"
+                  ></iconify-icon>
+                </button>
+
+                <div
+                  class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
+                  [class.hidden]="!item.isActive"
+                >
+                  <p class="sm:text-sm font-medium text-default-500 p-5 pt-0">
+                    {{ item.answer }}
+                  </p>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sticky top-24 border border-default-200 rounded-md px-12 py-6">
+          <div class="flex items-center gap-4">
+            <iconify-icon
+              icon="tabler:lifebuoy"
+              width="28"
+              height="28"
+              class="text-default-500"
+            ></iconify-icon>
+            <h4 class="text-lg">Support center</h4>
+          </div>
+          <h5 class="font-medium mt-3 text-default-400">
+            <span class="font-semibold">Can't find the answer? </span>
+            We are here to help you all the time.
+          </h5>
+          <div class="flex flex-wrap items-center gap-4 mt-10">
+            <iconify-icon
+              icon="tabler:message"
+              width="20"
+              height="20"
+              class="text-default-500"
+            ></iconify-icon>
+            <h4 class="text-default-400">Talk to Support Team</h4>
+          </div>
+          <div class="flex flex-wrap items-center gap-4 my-3">
+            <iconify-icon
+              icon="tabler:mail"
+              width="20"
+              height="20"
+              class="text-default-500"
+            ></iconify-icon>
+            <h4 class="text-default-400">help@coderthemes.com</h4>
+          </div>
+          <div class="flex flex-wrap items-center gap-4 my-3">
+            <iconify-icon
+              icon="tabler:brand-x"
+              width="20"
+              height="20"
+              class="text-default-500"
+            ></iconify-icon>
+            <h4 class="text-default-400">@coderthemes</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

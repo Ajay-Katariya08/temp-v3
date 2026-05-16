@@ -1,0 +1,58 @@
+<!-- footer Section start -->
+<footer class="bg-default-100">
+    <div class="container">
+        <div class="grid xl:grid-cols-5 gap-6 py-12">
+            <div class="xl:col-span-2">
+                <a routerLink="/">
+                    <img src="assets/images/logo-dark.png" class="h-8">
+                </a>
+                <p class="text-default-500/80 mt-5 lg:w-4/5">Make your web application stand out with high-quality
+                    landing page</p>
+            </div>
+            <div class="xl:col-span-3 col-span-4">
+                <div class="flex flex-col sm:flex-row gap-6 flex-wrap justify-between">
+                    @for (item of sectionData; track $index) {
+                    <div>
+                        <div class="flex flex-col gap-3">
+                            <h5 class="mb-3 uppercase">{{ item.title }}</h5>
+                            @for (link of item.links; track $index) {
+                            <div class="text-default-500/80"><a [routerLink]="[]">{{link}}</a></div>
+                            }
+                        </div>
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-default-200 py-6">
+            <div class="grid sm:grid-cols-2 text-center sm:text-start gap-6">
+                <div>
+                    <p class="text-default-500/80 text-sm">
+                        {{ currentYear }}© Prompt. All rights reserved.
+                        Crafted
+                        by <a [routerLink]="[]" class="text-default-800 hover:text-primary transition-all">Coderthemes</a>
+                    </p>
+                </div>
+                <div class="flex justify-center sm:justify-end gap-7">
+                    <span>
+                        <a [routerLink]="[]">
+                            <iconify-icon icon="tabler:brand-facebook" height="20" width="20" class="hover:text-primary transition-all"></iconify-icon>
+                        </a>
+                    </span>
+                    <span>
+                        <a [routerLink]="[]">
+                            <iconify-icon icon="tabler:brand-x" height="20" width="20" class="hover:text-primary transition-all"></iconify-icon>
+                        </a>
+                    </span>
+                    <span>
+                        <a [routerLink]="[]">
+                            <iconify-icon icon="tabler:brand-instagram" height="20" width="20" class="hover:text-primary transition-all"></iconify-icon>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer Section end -->

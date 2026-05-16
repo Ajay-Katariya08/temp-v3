@@ -1,0 +1,37 @@
+<section class="py-20">
+  <div class="container">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10"
+        >Benefits</span
+      >
+      <h2 class="md:text-3xl/tight text-3xl font-semibold my-4">
+        All plans includes these benefits
+      </h2>
+      <p class="md:text-lg text-default-500 leading-7">
+        Some benefits of the monthly/yearly subscription
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 grid-cols-1 gap-6 gap-y-10 mt-16">
+      @for (item of serviceData; track $index) {
+        <div>
+          <div class="flex items-center lg:justify-center gap-6">
+            <div>
+              <div class="size-16 bg-primary/20 rounded-md flex items-center justify-center">
+                <iconify-icon [icon]="item.icon" width="40" height="40" class="text-primary">
+                </iconify-icon>
+              </div>
+            </div>
+
+            <div>
+              <h5 class="text-base">{{ item.title }}</h5>
+              <p class="text-default-400 mt-2">
+                {{ item.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

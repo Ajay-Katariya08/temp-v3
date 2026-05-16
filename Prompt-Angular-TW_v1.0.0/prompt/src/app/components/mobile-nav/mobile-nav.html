@@ -1,0 +1,41 @@
+<ul class="navbar-nav flex flex-col gap-2 hs-accordion-group">
+
+  @for (menu of MENU_DATA; track $index) {
+
+    <!-- SIMPLE LINK -->
+    @if (!menu.children) {
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="menu.url" (click)="closeMenu()">
+          {{ menu.label }}
+        </a>
+      </li>
+    }
+
+    <!-- ACCORDION -->
+    @if (menu.children) {
+      <li class="nav-item hs-accordion">
+        <a [routerLink]="[]" class="nav-link hs-accordion-toggle">
+          {{ menu.label }}
+          <iconify-icon
+            icon="fa6-solid:angle-down"
+            class="ms-auto align-middle transition-all hs-accordion-active:rotate-180"
+          ></iconify-icon>
+        </a>
+
+        <ul class="hs-accordion-content ps-4 hidden overflow-hidden transition-[height] duration-300 space-y-2">
+
+          @for (child of menu.children; track $index) {
+            <li class="nav-item mt-2">
+              <a class="nav-link" [routerLink]="child.url"  (click)="closeMenu()">
+                {{ child.label }}
+              </a>
+            </li>
+          }
+
+        </ul>
+      </li>
+    }
+
+  }
+
+</ul>

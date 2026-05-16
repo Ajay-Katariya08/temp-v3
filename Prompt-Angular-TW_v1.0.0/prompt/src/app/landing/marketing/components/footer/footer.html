@@ -1,0 +1,63 @@
+<!-- footer Section start -->
+<footer class="bg-default-100">
+
+    <div class="py-6">
+        <div class="container">
+            <div class="grid lg:grid-cols-2 items-center">
+                <div>
+                    <h1 class="text-2xl font-medium mt-3 mb-2">Ready to get started?</h1>
+                    <p class="text-default-500">Create your free 14-day trial account now</p>
+                </div>
+                <div class="flex flex-wrap items-center justify-start lg:justify-end gap-7 mt-5 lg:mt-0">
+                    <button class="flex items-center">
+                        <a [routerLink]="[]" class="bg-primary text-white rounded-full hover:shadow-lg hover:shadow-primary/30 focus:shadow-none focus:outline focus:outline-primary/40 py-2 px-4">Try
+                            it free for 14 days</a>
+                    </button>
+                    <a [routerLink]="[]" class="transition-all hover:text-primary">Chat with us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="border-b border-default-200"></div>
+
+    <div class="container">
+
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-14 py-6">
+            <div>
+                <a routerLink="/">
+                    <img src="assets/images/logo-dark.png" class="h-8">
+                </a>
+                <p class="text-default-500/80 mt-5 w-4/5">Make your web application stand out with high-quality
+                    landing page</p>
+            </div>
+
+            <div>
+                <div class="flex flex-col sm:flex-row gap-14 flex-wrap sm:flex-nowrap justify-between">
+                    @for (section of footerLinks; track $index) {
+                    <div>
+                        <div class="flex flex-col gap-3">
+                            <h5 class="mb-3 uppercase">{{ section.title }}</h5>
+                            @for (link of section.links; track $index) {
+                            <div class="text-default-500/80"><a [routerLink]="[]">{{ link }}</a></div>
+                            }
+                        </div>
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+        <div class="border-b border-default-200"></div>
+
+        <div class="flex justify-center gap-6 py-5">
+            <p class="text-default-500/80 text-sm">
+                {{currentYear}}© Prompt. All rights reserved. Crafted
+                by <a [routerLink]="[]" class="text-default-800 hover:text-primary transition-all">Coderthemes</a>
+            </p>
+        </div>
+    </div>
+
+</footer>
+<!-- footer Section end -->

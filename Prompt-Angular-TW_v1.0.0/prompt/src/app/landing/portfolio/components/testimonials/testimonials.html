@@ -1,0 +1,63 @@
+<section
+  class="py-20 relative overflow-x-hidden bg-gradient-to-b from-red-500/5 to-amber-500/5"
+  data-aos="fade-up"
+  data-aos-duration="600"
+>
+  <div class="absolute top-0 inset-x-0 hidden sm:block">
+    <img src="assets/images/shapes/white-wave.svg" alt="svg" class="w-full -scale-x-100" />
+  </div>
+  <div class="container relative">
+    <div class="relative z-20">
+      <div class="flex items-center justify-between pb-14">
+        <div>
+          <h2 class="md:text-3xl text-xl font-semibold my-5">Kind words from excellent clients</h2>
+        </div>
+        <div class="flex items-center gap-5">
+          <div class="button-prev"><iconify-icon icon="fa6-solid:arrow-left"></iconify-icon></div>
+          <div class="button-next"><iconify-icon icon="fa6-solid:arrow-right"></iconify-icon></div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="hidden sm:block">
+          <div class="before:w-24 before:h-24 before:absolute before:-top-10 before:-end-10 before:bg-[url('assets/images/pattern/dot3.svg')]"></div>
+          <div class="after:w-24 after:h-24 after:absolute after:-bottom-10 after:-start-10 after:bg-[url('assets/images/pattern/dot3.svg')]"></div>
+        </div>
+
+        <!-- Swiper -->
+        <div id="swiper_two" class="swiper">
+          <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper">
+            @for (item of testimonialData; track $index) {
+              <swiper-slide>
+                <div class="p-12 bg-white border border-default-200">
+                  <p class="text-default-800">
+                    {{ item.description }}
+                  </p>
+
+                  <div class="flex items-center justify-between mt-5">
+                    <div class="flex items-center gap-3">
+                      <div>
+                        <img [src]="item.client.image" class="w-10 rounded-full" />
+                      </div>
+
+                      <div>
+                        <h6>{{ item.client.name }}</h6>
+                        <p class="text-sm text-default-500">
+                          {{ item.client.role }}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <img [src]="item.image" class="w-24" />
+                    </div>
+                  </div>
+                </div>
+              </swiper-slide>
+            }
+          </swiper-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

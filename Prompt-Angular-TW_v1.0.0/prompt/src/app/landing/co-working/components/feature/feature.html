@@ -1,0 +1,31 @@
+ <section class="py-20 bg-primary/10 relative" data-aos="fade-up">
+        <div class="absolute top-0 inset-x-0 hidden sm:block">
+            <img src="assets/images/shapes/white-wave.svg" alt="svg" class="w-full -scale-x-100">
+        </div>
+        <div class="container relative">
+            <div class="text-center">
+                <span class="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">Features</span>
+                <h2 class="md:text-3xl text-xl font-semibold my-5">Why Choose Us</h2>
+                <p class="text-default-500">The benefits that will make you comfort</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 grid-cols-1 gap-6 mt-16">
+                @for(item of featureData; track $index){
+                <div class="bg-white p-6 rounded">
+                    <div class="flex gap-5">
+                        <div class="">
+                            <div class="size-16 bg-primary/10 rounded-md flex items-center justify-center gap-5">
+                                <iconify-icon [icon]="item.icon" class="text-primary" width="48" height="48"></iconify-icon>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h5 class="mb-2">{{item.title}}</h5>
+                            <p>{{item.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>

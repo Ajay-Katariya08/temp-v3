@@ -1,0 +1,75 @@
+<footer class="bg-default-100 pt-14 pb-5">
+  <div class="container">
+    <div class="grid grid-cols-4 gap-14">
+      <div class="xl:col-span-1 col-span-4">
+        <a routerLink="/">
+          <img src="assets/images/logo-dark.png" class="h-8" />
+        </a>
+        <p class="text-default-500/80 mt-5">300 Park Avenue, 12th Floor New York, NY 10022</p>
+        <p class="text-default-500/80 mt-5">
+          1499 Burwell Heights Road Port Arthur Meadow Nashville, TX 77642
+        </p>
+      </div>
+      <div class="xl:col-span-3 col-span-4 xl:mx-20">
+        <div class="flex flex-col sm:flex-row gap-14 flex-wrap justify-between">
+          <div>
+            <div class="flex flex-col gap-3">
+              <h5 class="mb-3">About</h5>
+              @for (item of aboutData; track $index) {
+                <div class="text-default-500/80">
+                  <a [routerLink]="[]">{{ item }}</a>
+                </div>
+              }
+            </div>
+          </div>
+          <div>
+            <div class="flex flex-col gap-3">
+              <h5 class="mb-3">Company</h5>
+              @for (item of companyData; track $index) {
+                <div class="text-default-500/80">
+                  <a [routerLink]="[]">{{ item }}</a>
+                </div>
+              }
+            </div>
+          </div>
+          <div>
+            <div class="flex flex-col gap-3">
+              <h5 class="mb-3">Get in touch</h5>
+              <div class="text-default-500/80"><a [routerLink]="[]">hello@Prompt.com</a></div>
+              <div class="flex sm:justify-center gap-7">
+                @for (item of socialLinkData; track $index) {
+                  <span>
+                    <a [routerLink]="[]">
+                      <iconify-icon
+                        [icon]="item"
+                        width="20"
+                        height="20"
+                        class="hover:text-primary transition-all"
+                      ></iconify-icon>
+                    </a>
+                  </span>
+                }
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex flex-col gap-3">
+              <h5 class="mb-3">Languages</h5>
+              <div class="text-default-500/80"><a [routerLink]="[]">Francais</a></div>
+              <div class="text-default-500/80"><a [routerLink]="[]">English</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-b border-default-200 my-5"></div>
+    <div class="text-center">
+      <p class="text-default-500/80 text-sm">
+        {{ currentYear }}© Prompt. All rights reserved. Crafted by
+        <a [routerLink]="[]" class="text-default-800 hover:text-primary transition-all"
+          >Coderthemes</a
+        >
+      </p>
+    </div>
+  </div>
+</footer>

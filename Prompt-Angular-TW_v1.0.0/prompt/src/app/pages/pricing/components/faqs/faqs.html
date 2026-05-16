@@ -1,0 +1,45 @@
+<section class="py-20 bg-default-100">
+  <div class="container">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10"
+        >FAQs</span
+      >
+      <h2 class="md:text-3xl/tight text-3xl font-semibold my-4">Frequently Asked Questions</h2>
+      <p class="md:text-lg text-default-500 leading-7">
+        Here are some of the basic types of questions for our customers
+      </p>
+    </div>
+
+    <div class="mt-16 lg:mx-32">
+      <div class="hs-accordion-group">
+        @for (item of faqData; track $index) {
+          <div
+            class="hs-accordion rounded border border-default-200 bg-white mt-2"
+            [class.active]="item.isOpen"
+            [class.mt-0]="$index === 0"
+          >
+            <button
+              class="hs-accordion-toggle hs-accordion-active:rounded-b-none sm:text-base p-5 inline-flex items-center gap-x-3 w-full font-medium text-left text-default-800 transition hover:text-default-500"
+            >
+              {{ item.question }}
+
+              <iconify-icon
+                icon="fa6-solid:angle-down"
+                class="ms-auto transition-all hs-accordion-active:-rotate-90"
+              ></iconify-icon>
+            </button>
+
+            <div
+              class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
+              [class.hidden]="!item.isOpen"
+            >
+              <p class="sm:text-sm font-medium text-default-500 p-5 pt-0">
+                {{ item.answer }}
+              </p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<!-- Footer Section Start -->
+<section class="py-10">
+    <div class="container">
+        <div class="text-center">
+            <div>
+                <h2 class="md:text-3xl text-xl font-semibold my-5">Start creating delightful user experience</h2>
+                <p class="text-default-500">Start working with <span class="text-primary">Prompt</span> to showcase
+                    your app to thousands of people.</p>
+                <div class="my-14">
+                    <a href="#demo" class="py-3 px-6 rounded border border-primary text-white bg-primary hover:shadow-lg hover:shadow-primary/50 focus:outline focus:outline-primary/50 transition-all duration-500">
+                        <iconify-icon icon="fa6-solid:bag-shopping" class="me-2"></iconify-icon> View Demos</a>
+                </div>
+            </div>
+
+            <div>
+                <ul class="flex flex-wrap items-center justify-center gap-5">
+                    <li class="after:content-['-'] after:text-default-500 after:font-extrabold">
+                        <a [routerLink]="[]" class="hover:text-primary me-4">About</a>
+                    </li>
+                    <li class="after:content-['-'] after:text-default-500 after:font-extrabold">
+                        <a [routerLink]="[]" class="hover:text-primary me-4">Support</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="[]" class="hover:text-primary">Version</a>
+                    </li>
+                </ul>
+
+                <p class="my-5">
+                     {{ currentYear }} © Prompt. All rights reserved. Crafted
+                    by
+                </p>
+                <a routerLink="/">
+                    <img src="assets/images/logo-dark.png" class="h-8 mx-auto">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

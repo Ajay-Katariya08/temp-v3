@@ -1,0 +1,32 @@
+<section class="py-16 sm:py-24">
+    <div class="container" data-aos="fade-up" data-aos-duration="2000">
+
+        <div class="text-center">
+            <span class="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">FAQs</span>
+            <h1 class="text-3xl/tight font-medium mt-3 mb-4">Frequently Asked Questions</h1>
+            <p class="text-default-500">Here are some of the basic types of questions for our customers</p>
+        </div>
+
+        <div class="hs-accordion-group mt-14 lg:w-3/4 lg:mx-auto 2xl:w-2/3">
+            @for (faq of faqData; track $index) {
+            <div class="hs-accordion border border-default-300 rounded-lg" [class.active]="faq.active" [class.mt-4]="!$first">
+                <button class="hs-accordion-toggle p-5 inline-flex items-center justify-between w-full font-semibold text-left transition">
+                    {{ faq.question }}
+                    <iconify-icon icon="fa6-solid:angle-down" class="text-xl block transition-all hs-accordion-active:rotate-180"></iconify-icon>
+                </button>
+                <div class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300" [class.hidden]="!faq.active">
+                    <p class="text-default-700 dark:text-default-300 pt-3 p-5">
+                        {{ faq.answer }}
+                    </p>
+                </div>
+            </div>
+            }
+        </div>
+
+        <div class="text-center mt-14">
+            <p class="inline-flex flex-wrap gap-1 bg-default-100 text-sm rounded-lg py-2 px-5">Still have unanswered
+                questions?<a [routerLink]="[]" class="hover:text-primary transition-all"> Contact Us</a></p>
+        </div>
+
+    </div>
+</section>

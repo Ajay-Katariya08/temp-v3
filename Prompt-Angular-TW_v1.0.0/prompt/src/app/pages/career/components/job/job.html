@@ -1,0 +1,33 @@
+<section class="lg:py-24 py-16">
+  <div>
+    <div class="container">
+      <div class="text-center">
+        <h1 class="text-3xl font-medium mb-4">Job Openings</h1>
+        <p class="text-default-500">Interested? Come show us what you're made of!</p>
+      </div>
+
+      @for (category of jobData; track $index) {
+        <div class="mt-14">
+          <h1 class="text-2xl font-medium mb-8">{{ category.category }}</h1>
+
+          @for (job of category.jobs; track $index) {
+            <div class="flex justify-between my-5">
+              <div>
+                <a [routerLink]="[]" class="transition-all hover:text-primary">
+                  {{ job.title }}
+                </a>
+              </div>
+              <div>
+                <a [routerLink]="[]" class="text-default-500">
+                  {{ job.location }}
+                </a>
+              </div>
+            </div>
+
+            <div class="border-b border-default-200"></div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>

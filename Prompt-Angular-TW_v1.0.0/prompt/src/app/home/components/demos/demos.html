@@ -1,0 +1,86 @@
+<!-- demos Section Start -->
+<section class="lg:py-20 py-10" id="demo">
+    <div class="container">
+        <div class="text-center">
+            <span class="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">Demos</span>
+            <h1 class="text-4xl my-4">Landing Pages</h1>
+            <p class="text-default-500 mb-14">Modern landing pages available for every need</p>
+        </div>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6" data-aos="fade-up" data-duration="600">
+            @for (item of demoData.slice(0, 10); track $index) {
+            <a [routerLink]="item.link" target="_blank">
+                <div class="border border-default-200 p-2 rounded">
+                    <img [src]="item.image">
+                </div>
+                <h4 class="text-base text-center mt-4">{{item.label}}</h4>
+            </a>
+            }
+        </div>
+    </div>
+</section>
+<!-- demos Section End -->
+
+<!-- demos Section Start -->
+<section class="lg:py-20 py-10" id="admindemo">
+    <div class="container">
+        <div class="text-center">
+            <span class="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">New</span>
+            <h1 class="text-4xl my-4">Admin Pages</h1>
+            <p class="text-default-500 mb-14">Modern landing pages available for every need</p>
+        </div>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6" data-aos="fade-up" data-duration="600">
+            @for (item of demoData.slice(10, 12); track $index) {
+            <a [routerLink]="item.link" target="_blank">
+                <div class="border border-default-200 p-2 rounded">
+                    <img [src]="item.image">
+                </div>
+                <h4 class="text-base text-center mt-4">{{item.label}}</h4>
+            </a>
+            }
+        </div>
+    </div>
+</section>
+<!-- demos Section End -->
+
+<!-- showcase Section Start -->
+<section class="lg:py-20 py-10">
+    <div class="container">
+        <div class="text-center" data-aos="fade-up">
+            <span class="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">Inner Pages</span>
+            <h1 class="text-4xl mt-4 mb-14">Inner Pages</h1>
+        </div>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6" data-aos="fade-up" data-duration="600">
+            @for (item of demoData.slice(12, 22); track $index) {
+            <a [routerLink]="item.link" target="_blank">
+                <div class="border border-default-200 p-2 rounded">
+                    <img [src]="item.image">
+                </div>
+                <h4 class="text-base text-center mt-4">{{item.label}}</h4>
+            </a>
+            }
+        </div>
+    </div>
+</section>
+<!-- showcase Section End -->
+
+<!-- Auth pages Section Start -->
+<section class="lg:py-20 py-10">
+    <div class="container">
+        <div class="text-center" data-aos="fade-up">
+            <span class="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">Account Pages</span>
+            <h1 class="text-4xl mt-4 mb-14">Auth Pages</h1>
+        </div>
+
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6" data-aos="fade-up" data-duration="600">
+            @for (item of demoData.slice(22, 26); track $index) {
+            <a [routerLink]="item.link" target="_blank">
+                <div class="border border-default-200 p-2 rounded">
+                    <img [src]="item.image">
+                </div>
+                <h4 class="text-base text-center mt-4">{{item.label}}</h4>
+            </a>
+            }
+        </div>
+    </div>
+</section>
+<!-- Auth pages Section End -->
